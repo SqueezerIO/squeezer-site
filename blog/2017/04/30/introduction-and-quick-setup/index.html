@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Introduction & quick setup</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Squeezer.IO it's a framework designed to help developers to get a better architecture on serverless zero-administration compute platforms with code that runs into microservices clouds like AWS Lambda">
+    <meta name="author" content="Nick Chisiu">
+    <link rel="canonical" href="https://Squeezer.IO/blog/2017/04/30/introduction-and-quick-setup/">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Google verification -->
+    
+
+    <!-- Bing Verification -->
+    
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-98188609-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <!-- Framework data -->
+    <script src="http://docs.squeezer.io/gitbook/js/framework.js"></script>
+</head>
+
+
+    <body id="page-top" class="index">
+       <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="/">
+                    <img class="logo" src="/img/logo_circle.png" alt="logo">
+                    <img class="logo-text" src="/img/logo-text.png" alt="logo text">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="/#page-top"></a>
+                    </li>
+                    <li class="quick-start">
+                        <a href="http://docs.squeezer.io">Getting Started</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/#features">Features</a>
+                    </li>
+                    <li class="page-scroll">
+
+                        <a href="/#slack"><img height="20px" src="/img/slack_white.png"/> Slack</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/blog">Blog</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container blog post">
+        <h1 class="postTitle text-center">Introduction & quick setup</h1>
+        <hr/>
+        <p><img src="/img/blog/introduction.png" alt="Squeezer Intro" /></p>
+
+<h2 id="framework-squeezerio">Framework <a href="http://squeezer.io">squeezer.io</a></h2>
+<h2 id="documentation-docssqueezerio">Documentation <a href="http://docs.squeezer.io">docs.squeezer.io</a></h2>
+
+<h2 id="what-is-squeezer-">What is Squeezer ?</h2>
+
+<p>Squeezer it’s a framework designed to help  developers to get a better architecture on serverless
+zero-administration compute platforms where code runs on the top of
+<a href="https://en.wikipedia.org/wiki/Microservices">microservices</a> clouds like
+<a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> , <a href="https://azure.microsoft.com/en-us/services/functions/">Azure Functions</a> , <a href="https://developer.ibm.com/openwhisk/">IBM OpenWhisk</a> &amp; <a href="https://cloud.google.com/functions/">Google Functions</a></p>
+
+<h2 id="features-in-short">Features in short</h2>
+
+<ul>
+  <li><a href="http://swagger.io/">Swagger UI</a> API REST  support</li>
+  <li><strong>SEO-friendly</strong> web apps with the <a href="https://pugjs.org/">PUG</a> support ( formerly known as <strong>JADE</strong> ) + your favorite JS framework + CDN integrated support for project’s assets (js, images, css, …)</li>
+  <li>share components between microservices</li>
+  <li>auto-deployable, auto-scalable , no DevOps requirements</li>
+  <li><a href="https://aws.amazon.com/cloudformation/">CloudFormation</a> deployments , silent, 
+no interruption for the current functionality ( really useful on production )</li>
+  <li><a href="https://aws.amazon.com/blogs/devops/use-nested-stacks-to-create-reusable-templates-and-support-role-specialization/">CloudDormation Nested Stacks</a>
+support &amp; use templates <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html">Outputs</a> values directly as <code class="highlighter-rouge">process.env</code> variables</li>
+  <li>one single command to simultaneously deploy all available microservices on your project</li>
+  <li>quick intuitive code deployments by using a special mechanism which will deploy only assets, functions and file packages
+where code changed from the last deployment</li>
+  <li>automatic rollback to the previous working deployment if something goes wrong</li>
+  <li>sequential deployments, wait for the current deployments in progress to finish</li>
+  <li>each microservice is called on demand separately, when the runtime is done , it exits , no need to worry about all
+services loaded in a single NodeJS server that may cause RSS memory issues or V8 engine loop blockers</li>
+  <li>test your code locally on a simulated microservices platform for a faster development cycle</li>
+  <li>separate your environments in multiple stages</li>
+  <li>extend framework functionality with your own “home-made” plugins</li>
+  <li>pay only for the usage ( no monthly subscriptions )</li>
+  <li>competitive pricing (  &gt;= 2$ / 1 million HTTP requests on AWS API Gateway + Lambda )</li>
+  <li>smart external dependencies inclusion into the compiled microservice ( <strong>node_modules</strong> and other project files ) … just
+like on any other trivial NodeJS project</li>
+  <li>Babel ES6/ES7 + Webpack 2 integration</li>
+</ul>
+
+<h3 id="requirements">Requirements</h3>
+
+<ul>
+  <li><a href="http://nodejs.org/">Install node.js</a> version <code class="highlighter-rouge">&gt;=6</code></li>
+</ul>
+
+<h2 id="squeezer-cli">Squeezer CLI</h2>
+
+<blockquote>
+  <p>Squeezer command-line interface</p>
+</blockquote>
+
+<h3 id="templates">Templates</h3>
+
+<p>You can get various templates for creating a quick project stub :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>template</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>aws-api-nodejs</td>
+      <td>AWS generic API Hello World template</td>
+    </tr>
+    <tr>
+      <td>aws-api-nodejs-rest</td>
+      <td>AWS NodeJS REST API template + Swagger support</td>
+    </tr>
+    <tr>
+      <td>aws-web-nodejs-reactjs</td>
+      <td>AWS NodeJS WebApp template + Pug ( ex-Jade ) + ReactJS support + Material UI + Bootstrap 3 styling</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="getting-started">Getting started</h3>
+
+<p>NOTE: <strong>Windows</strong> users should <a href="http://answers.perforce.com/articles/KB/3472/?q=enabling&amp;l=en_US&amp;fs=Search&amp;pn=1">enable symlinks</a> in order to avoid unwanted symbolic links errors .</p>
+
+<h4 id="run">Run</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>cmd</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.</td>
+      <td><strong>npm install -g squeezer-cli</strong></td>
+      <td>Install Squeezer CLI</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td><a href="clouds/aws/aws_profile.html">Configure AWS profile</a></td>
+      <td>AWS Profile</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td><strong>sqz create –project my-first-project –template aws-api-rest-nodejs –email you@example.org</strong></td>
+      <td>Create a project</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td><strong>cd my-first-project</strong></td>
+      <td>Switch to the project’s directory</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td><strong>sqz install</strong></td>
+      <td>Install all requirements</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td><strong>sqz compile</strong></td>
+      <td>Compile microservices</td>
+    </tr>
+    <tr>
+      <td>7.</td>
+      <td><strong>sqz serve</strong></td>
+      <td>Simulates project on your local microservices platform<br /><em>NOTE</em> : Live reload enabled by default</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br />
+<code class="highlighter-rouge">WebApp</code> : <a href="http://localhost:4001/">http://localhost:4001/</a></p>
+
+<p><code class="highlighter-rouge">Swagger UI</code> : <a href="http://localhost:4001/swagger-ui">http://localhost:4001/swagger-ui</a>
+<br />
+<br /></p>
+
+<h4 id="deploy">Deploy</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>cmd</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.</td>
+      <td><strong>sqz compile –production</strong></td>
+      <td>Compile microservices</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td><strong>sqz deploy</strong></td>
+      <td>Deploy your app into the cloud provider<br /><em>Note</em>: initial deployments can take longer &lt;= <strong>40 mins</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="project-structure">Project Structure</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.
+├── cloudformation      CloudFormation nested custom YAML templates
+├── lib                 Project's Library
+├── microservices       Microservices Directory
+│   └── microservice1
+│   └── microservice2
+├── node_modules        Node NPM packages
+└── plugins             Project's plugins
+</code></pre>
+</div>
+
+        <hr/>
+        <!-- twitter widget -->
+        <b>Author</b>: Nick Chisiu <br><br>
+        
+        <a target="_blank" href="https://twitter.com/nickchisiu"><b>@nickchisiu</b></a>
+        
+        <hr/>
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <div class="addthis_inline_share_toolbox"></div>
+        <hr/>
+        <!-- disquis -->
+        <div id="disqus_thread"></div>
+        <script>
+          var disqus_config = function () {
+            this.page.url = "https://Squeezer.IO/blog/2017/04/30/introduction-and-quick-setup/"; // <--- use canonical URL
+            this.page.identifier = "/blog/2017/04/30/introduction-and-quick-setup";
+          };
+          (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = '//synthetase.disqus.com/embed.js'; // <--- use Disqus shortname
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    </div>
+        <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Location</h3>
+                        <p>
+                            
+                                EVERYWHERE <br>
+		                    
+                                <b>Open Source</b> baby ! <br>
+		                    
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            
+                            <li>
+                                <a href="https://twitter.com/SqueezerIO" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+		                    
+                            <li>
+                                <a href="http://fb.me/Squeezer.IO" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+		                    
+                            <li>
+                                <a href="https://github.com/SqueezerIO/squeezer-cli" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+		                    
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Credits</h3>
+                        <p><a target="_blank" href="http://startbootstrap.com">Start Bootstrap</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Squeezer.IO 2017
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/lib/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/lib/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/lib/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- slack plugins -->
+    <script src="/js/slack.js"></script>
+
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/lib/jqBootstrapValidation.js"></script>
+    
+     <script src="/js/contact_me.js"></script>
+    
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/main.js"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-590739dba1cd9d34"></script>
+    </body>
+</html>
