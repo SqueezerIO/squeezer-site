@@ -1,0 +1,56 @@
+---
+layout: default
+title: Blog
+pagination:
+    enabled: true
+---
+
+<div class="container blog">
+    <div class="posts-list">
+        {% for post in paginator.posts %}
+        <article class="postPreviewBox post">
+            {% if post.featuredImage %}
+            <a href="{{ post.url | prepend: site.baseurl }}">
+                <img class="featuredImage" src="{{post.featuredImage}}" alt="featured image"/>
+            </a>
+            {% endif %}
+
+            <a href="{{ post.url | prepend: site.baseurl }}">
+                <h2 class="postTitle">{{ post.title }}</h2>
+                {% if post.subtitle %}
+                <h3 class="postSubTitle">
+                    {{ post.subtitle }}
+                </h3>
+                {% endif %}
+            </a>
+
+            <p class="postMeta">
+                Posted on {{ post.date | date: "%B %-d, %Y" }} <b>by</b> <a target="_blank" href="https://twitter.com/{{ post.author.twitter }}">{{ post.author.name }}</a>
+            </p>
+
+            <div class="postPreviewContent">
+                {{ post.content | truncatewords: 35 | strip_html | xml_escape}}
+                <br/><br/>
+                <a href="{{ post.url | prepend: site.baseurl }}" class="readMoreLink">&raquo; [Read&nbsp;More]</a>
+            </div>
+
+        </article>
+        {% endfor %}
+    </div>
+
+    {% if paginator.total_pages > 1 %}
+    <ul class="pager main-pager">
+        {% if paginator.previous_page %}
+        <li class="previous">
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer
+                Posts</a>
+        </li>
+        {% endif %}
+        {% if paginator.next_page %}
+        <li class="next">
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+        </li>
+        {% endif %}
+    </ul>
+    {% endif %}
+</div>

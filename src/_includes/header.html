@@ -1,0 +1,46 @@
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!--<img class="img-responsive profile-pic" src="img/logo_circle.png" alt="circle logo">-->
+                    <div class="intro-text">
+                        <span class="name">
+                            EVENT-DRIVEN
+                            <span class="intro-text-highlight">
+                                API<span class="lowercase">s</span> & WEB APPS</span> <br>
+                            ON MICROSERVICES ... SERVERLESS
+                        </span>
+                        <div class="row techs">
+                        {% for tech in site.techs %}
+                        <span>
+                            <a title="{{ tech.title }}" href="{{ tech.url }}" target="_blank"><img src="img/techs/{{tech.identifier}}.png"></a>
+                        </span>
+                        {% endfor %}
+                        </div>
+                        <div class="row techs">
+                        {% for tech in site.clouds %}
+                        <span>
+                            <a title="{{ tech.title }}" href="{{ tech.url }}" target="_blank"><img src="img/clouds/{{tech.identifier}}.png"></a>
+                        </span>
+                         {% endfor %}
+                        </div>
+                        <hr class="star-light">
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-5 col-lg-offset-2">
+                                <a href="http://docs.squeezer.io" class="btn btn-main btn-lg btn-outline">
+                                    <i class="fa fa-file-text-o"></i>&nbsp; Docs
+                                </a>
+                            </div>
+                            <div  class="col-lg-4 col-sm-2 version"><span id="frameworkVersion"></span> - <span id="frameworkVersionReleaseDate"></span> <br> <b>MIT Licensed</b></div>
+                            <div class="col-lg-2 col-sm-5">
+                                <a href="{{ site.gitUrl }}" target="_blank" class="btn btn-lg btn-outline">
+                                    <i class="fa fa-github"></i>&nbsp; GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>

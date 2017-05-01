@@ -1,0 +1,48 @@
+{
+  "name": "squeezer-site",
+  "version": "0.0.1",
+  "preferGlobal": true,
+  "description": "Squeezer.IO site suite",
+  "homepage": "http://Squeezer.IO/",
+  "keywords": [
+    "squeezer.io",
+    "squeezer.io framework",
+    "squeezer framework",
+    "site",
+    "squeezer",
+    "squeezer cli",
+    "squeezer generator",
+    "serverless",
+    "serverless framework",
+    "microservices",
+    "aws lambda",
+    "amazon web services lambda",
+    "azure functions",
+    "google cloud functions",
+    "ibm openwhisk"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SqueezerIO/squeezer-site.git"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/concurrently --kill-others  'jekyll build -s src  -w' './node_modules/.bin/browser-sync start --server _site --files _site/*'",
+    "build": "jekyll build -s src -d docs",
+    "eslint": "eslint ./src/js",
+    "jsinspect": "jsinspect -t 30 -i ./src/js --ignore lib/ "
+  },
+  "contributors": [
+    {
+      "name": "Nick Chisiu",
+      "email": "nick@squeezer.io",
+      "web": "https://Squeezer.IO/"
+    }
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.7",
+    "concurrently": "^2.2.0",
+    "eslint": "^3.3.1",
+    "jsinspect": "^0.8.0"
+  }
+}
