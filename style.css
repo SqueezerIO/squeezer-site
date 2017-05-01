@@ -708,3 +708,7 @@ footer .footer-below {
     padding:5px;
     border:1px solid #dfe2e5;
 }
+
+.post h1, h2, h3, h4 , h5 , h6 {
+    padding: 15px 0;
+}
