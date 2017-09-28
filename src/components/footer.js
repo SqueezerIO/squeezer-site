@@ -33,7 +33,7 @@ const LiElement = ({ children }) => (
   <li css={{
     float    : 'left',
     color    : presets.calm,
-    fontSize : '15px'
+    fontSize : '13px'
   }}>
     {children}
   </li>
