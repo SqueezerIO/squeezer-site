@@ -165,15 +165,6 @@ export const pageQuery = graphql`
         title
       }
     }
-    file(relativePath: { eq: "gatsby-explanation.png" }) {
-      childImageSharp {
-        responsiveSizes(maxWidth: 870) {
-          src
-          srcSet
-          sizes
-        }
-      }
-    }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       limit: 3
