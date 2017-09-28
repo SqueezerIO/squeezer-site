@@ -5,6 +5,7 @@ dist/*
 !dist/.gitkeep
 *.log
 .idea
+.history
 
 # eslint cache
 .eslintcache
@@ -14,3 +15,6 @@ test.js
 
 # site gen
 _site
+.cache
+public
+content/docs
