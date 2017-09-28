@@ -35,7 +35,7 @@ const MastheadContent = () => (
         paddingTop : rhythm(4)
       },
       [presets.Desktop] : {
-        height     : rhythm(30),
+        height     : rhythm(32),
         paddingTop : rhythm(5),
       },
       [presets.Hd]      : {
