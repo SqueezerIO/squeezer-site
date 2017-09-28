@@ -51,7 +51,7 @@
   "main": "n/a",
   "private": true,
   "scripts": {
-    "installDocs" : "rm -rf .squeezer content/docs ; git clone git@github.com:SqueezerIO/squeezer.git .squeezer ; ln -s `pwd`/.squeezer/docs `pwd`/content/docs",
+    "installDocs" : "rm -rf .squeezer content/docs ; git clone https://github.com/SqueezerIO/squeezer.git .squeezer ; ln -s `pwd`/.squeezer/docs `pwd`/content/docs",
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
