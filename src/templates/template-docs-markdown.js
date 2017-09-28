@@ -8,7 +8,12 @@ import EditOnGithub from "../components/edit-on-github"
 const DocsTemplate = React.createClass({
   render() {
     const page = this.props.data.markdownRemark
-    console.log(this.props)
+    
+    let gitHubLocation
+    
+    if (this.props.location) {
+      gitHubLocation = `${this.props.location.pathname.replace(/\/$/, "")}.md`;
+    }
 
     return (
       <Container>
@@ -25,7 +30,7 @@ const DocsTemplate = React.createClass({
         <div css={{
           textAlign: 'right'
         }}>
-          <EditOnGithub path={`${this.props.location.pathname.replace(/\/$/, "")}.md`}/>
+          <EditOnGithub path={gitHubLocation}/>
         </div>
         <h1 css={{ marginTop: 0 }}>{page.frontmatter.title}</h1>
         <div
