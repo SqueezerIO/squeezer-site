@@ -1,0 +1,28 @@
+.sidebar h3 {
+  margin-top : 25px;
+  font-size:14px;
+  text-transform: uppercase;
+  color: #1C90F3;
+}
+
+.sidebar ul,h3 {
+  margin-left: 12px;
+  margin-top:0;
+  margin-bottom:5px;
+}
+
+.sidebar ul {
+  list-style-type: none;  
+}
+
+.sidebar li {
+  margin:0;
+}
+
+.sidebar a , li {
+  font-size: 16px;
+  border: 0;
+  text-decoration: none;
+  box-shadow: initial;
+  font-weight: normal;
+}
