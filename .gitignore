@@ -6,6 +6,7 @@ dist/*
 *.log
 .idea
 .history
+.squeezer
 
 # eslint cache
 .eslintcache
