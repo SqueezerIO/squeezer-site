@@ -7,8 +7,8 @@ image: "enterprise.png"
 draft: false
 ---
 
-## Framework [https://squeezer.io](https://squeezer.io/docs)
-## Documentation [https://squeezer.io/docs](https:/squeezer.io/docs)
+## Framework [https://squeezer.io](https://squeezer.io)
+## Documentation [https://squeezer.io/docs/](https:/squeezer.io/docs/)
 
 ## What is Squeezer ?
 
