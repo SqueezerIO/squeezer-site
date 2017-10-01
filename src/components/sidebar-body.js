@@ -9,6 +9,7 @@ class SidebarBody extends React.Component {
   constructor(props) {
     super(props)
     const menu = this.props.yaml
+    const isBrowser = typeof window !== 'undefined';    
     const menuTree = []
     let activeLink = null
     let index = 0
@@ -42,7 +43,7 @@ class SidebarBody extends React.Component {
           display: false
         }
 
-        if (window.location.pathname === path) {
+        if (isBrowser && window.location.pathname === path) {
           activeLink = linkObj
         }          
 
