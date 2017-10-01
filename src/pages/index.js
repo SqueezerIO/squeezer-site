@@ -91,12 +91,12 @@ const IndexRoute = createReactClass({
                 <CardIcon icon={NuclearIcon}/>
                 <CardHeadline>
                   <em css={{ color: presets.brand, fontStyle: `normal` }}>
-                    Website
+                    CDN
                   </em>
                   &nbsp; + functions = Nuclear
                 </CardHeadline>
                 <FuturaParagraph>
-                  Combine the power of <b>web</b> with <b>Functions</b> .
+                  Combine the power of <b>Content Delivery Network</b> with <b>Functions</b> .
                   Deliver on any demand, allow your app to get visitors even from other galaxies :)
                 </FuturaParagraph>
               </Card>

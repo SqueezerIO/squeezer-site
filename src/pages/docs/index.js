@@ -10,7 +10,7 @@ import {
 class IndexRoute extends React.Component {
   render() {
     return (
-      <Redirect to="/docs/getting-started"/>
+      <Redirect to="/docs/getting-started/"/>
     )
   }
 }
