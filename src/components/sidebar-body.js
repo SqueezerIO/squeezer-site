@@ -3,24 +3,83 @@ import Link from "gatsby-link"
 
 import typography, { rhythm, scale, options } from "../utils/typography"
 import presets from "../utils/presets"
-import "../css/sidebar.css"
-import SummaryMd from 'raw-loader!../../content/docs/SUMMARY.md';
-import MarkdownIt from "markdown-it"
-const md = new MarkdownIt({
-  html : true,
-  breaks : false
-});
 
 class SidebarBody extends React.Component {
-  render() {
-    //const menu = this.props.yaml
-    const menu = md.render(SummaryMd)
+  constructor(props) {
+    super(props)
+    this.state = {
+      menu: props.menu.tree,
+      activeLink: props.menu.activeLink
+    };
+  }
 
-    // Use original sizes on mobile as the text is inline
-    // but smaller on > tablet so as not to compete with body text.
+  processMenu(val, direct) {
+    const status = val.active ? false : true
+    const menu = this.state.menu
+
+    if ((val.type === 'children' && !direct) || (val.parent == 0 && direct)) {
+      return
+    }
+
+    menu.map((section, sectionIndex) => (
+      section.links.map((link, linkIndex) => {
+        // add active arrow to selected parent
+        if ((val.type === 'parent' && val.id === link.id)) {
+          menu[sectionIndex].links[linkIndex].active = status
+        }
+
+        // display current children tree for the selected parent
+        if (val.id === link.parent) {
+          menu[sectionIndex].links[linkIndex].display = status
+        }
+
+        // show all subtree childrens for a parent
+        if (status === false && link.rootParent === val.rootParent && link.deep > val.deep) {
+          if (link.display === true) {
+            menu[sectionIndex].links[linkIndex].display = status
+          }
+          if (link.active) {
+            menu[sectionIndex].links[linkIndex].active = false
+          }
+        }
+
+        // show all parent tree for a children
+        if (status === true && link.rootParent === val.rootParent) {
+          if (link.display === false && link.deep <= val.deep) {
+            menu[sectionIndex].links[linkIndex].display = status
+          }
+          if (!link.active && link.deep < val.deep) {
+            menu[sectionIndex].links[linkIndex].active = true
+          }
+        }
+      })
+    ))
+
+    this.setState({
+      menu: menu
+    })
+  }
+
+  handleClick = (e, val) => {
+    this.processMenu(val);
+
+    if (val.type === 'parent') {
+      e.preventDefault();
+    }
+  }
+
+  componentDidMount() {
+    const activeLink = this.state.activeLink
+
+    if (this.state.activeLink) {
+      this.processMenu(activeLink, true)
+    }
+  }
+
+  render() {
     const fontSize = this.props.inline
       ? scale(0).fontSize
-      : scale(-2 / 10).fontSize
+      : scale(-2 / 15).fontSize
     const headerStyles = this.props.inline
       ? {
         fontSize: scale(2 / 5).fontSize,
@@ -33,24 +92,16 @@ class SidebarBody extends React.Component {
         color: presets.brandLight,
       }
     const headerTextTransform = this.props.inline ? false : `uppercase`
-    const getTitleLevel = (title) => {
-      return (title.match(/->/g) || []).length
-    }
-    const formatTitle = (title) => {
-      const level = getTitleLevel(title)
-
-      return title.slice(level * 2)
-    }
+    
     return (
       <div
-      className="sidebar"
+        className="sidebar"
         css={{
           marginBottom: rhythm(1),
           padding: this.props.inline ? 0 : rhythm(3 / 4),
         }}
-        dangerouslySetInnerHTML={{ __html: menu }}
       >
-        {/* {menu.map((section, index) => (
+        {this.state.menu.map((section, index) => (
           <div
             key={section.title}
             css={{
@@ -73,9 +124,8 @@ class SidebarBody extends React.Component {
                 fontFamily: typography.options.headerFontFamily.join(`,`),
               }}
             >
-              {Object.keys(section.links).map(title => {
-                // title index
-                const titleIndex = getTitleLevel(title)
+              {section.links.map(val => {
+                const title = val.title
 
                 // Don't show the main docs link on mobile as we put these
                 // links on that main docs page so it's confusing to have
@@ -91,7 +141,7 @@ class SidebarBody extends React.Component {
                     borderBottom: `none`,
                     boxShadow: `none`,
                     fontWeight: `normal`,
-                    marginLeft: rhythm(0.5 * titleIndex),
+                    marginLeft: rhythm(0.5 * (val.deep - 1)),
                     ":hover": {
                       color: `inherit`,
                       borderBottom: `none`,
@@ -99,46 +149,42 @@ class SidebarBody extends React.Component {
                     },
                   },
                 }
-                if (title.slice(-1) === `*`) {
-                  changedTitle = title.slice(0, -1)
-                  linkStyle = {
-                    // Increase specifity to override `.main-body a` styles
-                    // defined in src/utils/typography.js.
-                    "&&": {
-                      color: presets.calm,
-                      borderBottomColor: presets.veryLightBlue,
-                      borderBottom: `none`,
-                      boxShadow: `inset 0 -5px 0px 0px ${presets.veryLightBlue}`,
-                      boxShadow: `none`,
-                      fontStyle: `italic`,
-                      fontWeight: `normal`,
-                      ":hover": {
-                        color: `inherit`,
-                        borderBottomColor: presets.lightBlue,
-                        boxShadow: `inset 0 -5px 0px 0px ${presets.lightBlue}`,
-                        borderBottom: `none`,
-                        boxShadow: `none`,
-                      },
-                    },
-                  }
+
+                let liCss = {
+                  marginBottom: options.blockMarginBottom / 2,
+
                 }
+
+                if (val.display === false && val.parent !== 0) {
+                  liCss.display = 'none'
+                } else {
+                  liCss.display = 'block'
+                }
+
                 return (
                   <li
-                    key={section.links[title]}
-                    css={{ marginBottom: options.blockMarginBottom / 2 }}
-                    tabIndex={titleIndex}
+                    id={val.id}
+                    key={val.id}
+                    css={liCss}
                   >
-                    <Link to={section.links[title]} css={linkStyle} activeStyle={{
-                      color : `${presets.brand}`
+                    <Link onClick={(e) => this.handleClick(e, val)} className=" " to={val.path} css={linkStyle} activeStyle={{
+                      color: `${presets.brand}`
                     }}>
-                      {formatTitle(changedTitle)}
+                      <span css={{
+                        display: val.type === 'parent' ? '' : 'none',
+                        fontSize: '10px',
+                        verticalAlign: 'middle',
+                        marginLeft: '-12px',
+                        marginRight: '2px'
+                      }}>{val.active ? '▼' : '►'}</span>
+                      {changedTitle}
                     </Link>
                   </li>
                 )
               })}
             </ul>
           </div>
-        ))} */}
+        ))}
       </div>
     )
   }

@@ -1,7 +1,8 @@
 import React from "react"
 import Container from "../components/container"
+import createReactClass from "create-react-class"
 
-const IndexRoute = React.createClass({
+const IndexRoute = createReactClass({
   render() {
     return (
       <Container>

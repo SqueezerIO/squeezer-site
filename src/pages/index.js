@@ -24,6 +24,7 @@ import InfiniteIcon from "../assets/infinite.svg"
 import NuclearIcon from "../assets/nuclear.svg"
 import MonolithicIcon from "../assets/monolithic.svg"
 import CloudSunIcon from "../assets/cloud-sun.svg"
+import createReactClass from "create-react-class"
 
 const CardIcon = ({icon}) => {
   return (
@@ -34,7 +35,7 @@ const CardIcon = ({icon}) => {
   )
 };
 
-const IndexRoute = React.createClass({
+const IndexRoute = createReactClass({
   render() {
     // const blogPosts = this.props.data.allMarkdownRemark
     return (
@@ -90,12 +91,12 @@ const IndexRoute = React.createClass({
                 <CardIcon icon={NuclearIcon}/>
                 <CardHeadline>
                   <em css={{ color: presets.brand, fontStyle: `normal` }}>
-                    Website
+                    CDN
                   </em>
                   &nbsp; + functions = Nuclear
                 </CardHeadline>
                 <FuturaParagraph>
-                  Combine the power of <b>web</b> with <b>Functions</b> .
+                  Combine the power of <b>Content Delivery Network</b> with <b>Functions</b> .
                   Deliver on any demand, allow your app to get visitors even from other galaxies :)
                 </FuturaParagraph>
               </Card>

@@ -5,6 +5,8 @@
   "author": "Nick Chisiu <nick@squeezer.io>",
   "dependencies": {
     "bluebird": "^3.4.6",
+    "babel-preset-env": "^1.6.0",
+    "create-react-class": "^15.6.2",
     "gatsby": "^1.9.10",
     "gatsby-link": "^1.6.13",
     "gatsby-plugin-canonical-urls": "^1.0.4",
@@ -33,19 +35,17 @@
     "gatsby-transformer-yaml": "^1.5.5",
     "limax": "^1.5.0",
     "lodash": "^4.16.6",
-    "markdown-it": "^8.4.0",
     "mitt": "^1.1.2",
     "parse-filepath": "^1.0.1",
     "react-icons": "^2.2.3",
     "slash": "^1.0.0",
+    "traverse": "^0.6.6",
     "typeface-space-mono": "^0.0.35",
     "typeface-spectral": "^0.0.31",
     "typography-breakpoint-constants": "^0.15.10",
     "typography-plugin-code": "0.15.x"
   },
-  "devDependencies": {
-    "babel-preset-env": "^1.6.0"
-  },
+  "devDependencies": {},
   "keywords": [
     "squeezer site"
   ],
@@ -53,7 +53,7 @@
   "main": "n/a",
   "private": true,
   "scripts": {
-    "installDocs": "rm -rf .squeezer content/docs ; git clone https://github.com/SqueezerIO/squeezer.git .squeezer ; ln -s `pwd`/.squeezer/docs `pwd`/content/docs",
+    "installDocs": "rm -rf .squeezer content/docs && git clone https://github.com/SqueezerIO/squeezer.git .squeezer && cd .squeezer && npm install && npm run gendocs && cd .. && ln -s `pwd`/.squeezer/docs `pwd`/content/docs",
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-paths",
     "develop": "gatsby develop",

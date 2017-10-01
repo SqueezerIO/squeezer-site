@@ -10,15 +10,15 @@ The site is builded with [GatsbyJS](https://www.gatsbyjs.org/) , a static PWA (P
 
 ### Install packages
 
-`npm install`
+`yarn install`
 
 ### Install Squeezer docs
 
-`npm run installDocs`
+`yarn run installDocs`
 
 ### Run site on your local machine
 
-`npm run develop`
+`yarn run develop`
 
 ## Add a blog post
 
@@ -28,4 +28,9 @@ The site is builded with [GatsbyJS](https://www.gatsbyjs.org/) , a static PWA (P
 
 ### Add a new blog post
 
-`content/blog/posts`
+`content/blog/posts/`
+
+### Deploy website
+
+Use a separate branch from `master` and make a PR . We are using [netlifly](https://www.netlify.com/) for blazing 
+fast static websites . You can preview your deployment at `https://YOUR_BRANCH--squeezer-site.netlify.com` .

@@ -4,8 +4,9 @@ import Container from "../components/container"
 import BlogPostPreviewItem from "../components/blog-post-preview-item"
 import typography, { rhythm, scale, options } from "../utils/typography"
 import presets from "../utils/presets"
+import createReactClass from "create-react-class"
 
-const ContributorPageTemplate = React.createClass({
+const ContributorPageTemplate = createReactClass({
   render() {
     const contributor = this.props.data.authorYaml
     const allMarkdownRemark = this.props.data.allMarkdownRemark

@@ -4,13 +4,15 @@ import Helmet from "react-helmet"
 import { rhythm  } from "../utils/typography"
 import Container from "../components/container"
 import EditOnGithub from "../components/edit-on-github"
+import createReactClass from "create-react-class"
 
-const DocsTemplate = React.createClass({
+
+const DocsTemplate = createReactClass({
   render() {
     const page = this.props.data.markdownRemark
     
     let gitHubLocation
-    
+
     if (this.props.location) {
       gitHubLocation = `${this.props.location.pathname.replace(/\/$/, "")}.md`;
     }
@@ -37,6 +39,7 @@ const DocsTemplate = React.createClass({
           dangerouslySetInnerHTML={{
             __html: page.html,
           }}
+          className="content"
         />
       </Container>
     )
