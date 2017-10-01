@@ -7,6 +7,10 @@ import presets from "../utils/presets"
 class SidebarBody extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      menu: props.menu.tree,
+      activeLink: props.menu.activeLink
+    };
   }
 
   processMenu(val, direct) {
@@ -66,6 +70,7 @@ class SidebarBody extends React.Component {
 
   componentDidMount() {
     const activeLink = this.state.activeLink
+
     if (this.state.activeLink) {
       this.processMenu(activeLink, true)
     }
@@ -88,11 +93,6 @@ class SidebarBody extends React.Component {
       }
     const headerTextTransform = this.props.inline ? false : `uppercase`
     
-    this.state = {
-      menu: this.props.menu.tree,
-      activeLink: this.props.menu.activeLink
-    };
-
     return (
       <div
         className="sidebar"
@@ -166,9 +166,6 @@ class SidebarBody extends React.Component {
                     id={val.id}
                     key={val.id}
                     css={liCss}
-                    parent={val.parent}
-                    deep={val.deep}
-                    type={val.type}
                   >
                     <Link onClick={(e) => this.handleClick(e, val)} className=" " to={val.path} css={linkStyle} activeStyle={{
                       color: `${presets.brand}`

@@ -8,27 +8,31 @@ import createReactClass from "create-react-class"
 
 
 const DocsTemplate = createReactClass({
-  // getInitialState () {
-  //   return {
-  //     loaded: false
-  //   };
-  // },
+  getInitialState () {
+    return {
+      loaded: false
+    };
+  },
   componentDidMount() {
-    // this.setState({
-    //   loaded : true
-    // })
+    console.log('aaa')
+    this.setState({
+      loaded: true
+    })
   },
   render() {
     const page = this.props.data.markdownRemark
+    console.log('bbb')
     
     let gitHubLocation
-    
+
     if (this.props.location) {
       gitHubLocation = `${this.props.location.pathname.replace(/\/$/, "")}.md`;
     }
 
     return (
-      <Container>
+      <Container css={{
+        background : this.state.loaded ? '' : 'blue'
+      }}>
         <Helmet>
           <title>{page.frontmatter.title}</title>
           <meta name="description" content={page.excerpt} />
