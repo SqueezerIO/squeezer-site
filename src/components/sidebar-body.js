@@ -133,7 +133,7 @@ class SidebarBody extends React.Component {
     }
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     const activeLink = this.state.activeLink
     if (this.state.activeLink) {
       this.processMenu(activeLink, true)
@@ -143,7 +143,7 @@ class SidebarBody extends React.Component {
   render() {
     const fontSize = this.props.inline
       ? scale(0).fontSize
-      : scale(-2 / 10).fontSize
+      : scale(-2 / 15).fontSize
     const headerStyles = this.props.inline
       ? {
         fontSize: scale(2 / 5).fontSize,
