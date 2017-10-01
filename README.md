@@ -10,15 +10,15 @@ The site is builded with [GatsbyJS](https://www.gatsbyjs.org/) , a static PWA (P
 
 ### Install packages
 
-`npm install`
+`yarn install`
 
 ### Install Squeezer docs
 
-`npm run installDocs`
+`yarn run installDocs`
 
 ### Run site on your local machine
 
-`npm run develop`
+`yarn run develop`
 
 ## Add a blog post
 

@@ -8,6 +8,7 @@ import docsSidebar from "../../content/docs/doc-links.yaml"
 import { rhythm, scale } from "../utils/typography"
 import presets from "../utils/presets"
 import colors from "../utils/colors"
+import createReactClass from "create-react-class"
 
 import "../css/prism-coy.css"
 
@@ -21,7 +22,7 @@ import "../fonts/Webfonts/futurapt_demiitalic_macroman/stylesheet.css"
 import "typeface-spectral"
 import "typeface-space-mono"
 
-module.exports = React.createClass({
+module.exports = createReactClass({
   propTypes() {
     return {
       children: React.PropTypes.any,

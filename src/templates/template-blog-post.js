@@ -9,8 +9,9 @@ import typography, { rhythm, scale, options } from "../utils/typography"
 import Container from "../components/container"
 import Newsletter from "../components/newsletter"
 import Footer from "../components/footer"
+import createReactClass from "create-react-class"
 
-const BlogPostTemplate = React.createClass({
+const BlogPostTemplate = createReactClass({
   render() {
     const post = this.props.data.markdownRemark
     const prev = this.props.pathContext.prev

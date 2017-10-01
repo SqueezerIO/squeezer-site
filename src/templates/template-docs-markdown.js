@@ -4,8 +4,20 @@ import Helmet from "react-helmet"
 import { rhythm  } from "../utils/typography"
 import Container from "../components/container"
 import EditOnGithub from "../components/edit-on-github"
+import createReactClass from "create-react-class"
 
-const DocsTemplate = React.createClass({
+
+const DocsTemplate = createReactClass({
+  getInitialState () {
+    return {
+      loaded: false
+    };
+  },
+  componentDidMount() {
+    this.setState({
+      loaded : true
+    })
+  },
   render() {
     const page = this.props.data.markdownRemark
     
@@ -16,7 +28,9 @@ const DocsTemplate = React.createClass({
     }
 
     return (
-      <Container>
+      <Container css={{
+        background: this.state.loaded ? '' : 'red'
+      }}>
         <Helmet>
           <title>{page.frontmatter.title}</title>
           <meta name="description" content={page.excerpt} />
@@ -37,6 +51,7 @@ const DocsTemplate = React.createClass({
           dangerouslySetInnerHTML={{
             __html: page.html,
           }}
+          className="content"
         />
       </Container>
     )

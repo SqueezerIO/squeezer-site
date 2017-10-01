@@ -24,6 +24,7 @@ import InfiniteIcon from "../assets/infinite.svg"
 import NuclearIcon from "../assets/nuclear.svg"
 import MonolithicIcon from "../assets/monolithic.svg"
 import CloudSunIcon from "../assets/cloud-sun.svg"
+import createReactClass from "create-react-class"
 
 const CardIcon = ({icon}) => {
   return (
@@ -34,7 +35,7 @@ const CardIcon = ({icon}) => {
   )
 };
 
-const IndexRoute = React.createClass({
+const IndexRoute = createReactClass({
   render() {
     // const blogPosts = this.props.data.allMarkdownRemark
     return (

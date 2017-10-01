@@ -4,8 +4,9 @@ import Helmet from "react-helmet"
 import { rhythm, scale } from "../utils/typography"
 import presets from "../utils/presets"
 import Container from "../components/container"
+import createReactClass from "create-react-class"
 
-const DocsTemplate = React.createClass({
+const DocsTemplate = createReactClass({
   render() {
     const packageName = this.props.data.markdownRemark.fields.title
     const page = this.props.data.markdownRemark
