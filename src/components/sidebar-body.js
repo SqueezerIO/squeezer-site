@@ -3,79 +3,10 @@ import Link from "gatsby-link"
 
 import typography, { rhythm, scale, options } from "../utils/typography"
 import presets from "../utils/presets"
-import traverse from "traverse"
 
 class SidebarBody extends React.Component {
   constructor(props) {
     super(props)
-    this.loadMenu()    
-  }
-
-  loadMenu() {
-    const menu = this.props.yaml
-    const isBrowser = typeof window !== 'undefined';    
-    const menuTree = []
-    let activeLink = null
-    let index = 0
-    let parentLinks = [], parentLink, rootParent
-
-    menu.forEach((section, index) => {
-      let links = []
-      traverse(section.links).forEach(function () {
-        const deep = this.level
-        const node = this.node
-        const key = this.key
-        let linkId = `sidebar-link-${index}`
-        let path = typeof node === 'string' ? this.node : '#'
-
-        if (deep === 1) {
-          parentLink = 0
-          rootParent = linkId
-        } else {
-          parentLink = parentLinks[deep - 1]
-        }
-
-        let linkObj = {
-          id: linkId,
-          title: key,
-          type: typeof node === 'string' ? 'children' : 'parent',
-          path: path,
-          parent: parentLink,
-          rootParent : rootParent,
-          deep: deep,
-          active: false,
-          display: false
-        }
-
-        if (isBrowser && window.location.pathname === path) {
-          activeLink = linkObj
-        }          
-
-        if (key) {
-         links.push(linkObj)
-        }
-
-        if (typeof node !== 'string') {
-          parentLinks[deep] = linkId
-        }
-
-        index++
-      })
-
-      menuTree.push({
-        title: section.title,
-        key: section.title,
-        links: links
-      })
-    })
-    // return {
-    //     tree: menuTree,
-    //     activeLink: activeLink
-    //   }
-    this.state = {
-      menu: menuTree,
-      activeLink: activeLink
-    };
   }
 
   processMenu(val, direct) {
@@ -157,6 +88,11 @@ class SidebarBody extends React.Component {
       }
     const headerTextTransform = this.props.inline ? false : `uppercase`
     
+    this.state = {
+      menu: this.props.menu.tree,
+      activeLink: this.props.menu.activeLink
+    };
+
     return (
       <div
         className="sidebar"

@@ -9,6 +9,7 @@ import { rhythm, scale } from "../utils/typography"
 import presets from "../utils/presets"
 import colors from "../utils/colors"
 import createReactClass from "create-react-class"
+import traverse from "traverse"
 
 import "../css/prism-coy.css"
 
@@ -28,12 +29,77 @@ module.exports = createReactClass({
       children: React.PropTypes.any,
     }
   },
+  loadMenu(props) {
+    const menuTree = []
+    let activeLink = null
+    let index = 0
+    let parentLinks = [], parentLink, rootParent
+
+    docsSidebar.forEach((section, index) => {
+      let links = []
+      traverse(section.links).forEach(function () {
+        const deep = this.level
+        const node = this.node
+        const key = this.key
+        let linkId = `sidebar-link-${index}`
+        let path = typeof node === 'string' ? this.node : '#'
+
+        if (deep === 1) {
+          parentLink = 0
+          rootParent = linkId
+        } else {
+          parentLink = parentLinks[deep - 1]
+        }
+
+        let linkObj = {
+          id: linkId,
+          title: key,
+          type: typeof node === 'string' ? 'children' : 'parent',
+          path: path,
+          parent: parentLink,
+          rootParent : rootParent,
+          deep: deep,
+          active: false,
+          display: false
+        }
+
+        if (props.location.pathname === path) {
+          activeLink = linkObj
+        }          
+
+        if (key) {
+         links.push(linkObj)
+        }
+
+        if (typeof node !== 'string') {
+          parentLinks[deep] = linkId
+        }
+
+        index++
+      })
+
+      menuTree.push({
+        title: section.title,
+        key: section.title,
+        links: links
+      })
+    })
+    return {
+        tree: menuTree,
+        activeLink: activeLink
+      }
+    // this.state = {
+    //   menu: menuTree,
+    //   activeLink: activeLink
+    // };
+  },
   render() {
     const isHomepage = this.props.location.pathname == `/`
     const hasSidebar =
       this.props.location.pathname.slice(0, 6) === `/docs/` ||
       this.props.location.pathname.slice(0, 10) === `/packages/` ||
       this.props.location.pathname.slice(0, 10) === `/enterprise/`
+    const menu = this.loadMenu(this.props)  
     const sidebarStyles = {
       borderRight: `1px solid ${colors.b[0]}`,
       backgroundColor: presets.sidebar,
@@ -88,22 +154,7 @@ module.exports = createReactClass({
               },
             }}
           >
-            <SidebarBody yaml={docsSidebar} />
-          </div>
-          {/* TODO Move this under docs/tutorial/index.js once Gatsby supports multiple levels
-               of layouts */}
-          <div
-            css={{
-              ...sidebarStyles,
-              [presets.Tablet]: {
-                display:
-                  this.props.location.pathname.slice(0, 10) === `/enterprise/`
-                    ? `block`
-                    : `none`,
-              },
-            }}
-          >
-            {/*<SidebarBody yaml={tutorialSidebar} />*/}
+            <SidebarBody menu={menu} />
           </div>
           <div
             css={{
