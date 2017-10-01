@@ -23,14 +23,7 @@ import "../fonts/Webfonts/futurapt_demiitalic_macroman/stylesheet.css"
 import "typeface-spectral"
 import "typeface-space-mono"
 
-let loaded = false
-
 module.exports = createReactClass({
-  getInitialState() {
-    return { 
-      loaded : false
-    };
-  },
   propTypes() {
     return {
       children: React.PropTypes.any
@@ -95,53 +88,7 @@ module.exports = createReactClass({
         tree: menuTree,
         activeLink: activeLink
       }
-    // this.state = {
-    //   menu: menuTree,
-    //   activeLink: activeLink
-    // };
   },
-  // componentWillMount() {
-  //   this.setState({
-  //     loaded : false
-  //   })
-  // },
-  componentDidMount() {
-    console.log('did mount')
-    this.setState({
-      loaded : true
-    })
-  },
-  componentWillUpdate() {
-    console.log('will update')
-
-    if (this.state.loaded === true) {
-      this.setState({
-        loaded: false
-      })
-    }
-  },
-  componentDidUpdate() {
-    console.log('did update')
-
-    if (this.state.loaded === false) {
-      this.setState({
-        loaded: true
-      })
-    }
-  },
-  // componentWillUpdate() {
-  //   console.log('111')
-  //   this.setState({
-  //     loaded : false
-  //   })
-  // },
-  // componentDidUpdate() {
-  //   console.log('222')
-    
-  //   this.setState({
-  //     loaded : true
-  //   })
-  // },
   render() {
     const isHomepage = this.props.location.pathname == `/`
     const hasSidebar =
