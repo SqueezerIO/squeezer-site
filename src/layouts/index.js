@@ -159,9 +159,6 @@ module.exports = createReactClass({
               },
             }}
           >
-            <div css={{
-              display : this.state.loaded ? 'none' : ''
-            }}>loading</div>
             {this.props.children()}
           </div>
         </div>
