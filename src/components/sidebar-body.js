@@ -8,6 +8,10 @@ import traverse from "traverse"
 class SidebarBody extends React.Component {
   constructor(props) {
     super(props)
+    this.loadMenu()    
+  }
+
+  loadMenu() {
     const menu = this.props.yaml
     const isBrowser = typeof window !== 'undefined';    
     const menuTree = []
@@ -64,7 +68,10 @@ class SidebarBody extends React.Component {
         links: links
       })
     })
-
+    // return {
+    //     tree: menuTree,
+    //     activeLink: activeLink
+    //   }
     this.state = {
       menu: menuTree,
       activeLink: activeLink
@@ -126,7 +133,7 @@ class SidebarBody extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
     const activeLink = this.state.activeLink
     if (this.state.activeLink) {
       this.processMenu(activeLink, true)
@@ -149,7 +156,7 @@ class SidebarBody extends React.Component {
         color: presets.brandLight,
       }
     const headerTextTransform = this.props.inline ? false : `uppercase`
-
+    
     return (
       <div
         className="sidebar"

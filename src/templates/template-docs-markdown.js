@@ -8,15 +8,15 @@ import createReactClass from "create-react-class"
 
 
 const DocsTemplate = createReactClass({
-  getInitialState () {
-    return {
-      loaded: false
-    };
-  },
+  // getInitialState () {
+  //   return {
+  //     loaded: false
+  //   };
+  // },
   componentDidMount() {
-    this.setState({
-      loaded : true
-    })
+    // this.setState({
+    //   loaded : true
+    // })
   },
   render() {
     const page = this.props.data.markdownRemark
@@ -28,9 +28,7 @@ const DocsTemplate = createReactClass({
     }
 
     return (
-      <Container css={{
-        background: this.state.loaded ? '' : 'red'
-      }}>
+      <Container>
         <Helmet>
           <title>{page.frontmatter.title}</title>
           <meta name="description" content={page.excerpt} />
