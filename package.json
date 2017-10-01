@@ -37,8 +37,6 @@
     "lodash": "^4.16.6",
     "mitt": "^1.1.2",
     "parse-filepath": "^1.0.1",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
     "react-icons": "^2.2.3",
     "slash": "^1.0.0",
     "traverse": "^0.6.6",

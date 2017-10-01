@@ -28,7 +28,7 @@ The site is builded with [GatsbyJS](https://www.gatsbyjs.org/) , a static PWA (P
 
 ### Add a new blog post
 
-`content/blog/posts`
+`content/blog/posts/`
 
 ### Deploy website
 

@@ -14,9 +14,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     const contributorPageTemplate = path.resolve(
       `src/templates/template-contributor-page.js`
     )
-    const packageTemplate = path.resolve(
-      `src/templates/template-docs-packages.js`
-    )
     // Query for markdown nodes to use in creating pages.
     resolve(
       graphql(
@@ -105,7 +102,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             createPage({
               path: `${edge.node.fields.slug}`, // required
               component: slash(
-                edge.node.fields.package ? packageTemplate : docsTemplate
+                docsTemplate
               ),
               context: {
                 slug: edge.node.fields.slug,
