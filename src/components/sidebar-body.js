@@ -17,7 +17,7 @@ class SidebarBody extends React.Component {
     const status = val.active ? false : true
     const menu = this.state.menu
 
-    if (val.type === 'children' && !direct) {
+    if ((val.type === 'children' && !direct) || (val.parent == 0 && direct)) {
       return
     }
 
