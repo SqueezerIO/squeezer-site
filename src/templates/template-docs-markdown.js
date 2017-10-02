@@ -6,6 +6,15 @@ import Container from "../components/container"
 import EditOnGithub from "../components/edit-on-github"
 import createReactClass from "create-react-class"
 
+const formatTitle = (title) => {
+  const splittedTitle = title.split(' - ')
+  let text = ''
+  splittedTitle.forEach((val, index) => {
+    const headerIndex = index + 1
+    text += `<h${headerIndex} style="margin-top:0">${val}</h${headerIndex}>`
+  })
+  return (text)
+}
 
 const DocsTemplate = createReactClass({
   render() {
@@ -34,7 +43,11 @@ const DocsTemplate = createReactClass({
         }}>
           <EditOnGithub path={gitHubLocation}/>
         </div>
-        <h1 className="lvl0" css={{ marginTop: 0 }}>{page.frontmatter.title}</h1>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: formatTitle(page.frontmatter.title),
+          }}
+        />
         <div
           dangerouslySetInnerHTML={{
             __html: page.html,
