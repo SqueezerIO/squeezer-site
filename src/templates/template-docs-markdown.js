@@ -18,7 +18,7 @@ const DocsTemplate = createReactClass({
     }
 
     return (
-      <Container>
+      <Container className="content">
         <Helmet>
           <title>{page.frontmatter.title}</title>
           <meta name="description" content={page.excerpt} />
@@ -34,12 +34,11 @@ const DocsTemplate = createReactClass({
         }}>
           <EditOnGithub path={gitHubLocation}/>
         </div>
-        <h1 css={{ marginTop: 0 }}>{page.frontmatter.title}</h1>
+        <h1 className="lvl0" css={{ marginTop: 0 }}>{page.frontmatter.title}</h1>
         <div
           dangerouslySetInnerHTML={{
             __html: page.html,
           }}
-          className="content"
         />
       </Container>
     )
