@@ -16,7 +16,25 @@ const formatTitle = (title) => {
   return (text)
 }
 
+const initSearch = () => {
+  if (typeof docsearch !== 'undefined') {
+    docsearch({ // eslint-disable-line
+      apiKey: 'ce6472c23c0d013b682cad58fdb6b1fb',
+      indexName: 'squeezer',
+      inputSelector: '#docs-search',
+      debug: false // set to true to style search box
+    })
+  } else {
+    setTimeout(() => {
+      initSearch()
+    }, 50)
+  }
+}
+
 const DocsTemplate = createReactClass({
+  componentDidMount() {
+    initSearch()
+  },
   render() {
     const page = this.props.data.markdownRemark
     
@@ -37,6 +55,8 @@ const DocsTemplate = createReactClass({
           <meta name="og:type" content="article" />
           <meta name="twitter.label1" content="Reading time" />
           <meta name="twitter:data1" content={`${page.timeToRead} min read`} />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
         </Helmet>
         <div css={{
           textAlign: 'right'
