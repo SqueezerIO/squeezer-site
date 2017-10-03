@@ -7,6 +7,7 @@ import logo from "../logo-negative.png"
 import typography, { rhythm, scale } from "../utils/typography"
 import presets from "../utils/presets"
 import { vP, vPHd, vPVHd, vPVVHd } from "./gutters"
+import DocSearchInput from "../components/doc-search-input"
 
 const navItemStyles = {
   ...scale(-1 / 3),
@@ -40,6 +41,7 @@ const NavItem = ({ linkTo, children }) => (
 export default ({ pathname }) => {
   const isHomepage = pathname == `/`
   const isBlog = pathname == `/blog/`
+  const isDocs = pathname.slice(0, 6) === `/docs/`  
   let styles = {}
   if (isHomepage) {
     styles.backgroundColor = `rgba(255,255,255,0)`
@@ -80,6 +82,16 @@ export default ({ pathname }) => {
         },
       }
     : {}
+
+    const DocsSearch = ({css}) => {
+      return (
+        <div css={{
+          display: isDocs ? 'block' : 'none'
+        }}>
+          <DocSearchInput/>
+        </div>  
+      )
+    }
 
   return (
     <div
@@ -142,6 +154,7 @@ export default ({ pathname }) => {
           >
           </h1>
         </Link>
+        <DocsSearch/>
         <ul
           css={{
             display: `none`,

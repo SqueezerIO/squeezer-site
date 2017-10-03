@@ -92,7 +92,7 @@ class SidebarBody extends React.Component {
         color: presets.brandLight,
       }
     const headerTextTransform = this.props.inline ? false : `uppercase`
-    
+
     return (
       <div
         className="sidebar"

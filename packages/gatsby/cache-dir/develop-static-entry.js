@@ -51,11 +51,11 @@ module.exports = (locals, callback) => {
     ...bodyProps,
     body: ``,
     headComponents: headComponents.concat([
-      <script key={`io`} src="/socket.io/socket.io.js" />,
+      <script key={`io`} src="/socket.io/socket.io.js" />
     ]),
     preBodyComponents,
     postBodyComponents: postBodyComponents.concat([
-      <script key={`commons`} src="/commons.js" />,
+      <script key={`commons`} src="/commons.js" />
     ]),
   })
   htmlStr = renderToStaticMarkup(htmlElement)

@@ -163,6 +163,7 @@ module.exports = createReactClass({
           </div>
         </div>
         <MobileNavigation />
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
       </div>
     )
   },

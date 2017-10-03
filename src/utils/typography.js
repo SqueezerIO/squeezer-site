@@ -46,6 +46,9 @@ const options = {
   plugins: [new CodePlugin()],
   overrideStyles: ({ rhythm, scale }, options) => {
     return {
+      "input:focus, input:active, input:focus" : {
+        outline: 0
+      },
       "h1,h2,h4,h5,h6": {
         marginTop: rhythm(options.blockMarginBottom * 2),
         marginBottom: rhythm(options.blockMarginBottom),
