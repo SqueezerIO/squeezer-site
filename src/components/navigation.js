@@ -86,7 +86,13 @@ export default ({ pathname }) => {
     const DocsSearch = ({css}) => {
       return (
         <div css={{
-          display: isDocs ? 'block' : 'none'
+          display: isDocs ? 'block' : 'none',
+          [presets.Mobile]: {
+            display: 'none'
+          },
+          [presets.Desktop]: {
+            display: 'block'
+          }
         }}>
           <DocSearchInput/>
         </div>  
