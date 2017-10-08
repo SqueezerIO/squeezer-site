@@ -24,6 +24,7 @@ import InfiniteIcon from "../assets/infinite.svg"
 import NuclearIcon from "../assets/nuclear.svg"
 import MonolithicIcon from "../assets/monolithic.svg"
 import CloudSunIcon from "../assets/cloud-sun.svg"
+import Team from "../components/team"
 import createReactClass from "create-react-class"
 
 const CardIcon = ({icon}) => {
@@ -68,7 +69,7 @@ const IndexRoute = createReactClass({
                 <CardIcon icon={EventsIcon}/>
                 <CardHeadline>Event driven ecosystem</CardHeadline>
                 <FuturaParagraph>
-                  Add as many events you want to trigger you microservice's functions.
+                  Add different events to trigger your app functions.
                   <b> HTTP</b> requests , <b>cron</b> events  and much more.
                 </FuturaParagraph>
               </Card>
@@ -150,6 +151,7 @@ const IndexRoute = createReactClass({
             </Cards>
           </div>
         </div>
+        <Team/>
         <Newsletter/>
         <Footer/>
       </div>
