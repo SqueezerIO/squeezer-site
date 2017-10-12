@@ -187,7 +187,7 @@ const MastheadContent = () => (
         },
         {
           type : 'command',
-          text : 'sqz compile --cloud'
+          text : 'sqz compile --cloud --stage dev'
         },
         {
           type : 'comment',
@@ -195,7 +195,7 @@ const MastheadContent = () => (
         },
         {
           type : 'command',
-          text : 'sqz deploy --stage dev'
+          text : 'sqz deploy'
         },
         {
           type : 'comment',

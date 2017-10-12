@@ -109,9 +109,25 @@ const Team = () => {
       textAlign: 'center'
     }}>
       <h1>The Squeezer Team</h1>
-      <Member name="Nick Chisiu" title="Founder" twitter="https://twitter.com/nickchisiu" linkedin="https://www.linkedin.com/in/nick-chisiu" github="https://github.com/nickchisiu" pic={NickPic} />
-      <Member name="Vlad Nicula" title="Core Developer" twitter="https://twitter.com/agilius" linkedin="https://linkedin.com/in/vladnicula" github="https://github.com/vladnicula" pic={VladPic} />
-      <Member name="Karl Eastwood" title="Advisor" linkedin="https://www.linkedin.com/in/karl-eastwood-35b8b343/" pic={KarlPic} />
+      <Member 
+        name="Nick Chisiu" 
+        title="Founder" 
+        twitter="https://twitter.com/nickchisiu" 
+        linkedin="https://www.linkedin.com/in/nick-chisiu" 
+        github="https://github.com/nickchisiu" 
+        pic={NickPic} />
+      <Member 
+        name="Vlad Nicula" 
+        title="Core Developer" 
+        twitter="https://twitter.com/agilius" 
+        linkedin="https://linkedin.com/in/vladnicula" 
+        github="https://github.com/vladnicula" 
+        pic={VladPic} />
+      <Member 
+        name="Karl Eastwood" 
+        title="Advisor" 
+        linkedin="https://www.linkedin.com/in/karl-eastwood-35b8b343/" 
+        pic={KarlPic} />
     </div>
   )
 }
