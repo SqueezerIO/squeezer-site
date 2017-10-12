@@ -27,7 +27,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             node {
               fields {
                 slug
-                package
               }
               frontmatter {
                 title
@@ -151,19 +150,19 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
         slug = `/${parsedFilePath.dir}/`
       }
     }
-    // Add slugs for package READMEs.
-    if (
-      fileNode.sourceInstanceName === `packages` &&
-      parsedFilePath.name === `README`
-    ) {
-      slug = `/packages/${parsedFilePath.dir}/`
-      createNodeField({
-        node,
-        name: `title`,
-        value: parsedFilePath.dir,
-      })
-      createNodeField({ node, name: `package`, value: true })
-    }
+    // // Add slugs for package READMEs.
+    // if (
+    //   fileNode.sourceInstanceName === `packages` &&
+    //   parsedFilePath.name === `README`
+    // ) {
+    //   slug = `/packages/${parsedFilePath.dir}/`
+    //   createNodeField({
+    //     node,
+    //     name: `title`,
+    //     value: parsedFilePath.dir,
+    //   })
+    //   createNodeField({ node, name: `package`, value: true })
+    // }
     if (slug) {
       createNodeField({ node, name: `slug`, value: slug })
     }
