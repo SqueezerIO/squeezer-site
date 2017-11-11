@@ -225,19 +225,19 @@ const Diagram = ({ containerCSS }) => (
       <SourceItems>
         <SourceItem>
           <ItemTitle>Function A</ItemTitle>
-          <ItemDescription>events</ItemDescription>
+          <ItemDescription>event</ItemDescription>
           <ItemDescription>&nbsp;- type: http</ItemDescription>
           <ItemDescription>&nbsp;&nbsp;&nbsp;path: /rest/v1/hello</ItemDescription>
         </SourceItem>
         <SourceItem>
           <ItemTitle>Function B</ItemTitle>
-          <ItemDescription>events</ItemDescription>
+          <ItemDescription>event</ItemDescription>
           <ItemDescription>&nbsp;- type: cron</ItemDescription>
           <ItemDescription>&nbsp;&nbsp;&nbsp;value: 0 10 * * * *</ItemDescription>
         </SourceItem>
         <SourceItem>
           <ItemTitle>Function C</ItemTitle>
-          <ItemDescription>events</ItemDescription>
+          <ItemDescription>event</ItemDescription>
           <ItemDescription>&nbsp;- type: s3</ItemDescription>
           <ItemDescription>&nbsp;&nbsp;&nbsp;value: s3:ObjectCreated:*</ItemDescription>
         </SourceItem>

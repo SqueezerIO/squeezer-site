@@ -115,6 +115,17 @@ const MastheadContent = () => (
             css={{ verticalAlign : `baseline`, marginLeft : `.2em` }}
           />
         </CtaButton>
+        <CtaButton to="/token-sale/" overrideCSS={{
+          margin : '50px 0px 0px 50px',
+          color  : '#fff !important',          
+          border : '1px solid #fff !important'
+        }}>
+          <span css={{ verticalAlign : `middle` }}>Token Sale</span>
+          {` `}
+          <ArrowForwardIcon
+            css={{ verticalAlign : `baseline`, marginLeft : `.2em` }}
+          />
+        </CtaButton>
       </div>
       <div css={{
         marginLeft        : 0,
@@ -163,7 +174,7 @@ const MastheadContent = () => (
         },
         {
           type : 'command',
-          text : 'sqz create --template aws-api-nodejs'
+          text : 'sqz create --template api-nodejs'
         },
         {
           type : 'comment',

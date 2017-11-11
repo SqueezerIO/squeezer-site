@@ -14,6 +14,7 @@ import Techs from "../components/techs"
 import HeadlineFeatures from "../components/headline-features"
 import Cards from "../components/cards"
 import Card from "../components/card"
+import DownloadsCountUp from "../components/downloads-countup"
 import CardHeadline from "../components/card-headline"
 import Diagram from "../components/diagram"
 import FuturaParagraph from "../components/futura-paragraph"
@@ -50,6 +51,7 @@ const IndexRoute = createReactClass({
           }}
         >
           <MastheadContent />
+          {/* <DownloadsCountUp /> */}
           <HeadlineFeatures />
           <Techs/>
           <div
