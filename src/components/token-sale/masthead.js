@@ -55,7 +55,14 @@ const CountdownRender = ({ days, hours, minutes, seconds, completed }) => {
        </h1>
         <span css={{
           color: presets.brandLighter,
-          fontSize: scale(1.2).fontSize
+          [presets.Mobile]: {
+            lineHeight: 1.2,
+            fontSize: scale(0.6).fontSize            
+          },
+          [presets.Desktop]: {
+            fontSize: scale(1.2).fontSize,            
+            lineHeight: 0
+          }         
         }}>{pl('day', days)}  {pl('hour', hours)} {pl('min', minutes)} {pl('sec', seconds)}</span>
       </div>
     );
@@ -68,13 +75,12 @@ const MastheadContent = () => (
     css={{
       width: '100%',
       background: presets.brand,
-      paddingTop: rhythm(3),
+      paddingTop: rhythm(2),
       paddingBottom: rhythm(1),
       paddingBottom: rhythm(1),
-
       [presets.Mobile]: {
         paddingBottom: rhythm(2),
-        height: rhythm(40),
+        height: rhythm(48),
         paddingLeft: vP
       },
       [presets.Phablet]: {
@@ -149,10 +155,10 @@ const MastheadContent = () => (
           }
         }}
       >
-        Build auto-scalable serverless apps on top of the blockchain technology .
+        Build auto-scalable serverless apps on top of the blockchain technology
         <br />
         <br />
-        Get <b>25%</b> discount on token {saleStage} .
+        Get <b>25%</b> discount on token {saleStage}
       </FuturaParagraph>
 
       <div css={{ paddingTop: rhythm(1.3) }}>
@@ -161,7 +167,7 @@ const MastheadContent = () => (
         }} />
       </div>
       <div css={{
-        marginTop: rhythm(3)
+        marginTop: rhythm(2)
       }}>
         <Countdown
           date={countDownTime()}
@@ -175,7 +181,8 @@ const MastheadContent = () => (
         verticalAlign: 'top',
         [presets.Mobile]: {
           width: '90%',
-          height: rhythm(14.5)
+          height: rhythm(14.5),
+          marginTop: rhythm(2)
         },
         [presets.Phablet]: {
           height: rhythm(12.5)
@@ -188,7 +195,7 @@ const MastheadContent = () => (
         [presets.Desktop]: {
           height: rhythm(12),
           display: 'inline-block',
-          margin: `${rhythm(3)} ${rhythm(0)} ${rhythm(0)} ${rhythm(2)}`,
+          margin: `${rhythm(4)} ${rhythm(0)} ${rhythm(0)} ${rhythm(2)}`,
           width: rhythm(19.5)
         }
       }}
@@ -196,6 +203,7 @@ const MastheadContent = () => (
       <div css={{ cursor: 'pointer' }} onClick={() => window.open("someLink", "_blank")}>
         <img css={{
           width: '200px',
+          height: 'auto'
         }}
           src={PlayIcon} alt="play video" />
         <h1 css={{
@@ -204,7 +212,12 @@ const MastheadContent = () => (
         }}>Watch video</h1>
       </div>
       <div css={{
-        marginTop: rhythm(7)
+        [presets.Mobile]: {
+          marginTop: rhythm(3)          
+        },
+        [presets.Desktop]: {
+          marginTop: rhythm(5)          
+        }
       }}>
         <CloudWithLogo icon={AwsLogo} height="45px">Amazon Web Services</CloudWithLogo>
         <CloudWithLogo icon={MicrosoftAzureLogo}>Microsoft Azure</CloudWithLogo>

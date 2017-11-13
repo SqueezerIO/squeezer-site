@@ -89,7 +89,15 @@ class SubscribeForm extends React.Component {
                 padding: rhythm(1),
                 fontWeight: `normal`,                
                 border: 0,
-                width: '60%'
+                [presets.Mobile]: {
+                  width: '90%'                  
+                },    
+                [presets.Tablet]: {
+                  width: '60%'                  
+                },              
+                [presets.Desktop]: {
+                  width: '60%'                  
+                }
               }}
               ref={node => (this.input = node)}
               type="email"
@@ -101,6 +109,7 @@ class SubscribeForm extends React.Component {
             <button
               css={{
                 border: `1px solid #FFF`,
+                borderRadius : 0,
                 boxShadow: `none`,
                 color: '#FFF',
                 fontSize: '25px',
@@ -110,6 +119,15 @@ class SubscribeForm extends React.Component {
                 backgroundSize: `30px 30px`,
                 padding: '13px 15px',
                 cursor : 'pointer',
+                [presets.Mobile]: {
+                  marginTop : rhythm(0.5)              
+                },
+                [presets.Tablet]: {
+                  marginTop : 0               
+                },
+                [presets.Desktop]: {
+                  marginTop : 0          
+                },
                 "&&": {
                   boxShadow: `none`,
                   backgroundColor: `transparent`,

@@ -8,6 +8,7 @@ import NickPic from "../../assets/team/nick.png"
 import KarlPic from "../../assets/team/karl.png"
 import VladPic from "../../assets/team/vlad.png"
 import CalinaPic from "../../assets/team/calina.png"
+import FabioPic from "../../assets/team/fabio.png"
 
 const HrefEl = ({ link, type }) => {
   return (
@@ -92,7 +93,7 @@ const Team = () => {
     <div css={{
       textAlign: 'center',
       borderTop: `1px solid ${presets.veryLightBlue}`,
-      padding: '80px 0px'      
+      padding: '150px 0px'      
     }}>
       <h1>Token-sale Team</h1>
       <Member 
@@ -115,7 +116,12 @@ const Team = () => {
         name="Calina Oros" 
         title="Legal Advisor" 
         linkedin="https://www.linkedin.com/in/oros-calina-a33423152/" 
-        pic={CalinaPic} />        
+        pic={CalinaPic} />
+      <Member 
+        name="Fabio Nani" 
+        title="Operations &amp; Strategy Advisor (MBA)" 
+        linkedin="https://www.linkedin.com/in/fabio7nani/" 
+        pic={FabioPic} />                
     </div>
   )
 }

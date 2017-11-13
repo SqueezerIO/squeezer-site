@@ -21,6 +21,7 @@ export default () => {
       marginBottom: `${rhythm(8)}`,
       width: '100%',
       textAlign: 'center',
+      lineHeight: 1,      
       fontSize: scale(1.6).fontSize,
     }} offset={200}>
       <DownloadsCounter />

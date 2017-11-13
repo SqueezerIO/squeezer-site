@@ -1,5 +1,6 @@
 import { rhythm, scale } from "../../utils/typography"
 import presets from "../../utils/presets"
+import RoadmapLine from "../../assets/roadmap-line.png"
 import React from "react"
 
 const CreateRoadMap = ({ data }) => {
@@ -11,41 +12,47 @@ const CreateRoadMap = ({ data }) => {
       position = 'left';      
     }
 
-    const sectionData = () => (
-      <div>
-        <h2>{val.title}</h2>
-        {val.description}
-      </div>
-    )
-
     return (
-      <tr>
-        <td css={{ border: 0, padding: 0, width: rhythm(10) }}>
-          { position === 'left' ? sectionData() : '' }
-        </td>
-        <td css={{ border: 0, padding: 0, verticalAlign: 'center', width: rhythm(2.5), verticalAlign : 'top' }}>
-          <div css={{
-            width: '40px',
-            height: '40px',
-            border: `3px solid ${presets.brandLight}`,
-            borderRadius: '50%'
-          }} />
-          <div css={{
-            border: `2px solid ${presets.brandLight}`,
-            width: '2px',
-            height: '100px',
-            marginLeft: '18px'
-          }}/>
-        </td>
-        <td css={{ border: 0, padding:0, width: rhythm(10) }}>
-          { position === 'right' ? sectionData() : '' }
-        </td>
-      </tr>
+      <div key={val.title} css={{
+        border: 0,
+        padding: 0,
+        [presets.Mobile]: {          
+          width: '90%',
+          background: 'none',
+          margin: '0 auto'      
+        },
+        [presets.Desktop]: {          
+          width: rhythm(23),
+          background: `url(${RoadmapLine})`,
+          backgroundSize: '40px 100%',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center'        
+        },
+      
+        height: '120px'
+      }}>
+        <div css={{
+          [presets.Desktop]: {
+            marginLeft: 0,
+            float: position,
+            width: rhythm(10)            
+          },
+          textAlign: 'center'
+        }}>
+          <h2 css={{ margin: '5px 0px' }}>{val.title}</h2>
+          {val.description}
+        </div>
+        <bulletLine />
+      </div>
     )
   })
 
   return (
-    <table css={{ marginTop: rhythm(2)}}>{roadMap}</table>
+    <div css={{
+      marginTop: rhythm(2)
+    }}>
+      {roadMap}
+    </div>
   );
 }
 
@@ -53,12 +60,13 @@ export default () => (
   <div css={{
     borderTop: `1px solid ${presets.veryLightBlue}`,
     width: '100%',
-    padding: '80px 0px'
+    padding: '150px 0px'
   }}>
     <div css={{
-      width: rhythm(25),
       margin: '0 auto',
-      textAlign: 'center'
+      [presets.Desktop]: {
+        width: rhythm(22)
+      }
     }}>
       <h1 css={{ textAlign: 'center' }}>Road map</h1>
       <CreateRoadMap
