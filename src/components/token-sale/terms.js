@@ -9,9 +9,12 @@ const ContentTable = ({data}) => {
   const content = data.map((val) => {
     return (
       <tr key={val.title}>
-        <td>&nbsp;{val.title}</td>
         <td css={{
+          width: '25%',
           fontWeight: 'bold'
+        }}>&nbsp;{val.title}</td>
+        <td css={{
+          
         }}>{val.description}</td>
       </tr>
     );
@@ -77,9 +80,25 @@ export default () => (
           description : '1,000,000$'
         },
         {
+          title : 'Extra tokens',
+          description : <div>tokens remained from token-sale will be <b>burned</b></div>
+        },
+        {
+          title : 'Pre-sale period',
+          description : '23 Nov 2017 - 23 Dec 2017 (UTC)'
+        },
+        {
+          title : 'Sale period',
+          description : '05 Jan 2018 - 25 Feb 2018 (UTC)'
+        },
+        {
           title : 'Purchase methods',
           description : <div>
-            <b>BTC, ETH, ETC, EXP, XEM, LSK, XMR, GAME, STEEM, GOLOS, SBD, ZEC, NLG, STRAT, ARDR, REP, LBC, MAID, FCT, LTC, BCN, XRP, DOGE, AMP, NXT, DASH, DSH, RADS, XDN, AEON, NBT, FCN, QCN, NAV, POT, GNT, WAVES, USDT, SWT, MLN, DGD, TIME, SNGLS, XAUR, PIVX, GBG, TRST, EDG, GBYTE, DAR, WINGS, RLC, GNO, DCR, GUP, SYS, LUN, STR, BAT, ANT, BNT, SNT, CVC, EOS, PAY, QTUM, BCC, NEO, OMG, MCO, MTL, 1ST, ADX, ZRX, QTUM-I, DCT, PTOY, TKN, STORJ, CFI, FUN, MYST, HMQ, NMR, SALT, ADT</b>
+            BTC, ETH, ETC, EXP, XEM, LSK, XMR, GAME, STEEM, GOLOS, SBD, ZEC, NLG, STRAT, ARDR, REP, 
+            LBC, MAID, FCT, LTC, BCN, XRP, DOGE, AMP, NXT, DASH, DSH, RADS, XDN, AEON, NBT, FCN, QCN, 
+            NAV, POT, GNT, WAVES, USDT, SWT, MLN, DGD, TIME, SNGLS, XAUR, PIVX, GBG, TRST, EDG, GBYTE, 
+            DAR, WINGS, RLC, GNO, DCR, GUP, SYS, LUN, STR, BAT, ANT, BNT, SNT, CVC, EOS, PAY, QTUM, BCC, 
+            NEO, OMG, MCO, MTL, 1ST, ADX, ZRX, QTUM-I, DCT, PTOY, TKN, STORJ, CFI, FUN, MYST, HMQ, NMR, SALT, ADT
               <br /><br />
               <img css={{
                 display: 'inline-block',

@@ -16,8 +16,8 @@ import ProblemSolution from "../../components/token-sale/problem-solution"
 export default () => (
   <div>
     <Masthead/>
-    <ProblemSolution/>
     <DownloadsCountUp/>
+    <ProblemSolution/>    
     <TokenTerms/>
     <RoadMap/>
     <Team/>

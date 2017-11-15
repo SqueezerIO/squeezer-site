@@ -9,6 +9,7 @@ import KarlPic from "../../assets/team/karl.png"
 import VladPic from "../../assets/team/vlad.png"
 import CalinaPic from "../../assets/team/calina.png"
 import FabioPic from "../../assets/team/fabio.png"
+import OdiPic from "../../assets/team/odi.png"
 
 const HrefEl = ({ link, type }) => {
   return (
@@ -101,27 +102,32 @@ const Team = () => {
         title="Founder &amp; CEO" 
         linkedin="https://www.linkedin.com/in/nick-chisiu" 
         pic={NickPic} />
+       <Member 
+        name="Fabio Nani" 
+        title="Operations &amp; Strategy Advisor (MBA)" 
+        linkedin="https://www.linkedin.com/in/fabio7nani/" 
+        pic={FabioPic} />            
+      <Member 
+        name="Karl Eastwood" 
+        title="Financial Advisor" 
+        linkedin="https://www.linkedin.com/in/karl-eastwood-35b8b343/" 
+        pic={KarlPic} />                       
+      <br/>
       <Member 
         name="Vlad Nicula" 
         title="Framework Lead Engineer" 
         linkedin="https://linkedin.com/in/vladnicula" 
         pic={VladPic} />
       <Member 
-        name="Karl Eastwood" 
-        title="Financial Advisor" 
-        linkedin="https://www.linkedin.com/in/karl-eastwood-35b8b343/" 
-        pic={KarlPic} />
-      <br/>
+        name="Odi Onyejekwe" 
+        title="Business Developer" 
+        linkedin="https://www.linkedin.com/in/odi-onyejekwe-0a546071/" 
+        pic={OdiPic} />          
       <Member 
         name="Calina Oros" 
         title="Legal Advisor" 
         linkedin="https://www.linkedin.com/in/oros-calina-a33423152/" 
-        pic={CalinaPic} />
-      <Member 
-        name="Fabio Nani" 
-        title="Operations &amp; Strategy Advisor (MBA)" 
-        linkedin="https://www.linkedin.com/in/fabio7nani/" 
-        pic={FabioPic} />                
+        pic={CalinaPic} />                         
     </div>
   )
 }

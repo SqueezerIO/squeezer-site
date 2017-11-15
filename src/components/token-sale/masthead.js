@@ -1,10 +1,7 @@
 import Link from "gatsby-link"
-import ArrowForwardIcon from "react-icons/lib/md/arrow-forward"
-import Countdown from 'react-countdown-now'
 
 import { rhythm, scale, options } from "../../utils/typography"
 import presets from "../../utils/presets"
-import CtaButton from "../cta-button"
 import FuturaParagraph from "../futura-paragraph"
 import { vP, vPHd, vPVHd, vPVVHd } from "../../components/gutters"
 import CloudWithLogo from "../../components/cloud-with-logo"
@@ -12,62 +9,9 @@ import AwsLogo from "../../assets/clouds/aws-logo.png"
 import MicrosoftAzureLogo from "../../assets/clouds/microsoft-azure.png"
 import GoogleCloudLogo from "../../assets/clouds/google-cloud-logo.png"
 import IbmOpenwhiskLogo from "../../assets/clouds/ibm-openwhisk.png"
-import PlayIcon from "../../assets/token-sale/play.png"
+import PlayIcon from "../../assets/token-sale/play-video.png"
 import SubscribeFrom from "../../components/subscribe-form"
-
-const saleStage = `pre-sale`;
-
-const countDownTime = () => {
-  const toDate = '2017-11-23T00:00:00.000Z'
-
-  // return new Date().getTime() + 5000;
-  return new Date(toDate).getTime();
-};
-
-const CountdownCompletion = () => (
-  <CtaButton to="/token-sale/participate" overrideCSS={{
-    color: '#fff !important',
-    border: '1px solid #fff !important'
-  }}>
-    <span css={{ verticalAlign: `middle` }}>Participate</span>
-    {` `}
-    <ArrowForwardIcon
-      css={{ verticalAlign: `baseline`, marginLeft: `.2em` }}
-    />
-  </CtaButton>);
-
-const pl = (name, val) => {
-  if (val === 1) {
-    return `${val} ${name}`;
-  } else {
-    return `${val} ${name}s`;
-  }
-};
-
-const CountdownRender = ({ days, hours, minutes, seconds, completed }) => {
-  if (completed) {
-    return <CountdownCompletion />;
-  } else {
-    return (
-      <div>
-        <h1 css={{ color: presets.brandLighter }}>
-          Token {saleStage} starts in :
-       </h1>
-        <span css={{
-          color: presets.brandLighter,
-          [presets.Mobile]: {
-            lineHeight: 1.2,
-            fontSize: scale(0.6).fontSize            
-          },
-          [presets.Desktop]: {
-            fontSize: scale(1.2).fontSize,            
-            lineHeight: 0
-          }         
-        }}>{pl('day', days)}  {pl('hour', hours)} {pl('min', minutes)} {pl('sec', seconds)}</span>
-      </div>
-    );
-  }
-};
+import Countdown from "./countdown"
 
 const MastheadContent = () => (
   <div
@@ -75,7 +19,7 @@ const MastheadContent = () => (
     css={{
       width: '100%',
       background: presets.brand,
-      paddingTop: rhythm(2),
+      paddingTop: rhythm(1),
       paddingBottom: rhythm(1),
       paddingBottom: rhythm(1),
       [presets.Mobile]: {
@@ -87,19 +31,19 @@ const MastheadContent = () => (
         paddingRight: 0,
       },
       [presets.Tablet]: {
-        paddingTop: rhythm(4)
+        paddingTop: rhythm(2)
       },
       [presets.Desktop]: {
         height: rhythm(32),
-        paddingTop: rhythm(5),
+        paddingTop: rhythm(1),
       },
       [presets.Hd]: {
-        paddingTop: rhythm(3),
+        paddingTop: rhythm(1),
         paddingLeft: vPHd,
         paddingBottom: rhythm(3),
       },
       [presets.VHd]: {
-        paddingTop: rhythm(4),
+        paddingTop: rhythm(1),
         paddingLeft: vPVHd,
       },
       [presets.VVHd]: {
@@ -158,7 +102,7 @@ const MastheadContent = () => (
         Build auto-scalable serverless apps on top of the blockchain technology
         <br />
         <br />
-        Get <b>25%</b> discount on token {saleStage}
+        Get <b>25%</b> discount on token sale
       </FuturaParagraph>
 
       <div css={{ paddingTop: rhythm(1.3) }}>
@@ -166,14 +110,7 @@ const MastheadContent = () => (
           action: '//squeezer.us17.list-manage.com/subscribe/post?u=c85492cf3a6e8f0992fe01e4e&id=d23e505112',
         }} />
       </div>
-      <div css={{
-        marginTop: rhythm(2)
-      }}>
-        <Countdown
-          date={countDownTime()}
-          renderer={CountdownRender}
-        />
-      </div>
+      <Countdown/>
     </div>
     <div
       css={{
@@ -200,16 +137,12 @@ const MastheadContent = () => (
         }
       }}
     >
-      <div css={{ cursor: 'pointer' }} onClick={() => window.open("someLink", "_blank")}>
+      <div css={{ cursor: 'pointer' }} onClick={() => window.open("https://www.youtube.com/watch?v=_pom9R7KqYQ", "_blank")}>
         <img css={{
-          width: '200px',
+          width: '350px',
           height: 'auto'
         }}
           src={PlayIcon} alt="play video" />
-        <h1 css={{
-          color: presets.brandLighter,
-          margin: '0'
-        }}>Watch video</h1>
       </div>
       <div css={{
         [presets.Mobile]: {

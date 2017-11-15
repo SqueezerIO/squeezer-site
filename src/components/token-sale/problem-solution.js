@@ -5,7 +5,7 @@ import SolutionImg from "../../assets/token-sale/solution.png"
 
 export default () => (
   <div css={{
-    borderBottom: `1px solid ${presets.veryLightBlue}`,
+    borderTop: `1px solid ${presets.veryLightBlue}`,
     width: '100%',
     padding: '100px 0px'
   }}>
