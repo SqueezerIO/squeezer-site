@@ -139,8 +139,11 @@ const MastheadContent = () => (
     >
       <div css={{ cursor: 'pointer' }} onClick={() => window.open("https://www.youtube.com/watch?v=_pom9R7KqYQ", "_blank")}>
         <img css={{
-          width: '350px',
-          height: 'auto'
+          [presets.Desktop]: {
+            maxWidth: '450px',            
+          },
+          height: 'auto',
+          borderRadius: '4px'
         }}
           src={PlayIcon} alt="play video" />
       </div>
