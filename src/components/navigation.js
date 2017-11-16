@@ -175,7 +175,8 @@ export default ({ pathname }) => {
           <NavItem linkTo="/community/">Community</NavItem>
           <NavItem linkTo="/blog/">Blog</NavItem>
           <NavItem linkTo="/enterprise/">Enterprise</NavItem>
-        </ul>
+          <NavItem linkTo="/token-sale/">Token Sale (ICO)</NavItem>
+          </ul>
         <div
           css={{
             marginLeft: isHomepage ? rhythm(1 / 2) : `auto`,

@@ -3,6 +3,7 @@ import { rhythm, scale } from "../utils/typography"
 import presets from "../utils/presets"
 import CtaButton from "../components/cta-button"
 import Input from "../components/input"
+import SubscribeFrom from "../components/subscribe-form"
 
 export default ({ overrideCss }) => {
   return (
@@ -33,35 +34,9 @@ export default ({ overrideCss }) => {
         <div css={{
           marginTop : rhythm(1)
         }}>
-          <Input name="subscriber" type="email" placeholder="Enter your email address"
-                 overrideCss={{
-                   display           : 'inline-block',
-                   margin            : 0,
-                   marginTop         : rhythm(1),
-                   marginRight       : rhythm(1),
-                   height            : rhythm(2.2),
-                   padding           : rhythm(1),
-                   border            : 0,
-                   width        : '100%',
-                   marginBottom : rhythm(1),
-                     [presets.Mobile]  : {
-                     // width        : '100%',
-                     // marginBottom : rhythm(1)
-                   },
-                   [presets.Desktop] : {
-                     // width        : rhythm(20),
-                     // marginBottom : 0
-                   }
-                 }}
-          />
-          <CtaButton to="/docs/" overrideCSS={{
-            color         : '#fff !important',
-            border        : '1px solid #fff !important',
-            // width: '29%',
-            verticalAlign : 'bottom'
-          }}>
-            <span css={{ verticalAlign : `middle` }}>Subscribe for updates</span>
-          </CtaButton>
+          <SubscribeFrom {...{
+            action: '//squeezer.us17.list-manage.com/subscribe/post?u=c85492cf3a6e8f0992fe01e4e&id=4e87ea6b3c',
+          }} />
         </div>
       </div>
     </div>

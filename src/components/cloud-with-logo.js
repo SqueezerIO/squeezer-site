@@ -10,7 +10,7 @@ const CloudWithLogo = ({ icon, height, children }) => {
              src={icon}
              css={{
                [presets.Mobile]  : {
-                 width  : '20%',
+                 width  : '25%',
                  height : 'auto',
                  marginRight       : '5px'
                },

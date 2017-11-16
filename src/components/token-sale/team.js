@@ -1,18 +1,23 @@
 import React from "react"
-import presets from "../utils/presets"
-import Container from "./container"
+import presets from "../../utils/presets"
+import Container from "../container"
 import GithubIcon from "react-icons/lib/go/mark-github"
 import TwitterIcon from "react-icons/lib/fa/twitter"
 import LinkedinIcon from "react-icons/lib/fa/linkedin-square"
-import NickPic from "../assets/team/nick.png"
-import KarlPic from "../assets/team/karl.png"
-import VladPic from "../assets/team/vlad.png"
+import NickPic from "../../assets/team/nick.png"
+import KarlPic from "../../assets/team/karl.png"
+import VladPic from "../../assets/team/vlad.png"
+import CalinaPic from "../../assets/team/calina.png"
+import FabioPic from "../../assets/team/fabio.png"
+import OdiPic from "../../assets/team/odi.png"
 
 const HrefEl = ({ link, type }) => {
   return (
     <div css={{
       display: link ? 'inline-block' : 'none',
-      margin: '5px 10px'
+      padding : 0,
+      margin: '3px 5px',
+      verticalAlign: 'top'
     }}>
       <a
         css={{
@@ -42,22 +47,6 @@ class Member extends React.Component {
     }
   }
 
-  onMouseEnter() {
-    if (this.state.showInfo === false) {
-      this.setState({
-        showInfo: true
-      })
-    }
-  }
-
-  onMouseLeave() {
-    if (this.state.showInfo === true) {
-      this.setState({
-        showInfo: false
-      })
-    }
-  }
-
   render() {
     const title = this.props.title
     const name = this.props.name
@@ -73,11 +62,11 @@ class Member extends React.Component {
         display: 'inline-block',
         margin: '25px'
       }}>
-        <div onMouseLeave={this.onMouseLeave.bind(this)}>
+        <div>
           <img css={{
             width: '100%',
             height: 'auto'
-          }} alt={title} src={pic} onMouseEnter={this.onMouseEnter.bind(this)} />
+          }} alt={title} src={pic} />
           <div css={{
             display: this.state.showInfo ? 'block' : 'none',
             position: 'absolute',
@@ -89,14 +78,11 @@ class Member extends React.Component {
             color: '#FFFFFF',
             backgroundColor: 'rgba(0, 0, 0, 0.5)'
           }}>
-            <HrefEl link={twitter} type="twitter" />
-            <HrefEl link={linkedin} type="linkedin" />
-            <HrefEl link={github} type="github" />
             </div>
         </div>
         <div css={{
           fontWeight: 'bold'
-        }}>{name}</div>
+        }}>{name}             <HrefEl link={linkedin} type="linkedin" />        </div>
         <div>{title}</div>
       </div>
     )
@@ -106,28 +92,42 @@ class Member extends React.Component {
 const Team = () => {
   return (
     <div css={{
-      textAlign: 'center'
+      textAlign: 'center',
+      borderTop: `1px solid ${presets.veryLightBlue}`,
+      padding: '150px 0px'      
     }}>
-      <h1>The Squeezer Team</h1>
+      <h1>Token-sale Team</h1>
       <Member 
         name="Nick Chisiu" 
-        title="Founder" 
-        twitter="https://twitter.com/nickchisiu" 
+        title="Founder &amp; CEO" 
         linkedin="https://www.linkedin.com/in/nick-chisiu" 
-        github="https://github.com/nickchisiu" 
         pic={NickPic} />
+       <Member 
+        name="Fabio Nani" 
+        title="Operations &amp; Strategy Advisor (MBA)" 
+        linkedin="https://www.linkedin.com/in/fabio7nani/" 
+        pic={FabioPic} />            
+      <Member 
+        name="Karl Eastwood" 
+        title="Financial Advisor" 
+        linkedin="https://www.linkedin.com/in/karl-eastwood-35b8b343/" 
+        pic={KarlPic} />                       
+      <br/>
       <Member 
         name="Vlad Nicula" 
         title="Framework Lead Engineer" 
-        twitter="https://twitter.com/agilius" 
         linkedin="https://linkedin.com/in/vladnicula" 
-        github="https://github.com/vladnicula" 
         pic={VladPic} />
       <Member 
-        name="Karl Eastwood" 
-        title="Operations Advisor" 
-        linkedin="https://www.linkedin.com/in/karl-eastwood-35b8b343/" 
-        pic={KarlPic} />   
+        name="Odi Onyejekwe" 
+        title="Business Developer" 
+        linkedin="https://www.linkedin.com/in/odi-onyejekwe-0a546071/" 
+        pic={OdiPic} />          
+      <Member 
+        name="Calina Oros" 
+        title="Legal Advisor" 
+        linkedin="https://www.linkedin.com/in/oros-calina-a33423152/" 
+        pic={CalinaPic} />                         
     </div>
   )
 }

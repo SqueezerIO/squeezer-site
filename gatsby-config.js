@@ -9,6 +9,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: '1922321114762239',
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `docs`,
