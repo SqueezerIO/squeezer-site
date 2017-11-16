@@ -62,12 +62,24 @@ const Contact = () => (
       marginBottom : 0
     }
   }}>
+    <form action="//formspree.io/nick@squeezer.io" method="POST">
     <Input name="company" type="text" placeholder="Company"/>
     <Input name="name" type="text" placeholder="Name"/>
     <Input name="email" type="email" placeholder="Email"/>
-    <CtaButton to="/docs/" overrideCSS={{ marginTop : '1rem', marginLeft : rhythm(1) }}>
+    {/* <CtaButton to="/docs/" overrideCSS={{ marginTop : '1rem', marginLeft : rhythm(1) }}>
       Let's talk
-    </CtaButton>
+    </CtaButton> */}
+    <input css={{
+      border : 0,
+      cursor : 'pointer',
+      background: presets.brand,
+      color: presets.brandLighter,
+      padding: '10px 20px',
+      marginLeft: '25px',
+      fontSize: '20px',
+      borderRadius : 0
+    }} type="submit" value="Let's talk"/>
+    </form>
   </div>
 )
 

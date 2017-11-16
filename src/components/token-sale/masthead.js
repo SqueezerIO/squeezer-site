@@ -142,8 +142,7 @@ const MastheadContent = () => (
           [presets.Desktop]: {
             maxWidth: '450px',            
           },
-          height: 'auto',
-          borderRadius: '4px'
+          height: 'auto'
         }}
           src={PlayIcon} alt="play video" />
       </div>
