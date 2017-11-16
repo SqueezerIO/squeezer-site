@@ -3,7 +3,7 @@ import presets from "../../utils/presets"
 import React from "react"
 import CtaButton from "../cta-button"
 import DocsIcon from "react-icons/lib/fa/file-text"
-import WhitePaper from "../../assets/token-sale/Squeezer.IO-White-Paper-November-2017.pdf"
+// import WhitePaper from "../../assets/token-sale/Squeezer.IO-White-Paper-November-2017.pdf"
 import GithubIcon from "react-icons/lib/go/mark-github"
 
 const InfoButton = ({ to, text, children }) => (
@@ -35,7 +35,7 @@ export default () => (
     padding: '150px 0px',
     textAlign: 'center'
   }}>
-    <InfoButton to={WhitePaper} icon={DocsIcon} text="White paper">
+    <InfoButton to="/docs/Squeezer.IO-White-Paper-November-2017.pdf" icon={DocsIcon} text="White paper">
       <DocsIcon
         css={{ verticalAlign: `baseline`, marginLeft: `.2em`,     cursor: 'pointer'      }}
       />
