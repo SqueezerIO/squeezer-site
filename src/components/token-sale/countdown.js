@@ -5,14 +5,14 @@ import CtaButton from "../cta-button"
 import ArrowForwardIcon from "react-icons/lib/md/arrow-forward"
 
 const PreSaleStartCountDownTime = () => {
-  const toDate = '2017-11-23T00:00:00.000Z'
+  const toDate = '2017-12-04T00:00:00.000Z'
 
   // return new Date().getTime() + 5000;
   return new Date(toDate).getTime();
 };
 
 const PreSaleEndCountDownTime = () => {
-  const toDate = '2017-12-23T00:00:00.000Z'
+  const toDate = '2017-12-24T00:00:00.000Z'
 
   // return new Date().getTime() + 10000;
   return new Date(toDate).getTime();

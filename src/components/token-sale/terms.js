@@ -77,7 +77,7 @@ export default () => (
         },
         {
           title : 'Min Goal',
-          description : '1,000,000$'
+          description : '300,000$'
         },
         {
           title : 'Extra tokens',
