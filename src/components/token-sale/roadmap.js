@@ -72,7 +72,7 @@ export default () => (
       <CreateRoadMap
         data={[
           {
-            title: 'November 2017',
+            title: 'December 2017',
             description: 'Token pre-sale crowdfunding stage'
           },
           {
