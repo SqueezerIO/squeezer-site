@@ -10,6 +10,7 @@ import TokenTerms from "../../components/token-sale/terms"
 import RoadMap from "../../components/token-sale/roadmap"
 import Team from "../../components/token-sale/team"
 import Info from "../../components/token-sale/info"
+import Media from "../../components/token-sale/media"
 import Chat from "../../components/token-sale/chat"
 import ProblemSolution from "../../components/token-sale/problem-solution"
 
@@ -23,6 +24,7 @@ export default () => (
     <RoadMap/>
     <Team/>
     <Info/>
+    <Media/>
     <Chat/>
     <Footer/>
   </div>
