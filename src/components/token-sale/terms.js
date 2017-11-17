@@ -81,11 +81,11 @@ export default () => (
         },
         {
           title : 'Extra tokens',
-          description : <div>tokens remained from token-sale will be <b>burned</b></div>
+          description : <div>tokens remained from token-sale will be burned</div>
         },
         {
           title : 'Pre-sale period',
-          description : '23 Nov 2017 - 23 Dec 2017 (UTC)'
+          description : '04 Dec 2017 - 24 Dec 2017 (UTC)'
         },
         {
           title : 'Sale period',
