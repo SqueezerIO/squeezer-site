@@ -10,6 +10,9 @@ import VladPic from "../../assets/team/vlad.png"
 import CalinaPic from "../../assets/team/calina.png"
 import FabioPic from "../../assets/team/fabio.png"
 import OdiPic from "../../assets/team/odi.png"
+import StefanoPic from "../../assets/team/stefano.png"
+import LigiaPic from "../../assets/team/ligia.png"
+import MattPic from "../../assets/team/matt.png"
 
 const HrefEl = ({ link, type }) => {
   return (
@@ -127,7 +130,23 @@ const Team = () => {
         name="Calina Oros" 
         title="Legal Advisor" 
         linkedin="https://www.linkedin.com/in/oros-calina-a33423152/" 
-        pic={CalinaPic} />                         
+        pic={CalinaPic} />
+      <br/>  
+      <Member 
+        name="Stefano Curti" 
+        title="Innovation Advisor (MBA)" 
+        linkedin="https://www.linkedin.com/in/curtistefano/" 
+        pic={StefanoPic} /> 
+      <Member 
+        name="Matt S." 
+        title="Product Development Advisor" 
+        linkedin="https://www.linkedin.com/in/matt-sampalean-43122139/" 
+        pic={MattPic} />
+      <Member 
+        name="Ligia Gozman" 
+        title="Campaign Development" 
+        linkedin="https://www.linkedin.com/in/ligia-gozman-b5351b28/" 
+        pic={LigiaPic} />                                                                       
     </div>
   )
 }
