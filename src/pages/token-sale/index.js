@@ -39,7 +39,7 @@ export default () => (
     <Team/>
     <Info/>
     <Media/>
-    <Chat/>
+    {/* <Chat/> */}
     <Footer/>
   </div>
 )
