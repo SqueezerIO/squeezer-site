@@ -43,7 +43,7 @@ const Techs = () => {
     <div css={{
       width         : '100%',
       paddingTop    : rhythm(2),
-      paddingBottom : rhythm(4),
+      paddingBottom : rhythm(6),
       marginBottom : rhythm(2),
       borderBottom: '1px solid #cfe7fc',
       [presets.Mobile]  : {
@@ -57,7 +57,7 @@ const Techs = () => {
         paddingTop : rhythm(4)
       },
       [presets.Desktop] : {
-        paddingTop : rhythm(4),
+        paddingTop : rhythm(6),
       }
     }}>
       <h1 css={{

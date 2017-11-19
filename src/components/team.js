@@ -1,5 +1,6 @@
 import React from "react"
 import presets from "../utils/presets"
+import { rhythm, scale } from "../utils/typography"
 import Container from "./container"
 import GithubIcon from "react-icons/lib/go/mark-github"
 import TwitterIcon from "react-icons/lib/fa/twitter"
@@ -106,7 +107,8 @@ class Member extends React.Component {
 const Team = () => {
   return (
     <div css={{
-      textAlign: 'center'
+      textAlign: 'center',
+      paddingBottom : rhythm(4)
     }}>
       <h1>The Squeezer Team</h1>
       <Member 

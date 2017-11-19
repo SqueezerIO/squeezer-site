@@ -58,8 +58,8 @@ const IndexRoute = createReactClass({
             css={{
               padding: rhythm(presets.gutters.default / 2),
               flex: `0 0 100%`,
-              marginTop : rhythm(4),
-              marginBottom : rhythm(2),
+              marginTop : rhythm(6),
+              marginBottom : rhythm(4),
               [presets.Hd]: {
                 padding: vP,
                 paddingTop: 0,
@@ -140,7 +140,7 @@ const IndexRoute = createReactClass({
                       padding: `${rhythm(1)} 0 ${rhythm(2)}`,
                     }}
                   >
-                    <h1 css={{ marginTop: 0 }}>Interested !?</h1>
+                    <h1 css={{ marginTop: rhythm(3) }}>Interested !?</h1>
                     <FuturaParagraph>
                       It only takes a few moments to get up and running!
                     </FuturaParagraph>
