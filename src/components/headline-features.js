@@ -64,8 +64,8 @@ const Feature = ({ icon, height, title, description, cssOverride }) => {
 const HeadlineFeatures = () => {
   return (
     <div css={{
-      paddingTop        : rhythm(2),
-      paddingBottom     : rhythm(4),
+      paddingTop        : rhythm(6),
+      paddingBottom     : rhythm(8),
       borderBottom      : '1px solid #cfe7fc',
       [presets.Mobile]  : {
         textAlign : 'center'

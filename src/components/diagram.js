@@ -213,7 +213,7 @@ const Diagram = ({ containerCSS }) => (
       },
     }}
   >
-    <h1 css={{ marginBottom: rhythm(1.5), ...scale(1.2) }}>How Squeezer works</h1>
+    <h1 css={{ paddingTop: rhythm(4), marginBottom: rhythm(1.5), ...scale(1.2) }}>How Squeezer works</h1>
     <div css={{ maxWidth: rhythm(20), margin: `0 auto ${rhythm(2)}` }}>
       <FuturaParagraph>
         Squeezer lets you create event-driven apps , with various triggers.
