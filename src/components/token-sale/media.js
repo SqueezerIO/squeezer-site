@@ -4,6 +4,7 @@ import Container from "../container"
 import IcoAlertPic from "../../assets/token-sale/media/ico-alert.png"
 import IcoCountdownPic from "../../assets/token-sale/media/icocountdown.png"
 import CryptoCoinNewsPic from "../../assets/token-sale/media/cryptocoinnews.png"
+import BitcoinTalkPic from "../../assets/token-sale/media/bitcointalk.png"
 
 const Source = ({ pic, link, title }) => (
   <div onClick={() => window.open(link, "_blank")} css={{
@@ -37,7 +38,11 @@ const Team = () => {
       <Source
         title="CryptoCoin News"
         link="https://www.cryptocoinsnews.com/squeezer-connects-blockchain-world-class-clouds/"
-        pic={CryptoCoinNewsPic} />                  
+        pic={CryptoCoinNewsPic} />
+      <Source
+        title="Bitcoin Talk"
+        link="https://bitcointalk.org/index.php?topic=2432882"
+        pic={BitcoinTalkPic} />                                  
     </div>
   )
 }
