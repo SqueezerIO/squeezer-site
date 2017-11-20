@@ -1,6 +1,5 @@
 import Link from "gatsby-link"
 import { css } from 'glamor'
-
 import { rhythm, scale, options } from "../../utils/typography"
 import presets from "../../utils/presets"
 import FuturaParagraph from "../futura-paragraph"
