@@ -6,9 +6,10 @@ import IcoCountdownPic from "../../assets/token-sale/media/icocountdown.png"
 import CryptoCoinNewsPic from "../../assets/token-sale/media/cryptocoinnews.png"
 
 const Source = ({ pic, link, title }) => (
-  <div css={{
+  <div onClick={() => window.open(link, "_blank")} css={{
     display: 'inline-block',
-    margin: '25px'
+    margin: '25px',
+    cursor: 'pointer'
   }}>
     <img css={{
       width: 'auto',
@@ -27,12 +28,15 @@ const Team = () => {
       <h1>Media channels</h1>
       <Source
         title="ICO Alert"
+        link="https://www.icoalert.com/"
         pic={IcoAlertPic} />
       <Source
         title="ICO COUNTDOWN"
+        link="https://www.icocountdown.com/"
         pic={IcoCountdownPic} />
       <Source
         title="CryptoCoin News"
+        link="https://www.cryptocoinsnews.com/squeezer-connects-blockchain-world-class-clouds/"
         pic={CryptoCoinNewsPic} />                  
     </div>
   )

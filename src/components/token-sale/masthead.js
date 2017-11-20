@@ -1,4 +1,5 @@
 import Link from "gatsby-link"
+import { css } from 'glamor'
 
 import { rhythm, scale, options } from "../../utils/typography"
 import presets from "../../utils/presets"
@@ -12,6 +13,18 @@ import IbmOpenwhiskLogo from "../../assets/clouds/ibm-openwhisk.png"
 import PlayIcon from "../../assets/token-sale/play-video.png"
 import SubscribeFrom from "../../components/subscribe-form"
 import Countdown from "./countdown"
+import { DefaultPlayer as Video } from 'react-html5video';
+import BlockchainVideo from "../../assets/token-sale/blockchain.mp4"
+import BlockchainPic from "../../assets/token-sale/blockchain.png"
+
+const videoClass = css({
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  width: rhythm(64),
+  height: 'auto',
+  zIndex: -1
+})
 
 const MastheadContent = () => (
   <div
@@ -19,38 +32,47 @@ const MastheadContent = () => (
     css={{
       width: '100%',
       background: presets.brand,
-      paddingTop: rhythm(1),
-      paddingBottom: rhythm(1),
+      background: 'rgba(61, 94, 236, 0.9)',
+      position: 'relative',
+      overflow: 'hidden',
       paddingBottom: rhythm(1),
       [presets.Mobile]: {
         paddingBottom: rhythm(2),
-        height: rhythm(48),
+        height: rhythm(38),
         paddingLeft: vP
       },
-      [presets.Phablet]: {
-        paddingRight: 0,
-      },
       [presets.Tablet]: {
+        height: rhythm(46),
         paddingTop: rhythm(2)
       },
       [presets.Desktop]: {
-        height: rhythm(32),
+        height: rhythm(33),
         paddingTop: rhythm(1),
-      },
-      [presets.Hd]: {
-        paddingTop: rhythm(1),
-        paddingLeft: vPHd,
-        paddingBottom: rhythm(3),
-      },
-      [presets.VHd]: {
-        paddingTop: rhythm(1),
-        paddingLeft: vPVHd,
-      },
-      [presets.VVHd]: {
-        paddingLeft: vPVVHd,
-      },
+      }
     }}
   >
+    <Video autoPlay loop muted
+      controls={[]}
+      poster={BlockchainPic}
+      className={`${videoClass}`}
+      css={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        [presets.Mobile]: {
+          width: rhythm(68)
+        },
+        [presets.Mobile]: {
+          width: rhythm(82)
+        },
+        [presets.Destkop]: {
+          width: rhythm(64)
+        },
+        height: 'auto',
+        zIndex: -1
+      }}>
+      <source src={BlockchainVideo} type="video/mp4" />
+    </Video>
     <div css={{
       display: 'inline-block',
       verticalAlign: 'top',
@@ -102,20 +124,15 @@ const MastheadContent = () => (
         Build auto-scalable serverless apps on top of the blockchain technology
         <br />
         <br />
-        Get <b>25%</b> discount on token sale
       </FuturaParagraph>
 
-      <div css={{ paddingTop: rhythm(1.3) }}>
-        <SubscribeFrom {...{
-          action: '//squeezer.us17.list-manage.com/subscribe/post?u=c85492cf3a6e8f0992fe01e4e&id=d23e505112',
-        }} />
-      </div>
-      <Countdown/>
+      <Countdown />
     </div>
     <div
       css={{
         textAlign: 'center',
         verticalAlign: 'top',
+        // opacity: 0.1,
         [presets.Mobile]: {
           width: '90%',
           height: rhythm(14.5),
@@ -125,7 +142,7 @@ const MastheadContent = () => (
           height: rhythm(12.5)
         },
         [presets.Tablet]: {
-          width: '90%',
+          width: '100%',
           margin: '15px auto',
           paddingRight: `${vP}`,
         },
@@ -133,36 +150,28 @@ const MastheadContent = () => (
           height: rhythm(12),
           display: 'inline-block',
           margin: `${rhythm(4)} ${rhythm(0)} ${rhythm(0)} ${rhythm(2)}`,
-          width: rhythm(19.5)
+          width: rhythm(18.5)
         }
       }}
     >
-      <div css={{ cursor: 'pointer' }} onClick={() => window.open("https://www.youtube.com/watch?v=_pom9R7KqYQ", "_blank")}>
+      <div css={{
+        cursor: 'pointer',
+        zIndex: 100,
+        [presets.Tablet]: {
+          paddingTop: rhythm(1)
+        }
+      }} onClick={() => window.open("https://www.youtube.com/watch?v=_pom9R7KqYQ", "_blank")}>
         <img css={{
           [presets.Desktop]: {
-            maxWidth: '450px',            
+            maxWidth: '550px',
           },
           height: 'auto'
         }}
           src={PlayIcon} alt="play video" />
       </div>
-      <div css={{
-        [presets.Mobile]: {
-          marginTop: rhythm(3)          
-        },
-        [presets.Desktop]: {
-          marginTop: rhythm(5)          
-        }
-      }}>
-        <CloudWithLogo icon={AwsLogo} height="45px">Amazon Web Services</CloudWithLogo>
-        <CloudWithLogo icon={MicrosoftAzureLogo}>Microsoft Azure</CloudWithLogo>
-        <CloudWithLogo icon={GoogleCloudLogo}>Google Cloud</CloudWithLogo>
-        <CloudWithLogo icon={IbmOpenwhiskLogo}>IBM Openwhisk</CloudWithLogo>
-      </div>
     </div>
   </div>
 )
 
-const Masthead = () => <MastheadContent />
 
-export default Masthead
+export default MastheadContent

@@ -8,15 +8,17 @@ import DownloadsCountUp from "../../components/downloads-countup"
 import Masthead from "../../components/token-sale/masthead"
 import TokenTerms from "../../components/token-sale/terms"
 import RoadMap from "../../components/token-sale/roadmap"
+import Providers from "../../components/token-sale/providers"
 import Team from "../../components/token-sale/team"
 import Info from "../../components/token-sale/info"
 import Media from "../../components/token-sale/media"
-import Chat from "../../components/token-sale/chat"
 import ProblemSolution from "../../components/token-sale/problem-solution"
+import Newsletter from "../../components/newsletter"
 
 export default () => (
   <div>
     <Masthead/>
+    <Providers/>
     <DownloadsCountUp/>
     <ProblemSolution/>    
     <TokenTerms/>
@@ -24,7 +26,7 @@ export default () => (
     <Team/>
     <Info/>
     <Media/>
-    {/* <Chat/> */}
+    <Newsletter/>
     <Footer/>
   </div>
 )

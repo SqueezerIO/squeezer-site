@@ -1,9 +1,9 @@
 import React from "react"
 import { rhythm, scale } from "../utils/typography"
 
-export default ({ overrideCss, placeholder, type, name, id }) => {
+export default ({ overrideCss, placeholder, type, name, id , required, value , onChange }) => {
   return (
-    <input id={id} name={name} type={type} placeholder={placeholder}
+    <input id={id} name={name} type={type} placeholder={placeholder} required={required} value={value} onChange={onChange}
            css={{
              width      : rhythm(12),
              color      : '#808080',
