@@ -3,6 +3,7 @@ import { rhythm, scale, options } from "../../utils/typography"
 import presets from "../../utils/presets"
 import CtaButton from "../cta-button"
 import ArrowForwardIcon from "react-icons/lib/md/arrow-forward"
+import Whitelist from "./whitelist"
 
 const PreSaleStartCountDownTime = () => {
   const toDate = '2017-12-04T00:00:00.000Z'
@@ -34,10 +35,30 @@ const SaleEndCountDownTime = () => {
 
 const SaleComplete = () => (
   <h1 css={{ color: presets.brandLighter }}>
-    Token sale complete . <br/>
-    Thank you for the contribution !
+    Token sale completed . <br/>
+    Thank you for your contribution !
   </h1>
 );
+
+const WhiteListWidget = ({overrideCss}) => (
+  <div css={{...overrideCss}}>
+    <div css={{
+      color: presets.brandLighter,
+      marginTop: rhythm(1),
+      [presets.Mobile]: {
+        fontSize: scale(0.2).fontSize,
+      },
+      [presets.Desktop]: {
+        fontSize: scale(0.8).fontSize,
+      }
+    }}>Get whitelisted and receive <b>25%</b> discount</div>
+    <Whitelist
+      {...{
+        action: '//squeezer.us17.list-manage.com/subscribe/post?u=c85492cf3a6e8f0992fe01e4e&id=d23e505112',
+      }}
+    />
+  </div>
+)
 
 const Participate = () => (
   <CtaButton to="/token-sale/participate" overrideCSS={{
@@ -67,6 +88,7 @@ const CountdownSaleStart = () => (
   <div>
     <Countdown
       date={SaleStartCountDownTime()}
+      whitelist="true"
       renderer={CountdownRender}
       msg="Token sale start in:"
       completeRenderer={CountdownSaleCompletion()}      
@@ -94,12 +116,15 @@ const pl = (name, val) => {
   }
 };
 
-const CountdownRender = ({ days, hours, minutes, seconds, completed , msg , participate, completeRenderer }) => {
+const CountdownRender = ({ days, hours, minutes, seconds, completed , msg , participate, completeRenderer, whitelist }) => {
   if (completed) {
     return completeRenderer || <div/>
   } else {
     return (
       <div>
+        <WhiteListWidget overrideCss={{
+          display : whitelist ? 'block' : 'none'
+        }}/>
         <h1 css={{ color: presets.brandLighter }}>{msg}</h1>
         <span css={{
           color: presets.brandLighter,
@@ -139,6 +164,7 @@ export default () => (
     <Countdown
       date={PreSaleStartCountDownTime()}
       renderer={CountdownRender}
+      whitelist="true"
       msg="Token pre-sale starts in:"
       completeRenderer={CountdownPreSaleCompletion()}
     />

@@ -5,7 +5,7 @@ import VisaIcon from "../../assets/token-sale/visa.svg"
 import MastercardIcon from "../../assets/token-sale/mastercard.svg"
 import { css } from 'glamor'
 
-const ContentTable = ({data}) => {
+const ContentTable = ({data, overrideCss}) => {
   const content = data.map((val) => {
     return (
       <tr key={val.title}>
@@ -21,7 +21,7 @@ const ContentTable = ({data}) => {
   });
 
   return (
-    <table>
+    <table css={{...overrideCss}}>
       <tbody>
         {content}
       </tbody>
@@ -36,29 +36,32 @@ export default () => (
     padding: '150px 0px 150px 0px'
   }}>
     <div css={{
-      [presets.Tablet]: {
-        width: rhythm(20)        
-      },
-      [presets.Desktop]: {
-        width: rhythm(25)        
-      },
       margin: '0 auto',
       textAlign: 'center'
     }}>
       <h1 css={{ textAlign: 'center' }}>Token terms</h1>
-      <div css={{paddingTop: '100px', width: rhythm(13), margin: '0 auto'}}>
+      <div css={{paddingTop: '100px', margin: rhythm(1), width: rhythm(13), display: 'inline-block'}}>
         <PercentageCircle radius={150} borderWidth={4} percent={20} color={"#3498db"}>
           <h1>20%</h1>
           Creators, development, marketing
         </PercentageCircle>
       </div>
-      <div css={{padding: '100px 0px', width: rhythm(13), margin: '0 auto'}}>
+      <div css={{padding: '100px 0px', width: rhythm(13), margin: rhythm(1),display: 'inline-block'}}>
         <PercentageCircle radius={150} borderWidth={4} percent={80} color={"#2ecc71"}>
           <h1>80%</h1>
           Token sale
         </PercentageCircle>
       </div>
-      <ContentTable data={[
+      <ContentTable overrideCss={{
+              margin: '0 auto',
+              
+              [presets.Tablet]: {
+                width: rhythm(20)        
+              },
+              [presets.Desktop]: {
+                width: rhythm(25)        
+              },
+      }} data={[
         {
           title : 'Token name',
           description : 'SQZ'
@@ -73,7 +76,7 @@ export default () => (
         },
         {
           title : 'Price',
-          description : <div>1$ = 4 SQZ<br/>1$ = 5 SQZ ( token sale)</div>
+          description : <div>1$ = 4 SQZ</div>
         },
         {
           title : 'Min Goal',
