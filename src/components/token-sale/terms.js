@@ -79,8 +79,12 @@ export default () => (
           description : <div>1$ = 4 SQZ</div>
         },
         {
-          title : 'Min Goal',
+          title : 'Soft cap',
           description : '300,000$'
+        },
+        {
+          title : 'Hard cap',
+          description : '66,000,000$'
         },
         {
           title : 'Extra tokens',
