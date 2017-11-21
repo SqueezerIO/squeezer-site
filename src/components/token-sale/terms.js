@@ -42,13 +42,13 @@ export default () => (
       <h1 css={{ textAlign: 'center' }}>Token terms</h1>
       <div css={{paddingTop: '100px', margin: rhythm(1), width: rhythm(13), display: 'inline-block'}}>
         <PercentageCircle radius={150} borderWidth={4} percent={20} color={"#3498db"}>
-          <h1>20%</h1>
+          <h1 css={{margin:0}}>20%</h1>
           Creators, development, marketing
         </PercentageCircle>
       </div>
       <div css={{padding: '100px 0px', width: rhythm(13), margin: rhythm(1),display: 'inline-block'}}>
         <PercentageCircle radius={150} borderWidth={4} percent={80} color={"#2ecc71"}>
-          <h1>80%</h1>
+          <h1 css={{margin:0}}>80%</h1>
           Token sale
         </PercentageCircle>
       </div>
