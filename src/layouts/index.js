@@ -10,6 +10,8 @@ import presets from "../utils/presets"
 import colors from "../utils/colors"
 import createReactClass from "create-react-class"
 import traverse from "traverse"
+import queryString from "query-string";
+
 
 import "../css/prism-coy.css"
 
@@ -90,6 +92,20 @@ module.exports = createReactClass({
       }
   },
   render() {
+    const queryParams = queryString.parse(this.props.location.search);
+    if (queryParams) {
+      if (queryParams.utm_source) {
+        localStorage.setItem('utm_source', queryParams.utm_source);        
+      }
+      if (queryParams.utm_source) {
+        localStorage.setItem('utm_medium', queryParams.utm_medium);        
+      }
+      if (queryParams.utm_source) {
+        localStorage.setItem('utm_campaign', queryParams.utm_campaign);        
+      }
+    }
+    console.log(queryParams)
+
     const isHomepage = this.props.location.pathname == `/`
     const hasSidebar =
       this.props.location.pathname.slice(0, 6) === `/docs/` ||

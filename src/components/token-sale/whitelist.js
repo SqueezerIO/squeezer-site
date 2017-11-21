@@ -43,7 +43,8 @@ class SubscribeForm extends React.Component {
       return
     }
     const url = getAjaxUrl(this.props.action) + `&EMAIL=${encodeURIComponent(emailVal)}` +
-    `&AMOUNT=${encodeURIComponent(amountVal)}`;
+    `&AMOUNT=${encodeURIComponent(amountVal)}` +  `&CAMPAIGN=${localStorage.utm_campaign}` +  
+    `&MEDIUM=${localStorage.utm_medium}` + `&SOURCE=${localStorage.utm_source}`;
 
     this.setState(
       {

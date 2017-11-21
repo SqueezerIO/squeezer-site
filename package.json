@@ -40,6 +40,7 @@
     "mitt": "^1.1.2",
     "parse-filepath": "^1.0.1",
     "prop-types": "^15.6.0",
+    "query-string": "^5.0.1",
     "react-countdown-now": "^1.2.0",
     "react-countup": "^3.0.2",
     "react-html5video": "^2.5.1",
