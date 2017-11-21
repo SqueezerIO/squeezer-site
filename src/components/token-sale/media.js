@@ -5,6 +5,7 @@ import IcoAlertPic from "../../assets/token-sale/media/ico-alert.png"
 import IcoCountdownPic from "../../assets/token-sale/media/icocountdown.png"
 import CryptoCoinNewsPic from "../../assets/token-sale/media/cryptocoinnews.png"
 import BitcoinTalkPic from "../../assets/token-sale/media/bitcointalk.png"
+import MediumPic from "../../assets/token-sale/media/medium.png"
 
 const Source = ({ pic, link, title }) => (
   <div onClick={() => window.open(link, "_blank")} css={{
@@ -42,7 +43,11 @@ const Team = () => {
       <Source
         title="Bitcoin Talk"
         link="https://bitcointalk.org/index.php?topic=2432882"
-        pic={BitcoinTalkPic} />                                  
+        pic={BitcoinTalkPic} />      
+      <Source
+        title="Medium"
+        link="https://medium.com/@nickchisiu/microservices-on-blockchain-4ccf3623a08f"
+        pic={MediumPic} />                                       
     </div>
   )
 }
