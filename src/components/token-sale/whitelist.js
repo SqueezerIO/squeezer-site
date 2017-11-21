@@ -100,7 +100,7 @@ class SubscribeForm extends React.Component {
                 marginTop: rhythm(1),
                 marginRight: rhythm(1),
                 height: rhythm(2.2),
-                padding: rhythm(1),
+                padding: '5px 15px',
                 fontWeight: `normal`,
                 border: 0,
                 [presets.Mobile]: {
@@ -128,7 +128,7 @@ class SubscribeForm extends React.Component {
                 marginTop: rhythm(1),
                 marginRight: rhythm(1),
                 height: rhythm(2.2),
-                padding: rhythm(1),
+                padding: '5px 15px',
                 fontWeight: `normal`,
                 border: 0,
                 [presets.Mobile]: {
