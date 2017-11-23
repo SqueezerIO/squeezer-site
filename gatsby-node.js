@@ -6,10 +6,6 @@ const fs = require(`fs-extra`)
 const slash = require(`slash`)
 const slugify = require(`limax`)
 
-if (typeof navigator === "undefined") {
-  global.navigator = {};  // like in the browser  
-}
-
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
   return new Promise((resolve, reject) => {
