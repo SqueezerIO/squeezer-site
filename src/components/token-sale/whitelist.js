@@ -44,7 +44,6 @@ class SubscribeForm extends React.Component {
       return
     }
     if (!amountVal || !Number(amountVal) || amountVal < minAmount) {
-      console.log('amount error')
       this.setState({
         status: "amountError"
       })
