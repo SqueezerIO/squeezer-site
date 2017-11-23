@@ -27,7 +27,7 @@ const SaleStartCountDownTime = () => {
 };
 
 const SaleEndCountDownTime = () => {
-  const toDate = '2017-02-20T00:00:00.000Z'
+  const toDate = '2018-02-20T00:00:00.000Z'
 
   // return new Date().getTime() + 20000;
   return new Date(toDate).getTime();

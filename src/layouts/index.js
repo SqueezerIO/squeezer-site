@@ -104,7 +104,6 @@ module.exports = createReactClass({
         localStorage.setItem('utm_campaign', queryParams.utm_campaign);        
       }
     }
-    console.log(queryParams)
 
     const isHomepage = this.props.location.pathname == `/`
     const hasSidebar =

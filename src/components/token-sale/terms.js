@@ -92,11 +92,11 @@ export default () => (
         },
         {
           title : 'Pre-sale period',
-          description : '04 Dec 2017 - 24 Dec 2017 (UTC)'
+          description : '04 Dec 2017 - 24 Dec 2017 (00:00:00 UTC)'
         },
         {
           title : 'Sale period',
-          description : '05 Jan 2018 - 25 Feb 2018 (UTC)'
+          description : '05 Jan 2018 - 25 Feb 2018 (00:00:00 UTC)'
         },
         {
           title : 'Purchase methods',

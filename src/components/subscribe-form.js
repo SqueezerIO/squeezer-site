@@ -185,7 +185,7 @@ SubscribeForm.defaultProps = {
     },
     error: {
       fontSize: 18,
-      color: "red"
+      color: "#ff9999"
     }
   }
 }
