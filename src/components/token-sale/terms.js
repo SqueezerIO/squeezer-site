@@ -11,10 +11,11 @@ const ContentTable = ({data, overrideCss}) => {
       <tr key={val.title}>
         <td css={{
           width: '25%',
+          paddingLeft: '10px',
           fontWeight: 'bold'
-        }}>&nbsp;{val.title}</td>
+        }}>{val.title}</td>
         <td css={{
-          
+          paddingRight: '10px',                    
         }}>{val.description}</td>
       </tr>
     );
@@ -54,7 +55,6 @@ export default () => (
       </div>
       <ContentTable overrideCss={{
               margin: '0 auto',
-              
               [presets.Tablet]: {
                 width: rhythm(20)        
               },
