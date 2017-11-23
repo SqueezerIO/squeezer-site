@@ -35,10 +35,18 @@ class SubscribeForm extends React.Component {
     e.preventDefault()
     const emailVal = this.state.form.email;
     const amountVal = this.state.form.amount;
-
+    const minAmount = 50;
+    
     if (!emailVal || emailVal.length < 5 || emailVal.indexOf("@") === -1) {
       this.setState({
-        status: "error"
+        status: "emailError"
+      })
+      return
+    }
+    if (!amountVal || !Number(amountVal) || amountVal < minAmount) {
+      console.log('amount error')
+      this.setState({
+        status: "amountError"
       })
       return
     }
@@ -55,12 +63,12 @@ class SubscribeForm extends React.Component {
       }, (err, data) => {
         if (err) {
           this.setState({
-            status: 'error',
+            status: 'emailError',
             msg: err
           })
         } else if (data.result !== 'success') {
           this.setState({
-            status: 'error',
+            status: 'emailError',
             msg: data.msg
           })
         } else {
@@ -196,8 +204,9 @@ class SubscribeForm extends React.Component {
           </div>
           {status === "sending" && <p style={styles.sending} dangerouslySetInnerHTML={{ __html: messages.sending }} />}
           {status === "success" && <p style={styles.success} dangerouslySetInnerHTML={{ __html: messages.success }} />}
-          {status === "error" && <p style={styles.error} dangerouslySetInnerHTML={{ __html: messages.error }} />}
-        </form>
+          {status === "emailError" && <p style={styles.error} dangerouslySetInnerHTML={{ __html: messages.emailError }} />}
+          {status === "amountError" && <p style={styles.error} dangerouslySetInnerHTML={{ __html: messages.amountError }} />}
+          </form>
       </div>
     )
   }
@@ -214,7 +223,8 @@ SubscribeForm.defaultProps = {
     btnLabel: "Add me to whitelist",
     sending: "Sending...",
     success: "You've been successfully added to our whitelist!",
-    error: "Oops, invalid email address"
+    emailError: "Oops, invalid email address",
+    amountError: "Oops, invalid amount, minimum amount is 50 USD"
   },
   styles: {
     sending: {
@@ -227,7 +237,7 @@ SubscribeForm.defaultProps = {
     },
     error: {
       fontSize: 18,
-      color: "red"
+      color: "#ff9999"
     }
   }
 }
