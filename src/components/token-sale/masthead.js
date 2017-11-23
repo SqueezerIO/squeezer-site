@@ -228,7 +228,7 @@ class MastheadContent extends React.Component {
               }
             }}
           >
-            Squeezer connects blockchain to the world-class clouds
+            Create blockchain apps like a pro
       </h1>
           <FuturaParagraph
             overrideCSS={{
@@ -239,7 +239,7 @@ class MastheadContent extends React.Component {
               }
             }}
           >
-            Build auto-scalable serverless apps on top of the blockchain technology
+            Squeezer is a tool that helps software developers to builds apps easily without tackling the entire blockchain infrastructure !
         <br />
             <br />
           </FuturaParagraph>

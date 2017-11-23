@@ -51,7 +51,7 @@ const WhiteListWidget = ({overrideCss}) => (
       [presets.Desktop]: {
         fontSize: scale(0.8).fontSize,
       }
-    }}>Get whitelisted and receive <b>25%</b> discount</div>
+    }}>Get whitelisted and enjoy your <b>25%</b> bonus</div>
     <Whitelist
       {...{
         action: '//squeezer.us17.list-manage.com/subscribe/post?u=c85492cf3a6e8f0992fe01e4e&id=d23e505112',

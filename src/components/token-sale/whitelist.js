@@ -43,14 +43,13 @@ class SubscribeForm extends React.Component {
       })
       return
     }
-    if (!amountVal || !Number(amountVal) || amountVal < minAmount) {
-      this.setState({
-        status: "amountError"
-      })
-      return
-    }
-    const url = getAjaxUrl(this.props.action) + `&EMAIL=${encodeURIComponent(emailVal)}` +
-    `&AMOUNT=${encodeURIComponent(amountVal)}` +  `&CAMPAIGN=${localStorage.utm_campaign}` +  
+    // if (!amountVal || !Number(amountVal) || amountVal < minAmount) {
+    //   this.setState({
+    //     status: "amountError"
+    //   })
+    //   return
+    // }
+    const url = getAjaxUrl(this.props.action) + `&EMAIL=${encodeURIComponent(emailVal)}` +  `&CAMPAIGN=${localStorage.utm_campaign}` +  
     `&MEDIUM=${localStorage.utm_medium}` + `&SOURCE=${localStorage.utm_source}`;
 
     this.setState(
@@ -129,7 +128,7 @@ class SubscribeForm extends React.Component {
               onChange={this.handleChange.bind(this)}               
               value={this.state.form.email}
             />
-            <input
+            {/* <input
               css={{
                 display: 'inline-block',
                 margin: 0,
@@ -154,7 +153,7 @@ class SubscribeForm extends React.Component {
               onChange={this.handleChange.bind(this)} 
               value={this.state.form.amount}
               placeholder="Amount (USD)"
-            />
+            /> */}
             <button
               css={{
                 border: `1px solid #FFF`,
@@ -223,7 +222,7 @@ SubscribeForm.defaultProps = {
     sending: "Sending...",
     success: "You've been successfully added to our whitelist!",
     emailError: "Oops, invalid email address",
-    amountError: "Oops, invalid amount, minimum amount is 50 USD"
+    // amountError: "Oops, invalid amount, minimum amount is 50 USD"
   },
   styles: {
     sending: {
