@@ -11,11 +11,11 @@ const ContentTable = ({data, overrideCss}) => {
       <tr key={val.title}>
         <td css={{
           width: '25%',
-          paddingLeft: '10px',
+          paddingLeft: '10px !important',
           fontWeight: 'bold'
         }}>{val.title}</td>
         <td css={{
-          paddingRight: '10px',                    
+          paddingRight: '10px !important',                    
         }}>{val.description}</td>
       </tr>
     );
