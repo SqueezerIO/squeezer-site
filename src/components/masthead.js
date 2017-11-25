@@ -3,6 +3,7 @@ import ArrowForwardIcon from "react-icons/lib/md/arrow-forward"
 
 import { rhythm, scale, options } from "../utils/typography"
 import presets from "../utils/presets"
+import TokensaleCountdown from "./token-sale/countdown"
 import CtaButton from "./cta-button"
 import FuturaParagraph from "./futura-paragraph"
 import { vP, vPHd, vPVHd, vPVVHd } from "../components/gutters"
@@ -127,6 +128,7 @@ const MastheadContent = () => (
           />
         </CtaButton>
       </div>
+      <TokensaleCountdown/>
       <div css={{
         marginLeft        : 0,
         marginTop         : rhythm(5)
