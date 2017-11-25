@@ -25,7 +25,8 @@ import InfiniteIcon from "../assets/infinite.svg"
 import NuclearIcon from "../assets/nuclear.svg"
 import MonolithicIcon from "../assets/monolithic.svg"
 import CloudSunIcon from "../assets/cloud-sun.svg"
-import Team from "../components/team"
+// import Team from "../components/team"
+import Team from "../components/token-sale/team"
 import createReactClass from "create-react-class"
 
 const CardIcon = ({icon}) => {
