@@ -6,7 +6,7 @@ import NpmIcon from "../assets/npm.png"
 const DownloadsCounter = ({ isVisible }) => {
   return (
     <div >
-      &gt; <CountUp duration={1.5} start={0} end={80000} redraw={true} /> monthly downloads
+      &gt; <CountUp duration={1.5} start={0} end={75000} redraw={true} /> monthly downloads
       <div css={{ cursor: 'pointer', marginTop : rhythm(3) }} onClick={() => window.open("https://www.npmjs.com/package/squeezer-cli", "_blank")}>
         <img css={{ width: '180px' }} src={NpmIcon} alt="play video" />
       </div>

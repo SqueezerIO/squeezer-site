@@ -1,10 +1,18 @@
 import { rhythm, scale } from "../../utils/typography"
 import presets from "../../utils/presets"
 import RoadmapLine from "../../assets/roadmap-line.png"
+import RoadmapLineActive from "../../assets/roadmap-line-active.png"
 import React from "react"
+
 
 const CreateRoadMap = ({ data }) => {
   let position = 'left'
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+
+  const currDate = new Date();
+  const currTime = `${currDate.getFullYear()}${currDate.getMonth()}`;
   const roadMap = data.map((val) => {
     if (position === 'left') {
       position = 'right';
@@ -12,8 +20,10 @@ const CreateRoadMap = ({ data }) => {
       position = 'left';      
     }
 
+    const roadmapPic = Number(currTime) > Number(`${val.year}${("0" + val.month).slice(-2)}`) ? RoadmapLineActive : RoadmapLine
+    console.log([Number(currTime), `${val.year}${("0" + val.month).slice(-2)}`])
     return (
-      <div key={val.title} css={{
+      <div key={val.description} css={{
         border: 0,
         padding: 0,
         [presets.Mobile]: {          
@@ -23,7 +33,7 @@ const CreateRoadMap = ({ data }) => {
         },
         [presets.Desktop]: {          
           width: rhythm(23),
-          background: `url(${RoadmapLine})`,
+          background: `url(${roadmapPic})`,
           backgroundSize: '40px 100%',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center'        
@@ -39,7 +49,7 @@ const CreateRoadMap = ({ data }) => {
           },
           textAlign: 'center'
         }}>
-          <h2 css={{ margin: '5px 0px' }}>{val.title}</h2>
+          <h2 css={{ margin: '5px 0px' }}>{monthNames[val.month]} {val.year}</h2>
           {val.description}
         </div>
         <bulletLine />
@@ -72,27 +82,48 @@ export default () => (
       <CreateRoadMap
         data={[
           {
-            title: 'December 2017',
+            month : 1,
+            year : 2016,
+            description: 'Create framework principles and add base functionality'
+          },
+          {
+            month : 8,
+            year : 2016,
+            description: 'Proof-of-Concept and plugins integration'
+          },
+          {
+            month : 9,
+            year : 2017,
+            description: 'Stable version + cloud providers'
+          },
+          {
+            month : 11,
+            year : 2017,
             description: 'Token pre-sale crowdfunding stage'
           },
           {
-            title: 'January 2018',
+            month : 0,
+            year : 2018,
             description: 'Transcending to the final token sale'
           },
           {
-            title: 'February 2018',
+            month : 1,
+            year : 2018,
             description: 'Add token on public exchanger(s)'
           },
           {
-            title: 'March 2018',
+            month : 2,
+            year : 2018,
             description: 'Hiring additional resources to build the blockchain cloud connectors'
           },
           {
-            title: 'December 2018',
+            month : 11,
+            year : 2018,
             description: 'Deliver the blockchain cloud components & connectors'
           },
           {
-            title: 'February 2019',
+            month : 1,
+            year : 2019,
             description: 'Add support to buy subscriptions with the SQZ token & start to build apps connected to the blockchain'
           },
         ]}
