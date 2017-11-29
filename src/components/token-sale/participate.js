@@ -1,206 +1,236 @@
-import Link from "gatsby-link"
-import ArrowForwardIcon from "react-icons/lib/md/arrow-forward"
-import Countdown from 'react-countdown-now'
-
-import { rhythm, scale, options } from "../../utils/typography"
+import { rhythm, scale } from "../../utils/typography"
 import presets from "../../utils/presets"
-import CtaButton from "../cta-button"
-import FuturaParagraph from "../futura-paragraph"
-import { vP, vPHd, vPVHd, vPVVHd } from "../../components/gutters"
-import CloudWithLogo from "../../components/cloud-with-logo"
-import AwsLogo from "../../assets/clouds/aws-logo.png"
-import MicrosoftAzureLogo from "../../assets/clouds/microsoft-azure.png"
-import GoogleCloudLogo from "../../assets/clouds/google-cloud-logo.png"
-import IbmOpenwhiskLogo from "../../assets/clouds/ibm-openwhisk.png"
-import PlayIcon from "../../assets/token-sale/play.png"
-import SubscribeFrom from "../../components/subscribe-form"
+import Button from "../../components/button"
+import Input from "../../components/input"
+import React from "react"
+import { validateEmail, validateWallet } from "../../utils/validate"
+import { apiAddNewTokenSalePurchase } from "../../utils/api"
+import QuestionCircle from "react-icons/lib/fa/question-circle"
+import WindowClose from "react-icons/lib/fa/close"
+// import Modal from 'react-modal';
 
-const CountdownCompletion = () => <span>You are good to go!</span>;
+// const WalletHelpModal = ({self}) => {
+//   const customStyles = {
+//     overlay : {
+//       position          : 'fixed',
+//       top               : 0,
+//       left              : 0,
+//       right             : 0,
+//       bottom            : 0,
+//       backgroundColor   : 'rgba(0, 0, 0, 0.90)'
+//     },
+//     content: {
+//       top: '50%',
+//       left: '50%',
+//       right: 'auto',
+//       bottom: 'auto',
+//       marginRight: '-50%',
+//       transform: 'translate(-50%, -50%)'
+//     }
+//   };
 
-const pl = (name, val) => {
-  if (val === 1) {
-    return `${val} ${name}`;
-  } else {
-    return `${val} ${name}s`;
+//   return (
+//     <Modal
+//     isOpen={self.state.walletHelpModalIsOpen}
+//     // onAfterOpen={this.afterOpenModal}
+//     onRequestClose={self.closeModal.bind(self)}
+//     style={customStyles}
+//     contentLabel="Example Modal"
+//   >
+//     <h2 ref={subtitle => self.subtitle = subtitle}>Hello</h2>
+//     <WindowClose css={{
+//       cursor: 'pointer',
+//       position: 'absolute',
+//       top: '15px',
+//       right: '15px'
+//     }} onClick={self.closeModal.bind(self)} />
+//     <div>I am a modal</div>
+//     <form>
+//       <input />
+//       <button>tab navigation</button>
+//       <button>stays</button>
+//       <button>inside</button>
+//       <button>the modal</button>
+//     </form>
+//   </Modal>
+//   )
+// }
+
+class ParticipateForm extends React.Component {
+  constructor(props, ...args) {
+    super(props, ...args)
+    this.summary = this.props.summary;
+    this.tier = this.summary.tiers[this.summary.activeTier];
+    this.state = {
+      form: {
+        email: '',
+        walletAddress: '',
+        amount: '',
+        citizenshipCertification: false
+      },
+      // walletHelpModalIsOpen: false,
+      error: null,
+      status: null
+    }
   }
-};
 
-const CountdownRender = ({ days, hours, minutes, seconds, completed }) => {
-  if (completed) {
-    return <CtaButton to="/token-sale/participate" overrideCSS={{
-      color: '#fff !important',
-      border: '1px solid #fff !important'
-    }}>
-      <span css={{ verticalAlign: `middle` }}>Participate</span>
-      {` `}
-      <ArrowForwardIcon
-        css={{ verticalAlign: `baseline`, marginLeft: `.2em` }}
-      />
-    </CtaButton>;
-  } else {
-    return <span css={{
-      color: presets.brandLighter,
-      fontSize: scale(1.2).fontSize
-    }}>{pl('day', days)}  {pl('hour', hours)} {pl('min', minutes)} {pl('sec', seconds)}</span>;
-  }
-};
+  // openModal() {
+  //   this.setState({ walletHelpModalIsOpen: true });
+  // }
 
-const MastheadContent = () => (
-  <div
-    className="masthead-content"
-    css={{
-      width: '100%',
-      background: presets.brand,
-      paddingTop: rhythm(3),
-      paddingBottom: rhythm(1),
-      paddingBottom: rhythm(1),
+  // closeModal() {
+  //   this.setState({ walletHelpModalIsOpen: false });
+  // }
 
-      [presets.Mobile]: {
-        paddingBottom: rhythm(2),
-        height: rhythm(40),
-        paddingLeft: vP
-      },
-      [presets.Phablet]: {
-        paddingRight: 0,
-      },
-      [presets.Tablet]: {
-        paddingTop: rhythm(4)
-      },
-      [presets.Desktop]: {
-        height: rhythm(32),
-        paddingTop: rhythm(5),
-      },
-      [presets.Hd]: {
-        paddingTop: rhythm(3),
-        paddingLeft: vPHd,
-        paddingBottom: rhythm(3),
-      },
-      [presets.VHd]: {
-        paddingTop: rhythm(4),
-        paddingLeft: vPVHd,
-      },
-      [presets.VVHd]: {
-        paddingLeft: vPVVHd,
-      },
-    }}
-  >
-    <div css={{
-      display: 'inline-block',
-      verticalAlign: 'top',
-      [presets.Desktop]: {
-        width: '50%'
-      }
-    }}>
-      <h1
-        css={{
-          ...scale(0.7),
-          color: '#FFF',
-          lineHeight: 1.2,
-          marginTop: '25px',
-          marginBottom: `1.2em`,
-          [presets.Mobile]: {
-            width: '90%'
-          },
-          "@media (min-width: 650px)": {
-            fontSize: scale(1).fontSize
-          },
-          [presets.Tablet]: {
-            fontSize: scale(1.1).fontSize
-          },
-          [presets.Hd]: {
-            fontSize: scale(1.4).fontSize
-          },
-          [presets.VHd]: {
-            fontSize: scale(1.5).fontSize
-          },
-          [presets.VVHd]: {
-            fontSize: scale(1.6).fontSize
-          },
-          [presets.Desktop]: {
-            fontSize: scale(1.4).fontSize
+  componentDidMount() {
+    const self = this
+    let walletProvider = false
+
+    if (typeof web3 !== "undefined") {
+      walletProvider = web3
+    }
+
+    if (walletProvider) {
+      walletProvider.eth.getAccounts(function (err, accounts) {
+        if (accounts.length > 0) {
+          // console.log(accounts[0])
+          const account = accounts[0];
+          if (self.state.form.walletAddress !== account) {
+            self.state.form.walletAddress = accounts[0]
+            self.setState({ form: self.state.form });
           }
-        }}
-      >
-        Squeezer brings the famous clouds to the blockchain
-      </h1>
-      <FuturaParagraph
-        overrideCSS={{
-          color: presets.brandLighter,
-          fontSize: scale(0.5).fontSize,
-          [presets.Mobile]: {
-            width: '90%'
-          }
-        }}
-      >
-        Build auto-scalable apps on top of the blockchain technology .
-        <br />
-        <br />
-        Get <b>15%</b> discount on the token pre-sale .
-      </FuturaParagraph>
-
-      <div css={{ paddingTop: rhythm(1.3) }}>
-        <SubscribeFrom {...{
-          action: '//squeezer.us17.list-manage.com/subscribe/post?u=c85492cf3a6e8f0992fe01e4e&id=d23e505112',
-        }} />
-      </div>
-      <h1 css={{ color: presets.brandLighter }}>
-        Token pre-sale
-      </h1>
-      <div css={{
-        marginTop: rhythm(2)
-      }}>
-        <Countdown
-          date={Date.now() + 5000}
-          renderer={CountdownRender}
-        />
-      </div>
-    </div>
-    <div
-      css={{
-        textAlign: 'center',
-        verticalAlign: 'top',
-        [presets.Mobile]: {
-          width: '90%',
-          height: rhythm(14.5)
-        },
-        [presets.Phablet]: {
-          height: rhythm(12.5)
-        },
-        [presets.Tablet]: {
-          width: '90%',
-          margin: '15px auto',
-          paddingRight: `${vP}`,
-        },
-        [presets.Desktop]: {
-          height: rhythm(12),
-          display: 'inline-block',
-          margin: `${rhythm(3)} ${rhythm(0)} ${rhythm(0)} ${rhythm(2)}`,
-          width: rhythm(19.5)
         }
-      }}
-    >
-      <div css={{ cursor: 'pointer' }} onClick={() => window.open("someLink", "_blank")}>
-        <img css={{
-          width: '200px',
-        }}
-          src={PlayIcon} alt="play video" />
-        <h1 css={{
-          color: presets.brandLighter,
-          margin: '0'
-        }}>Watch video</h1>
-      </div>
+      })
+    }
+  }
+
+  handleChange(event) {
+    this.state.form[event.target.name] = event.target.value;
+
+    if (event.target.name === "email" && validateEmail(event.target.value)) {
+      console.log('email nice');
+    }
+
+    this.setState({ form: this.state.form });
+  }
+
+  onFormSubmit(event) {
+    event.preventDefault()
+
+    this.setState({
+      error: null
+    })
+
+    const email = this.state.form.email;
+    const walletAddress = this.state.form.walletAddress;
+    const amount = this.state.form.amount;
+    const citizenshipCertification = this.state.form.citizenshipCertification;
+    const minAmount = 50;
+
+    let isError = false
+
+    const setError = (error) => {
+      if (!isError) {
+        this.setState({ error: error })
+        isError = true
+      }
+    }
+
+    if (!email || !validateEmail(email)) {
+      setError("Invalid email address")
+    }
+
+    if (!walletAddress || !validateWallet(walletAddress)) {
+      setError("Invalid wallet address")
+    }
+
+    if (!amount || isNaN(amount)) {
+      setError("Invalid amount")
+    }
+
+    if (amount && amount < minAmount) {
+      setError(`Minimum amount is ${minAmount} USD`)
+    }
+
+    if (!citizenshipCertification) {
+      setError("You're not a certified citizen")
+    }
+
+    if (!isError) {
+      this.setState({ status: 'sending' })
+
+      const purchaseObj = {
+        email: email,
+        walletAddress: walletAddress,
+        utm_campaign: localStorage.utm_campaign,
+        utm_medium: localStorage.utm_medium,
+        utm_source: localStorage.utm_source
+      }
+
+      apiAddNewTokenSalePurchase(purchaseObj).then((data) => {
+        if (data.message === 'success') {
+          this.setState({ status: 'success' })
+        }
+      })
+    }
+  }
+
+  render() {
+    return (
       <div css={{
-        marginTop: rhythm(7)
+        borderTop: `1px solid ${presets.veryLightBlue}`,
+        width: '100%',
+        padding: '75px 0px'
       }}>
-        <CloudWithLogo icon={AwsLogo} height="45px">Amazon Web Services</CloudWithLogo>
-        <CloudWithLogo icon={MicrosoftAzureLogo}>Microsoft Azure</CloudWithLogo>
-        <CloudWithLogo icon={GoogleCloudLogo}>Google Cloud</CloudWithLogo>
-        <CloudWithLogo icon={IbmOpenwhiskLogo}>IBM Openwhisk</CloudWithLogo>
+        <div css={{
+          margin: '0 auto',
+          // [presets.Desktop]: {
+          width: rhythm(13)
+          // }
+        }}>
+          <h1 css={{ textAlign: 'center' }}>Participate</h1>
+          <form onSubmit={this.onFormSubmit.bind(this)} autoComplete="off">
+            <Input name="email" placeholder="Email" onChange={this.handleChange.bind(this)} value={this.state.form.email} />
+            <Input overrideCss={{
+              display: 'inline-block',
+              verticalAlign: 'center'
+            }} name="walletAddress" placeholder="Ethereum wallet address (ERC20)" onChange={this.handleChange.bind(this)} value={this.state.form.walletAddress} />
+            <QuestionCircle onClick={() => window.open("/token-sale/create-wallet/", "_blank")} css={{
+              display: 'inline-block',
+              verticalAlign: 'center',
+              marginLeft: '5px',
+              cursor: 'pointer'
+            }} />
+            {/* <WalletHelpModal self={this}/> */}
+            <Input name="amount" placeholder="Amount (USD)" onChange={this.handleChange.bind(this)} value={this.state.form.amount} />
+            <div css={{
+              height: rhythm(0.2),
+              marginBottom: '30px',
+              display: this.state.form.amount > 0 ? 'block' : 'none'
+            }}>
+              <b>{(this.state.form.amount / this.tier.value).toFixed(2)} {this.summary.token}</b> - <i>1 {this.summary.token} = {this.tier.value}$</i>
+            </div>
+            <div>
+              <input
+                name="citizenshipCertification"
+                type="checkbox"
+                checked={this.state.citizenshipCertification}
+                onChange={this.handleChange.bind(this)} /> I certify that the beneficial owner is not a citizen of <b>USA , China or South Korea</b>
+            </div>
+            <div css={{ color: 'red', marginTop: '10px' }}>{this.state.error}</div>
+            <div css={{
+              background: presets.brand,
+              width: '285px',
+              // margin: '0 auto',
+              marginTop: '25px'
+            }}>
+              <Button overrideCSS={{ width: '285px' }} label="Purchase tokens" type="submit" onClick={this.onSubmit} disabled={this.state.status === "sending" || this.state.status === "success" || this.state.status === "success" === "disabled"} />
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
-  </div>
-)
+    )
+  }
+}
 
-const Masthead = () => <MastheadContent />
-
-export default Masthead
+export default ParticipateForm

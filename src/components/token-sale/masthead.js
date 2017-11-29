@@ -26,6 +26,7 @@ const videoClass = css({
 class MastheadContent extends React.Component {
   constructor(props, ...args) {
     super(props, ...args)
+    this.props = props;
   }
 
   componentDidMount() {
@@ -239,12 +240,12 @@ class MastheadContent extends React.Component {
               }
             }}
           >
-            Squeezer is a tool that helps software developers to builds apps easily without tackling the entire blockchain infrastructure
+            Squeezer is a platform that helps software developers to builds apps easily without tackling the entire blockchain infrastructure
         <br />
             <br />
           </FuturaParagraph>
 
-          <Countdown />
+          <Countdown summary={this.props.summary}/>
         </div>
         <div
           css={{

@@ -2,17 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import jsonp from "jsonp"
 import presets from "../../utils/presets"
-import CtaButton from "../../components/cta-button"
+import Button from "../../components/button"
 import Input from "../../components/input"
 import { rhythm, scale, options } from "../../utils/typography"
 import { css } from "glamor"
 
 const getAjaxUrl = url => url.replace('/post?', '/post-json?')
-
-let stripeAnimation = css.keyframes({
-  "0%": { backgroundPosition: `0 0` },
-  "100%": { backgroundPosition: `30px 60px` },
-})
 
 class SubscribeForm extends React.Component {
   constructor(props, ...args) {
@@ -85,21 +80,6 @@ class SubscribeForm extends React.Component {
       <div className={className} style={style}>
         <form action={action.bind} method="post" noValidate>
           <div>
-            {/* <input
-              ref={node => (this.input = node)}
-              type="email"
-              defaultValue=""
-              name="EMAIL"
-              required={true}
-              placeholder={messages.inputPlaceholder}
-            />
-            <button
-              disabled={this.state.status === "sending" || this.state.status === "success"}
-              onClick={this.onSubmit}
-              type="submit"
-            >
-              {messages.btnLabel}
-            </button> */}
             <input
               css={{
                 display: 'inline-block',
@@ -128,77 +108,7 @@ class SubscribeForm extends React.Component {
               onChange={this.handleChange.bind(this)}               
               value={this.state.form.email}
             />
-            {/* <input
-              css={{
-                display: 'inline-block',
-                margin: 0,
-                marginTop: rhythm(1),
-                marginRight: rhythm(1),
-                height: rhythm(2.2),
-                padding: '5px 15px',
-                fontWeight: `normal`,
-                border: 0,
-                [presets.Mobile]: {
-                  width: '90%'
-                },
-                [presets.Tablet]: {
-                  width: '50%'
-                },
-                [presets.Desktop]: {
-                  width: '50%'
-                }
-              }}
-              // ref={node => (this.input = node)}
-              name="amount"
-              onChange={this.handleChange.bind(this)} 
-              value={this.state.form.amount}
-              placeholder="Amount (USD)"
-            /> */}
-            <button
-              css={{
-                border: `1px solid #FFF`,
-                borderRadius: 0,
-                boxShadow: `none`,
-                color: '#FFF',
-                fontSize: '25px',
-                verticalAlign: 'middle',
-                fontWeight: `normal`,
-                backgroundColor: `transparent`,
-                backgroundSize: `30px 30px`,
-                padding: '13px 15px',
-                cursor: 'pointer',
-                [presets.Mobile]: {
-                  marginTop: rhythm(0.5)
-                },
-                [presets.Tablet]: {
-                  marginTop: 0
-                },
-                [presets.Desktop]: {
-                  marginTop: 0
-                },
-                "&&": {
-                  boxShadow: `none`,
-                  backgroundColor: `transparent`,
-                  transiton: `all .15s ease-out`,
-                  ":hover": {
-                    backgroundSize: `30px 30px`,
-                    backgroundColor: presets.brand,
-                    backgroundImage: `linear-gradient(45deg, rgba(0,0,0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0,0,0, 0.1) 50%, rgba(0,0,0, 0.1) 75%, transparent 75%, transparent)`,
-                    color: `#fff`,
-                    animation: `${stripeAnimation} 2.8s linear infinite`,
-                  },
-                  ":after": {
-                    content: ``,
-                    display: `block`,
-                  },
-                }
-              }}
-              disabled={this.state.status === "sending" || this.state.status === "success"}
-              onClick={this.onSubmit}
-              type="submit"
-            >
-              {messages.btnLabel}
-            </button>
+            <Button label={messages.btnLabel} type="submit" onClick={this.onSubmit} disabled={this.state.status === "sending" || this.state.status === "success"} />
           </div>
           {status === "sending" && <p style={styles.sending} dangerouslySetInnerHTML={{ __html: messages.sending }} />}
           {status === "success" && <p style={styles.success} dangerouslySetInnerHTML={{ __html: messages.success }} />}

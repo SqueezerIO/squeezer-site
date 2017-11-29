@@ -14,19 +14,42 @@ import Info from "../../components/token-sale/info"
 import Media from "../../components/token-sale/media"
 import ProblemSolution from "../../components/token-sale/problem-solution"
 import Newsletter from "../../components/newsletter"
+import { apiGetSummary } from "../../utils/api"
 
-export default () => (
-  <div>
-    <Masthead/>
-    <Providers/>
-    <DownloadsCountUp/>
-    <ProblemSolution/>    
-    <TokenTerms/>
-    <RoadMap/>
-    <Team/>
-    <Info/>
-    <Media/>
-    <Newsletter/>
-    <Footer/>
-  </div>
-)
+class TokenSale extends React.Component {
+  constructor(props, ...args) {
+    super(props, ...args)
+    this.state = {
+      summary: null
+    }
+  }
+
+  componentWillMount() {
+    apiGetSummary().then((res) => {      
+      this.setState({summary : res.data})
+    })
+  }
+
+  render() {
+    if (this.state.summary) {
+      return (
+        <div>
+          <Masthead summary={this.state.summary} />
+          <Providers />
+          <DownloadsCountUp />
+          <ProblemSolution />
+          <TokenTerms summary={this.state.summary} />
+          <RoadMap />
+          <Team />
+          <Info />
+          <Media />
+          <Newsletter />
+          <Footer />
+        </div>
+      )
+    }
+    return <div/>;
+  }
+}
+
+export default TokenSale
