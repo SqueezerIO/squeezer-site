@@ -19,7 +19,7 @@ const apiAddNewTokenSalePurchase = (item) => {
   })
 }
 
-const getTokenSaleWhitelisted = (email) => {
+const apiGetTokenSaleWhitelisted = (email) => {
   return new Promise((resolve) => {
     axios.get(`${apiBaseUrl}/rest/v1/token-sale/whitelisted?email=${email}`).then((res) => {
       return resolve(res.data)
@@ -27,4 +27,4 @@ const getTokenSaleWhitelisted = (email) => {
   })
 }
 
-export default { apiGetSummary , apiAddNewTokenSalePurchase }
+export default { apiGetSummary , apiAddNewTokenSalePurchase, apiGetTokenSaleWhitelisted }

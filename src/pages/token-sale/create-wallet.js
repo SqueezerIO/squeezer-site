@@ -18,7 +18,7 @@ class CreateWallet extends React.Component {
     return (
       <div>
         <div css={{
-          width: rhythm(30),
+          maxWidth: rhythm(30),
           margin: '0 auto',
           paddingTop: rhythm(2)
         }}>

@@ -6,6 +6,7 @@ import React from "react"
 import { validateEmail, validateWallet } from "../../utils/validate"
 import { apiAddNewTokenSalePurchase } from "../../utils/api"
 import QuestionCircle from "react-icons/lib/fa/question-circle"
+import { apiGetTokenSaleWhitelisted } from "../../utils/api"
 import WindowClose from "react-icons/lib/fa/close"
 // import Modal from 'react-modal';
 
@@ -69,6 +70,7 @@ class ParticipateForm extends React.Component {
         citizenshipCertification: false
       },
       // walletHelpModalIsOpen: false,
+      whitelisted : false,
       error: null,
       status: null
     }
@@ -108,10 +110,26 @@ class ParticipateForm extends React.Component {
     this.state.form[event.target.name] = event.target.value;
 
     if (event.target.name === "email" && validateEmail(event.target.value)) {
-      console.log('email nice');
+      apiGetTokenSaleWhitelisted(event.target.value).then((res) => {
+        if (res && res.message === 'success') {
+          this.setState({ whitelisted: true })          
+        }
+      });
+      
     }
 
     this.setState({ form: this.state.form });
+  }
+
+  calculateTokens() {
+    let totalTokens = this.state.form.amount / this.tier.value;
+
+    if (this.state.whitelisted) {
+      const whitelistBonus = totalTokens * (this.summary.bonuses.whitelist / 100);
+      totalTokens += whitelistBonus;
+    }
+
+    return (totalTokens).toFixed(2)
   }
 
   onFormSubmit(event) {
@@ -168,9 +186,7 @@ class ParticipateForm extends React.Component {
       }
 
       apiAddNewTokenSalePurchase(purchaseObj).then((data) => {
-        if (data.message === 'success') {
-          this.setState({ status: 'success' })
-        }
+
       })
     }
   }
@@ -204,12 +220,18 @@ class ParticipateForm extends React.Component {
             {/* <WalletHelpModal self={this}/> */}
             <Input name="amount" placeholder="Amount (USD)" onChange={this.handleChange.bind(this)} value={this.state.form.amount} />
             <div css={{
-              height: rhythm(0.2),
+              height: rhythm(1),
               marginBottom: '30px',
               display: this.state.form.amount > 0 ? 'block' : 'none'
             }}>
-              <b>{(this.state.form.amount / this.tier.value).toFixed(2)} {this.summary.token}</b> - <i>1 {this.summary.token} = {this.tier.value}$</i>
-            </div>
+              <b>{this.calculateTokens()} {this.summary.token}</b> - <i>1 {this.summary.token} = {this.tier.value}$</i>
+              <div css={{
+                display: this.state.whitelisted ? 'block' : 'none',
+                // marginTop: '5px'
+              }}>
+              <b>{this.summary.bonuses.whitelist}%</b> whitelist bonus
+              </div>
+            </div>              
             <div>
               <input
                 name="citizenshipCertification"

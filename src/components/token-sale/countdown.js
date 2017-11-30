@@ -6,6 +6,7 @@ import ArrowForwardIcon from "react-icons/lib/md/arrow-forward"
 import Whitelist from "./whitelist"
 
 let dates = {}
+let summaryData = {}
 
 const SaleComplete = () => (
   <h1 css={{ color: presets.brandLighter }}>
@@ -25,7 +26,7 @@ const WhiteListWidget = ({ overrideCss }) => (
       [presets.Desktop]: {
         fontSize: scale(0.8).fontSize,
       }
-    }}>Get whitelisted and enjoy your <b>25%</b> bonus</div>
+    }}>Get whitelisted and enjoy your <b>{summaryData.bonuses.whitelist}%</b> bonus</div>
     <Whitelist
       {...{
         action: '//squeezer.us17.list-manage.com/subscribe/post?u=c85492cf3a6e8f0992fe01e4e&id=d23e505112',
@@ -132,6 +133,8 @@ const CountdownRender = ({ days, hours, minutes, seconds, completed, msg, partic
 };
 
 export default ({ summary }) => {
+  summaryData = summary
+
   dates = {
     PreSaleStartCountDownTime : new Date(summary.dates.preSale.start).getTime(),
     PreSaleEndCountDownTime : new Date(summary.dates.preSale.end).getTime(),  
