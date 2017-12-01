@@ -20,7 +20,7 @@ export default () => (
           maxWidth: '350px'          
         },
         [presets.Tablet]: {    
-          maxWidth: '650px'          
+          maxWidth: '850px'          
         },
         height: 'auto'
       }}
@@ -32,7 +32,7 @@ export default () => (
           maxWidth: '350px'          
         },
         [presets.Tablet]: {    
-          maxWidth: '650px'          
+          maxWidth: '850px'          
         },
         height: 'auto'
       }}
