@@ -5,43 +5,18 @@ import CtaButton from "../cta-button"
 import ArrowForwardIcon from "react-icons/lib/md/arrow-forward"
 import Whitelist from "./whitelist"
 
-const PreSaleStartCountDownTime = () => {
-  const toDate = '2017-12-04T00:00:00.000Z'
-
-  // return new Date().getTime() + 5000;
-  return new Date(toDate).getTime();
-};
-
-const PreSaleEndCountDownTime = () => {
-  const toDate = '2017-12-24T00:00:00.000Z'
-
-  // return new Date().getTime() + 10000;
-  return new Date(toDate).getTime();
-};
-
-const SaleStartCountDownTime = () => {
-  const toDate = '2018-01-05T00:00:00.000Z'
-
-  // return new Date().getTime() + 15000;
-  return new Date(toDate).getTime();
-};
-
-const SaleEndCountDownTime = () => {
-  const toDate = '2018-02-20T00:00:00.000Z'
-
-  // return new Date().getTime() + 20000;
-  return new Date(toDate).getTime();
-};
+let dates = {}
+let summaryData = {}
 
 const SaleComplete = () => (
   <h1 css={{ color: presets.brandLighter }}>
-    Token sale completed . <br/>
+    Token sale completed . <br />
     Thank you for your contribution !
   </h1>
 );
 
-const WhiteListWidget = ({overrideCss}) => (
-  <div css={{...overrideCss}}>
+const WhiteListWidget = ({ overrideCss }) => (
+  <div css={{ ...overrideCss }}>
     <div css={{
       color: presets.brandLighter,
       marginTop: rhythm(1),
@@ -51,7 +26,7 @@ const WhiteListWidget = ({overrideCss}) => (
       [presets.Desktop]: {
         fontSize: scale(0.8).fontSize,
       }
-    }}>Get whitelisted and enjoy your <b>25%</b> bonus</div>
+    }}>Get whitelisted and enjoy your <b>{summaryData.bonuses.whitelist}%</b> bonus</div>
     <Whitelist
       {...{
         action: '//squeezer.us17.list-manage.com/subscribe/post?u=c85492cf3a6e8f0992fe01e4e&id=d23e505112',
@@ -61,7 +36,7 @@ const WhiteListWidget = ({overrideCss}) => (
 )
 
 const Participate = () => (
-  <CtaButton to="/token-sale/participate" overrideCSS={{
+  <CtaButton to="/token-sale/participate/" overrideCSS={{
     color: '#fff !important',
     border: '1px solid #fff !important'
   }}>
@@ -75,11 +50,11 @@ const Participate = () => (
 const CountdownPreSaleCompletion = () => (
   <div>
     <Countdown
-      date={PreSaleEndCountDownTime()}
+      date={dates.PreSaleEndCountDownTime}
       renderer={CountdownRender}
       msg="Token pre-sale ends in:"
       participate="true"
-      completeRenderer={CountdownSaleStart()}      
+      completeRenderer={CountdownSaleStart()}
     />
   </div>
 );
@@ -87,11 +62,11 @@ const CountdownPreSaleCompletion = () => (
 const CountdownSaleStart = () => (
   <div>
     <Countdown
-      date={SaleStartCountDownTime()}
+      date={dates.SaleStartCountDownTime}
       whitelist="true"
       renderer={CountdownRender}
       msg="Token sale start in:"
-      completeRenderer={CountdownSaleCompletion()}      
+      completeRenderer={CountdownSaleCompletion()}
     />
   </div>
 );
@@ -99,11 +74,11 @@ const CountdownSaleStart = () => (
 const CountdownSaleCompletion = () => (
   <div>
     <Countdown
-      date={SaleEndCountDownTime()}
+      date={dates.SaleEndCountDownTime}
       renderer={CountdownRender}
       msg="Token sale ends in:"
-      participate="true"    
-      completeRenderer={SaleComplete()}  
+      participate="true"
+      completeRenderer={SaleComplete()}
     />
   </div>
 );
@@ -116,30 +91,30 @@ const pl = (name, val) => {
   }
 };
 
-const CountdownRender = ({ days, hours, minutes, seconds, completed , msg , participate, completeRenderer, whitelist }) => {
+const CountdownRender = ({ days, hours, minutes, seconds, completed, msg, participate, completeRenderer, whitelist }) => {
   if (completed) {
-    return completeRenderer || <div/>
+    return completeRenderer || <div />
   } else {
     return (
       <div>
         <WhiteListWidget overrideCss={{
-          display : whitelist ? 'block' : 'none'
-        }}/>
+          display: whitelist ? 'block' : 'none'
+        }} />
         <h1 css={{ color: presets.brandLighter }}>{msg}</h1>
         <span css={{
           color: presets.brandLighter,
           [presets.Mobile]: {
             lineHeight: 1.2,
-            fontSize: scale(0.6).fontSize            
+            fontSize: scale(0.6).fontSize
           },
           [presets.Desktop]: {
-            fontSize: scale(1.2).fontSize,            
+            fontSize: scale(1.2).fontSize,
             lineHeight: 0
-          }         
+          }
         }}>{pl('day', days)}  {pl('hour', hours)} {pl('min', minutes)} {pl('sec', seconds)}</span>
         <div css={{
           display: participate === 'true' ? 'block' : 'none',
-          marginTop : rhythm(1)
+          marginTop: rhythm(1)
         }}>
           <CtaButton to="/token-sale/participate" overrideCSS={{
             color: '#fff !important',
@@ -157,16 +132,33 @@ const CountdownRender = ({ days, hours, minutes, seconds, completed , msg , part
   }
 };
 
-export default () => (
-  <div css={{
-    marginTop: rhythm(2)
-  }}>
-    <Countdown
-      date={PreSaleStartCountDownTime()}
-      renderer={CountdownRender}
-      whitelist="true"
-      msg="Token pre-sale starts in:"
-      completeRenderer={CountdownPreSaleCompletion()}
-    />
-  </div>
-)
+export default ({ summary }) => {
+  summaryData = summary
+
+  dates = {
+    PreSaleStartCountDownTime : new Date(summary.dates.preSale.start).getTime(),
+    PreSaleEndCountDownTime : new Date(summary.dates.preSale.end).getTime(),  
+    SaleStartCountDownTime : new Date(summary.dates.sale.start).getTime(),
+    SaleEndCountDownTime : new Date(summary.dates.sale.end).getTime(),     
+  }
+  // dates = {
+  //   PreSaleStartCountDownTime : new Date().getTime() + 5000,
+  //   PreSaleEndCountDownTime : new Date().getTime() + 10000,
+  //   SaleStartCountDownTime : new Date().getTime() + 15000,
+  //   SaleEndCountDownTime : new Date().getTime() + 20000,
+  // }
+
+  return (
+    <div css={{
+      marginTop: rhythm(2)
+    }}>
+      <Countdown
+        date={dates.PreSaleStartCountDownTime}
+        renderer={CountdownRender}
+        whitelist="true"
+        msg="Token pre-sale starts in:"
+        completeRenderer={CountdownPreSaleCompletion()}
+      />
+    </div>
+  )
+}

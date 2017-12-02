@@ -10,7 +10,7 @@ export default ({ overrideCss, placeholder, type, name, id , required, value , o
              padding    : rhythm(0.5),
              fontFamily : 'sans-serif',
              border     : '1px solid #d9d9d9',
-             margin     : rhythm(1),
+             marginBottom     : rhythm(1),
              display    : 'block',
              ...overrideCss
            }}
