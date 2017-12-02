@@ -1,7 +1,8 @@
 import axios from 'axios'
 import Promise from 'bluebird'
 
-const apiBaseUrl = 'http://localhost:4001';
+// const apiBaseUrl = 'http://localhost:4001';
+const apiBaseUrl = 'https://api.squeezer.io';
 
 const apiGetSummary = () => {
   return new Promise((resolve) => {

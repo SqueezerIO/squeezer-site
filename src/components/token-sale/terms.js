@@ -1,4 +1,5 @@
 import PercentageCircle from '../../components/percentage-circle'
+import Payment from '../../components/token-sale/payment'
 import { rhythm, scale } from "../../utils/typography"
 import presets from "../../utils/presets"
 import VisaIcon from "../../assets/token-sale/visa.svg"
@@ -180,21 +181,7 @@ const Terms = ({ summary }) => {
           {
             title: 'Purchase methods',
             description: <div>
-              BTC, ETH, ETC, EXP, XEM, LSK, XMR, GAME, STEEM, GOLOS, SBD, ZEC, NLG, STRAT, ARDR, REP,
-            LBC, MAID, FCT, LTC, BCN, XRP, DOGE, AMP, NXT, DASH, DSH, RADS, XDN, AEON, NBT, FCN, QCN,
-            NAV, POT, GNT, WAVES, USDT, SWT, MLN, DGD, TIME, SNGLS, XAUR, PIVX, GBG, TRST, EDG, GBYTE,
-            DAR, WINGS, RLC, GNO, DCR, GUP, SYS, LUN, STR, BAT, ANT, BNT, SNT, CVC, EOS, PAY, QTUM, BCC,
-            NEO, OMG, MCO, MTL, 1ST, ADX, ZRX, QTUM-I, DCT, PTOY, TKN, STORJ, CFI, FUN, MYST, HMQ, NMR, SALT, ADT
-              <br /><br />
-              <img css={{
-                display: 'inline-block',
-                verticalAlign: 'middle'
-              }} src={VisaIcon} alt="visa" height="45" />
-              <img css={{
-                display: 'inline-block',
-                verticalAlign: 'middle',
-                marginLeft: '15px'
-              }} src={MastercardIcon} alt="mastercard" height="30" />
+              <Payment/>
             </div>
           }
         ]} />

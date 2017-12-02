@@ -8,6 +8,8 @@ import { apiAddNewTokenSalePurchase } from "../../utils/api"
 import QuestionCircle from "react-icons/lib/fa/question-circle"
 import { apiGetTokenSaleWhitelisted } from "../../utils/api"
 import WindowClose from "react-icons/lib/fa/close"
+import Payment from '../../components/token-sale/payment'
+
 // import Modal from 'react-modal';
 
 // const WalletHelpModal = ({self}) => {
@@ -248,6 +250,8 @@ class ParticipateForm extends React.Component {
             }}>
               <Button overrideCSS={{ width: '285px' }} label="Purchase tokens" type="submit" onClick={this.onSubmit} disabled={this.state.status === "sending" || this.state.status === "success" || this.state.status === "success" === "disabled"} />
             </div>
+            <br/>
+            <Payment/>
           </form>
         </div>
       </div>

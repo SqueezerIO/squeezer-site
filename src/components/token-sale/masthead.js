@@ -279,7 +279,7 @@ class MastheadContent extends React.Component {
             [presets.Tablet]: {
               paddingTop: rhythm(1)
             }
-          }} onClick={() => window.open("https://www.youtube.com/watch?v=_pom9R7KqYQ", "_blank")}>
+          }} onClick={() => window.open("https://youtu.be/VPbS_lyrF9Q", "_blank")}>
             <img css={{
               [presets.Desktop]: {
                 maxWidth: '550px',
