@@ -4,17 +4,20 @@ import React from "react"
 import CtaButton from "../cta-button"
 import DocsIcon from "react-icons/lib/fa/file-text"
 import GithubIcon from "react-icons/lib/go/mark-github"
-import BTCPic from "./payment/BTC.png"
-import ETHPic from "./payment/ETH.png"
-import BCHPic from "./payment/BCH.png"
-import LTCPic from "./payment/LTC.png"
-import DASHPic from "./payment/DASH.png"
-import XEMPic from "./payment/XEM.png"
-import XMRPic from "./payment/XMR.png"
+import BTCPic from "../../assets/token-sale/payment/BTC.png"
+import ETHPic from "../../assets/token-sale/payment/ETH.png"
+import ETCPic from "../../assets/token-sale/payment/ETC.png"
+import BCHPic from "../../assets/token-sale/payment/BCH.png"
+import LTCPic from "../../assets/token-sale/payment/LTC.png"
+import DASHPic from "../../assets/token-sale/payment/DASH.png"
+import XEMPic from "../../assets/token-sale/payment/XEM.png"
+import XMRPic from "../../assets/token-sale/payment/XMR.png"
+import PaypalPic from "../../assets/token-sale/payment/AM_mc_vs_dc_ae.jpg"
 
 const Payment = ({ title, pic, overrideCss }) => (
   <div css={{
     display: 'inline-block',
+    verticalAlign: 'middle',
     width: '36px',
     marginRight: '5px',
     height: '36px',
@@ -26,14 +29,19 @@ const Payment = ({ title, pic, overrideCss }) => (
 
 export default () => (
   <div css={{
-    height: '36px'
+    width: '290px'
   }}>
-    <Payment title="BTC" pic={BTCPic} />
-    <Payment title="ETH" pic={ETHPic} />
-    <Payment title="LTC" pic={LTCPic} />
-    <Payment title="DASH" pic={DASHPic} />
-    <Payment title="XEM" pic={XEMPic} />
-    <Payment title="XMR" pic={XMRPic} />
-    <Payment title="BCH" pic={BCHPic} />
+    <div css={{
+      height: '36px'
+    }}>
+      <Payment title="BTC" pic={BTCPic} />
+      <Payment title="BCH" pic={BCHPic} />
+      <Payment title="ETH" pic={ETHPic} />
+      <Payment title="ETC" pic={ETCPic} />
+      <Payment title="LTC" pic={LTCPic} />
+      <Payment title="DASH" pic={DASHPic} />
+      {/* <Payment title="XEM" pic={XEMPic} /> */}
+      <Payment title="XMR" pic={XMRPic} />
+    </div>
   </div>
 )

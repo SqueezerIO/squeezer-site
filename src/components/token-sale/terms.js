@@ -180,7 +180,7 @@ const Terms = ({ summary }) => {
           },
           {
             title: 'Purchase methods',
-            description: <div>
+            description: <div css={{}}>
               <Payment/>
             </div>
           }

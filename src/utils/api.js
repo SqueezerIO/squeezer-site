@@ -13,10 +13,24 @@ const apiGetSummary = () => {
 }
 
 const apiAddNewTokenSalePurchase = (item) => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     axios.post(`${apiBaseUrl}/rest/v1/token-sale/purchase/new`, item).then((res) => {
       return resolve(res.data)
+    }).catch((err) => {
+      return reject(err.response.data.message)
     })
+  })
+}
+
+const apiGetSecurityCode = (phone) => {
+  return new Promise((resolve, reject) => {
+    axios.post(`${apiBaseUrl}/rest/v1/security/code`, { phone: phone })
+      .then((res) => {
+        return resolve(res.data)
+      })
+      .catch((err) => {
+        return reject(err)
+      })
   })
 }
 
@@ -28,4 +42,4 @@ const apiGetTokenSaleWhitelisted = (email) => {
   })
 }
 
-export default { apiGetSummary , apiAddNewTokenSalePurchase, apiGetTokenSaleWhitelisted }
+export default { apiGetSummary, apiAddNewTokenSalePurchase, apiGetTokenSaleWhitelisted, apiGetSecurityCode }

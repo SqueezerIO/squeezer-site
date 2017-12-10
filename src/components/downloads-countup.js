@@ -20,10 +20,11 @@ export default () => {
       marginTop: `${rhythm(8)}`,
       marginBottom: `${rhythm(8)}`,
       width: '100%',
+      color: '#3385ff',
       textAlign: 'center',
       lineHeight: 1,      
       fontSize: scale(1.6).fontSize,
-    }} offset={200}>
+    }} offset={300}>
       <DownloadsCounter />
     </TrackVisibility>
   );
