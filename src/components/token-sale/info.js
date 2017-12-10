@@ -35,7 +35,7 @@ export default () => (
     padding: '150px 0px',
     textAlign: 'center'
   }}>
-    <InfoButton to="/docs/Squeezer.IO-White-Paper-November-2017.pdf" icon={DocsIcon} text="White paper">
+    <InfoButton to="/docs/Squeezer.IO-White-Paper-December-2017.pdf" icon={DocsIcon} text="White paper">
       <DocsIcon
         css={{ verticalAlign: `baseline`, marginLeft: `.2em`,     cursor: 'pointer'      }}
       />
