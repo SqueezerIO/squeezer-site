@@ -50,15 +50,15 @@ const Participate = () => (
 
 const CountdownPreSaleCompletion = () => (
   <div>
-    <h1 css={{color: '#fff'}}>Pre-sale will start soon, please stay close !</h1>
-    {/* <Countdown
+    {/* <h1 css={{color: '#fff'}}>Pre-sale will start soon, please stay close !</h1> */}
+    <Countdown
       date={dates.PreSaleEndCountDownTime}
       renderer={CountdownRender}
       msg="Token pre-sale ends in:"
       participate="true"
       status="true"
       completeRenderer={CountdownSaleStart()}
-    /> */}
+    />
   </div>
 );
 
