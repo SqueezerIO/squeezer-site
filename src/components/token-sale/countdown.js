@@ -125,7 +125,7 @@ const CountdownRender = ({ days, hours, minutes, seconds, completed, msg, partic
             color: '#fff !important',
             border: '1px solid #fff !important'
           }}>
-            <span css={{ verticalAlign: `middle` }}>Participate</span>
+            <span css={{ verticalAlign: `middle` }}>Purchase tokens</span>
             {` `}
             <ArrowForwardIcon
               css={{ verticalAlign: `baseline`, marginLeft: `.2em` }}

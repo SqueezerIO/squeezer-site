@@ -35,7 +35,7 @@ export default () => (
     padding: '150px 0px',
     textAlign: 'center'
   }}>
-    <InfoButton to="/docs/Squeezer.IO-White-Paper-November-2017.pdf" icon={DocsIcon} text="White paper">
+    <InfoButton to="/docs/Squeezer.IO-White-Paper-December-2017.pdf" icon={DocsIcon} text="White paper">
       <DocsIcon
         css={{ verticalAlign: `baseline`, marginLeft: `.2em`,     cursor: 'pointer'      }}
       />
@@ -50,5 +50,12 @@ export default () => (
         css={{ verticalAlign: `baseline`, marginLeft: `.2em` }}
       />
     </InfoButton>
+    <h3 css={{
+      marginTop: rhythm(3)
+    }}>
+      <a target="_blank" href="https://etherscan.io/address/0xfc7cffb8a6d645cbeb11d939dbd851228d087461">
+      Contract address : 0xfc7cffb8a6d645cbeb11d939dbd851228d087461
+      </a>
+    </h3>
   </div>
 )
