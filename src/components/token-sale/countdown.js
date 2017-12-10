@@ -4,6 +4,7 @@ import presets from "../../utils/presets"
 import CtaButton from "../cta-button"
 import ArrowForwardIcon from "react-icons/lib/md/arrow-forward"
 import Whitelist from "./whitelist"
+import Status from './status'
 
 let dates = {}
 let summaryData = {}
@@ -66,6 +67,7 @@ const CountdownSaleStart = () => (
     <Countdown
       date={dates.SaleStartCountDownTime}
       whitelist="true"
+      status="true"      
       renderer={CountdownRender}
       msg="Token sale start in:"
       completeRenderer={CountdownSaleCompletion()}
@@ -78,6 +80,7 @@ const CountdownSaleCompletion = () => (
     <Countdown
       date={dates.SaleEndCountDownTime}
       renderer={CountdownRender}
+      status="true"      
       msg="Token sale ends in:"
       participate="true"
       completeRenderer={SaleComplete()}
@@ -93,7 +96,7 @@ const pl = (name, val) => {
   }
 };
 
-const CountdownRender = ({ days, hours, minutes, seconds, completed, msg, participate, completeRenderer, whitelist }) => {
+const CountdownRender = ({ days, hours, minutes, seconds, completed, msg, participate, completeRenderer, whitelist, status }) => {
   if (completed) {
     return completeRenderer || <div />
   } else {
@@ -129,6 +132,12 @@ const CountdownRender = ({ days, hours, minutes, seconds, completed, msg, partic
             />
           </CtaButton>
         </div>
+        <Status summary={summaryData} overrideCss={{
+          display: status === 'true' ? 'block' : 'none',
+          marginTop: "75px !important", 
+          marginLeft: "-25px",           
+          color: "#FFF"
+        }}/>
       </div>
     );
   }

@@ -4,6 +4,7 @@ import React from "react"
 import CtaButton from "../cta-button"
 import DocsIcon from "react-icons/lib/fa/file-text"
 import GithubIcon from "react-icons/lib/go/mark-github"
+import CertificateIcon from "react-icons/lib/fa/certificate"
 
 const InfoButton = ({ to, text, children }) => (
   <div css={{
@@ -40,7 +41,12 @@ export default () => (
       />
     </InfoButton>
     <InfoButton to="https://github.com/SqueezerIO" icon={GithubIcon} text="GitHub Organization">
-      <DocsIcon
+      <GithubIcon
+        css={{ verticalAlign: `baseline`, marginLeft: `.2em` }}
+      />
+    </InfoButton>
+    <InfoButton to="https://github.com/SqueezerIO/squeezer-token-smartcontract" icon={CertificateIcon} text="Smart Contract">
+      <CertificateIcon
         css={{ verticalAlign: `baseline`, marginLeft: `.2em` }}
       />
     </InfoButton>
