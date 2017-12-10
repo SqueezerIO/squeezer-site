@@ -50,5 +50,12 @@ export default () => (
         css={{ verticalAlign: `baseline`, marginLeft: `.2em` }}
       />
     </InfoButton>
+    <h3 css={{
+      marginTop: rhythm(3)
+    }}>
+      <a target="_blank" href="https://etherscan.io/address/0xfc7cffb8a6d645cbeb11d939dbd851228d087461">
+      Contract address : 0xfc7cffb8a6d645cbeb11d939dbd851228d087461
+      </a>
+    </h3>
   </div>
 )
