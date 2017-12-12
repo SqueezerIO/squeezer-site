@@ -85,7 +85,6 @@ class SubscribeForm extends React.Component {
                 display: 'inline-block',
                 margin: 0,
                 marginTop: rhythm(1),
-                marginRight: rhythm(1),
                 height: rhythm(2.2),
                 padding: '5px 15px',
                 fontWeight: `normal`,
@@ -94,7 +93,8 @@ class SubscribeForm extends React.Component {
                   width: '90%'
                 },
                 [presets.Tablet]: {
-                  width: '50%'
+                  width: '50%',
+                  marginRight: rhythm(1)                  
                 },
                 [presets.Desktop]: {
                   width: '50%'
@@ -108,7 +108,14 @@ class SubscribeForm extends React.Component {
               onChange={this.handleChange.bind(this)}               
               value={this.state.form.email}
             />
-            <Button label={messages.btnLabel} type="submit" onClick={this.onSubmit} disabled={this.state.status === "sending" || this.state.status === "success"} />
+            <Button overrideCss={{
+              [presets.Mobile]: {
+                paddingTop: '15px !important'
+              },
+              [presets.Tablet]: {
+                marginTop: '15px'                
+              }
+            }} label={messages.btnLabel} type="submit" onClick={this.onSubmit} disabled={this.state.status === "sending" || this.state.status === "success"} />
           </div>
           {status === "sending" && <p style={styles.sending} dangerouslySetInnerHTML={{ __html: messages.sending }} />}
           {status === "success" && <p style={styles.success} dangerouslySetInnerHTML={{ __html: messages.success }} />}

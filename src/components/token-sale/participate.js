@@ -325,7 +325,7 @@ class ParticipateForm extends React.Component {
           <Input overrideCss={{
               display: 'inline-block',
               verticalAlign: 'center'
-            }} name="walletAddress" placeholder="Ethereum wallet address (ERC20)" onChange={this.handleChange.bind(this)} value={this.state.form.walletAddress} />
+            }} name="walletAddress" placeholder="Wallet address" onChange={this.handleChange.bind(this)} value={this.state.form.walletAddress} />
             <QuestionCircle onClick={() => window.open("/token-sale/create-wallet/", "_blank")} css={{
               display: 'inline-block',
               verticalAlign: 'center',
@@ -348,7 +348,7 @@ class ParticipateForm extends React.Component {
             <div css={{
               height: rhythm(1),
               marginBottom: '30px',
-              display: this.state.form.amount > 0 ? 'block' : 'none'
+              // display: this.state.form.amount > 0 ? 'block' : 'none'
             }}>
               <b>{this.calculateTokens()} {this.summary.token}</b> - <i>1 {this.summary.token} = {this.tier.value}$</i>
               <div css={{

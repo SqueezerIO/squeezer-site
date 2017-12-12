@@ -5,15 +5,31 @@ import CtaButton from "../cta-button"
 import ArrowForwardIcon from "react-icons/lib/md/arrow-forward"
 import Whitelist from "./whitelist"
 import Status from './status'
+import { active } from 'glamor';
+import { Line as ProgressLine } from 'rc-progress';
 
 let dates = {}
 let summaryData = {}
 
 const SaleComplete = () => (
-  <h1 css={{ color: presets.brandLighter }}>
-    Token sale completed . <br />
-    Thank you for your contribution !
-  </h1>
+  <div>
+    <div css={{
+      maxWidth: '500px',
+      margin: '0 auto',
+      textAlign: 'center',
+      paddingTop: '100px'
+    }}>
+      <h1 css={{ color: presets.brandLighter }}>
+        Token sale completed . <br />
+        Thank you for your contribution !
+    </h1>
+    </div>
+    <Status summary={summaryData} overrideCss={{
+      marginTop: "175px !important",
+      textAlign: 'center',
+      color: "#FFF"
+    }} />
+  </div>
 );
 
 const WhiteListWidget = ({ overrideCss }) => (
@@ -23,6 +39,9 @@ const WhiteListWidget = ({ overrideCss }) => (
       marginTop: rhythm(1),
       [presets.Mobile]: {
         fontSize: scale(0.2).fontSize,
+        maxWidth: '300px',
+        margin: '0 auto',
+        textAlign: 'center'
       },
       [presets.Desktop]: {
         fontSize: scale(0.8).fontSize,
@@ -54,9 +73,11 @@ const CountdownPreSaleCompletion = () => (
     <Countdown
       date={dates.PreSaleEndCountDownTime}
       renderer={CountdownRender}
-      msg="Token pre-sale ends in:"
+      msg="JOIN CROWDSALE NOW ! Pre-sale ends in:"
+      activeTierBonus="true"
       participate="true"
       status="true"
+      progress="true"
       completeRenderer={CountdownSaleStart()}
     />
   </div>
@@ -67,7 +88,7 @@ const CountdownSaleStart = () => (
     <Countdown
       date={dates.SaleStartCountDownTime}
       whitelist="true"
-      status="true"      
+      status="true"
       renderer={CountdownRender}
       msg="Token sale start in:"
       completeRenderer={CountdownSaleCompletion()}
@@ -80,64 +101,158 @@ const CountdownSaleCompletion = () => (
     <Countdown
       date={dates.SaleEndCountDownTime}
       renderer={CountdownRender}
-      status="true"      
-      msg="Token sale ends in:"
+      status="true"
+      activeTierBonus="true"      
+      msg="JOIN CROWDSALE NOW ! Sale ends in:"
       participate="true"
+      progress="true"
       completeRenderer={SaleComplete()}
     />
   </div>
 );
 
-const pl = (name, val) => {
-  if (val === 1) {
-    return `${val} ${name}`;
-  } else {
-    return `${val} ${name}s`;
-  }
+const pl = (name, val, split) => {
+  const formattedName = val === 1 ? name : `${name}s`;
+
+  return <div css={{
+    display: 'inline-block'
+  }}>
+    <div css={{
+      display: 'inline-block',
+      verticalAlign: 'middle'
+    }}>
+      <div css={{
+        [presets.Mobile]: {
+          fontSize: '25px'
+        },
+        [presets.Desktop]: {
+          fontSize: '80px'          
+        }
+      }}>{val}</div>
+      <div css={{
+        [presets.Mobile]: {
+          fontSize: '14px'
+        },
+        [presets.Desktop]: {
+          fontSize: '20px'
+        }
+      }}>{formattedName}</div>
+    </div>
+    <div css={{
+      display: 'inline-block',
+      verticalAlign: 'top',
+      [presets.Mobile]: {
+        marginLeft: '5px',
+        marginRight: '5px',
+        fontSize: '25px'
+      },
+      [presets.Desktop]: {
+        marginLeft: '25px',
+        marginRight: '25px',
+        fontSize: '70px'          
+      }
+    }}>{split}</div>
+  </div>
 };
 
-const CountdownRender = ({ days, hours, minutes, seconds, completed, msg, participate, completeRenderer, whitelist, status }) => {
+const CountdownRender = ({ days, hours, minutes, seconds, completed, msg, participate, completeRenderer, whitelist, status, progress, activeTierBonus }) => {
+  const activeTier = summaryData.tiers[summaryData.activeTier]
+  const finalTier = summaryData.tiers["t4"]
+  const currentDiscountValue = Math.round(((finalTier.value - activeTier.value) / finalTier.value) * 100)
+  const distributionPercent = (100 - (summaryData.balance / summaryData.saleSupply * 100))
+
   if (completed) {
     return completeRenderer || <div />
   } else {
     return (
       <div>
-        <WhiteListWidget overrideCss={{
-          display: whitelist ? 'block' : 'none'
-        }} />
-        <h1 css={{ color: presets.brandLighter }}>{msg}</h1>
-        <span css={{
-          color: presets.brandLighter,
-          [presets.Mobile]: {
-            lineHeight: 1.2,
-            fontSize: scale(0.6).fontSize
-          },
-          [presets.Desktop]: {
-            fontSize: scale(1.2).fontSize,
-            lineHeight: 0
-          }
-        }}>{pl('day', days)}  {pl('hour', hours)} {pl('min', minutes)} {pl('sec', seconds)}</span>
         <div css={{
-          display: participate === 'true' ? 'block' : 'none',
-          marginTop: rhythm(1)
+          maxWidth: '770px',
+          margin: '0 auto',
+          textAlign: 'center'
         }}>
-          <CtaButton to="/token-sale/participate" overrideCSS={{
-            color: '#fff !important',
-            border: '1px solid #fff !important'
+          <div css={{
+            color: presets.brandLighter,
+            textTransform: 'uppercase',
+            [presets.Mobile]: {
+              fontSize: '25px'
+            },
+            [presets.Desktop]: {
+              fontSize: '40px'
+            },
+            lineHeight: 1.4
           }}>
-            <span css={{ verticalAlign: `middle` }}>Purchase tokens</span>
-            {` `}
-            <ArrowForwardIcon
-              css={{ verticalAlign: `baseline`, marginLeft: `.2em` }}
-            />
-          </CtaButton>
+            {msg}
+          </div>
+          <div css={{
+            color: presets.brandLighter,
+            marginTop: '35px',
+            [presets.Mobile]: {
+              lineHeight: 1.2,
+              // fontSize: scale(0.6).fontSize
+            },
+            [presets.Desktop]: {
+              fontSize: scale(1.2).fontSize,
+              lineHeight: 1
+            }
+          }}>{pl('day', days, ':')}  {pl('hour', hours, ':')} {pl('minute', minutes, ':')} {pl('second', seconds)}</div>
+          <div css={{
+            display: activeTierBonus === 'true' && currentDiscountValue > 0 ? 'block' : 'none',
+            color: "#FFF",
+            fontSize: "25px",
+            marginTop: "40px"
+          }}>
+            ACTIVE TIER BONUS <b>{currentDiscountValue}%</b>
+          </div>
+          <div css={{
+            display: participate === 'true' ? 'block' : 'none',
+            marginTop: rhythm(1)
+          }}>
+            <CtaButton to="/token-sale/participate" overrideCSS={{
+              color: '#fff !important',
+              background: '#fff',
+              border: '1px solid #fff !important'
+            }}>
+              <span css={{ verticalAlign: `middle` }}>Buy Tokens</span>
+              {` `}
+              <ArrowForwardIcon
+                css={{ verticalAlign: `baseline`, marginLeft: `.2em` }}
+              />
+            </CtaButton>
+          </div>
+          <WhiteListWidget overrideCss={{
+            display: whitelist ? 'block' : 'none',
+            marginTop: '50px'
+          }} />
         </div>
         <Status summary={summaryData} overrideCss={{
           display: status === 'true' ? 'block' : 'none',
-          marginTop: "75px !important", 
-          marginLeft: "-25px",           
+          marginTop: "75px !important",
+          textAlign: 'center',
           color: "#FFF"
-        }}/>
+        }} />
+        <div css={{
+          display: progress === 'true' ? 'block' : 'none',
+          marginTop: "25px !important",
+          textAlign: 'center',
+          color: "#FFF",
+          margin: '0 auto',
+          [presets.Mobile]: {
+            fontSize: '18px',
+            maxWidth: "300px"            
+          },
+          [presets.Desktop]: {
+            maxWidth: "500px"            
+          }
+        }}>
+          <ProgressLine percent={distributionPercent} strokeWidth="2" strokeColor="#FFF" />
+          <div css={{
+            width: '100%'
+          }}>
+            <div css={{float: 'left'}}>{Math.round(summaryData.saleSupply - summaryData.balance)} {summaryData.token}</div>
+            <div css={{float: 'right'}}>{summaryData.saleSupply} {summaryData.token}</div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -147,10 +262,10 @@ export default ({ summary }) => {
   summaryData = summary
 
   dates = {
-    PreSaleStartCountDownTime : new Date(summary.dates.preSale.start).getTime(),
-    PreSaleEndCountDownTime : new Date(summary.dates.preSale.end).getTime(),  
-    SaleStartCountDownTime : new Date(summary.dates.sale.start).getTime(),
-    SaleEndCountDownTime : new Date(summary.dates.sale.end).getTime(),     
+    PreSaleStartCountDownTime: new Date(summary.dates.preSale.start).getTime(),
+    PreSaleEndCountDownTime: new Date(summary.dates.preSale.end).getTime(),
+    SaleStartCountDownTime: new Date(summary.dates.sale.start).getTime(),
+    SaleEndCountDownTime: new Date(summary.dates.sale.end).getTime(),
   }
   // dates = {
   //   PreSaleStartCountDownTime : new Date().getTime() + 5000,

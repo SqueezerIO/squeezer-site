@@ -13,7 +13,7 @@ export default () => (
       margin: '0 auto',
       textAlign: 'center'
     }}>
-      <h1 css={{ textAlign: 'center' }}>Problem</h1>
+      <h1 css={{ textAlign: 'center', textTransform: 'uppercase' }}>Problem</h1>
       <img css={{
         marginTop: rhythm(1),
         [presets.Mobile]: {    
@@ -25,7 +25,7 @@ export default () => (
         height: 'auto'
       }}
         src={ProblemImg} alt="problem" />
-      <h1 css={{ textAlign: 'center' }}>Solution</h1>
+      <h1 css={{ textAlign: 'center', textTransform: 'uppercase' }}>Solution</h1>
       <img css={{
         marginTop: rhythm(1),
         [presets.Mobile]: {    

@@ -6,6 +6,7 @@ import Input from "../../components/input"
 import CtaButton from "../../components/cta-button"
 import DownloadsCountUp from "../../components/downloads-countup"
 import Masthead from "../../components/token-sale/masthead"
+import MainInfo from "../../components/token-sale/mainInfo"
 import TokenTerms from "../../components/token-sale/terms"
 import RoadMap from "../../components/token-sale/roadmap"
 import Providers from "../../components/token-sale/providers"
@@ -35,13 +36,14 @@ class TokenSale extends React.Component {
       return (
         <div>
           <Masthead summary={this.state.summary} />
+          <MainInfo summary={this.state.summary} />
           <Providers />
           <DownloadsCountUp />
           <ProblemSolution />
           <TokenTerms summary={this.state.summary} />
           <RoadMap />
           <Team />
-          <Info />
+          <Info summary={this.state.summary} />
           <Media />
           <Newsletter />
           <Footer />

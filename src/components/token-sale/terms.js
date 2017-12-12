@@ -93,7 +93,7 @@ const Terms = ({ summary }) => {
         margin: '0 auto',
         textAlign: 'center'
       }}>
-        <h1 css={{ textAlign: 'center' }}>Token terms</h1>
+        <h1 css={{ textAlign: 'center', textTransform: 'uppercase' }}>Token terms</h1>
         <Tier summary={summary} />
         <div css={{ paddingTop: '100px', margin: rhythm(1), width: rhythm(13), display: 'inline-block' }}>
           <PercentageCircle radius={150} borderWidth={4} percent={20} color={"#3498db"}>
@@ -180,9 +180,7 @@ const Terms = ({ summary }) => {
           },
           {
             title: 'Purchase methods',
-            description: <div css={{}}>
-              <Payment/>
-            </div>
+            description: <Payment/>
           }
         ]} />
       </div>
