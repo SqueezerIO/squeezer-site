@@ -78,7 +78,7 @@ export default () => (
         width: rhythm(22)
       }
     }}>
-      <h1 css={{ textAlign: 'center' }}>Road map</h1>
+      <h1 css={{ textAlign: 'center', textTransform: 'uppercase' }}>Road map</h1>
       <CreateRoadMap
         data={[
           {

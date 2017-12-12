@@ -27,7 +27,7 @@ const Providers = () => {
       padding: '150px 0px',
       borderBottom: `1px solid ${presets.veryLightBlue}` 
     }}>
-      <h1>Cloud Providers</h1>
+      <h1>CLOUD PROVIDERS</h1>
       <Provider
         title="Amazon Web Services"
         pic={AwsPic} />             

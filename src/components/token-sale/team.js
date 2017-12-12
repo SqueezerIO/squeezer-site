@@ -97,9 +97,11 @@ const Team = () => {
     <div css={{
       textAlign: 'center',
       borderTop: `1px solid ${presets.veryLightBlue}`,
-      padding: '150px 0px'      
+      padding: '150px 0px',
+      maxWidth: '900px',
+      margin: '0 auto'
     }}>
-      <h1>Token-sale Team</h1>
+      <h1 css={{textTransform: 'uppercase'}}>The Squeezer Team</h1>
       <Member 
         name="Nick Chisiu" 
         title="Founder &amp; CEO" 
@@ -115,7 +117,6 @@ const Team = () => {
         title="Financial Advisor" 
         linkedin="https://www.linkedin.com/in/karl-eastwood-35b8b343/" 
         pic={KarlPic} />                       
-      <br/>
       <Member 
         name="Vlad Nicula" 
         title="Framework Lead Engineer" 
@@ -131,7 +132,6 @@ const Team = () => {
         title="Legal Advisor" 
         linkedin="https://www.linkedin.com/in/oros-calina-a33423152/" 
         pic={CalinaPic} />
-      <br/>  
       <Member 
         name="Stefano Curti" 
         title="Innovation Advisor (MBA)" 

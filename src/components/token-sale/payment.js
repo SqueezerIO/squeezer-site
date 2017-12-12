@@ -28,9 +28,7 @@ const Payment = ({ title, pic, overrideCss }) => (
 )
 
 export default () => (
-  <div css={{
-    width: '290px'
-  }}>
+  <div>
     <div css={{
       height: '36px'
     }}>

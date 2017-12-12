@@ -5,7 +5,7 @@ import CountUp from 'react-countup';
 const CountItem = ({ title, end }) => (
   <div css={{
     display: 'inline-block',
-    width: '30%',
+    width: '33.3%',
     textAlign: 'center',
     textTransform: 'uppercase'
   }}>

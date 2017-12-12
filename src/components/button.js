@@ -21,7 +21,7 @@ const Button = ({ to, overrideCSS, type, onClick, disabled, label}) => (
       fontWeight: `normal`,
       backgroundColor: `transparent`,
       backgroundSize: `30px 30px`,
-      margin: '0 !important',
+      // margin: '0 !important',
       padding: '13px 15px',
       cursor: 'pointer',
       [presets.Mobile]: {

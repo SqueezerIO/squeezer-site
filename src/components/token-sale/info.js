@@ -28,7 +28,7 @@ const InfoButton = ({ to, text, children }) => (
   </div>
 )
 
-export default () => (
+export default ({ summary }) => (
   <div css={{
     borderTop: `1px solid ${presets.veryLightBlue}`,
     width: '100%',
@@ -37,7 +37,7 @@ export default () => (
   }}>
     <InfoButton to="/docs/Squeezer.IO-White-Paper-December-2017.pdf" icon={DocsIcon} text="White paper">
       <DocsIcon
-        css={{ verticalAlign: `baseline`, marginLeft: `.2em`,     cursor: 'pointer'      }}
+        css={{ verticalAlign: `baseline`, marginLeft: `.2em`, cursor: 'pointer' }}
       />
     </InfoButton>
     <InfoButton to="https://github.com/SqueezerIO" icon={GithubIcon} text="GitHub Organization">
@@ -51,11 +51,12 @@ export default () => (
       />
     </InfoButton>
     <h3 css={{
-      marginTop: rhythm(3)
+      marginTop: rhythm(3),
+      lineHeight: 1.4
     }}>
-      <a target="_blank" href="https://etherscan.io/address/0xfc7cffb8a6d645cbeb11d939dbd851228d087461">
-      Contract address : 0xfc7cffb8a6d645cbeb11d939dbd851228d087461
+      <a target="_blank" href={'https://etherscan.io/address/' + summary.contract.contractAddress}>
+      Contract address : {summary.contract.contractAddress}
       </a>
     </h3>
-  </div>
+  </div >
 )
