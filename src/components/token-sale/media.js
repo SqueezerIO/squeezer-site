@@ -6,7 +6,7 @@ import IcoCountdownPic from "../../assets/token-sale/media/icocountdown.png"
 import CryptoCoinNewsPic from "../../assets/token-sale/media/cryptocoinnews.png"
 import BitcoinTalkPic from "../../assets/token-sale/media/bitcointalk.png"
 import MediumPic from "../../assets/token-sale/media/medium.png"
-import ICORatingPic from "../../assets/token-sale/media/ICOrating.png"
+import ICORatingPic from "../../assets/token-sale/media/ICORating.png"
 
 const Source = ({ pic, link, title }) => (
   <div onClick={() => window.open(link, "_blank")} css={{
