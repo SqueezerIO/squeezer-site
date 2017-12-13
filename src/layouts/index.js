@@ -59,7 +59,7 @@ module.exports = createReactClass({
           type: typeof node === 'string' ? 'children' : 'parent',
           path: path,
           parent: parentLink,
-          rootParent : rootParent,
+          rootParent: rootParent,
           deep: deep,
           active: false,
           display: false
@@ -67,10 +67,10 @@ module.exports = createReactClass({
 
         if (props.location.pathname === path) {
           activeLink = linkObj
-        }          
+        }
 
         if (key) {
-         links.push(linkObj)
+          links.push(linkObj)
         }
 
         if (typeof node !== 'string') {
@@ -87,21 +87,21 @@ module.exports = createReactClass({
       })
     })
     return {
-        tree: menuTree,
-        activeLink: activeLink
-      }
+      tree: menuTree,
+      activeLink: activeLink
+    }
   },
   render() {
     const queryParams = queryString.parse(this.props.location.search);
     if (queryParams) {
       if (queryParams.utm_source) {
-        localStorage.setItem('utm_source', queryParams.utm_source);        
+        localStorage.setItem('utm_source', queryParams.utm_source);
       }
       if (queryParams.utm_source) {
-        localStorage.setItem('utm_medium', queryParams.utm_medium);        
+        localStorage.setItem('utm_medium', queryParams.utm_medium);
       }
       if (queryParams.utm_source) {
-        localStorage.setItem('utm_campaign', queryParams.utm_campaign);        
+        localStorage.setItem('utm_campaign', queryParams.utm_campaign);
       }
     }
 
@@ -110,7 +110,7 @@ module.exports = createReactClass({
       this.props.location.pathname.slice(0, 6) === `/docs/` ||
       this.props.location.pathname.slice(0, 10) === `/packages/` ||
       this.props.location.pathname.slice(0, 10) === `/enterprise/`
-    const menu = this.loadMenu(this.props)  
+    const menu = this.loadMenu(this.props)
     const sidebarStyles = {
       borderRight: `1px solid ${colors.b[0]}`,
       backgroundColor: presets.sidebar,
@@ -138,7 +138,15 @@ module.exports = createReactClass({
         <Helmet defaultTitle={`Squeezer Framework`} titleTemplate={`%s | Squeezer Framework`}>
           <meta name="twitter:site" content="@squeezerio" />
           <meta name="og:type" content="website" />
-          <meta name="og:site_name" content="Squeezer.IO" />
+          <meta name="og:site_name" content="Squeezer.IO" /> <link
+            href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.3.0/css/okta-sign-in.min.css"
+            type="text/css"
+            rel="stylesheet" />
+          <link
+            href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.3.0/css/okta-theme.css"
+            type="text/css"
+            rel="stylesheet" />
+
         </Helmet>
         <Navigation pathname={this.props.location.pathname} />
         <div
@@ -159,7 +167,7 @@ module.exports = createReactClass({
               [presets.Tablet]: {
                 display:
                   this.props.location.pathname.slice(0, 6) === `/docs/` ||
-                  this.props.location.pathname.slice(0, 10) === `/packages/`
+                    this.props.location.pathname.slice(0, 10) === `/packages/`
                     ? `block`
                     : `none`,
               },
