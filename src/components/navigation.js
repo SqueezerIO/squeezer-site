@@ -41,7 +41,7 @@ const NavItem = ({ linkTo, children }) => (
 export default ({ pathname }) => {
   const isHomepage = pathname == `/`
   const isBlog = pathname == `/blog/`
-  const isDocs = pathname.slice(0, 6) === `/docs/`  
+  const isDocs = pathname.slice(0, 6) === `/docs/`
   let styles = {}
   if (isHomepage) {
     styles.backgroundColor = `rgba(255,255,255,0)`
@@ -65,38 +65,38 @@ export default ({ pathname }) => {
   }
   const gutters = isHomepage
     ? {
-        paddingLeft: vP,
-        paddingRight: vP,
-        paddingTop: rhythm(1.5),
-        [presets.Hd]: {
-          paddingLeft: vPHd,
-          paddingRight: vPHd,
-        },
-        [presets.VHd]: {
-          paddingLeft: vPVHd,
-          paddingRight: vPVHd,
-        },
-        [presets.VVHd]: {
-          paddingLeft: vPVVHd,
-          paddingRight: vPVVHd,
-        },
-      }
+      paddingLeft: vP,
+      paddingRight: vP,
+      paddingTop: rhythm(1.5),
+      [presets.Hd]: {
+        paddingLeft: vPHd,
+        paddingRight: vPHd,
+      },
+      [presets.VHd]: {
+        paddingLeft: vPVHd,
+        paddingRight: vPVHd,
+      },
+      [presets.VVHd]: {
+        paddingLeft: vPVVHd,
+        paddingRight: vPVVHd,
+      },
+    }
     : {}
 
-    const DocsSearch = ({css}) => {
-      return (
-        <div css={{
-          [presets.Mobile]: {
-            display: 'none'
-          },
-          [presets.Desktop]: {
-            display: isDocs ? 'block' : 'none'
-          }
-        }}>
-          <DocSearchInput/>
-        </div>  
-      )
-    }
+  const DocsSearch = ({ css }) => {
+    return (
+      <div css={{
+        [presets.Mobile]: {
+          display: 'none'
+        },
+        [presets.Desktop]: {
+          display: isDocs ? 'block' : 'none'
+        }
+      }}>
+        <DocSearchInput />
+      </div>
+    )
+  }
 
   return (
     <div
@@ -159,7 +159,7 @@ export default ({ pathname }) => {
           >
           </h1>
         </Link>
-        <DocsSearch/>
+        <DocsSearch />
         <ul
           css={{
             display: `none`,
@@ -171,12 +171,13 @@ export default ({ pathname }) => {
             },
           }}
         >
+          <NavItem linkTo="/token-sale/">Token Sale (ICO)</NavItem>
+          <NavItem linkTo="/framework/">Framework</NavItem>
           <NavItem linkTo="/docs/">Docs</NavItem>
           <NavItem linkTo="/community/">Community</NavItem>
           <NavItem linkTo="/blog/">Blog</NavItem>
           <NavItem linkTo="/enterprise/">Enterprise</NavItem>
-          <NavItem linkTo="/token-sale/">Token Sale (ICO)</NavItem>
-          </ul>
+        </ul>
         <div
           css={{
             marginLeft: isHomepage ? rhythm(1 / 2) : `auto`,

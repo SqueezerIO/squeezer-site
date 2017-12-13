@@ -173,7 +173,7 @@ class ParticipateForm extends React.Component {
     const walletAddress = this.state.form.walletAddress;
     const amount = Number(this.state.form.amount);
     const citizenshipCertification = this.state.form.citizenshipCertification;
-    const minAmount = 3;
+    const minAmount = 50;
 
     let isError = false
 

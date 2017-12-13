@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "author": "Nick Chisiu <nick@squeezer.io>",
   "dependencies": {
+    "@okta/okta-auth-js": "^1.11.0",
+    "@okta/okta-signin-widget": "^2.5.0",
     "axios": "^0.17.1",
     "babel-preset-env": "^1.6.0",
     "bluebird": "^3.5.1",
