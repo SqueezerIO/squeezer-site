@@ -37,6 +37,7 @@ const WhiteListWidget = ({ overrideCss }) => (
     <div css={{
       color: presets.brandLighter,
       marginTop: rhythm(1),
+      lineHeight: 1.2,
       [presets.Mobile]: {
         fontSize: scale(0.2).fontSize,
         maxWidth: '300px',
