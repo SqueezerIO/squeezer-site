@@ -120,7 +120,7 @@ const Team = () => {
         pic={NickPic} />
       <Member 
         name="Vlad Nicula" 
-        title="Framework Lead Engineer" 
+        title="Framework Engineer" 
         twitter="https://twitter.com/agilius" 
         linkedin="https://linkedin.com/in/vladnicula" 
         github="https://github.com/vladnicula" 

@@ -119,7 +119,7 @@ const Team = () => {
         pic={KarlPic} />                       
       <Member 
         name="Vlad Nicula" 
-        title="Framework Lead Engineer" 
+        title="Framework Engineer" 
         linkedin="https://linkedin.com/in/vladnicula" 
         pic={VladPic} />
       <Member 
