@@ -1,11 +1,9 @@
 {
   "name": "squeezer-site",
   "description": "Squeezer Framework Website",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Nick Chisiu <nick@squeezer.io>",
   "dependencies": {
-    "@okta/okta-auth-js": "^1.11.0",
-    "@okta/okta-signin-widget": "^2.5.0",
     "axios": "^0.17.1",
     "babel-preset-env": "^1.6.0",
     "bluebird": "^3.5.1",
@@ -40,6 +38,7 @@
     "gatsby-transformer-sharp": "^1.6.2",
     "gatsby-transformer-yaml": "^1.5.5",
     "jsonp": "^0.2.1",
+    "jspm": "^0.16.23",
     "limax": "^1.5.0",
     "lodash": "^4.16.6",
     "mitt": "^1.1.2",

@@ -6,6 +6,8 @@ const IndexRoute = createReactClass({
     if (typeof window !== "undefined") {
       window.location = "/token-sale/"
     }
+
+    return <div/>
   }
 })
 

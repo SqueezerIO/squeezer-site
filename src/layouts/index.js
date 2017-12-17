@@ -138,15 +138,7 @@ module.exports = createReactClass({
         <Helmet defaultTitle={`Squeezer Framework`} titleTemplate={`%s | Squeezer Framework`}>
           <meta name="twitter:site" content="@squeezerio" />
           <meta name="og:type" content="website" />
-          <meta name="og:site_name" content="Squeezer.IO" /> <link
-            href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.3.0/css/okta-sign-in.min.css"
-            type="text/css"
-            rel="stylesheet" />
-          <link
-            href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.3.0/css/okta-theme.css"
-            type="text/css"
-            rel="stylesheet" />
-
+          <meta name="og:site_name" content="Squeezer.IO" /> 
         </Helmet>
         <Navigation pathname={this.props.location.pathname} />
         <div
