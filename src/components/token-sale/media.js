@@ -52,7 +52,8 @@ const Team = () => {
       <Source
         title="Medium"
         link="https://medium.com/@nickchisiu/microservices-on-blockchain-4ccf3623a08f"
-        pic={MediumPic} />        
+        pic={MediumPic} />      
+          
     </div>
   )
 }

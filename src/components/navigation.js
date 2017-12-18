@@ -1,13 +1,11 @@
 import React from "react"
 import Link from "gatsby-link"
-import GithubIcon from "react-icons/lib/go/mark-github"
-import TwitterIcon from "react-icons/lib/fa/twitter"
-import FacebookIcon from "react-icons/lib/fa/facebook"
 import logo from "../logo-negative.png"
 import typography, { rhythm, scale } from "../utils/typography"
 import presets from "../utils/presets"
 import { vP, vPHd, vPVHd, vPVVHd } from "./gutters"
 import DocSearchInput from "../components/doc-search-input"
+import Social from "../components/social"
 
 const navItemStyles = {
   ...scale(-1 / 3),
@@ -56,13 +54,7 @@ export default ({ pathname }) => {
       position: isHomepage || isBlog ? `absolute` : `fixed`,
     }
   }
-
-  const socialIconsStyles = {
-    color: presets.brandLighter,
-    [presets.Phablet]: {
-      color: presets.brandLighter,
-    },
-  }
+  
   const gutters = isHomepage
     ? {
       paddingLeft: vP,
@@ -186,37 +178,7 @@ export default ({ pathname }) => {
             },
           }}
         >
-          <a
-            href="https://github.com/SqueezerIO/squeezer"
-            title="Github"
-            css={{
-              ...navItemStyles,
-              ...socialIconsStyles,
-            }}
-          >
-            <GithubIcon style={{ verticalAlign: `text-top` }} />
-          </a>
-          <a
-            href="https://twitter.com/SqueezerIO"
-            title="@squeezerio"
-            css={{
-              ...navItemStyles,
-              ...socialIconsStyles,
-            }}
-          >
-            <TwitterIcon style={{ verticalAlign: `text-top` }} />
-          </a>
-          <a
-            href="https://www.facebook.com/Squeezer.IO"
-            title="Facebook"
-            css={{
-              ...navItemStyles,
-              ...socialIconsStyles,
-              paddingRight: 0
-            }}
-          >
-            <FacebookIcon style={{ verticalAlign: `text-top` }} />
-          </a>
+          <Social/>
         </div>
       </div>
     </div>

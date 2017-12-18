@@ -4,7 +4,6 @@ import { rhythm, scale } from "../utils/typography"
 import presets from "../utils/presets"
 import { vP, vPHd, vPVHd, vPVVHd } from "./gutters"
 
-
 const UlElement = ({ title, children }) => (
   <div css={{
     paddingTop : rhythm(1),

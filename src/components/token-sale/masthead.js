@@ -10,6 +10,7 @@ import GoogleCloudLogo from "../../assets/clouds/google-cloud-logo.png"
 import IbmOpenwhiskLogo from "../../assets/clouds/ibm-openwhisk.png"
 import SubscribeFrom from "../../components/subscribe-form"
 import Countdown from "./countdown"
+import Info from "./info"
 import React from "react"
 
 const videoClass = css({
@@ -147,14 +148,14 @@ class MastheadContent extends React.Component {
           paddingBottom: rhythm(1),
           [presets.Mobile]: {
             paddingBottom: rhythm(2),
-            height: rhythm(34)
+            height: rhythm(38)
           },
           [presets.Tablet]: {
-            height: rhythm(46),
+            height: rhythm(48),
             paddingTop: rhythm(2)
           },
           [presets.Desktop]: {
-            height: rhythm(33),
+            height: rhythm(35),
             paddingTop: rhythm(0),
           }
         }}
@@ -182,6 +183,7 @@ class MastheadContent extends React.Component {
           }
         }}>
           <Countdown summary={this.props.summary} />
+          <Info summary={this.props.summary} header="true" />
         </div>
       </div>
     )
