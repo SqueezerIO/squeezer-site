@@ -148,14 +148,14 @@ class MastheadContent extends React.Component {
           paddingBottom: rhythm(1),
           [presets.Mobile]: {
             paddingBottom: rhythm(2),
-            height: rhythm(34)
+            height: rhythm(38)
           },
           [presets.Tablet]: {
-            height: rhythm(46),
+            height: rhythm(48),
             paddingTop: rhythm(2)
           },
           [presets.Desktop]: {
-            height: rhythm(33),
+            height: rhythm(35),
             paddingTop: rhythm(0),
           }
         }}
