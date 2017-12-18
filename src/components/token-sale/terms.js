@@ -125,6 +125,10 @@ const Terms = ({ summary }) => {
             description: 'Ethereum ERC 20 Standard'
           },
           {
+            title: 'Instant token delivery',
+            description: 'Yes'
+          },
+          {
             title: 'Total supply',
             description: `${commafy(summary.saleSupply + summary.creatorsSupply)} ${token}`
           },
@@ -159,24 +163,28 @@ const Terms = ({ summary }) => {
               `${formatTime(summary.dates.sale.end)}`
           },
           {
+            title: 'Exchanger entry price',
+            description: `$${summary.entryPrice || '0.30'}`
+          },
+          {
             title: 'Tier 1',
             description: `${formatTime(summary.tiers.t1.start)} - ` +
-              `${formatTime(summary.tiers.t1.end)}`
+              `${formatTime(summary.tiers.t1.end)} - $${summary.tiers.t1.value}`
           },
           {
             title: 'Tier 2',
             description: `${formatTime(summary.tiers.t2.start)} - ` +
-              `${formatTime(summary.tiers.t2.end)}`
+              `${formatTime(summary.tiers.t2.end)} - $${summary.tiers.t2.value}`
           },
           {
             title: 'Tier 3',
             description: `${formatTime(summary.tiers.t3.start)} - ` +
-              `${formatTime(summary.tiers.t3.end)}`
+              `${formatTime(summary.tiers.t3.end)} - $${summary.tiers.t3.value}`
           },
           {
             title: 'Tier 4',
             description: `${formatTime(summary.tiers.t4.start)} - ` +
-              `${formatTime(summary.tiers.t4.end)}`
+              `${formatTime(summary.tiers.t4.end)} - $${summary.tiers.t4.value}`
           },
           {
             title: 'Purchase methods',

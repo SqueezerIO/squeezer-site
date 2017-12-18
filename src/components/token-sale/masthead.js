@@ -10,6 +10,7 @@ import GoogleCloudLogo from "../../assets/clouds/google-cloud-logo.png"
 import IbmOpenwhiskLogo from "../../assets/clouds/ibm-openwhisk.png"
 import SubscribeFrom from "../../components/subscribe-form"
 import Countdown from "./countdown"
+import Info from "./info"
 import React from "react"
 
 const videoClass = css({
@@ -182,6 +183,7 @@ class MastheadContent extends React.Component {
           }
         }}>
           <Countdown summary={this.props.summary} />
+          <Info summary={this.props.summary} header="true" />
         </div>
       </div>
     )
