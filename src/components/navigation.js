@@ -6,6 +6,8 @@ import presets from "../utils/presets"
 import { vP, vPHd, vPVHd, vPVVHd } from "./gutters"
 import DocSearchInput from "../components/doc-search-input"
 import Social from "../components/social"
+import AccountIcon from "react-icons/lib/fa/user"
+import { css } from "glamor"
 
 const navItemStyles = {
   ...scale(-1 / 3),
@@ -36,9 +38,21 @@ const NavItem = ({ linkTo, children }) => (
   </li>
 )
 
+const subnavStyle = css({
+  backgroundColor: 'rgba(0, 153, 255, 0.7)',
+  padding: '5px 25px',
+  height: '30px',
+  ' a': {
+    color: '#FFF !important',
+    textDecoration: 'none',
+    marginRight: '25px'
+  }
+})
+
 export default ({ pathname }) => {
   const isHomepage = pathname == `/`
   const isBlog = pathname == `/blog/`
+  const isTokenSale = pathname == `/token-sale/`
   const isDocs = pathname.slice(0, 6) === `/docs/`
   let styles = {}
   if (isHomepage) {
@@ -54,7 +68,7 @@ export default ({ pathname }) => {
       position: isHomepage || isBlog ? `absolute` : `fixed`,
     }
   }
-  
+
   const gutters = isHomepage
     ? {
       paddingLeft: vP,
@@ -178,8 +192,56 @@ export default ({ pathname }) => {
             },
           }}
         >
-          <Social/>
+          {/* <a
+            href="/token-sale/account/"
+            title="account"
+            css={{
+              ...navItemStyles,
+              color: presets.brandLighter,
+              [presets.Phablet]: {
+                color: presets.brandLighter,
+              }
+            }}
+          >
+            <AccountIcon style={{ verticalAlign: `text-top`, display: 'inline-block' }} />
+          </a> */}
+          <Social />
         </div>
+      </div>
+      <div className={`${subnavStyle}`}
+        css={{
+          display: isTokenSale ? 'block' : 'none'
+        }}
+      >
+        <div css={{
+          [presets.Mobile]: {
+            display: 'none'
+          },
+          [presets.Table]: {
+            display: 'block'
+          },
+          [presets.Desktop]: {
+            display: 'block'
+          }
+        }}>
+          <a href="#tokenterms">Token terms</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#team">Team</a>
+          <a href="#telegram">Telegram</a>
+          <a href="#affiliate">Affiliate</a>
+          <a href="#media">Media</a>
+        </div>
+        <div onClick={() => window.location.replace("/token-sale/account/")} css={{
+          position: 'absolute',
+          cursor: 'pointer',
+          color: '#FFF',
+          right: 0,
+          top: '62px',
+          right: '20px'
+        }}>
+          <AccountIcon css={{verticalAlign: 'middle'}}/>
+          <span css={{marginLeft: '5px', verticalAlign: 'middle'}}>My account</span>
+        </div>  
       </div>
     </div>
   )

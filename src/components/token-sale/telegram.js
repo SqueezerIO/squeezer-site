@@ -2,7 +2,7 @@ import presets from "../../utils/presets"
 
 const Telegram = () => {
   return (
-    <div css={{
+    <div id="telegram" css={{
       textAlign: 'center',
       borderTop: `1px solid ${presets.veryLightBlue}`,
       padding: '150px 0px'

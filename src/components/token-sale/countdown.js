@@ -57,7 +57,7 @@ const WhiteListWidget = ({ overrideCss }) => (
 )
 
 const Participate = () => (
-  <CtaButton to="/token-sale/participate/" overrideCSS={{
+  <CtaButton to="/token-sale/account/" overrideCSS={{
     color: '#fff !important',
     border: '1px solid #fff !important'
   }}>
@@ -209,7 +209,7 @@ const CountdownRender = ({ days, hours, minutes, seconds, completed, msg, partic
             display: participate === 'true' ? 'block' : 'none',
             marginTop: rhythm(1)
           }}>
-            <CtaButton to="/token-sale/participate" overrideCSS={{
+            <CtaButton to="/token-sale/account/" overrideCSS={{
               color: '#fff !important',
               background: '#fff',
               border: '1px solid #fff !important'

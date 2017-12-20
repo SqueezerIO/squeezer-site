@@ -13,6 +13,7 @@ import Providers from "../../components/token-sale/providers"
 import Team from "../../components/token-sale/team"
 import Info from "../../components/token-sale/info"
 import Telegram from "../../components/token-sale/telegram"
+import Affiliate from "../../components/token-sale/affiliate"
 import Media from "../../components/token-sale/media"
 import ProblemSolution from "../../components/token-sale/problem-solution"
 import Newsletter from "../../components/newsletter"
@@ -45,8 +46,9 @@ class TokenSale extends React.Component {
           <RoadMap />
           <Team />
           <Info summary={this.state.summary} />
-          <Telegram />
+          <Affiliate />
           <Media />
+          <Telegram />
           <Newsletter />
           <Footer />
         </div>

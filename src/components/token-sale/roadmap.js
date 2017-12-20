@@ -67,7 +67,7 @@ const CreateRoadMap = ({ data }) => {
 }
 
 export default () => (
-  <div css={{
+  <div id="roadmap" css={{
     borderTop: `1px solid ${presets.veryLightBlue}`,
     width: '100%',
     padding: '150px 0px'
