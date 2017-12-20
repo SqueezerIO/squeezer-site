@@ -31,6 +31,7 @@ const Affiliate = () => {
             textAlign: 'center'
           },
           [presets.Tablet]: {
+            textAlign: 'left',
             marginLeft: '25px',
             display : 'inline-block'
           },
