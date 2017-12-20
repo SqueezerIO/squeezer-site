@@ -13,6 +13,7 @@ import OdiPic from "../../assets/team/odi.png"
 import StefanoPic from "../../assets/team/stefano.png"
 import LigiaPic from "../../assets/team/ligia.png"
 import MattPic from "../../assets/team/matt.png"
+import FlaviusPic from "../../assets/team/flavius.jpg"
 
 const HrefEl = ({ link, type }) => {
   return (
@@ -146,7 +147,12 @@ const Team = () => {
         name="Ligia Gozman" 
         title="Campaign Development" 
         linkedin="https://www.linkedin.com/in/ligia-gozman-b5351b28/" 
-        pic={LigiaPic} />                                                                       
+        pic={LigiaPic} />    
+           <Member 
+        name="Flavius Fulea" 
+        title="Marketing Manager" 
+        linkedin="https://www.linkedin.com/in/flavius-fulea-9478b7a2/" 
+        pic={FlaviusPic} />                                                                        
     </div>
   )
 }

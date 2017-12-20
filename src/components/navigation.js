@@ -40,8 +40,8 @@ const NavItem = ({ linkTo, children }) => (
 
 const subnavStyle = css({
   backgroundColor: 'rgba(0, 153, 255, 0.7)',
-  padding: '5px 25px',
-  height: '30px',
+  padding: '8px 25px',
+  height: '40px',
   ' a': {
     color: '#FFF !important',
     textDecoration: 'none',
@@ -236,7 +236,7 @@ export default ({ pathname }) => {
           cursor: 'pointer',
           color: '#FFF',
           right: 0,
-          top: '62px',
+          top: '67px',
           right: '20px'
         }}>
           <AccountIcon css={{verticalAlign: 'middle'}}/>
