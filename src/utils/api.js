@@ -3,14 +3,17 @@ import Promise from 'bluebird'
 
 axios.defaults.baseURL = 'https://api.squeezer.io';
 // axios.defaults.baseURL = 'http://localhost:4001';
-axios.defaults.headers.common['x-access-token'] = localStorage.token;
+
+if (typeof localStorage !== "undefined") {
+  axios.defaults.headers.common['x-access-token'] = localStorage.token;
+}
 
 axios.interceptors.response.use((response) => {
   return response;
 }, function (error) {
   // Do something with response error
   if (error.response.status === 401) {
-      window.location = "/token-sale/account/login/"
+    window.location = "/token-sale/account/login/"
   }
 });
 
@@ -91,8 +94,8 @@ const apiGetTokenSaleWhitelisted = (email) => {
   })
 }
 
-export default { 
-  apiGetSummary, 
+export default {
+  apiGetSummary,
   apiGetAccountDetails,
   apiAddNewTokenSalePurchase,
   apiGetTokenSaleWhitelisted,
