@@ -84,7 +84,7 @@ const Terms = ({ summary }) => {
   }
 
   return (
-    <div css={{
+    <div id="tokenterms" css={{
       borderTop: `1px solid ${presets.veryLightBlue}`,
       width: '100%',
       padding: '150px 0px 150px 0px'

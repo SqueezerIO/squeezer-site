@@ -6,6 +6,7 @@ import Button from "../../components/button"
 import Input from "../../components/input"
 import { rhythm, scale, options } from "../../utils/typography"
 import { css } from "glamor"
+import { apiAddNewReferral } from "../../utils/api"
 
 const getAjaxUrl = url => url.replace('/post?', '/post-json?')
 
@@ -46,6 +47,13 @@ class SubscribeForm extends React.Component {
     // }
     const url = getAjaxUrl(this.props.action) + `&EMAIL=${encodeURIComponent(emailVal)}` +  `&CAMPAIGN=${localStorage.utm_campaign}` +  
     `&MEDIUM=${localStorage.utm_medium}` + `&SOURCE=${localStorage.utm_source}`;
+
+    if (localStorage.utm_medium === "ref") {
+      apiAddNewReferral({
+        email: emailVal,
+        affiliateCode: localStorage.utm_source
+      })
+    }
 
     this.setState(
       {

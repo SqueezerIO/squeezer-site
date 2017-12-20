@@ -23,7 +23,7 @@ const Source = ({ pic, link, title }) => (
 
 const Team = () => {
   return (
-    <div css={{
+    <div id="media" css={{
       textAlign: 'center',
       borderTop: `1px solid ${presets.veryLightBlue}`,
       padding: '150px 0px'

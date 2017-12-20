@@ -94,7 +94,7 @@ class Member extends React.Component {
 
 const Team = () => {
   return (
-    <div css={{
+    <div id="team" css={{
       textAlign: 'center',
       borderTop: `1px solid ${presets.veryLightBlue}`,
       padding: '150px 0px',
