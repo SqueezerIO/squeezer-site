@@ -97,22 +97,22 @@ export default () => (
             description: 'Stable version + cloud providers'
           },
           {
-            month : 0,
+            month : 1,
             year : 2018,
             description: 'Token pre-sale crowdfunding stage'
           },
           {
-            month : 1,
+            month : 2,
             year : 2018,
             description: 'Transcending to the final token sale'
           },
           {
-            month : 2,
+            month : 3,
             year : 2018,
             description: 'Add token on public exchanger(s)'
           },
           {
-            month : 3,
+            month : 4,
             year : 2018,
             description: 'Hiring additional resources to build the blockchain cloud connectors'
           },
