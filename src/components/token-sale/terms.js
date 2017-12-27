@@ -79,6 +79,7 @@ const Terms = ({ summary }) => {
 
   const formatTime = (time) => {
     const date = new Date(time);
+    console.log(`${time} ${date}`)
 
     return `${date.getUTCMonth() + 1}.${date.getUTCDate()}.${date.getUTCFullYear()}`;
   }

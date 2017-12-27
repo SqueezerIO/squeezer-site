@@ -12,6 +12,7 @@ import LTCPic from "../../assets/token-sale/payment/LTC.png"
 import DASHPic from "../../assets/token-sale/payment/DASH.png"
 import XEMPic from "../../assets/token-sale/payment/XEM.png"
 import XMRPic from "../../assets/token-sale/payment/XMR.png"
+import BNBPic from "../../assets/token-sale/payment/BNB.jpg"
 import PaypalPic from "../../assets/token-sale/payment/AM_mc_vs_dc_ae.jpg"
 
 const Payment = ({ title, pic, overrideCss }) => (
@@ -40,6 +41,7 @@ export default () => (
       <Payment title="DASH" pic={DASHPic} />
       {/* <Payment title="XEM" pic={XEMPic} /> */}
       <Payment title="XMR" pic={XMRPic} />
+      <Payment title="BNB" pic={BNBPic} />
     </div>
   </div>
 )
