@@ -4,7 +4,7 @@ import presets from "../../utils/presets"
 import Footer from "../../components/footer"
 import Input from "../../components/input"
 import CtaButton from "../../components/cta-button"
-import DownloadsCountUp from "../../components/downloads-countup"
+import Stats from "../../components/token-sale/stats"
 import Masthead from "../../components/token-sale/masthead"
 import MainInfo from "../../components/token-sale/mainInfo"
 import TokenTerms from "../../components/token-sale/terms"
@@ -40,7 +40,7 @@ class TokenSale extends React.Component {
           <Masthead summary={this.state.summary} />
           <MainInfo summary={this.state.summary} />
           <Providers />
-          <DownloadsCountUp />
+          <Stats />
           <ProblemSolution />
           <TokenTerms summary={this.state.summary} />
           <RoadMap />
