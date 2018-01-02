@@ -12,7 +12,7 @@ const CreateRoadMap = ({ data }) => {
   ];
 
   const currDate = new Date();
-  const currTime = `${currDate.getFullYear()}${currDate.getMonth()}`;
+  const currTime = `${currDate.getFullYear()}${("0" + currDate.getMonth()).slice(-2)}`;
   const roadMap = data.map((val) => {
     if (position === 'left') {
       position = 'right';
