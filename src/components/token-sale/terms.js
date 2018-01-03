@@ -149,8 +149,8 @@ const Terms = ({ summary }) => {
             description: `${commafy(summary.hardCap)} USD`
           },
           {
-            title: 'Extra tokens',
-            description: <div>tokens remained from token-sale will be burned</div>
+            title: 'Unsold tokens',
+            description: <div>unsold tokens will be preserved on an escrow account and slow released lately trough the market</div>
           },
           {
             title: 'Pre-sale period',
