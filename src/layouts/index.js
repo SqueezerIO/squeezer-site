@@ -92,17 +92,15 @@ module.exports = createReactClass({
     }
   },
   render() {
-    const queryParams = queryString.parse(this.props.location.search);
-    if (queryParams) {
-      if (queryParams.utm_source) {
-        localStorage.setItem('utm_source', queryParams.utm_source);
-      }
-      if (queryParams.utm_source) {
-        localStorage.setItem('utm_medium', queryParams.utm_medium);
-      }
-      if (queryParams.utm_source) {
-        localStorage.setItem('utm_campaign', queryParams.utm_campaign);
-      }
+    const queryParams = queryString.parse(this.props.location.search)
+    if (queryParams && queryParams.utm_source) {
+      localStorage.setItem('utm_source', queryParams.utm_source)
+      localStorage.setItem('utm_medium', queryParams.utm_medium)
+      localStorage.setItem('utm_campaign', queryParams.utm_campaign)
+    } else if (typeof document !== "undefined" && document.referrer) {
+      const referrer = document.referrer.replace('https://', '').split(/[/?#]/)[0]
+      localStorage.setItem('utm_source', referrer)
+      localStorage.setItem('utm_medium', 'cpc')
     }
 
     const isHomepage = this.props.location.pathname == `/`
@@ -138,7 +136,7 @@ module.exports = createReactClass({
         <Helmet defaultTitle={`Squeezer Framework`} titleTemplate={`%s | Squeezer Framework`}>
           <meta name="twitter:site" content="@squeezerio" />
           <meta name="og:type" content="website" />
-          <meta name="og:site_name" content="Squeezer.IO" /> 
+          <meta name="og:site_name" content="Squeezer.IO" />
         </Helmet>
         <Navigation pathname={this.props.location.pathname} />
         <div
