@@ -100,7 +100,7 @@ module.exports = createReactClass({
     } else if (typeof document !== "undefined" && document.referrer) {
       const referrer = document.referrer.replace('https://', '').split(/[/?#]/)[0]
       localStorage.setItem('utm_source', referrer)
-      localStorage.setItem('utm_medium', 'cpc')
+      localStorage.setItem('utm_medium', 'referrer')
     }
 
     const isHomepage = this.props.location.pathname == `/`
