@@ -82,6 +82,35 @@ export default () => (
           width: '816',
         }
       }}
+      videoId="egtTeDTV-FM"
+      suggestedQuality="large"
+      opts={{
+        height: '100%',
+        width: 'auto',
+        playerVars: { // https://developers.google.com/youtube/player_parameters
+          // autoplay: 1
+          fs: 0,
+          controls: 0,
+          showinfo: false
+        }
+      }}
+    />
+    <YouTube
+      className=" "
+      css={{
+        [presets.Mobile]: {
+          width: '100%',
+          height: '240px'
+        },
+        [presets.Tablet]: {
+          width: '100%',
+          height: '400px'
+        },
+        [presets.Desktop]: {
+          height: '459',
+          width: '816',
+        }
+      }}
       videoId="VPbS_lyrF9Q"
       suggestedQuality="large"
       opts={{
