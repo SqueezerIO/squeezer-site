@@ -97,7 +97,7 @@ module.exports = createReactClass({
       localStorage.setItem('utm_source', queryParams.utm_source)
       localStorage.setItem('utm_medium', queryParams.utm_medium)
       localStorage.setItem('utm_campaign', queryParams.utm_campaign)
-    } else if (typeof document !== "undefined" && document.referrer) {
+    } else if (typeof document !== "undefined" && document.referrer && !localStorage.utm_source) {
       const referrer = document.referrer.replace('https://', '').split(/[/?#]/)[0]
       localStorage.setItem('utm_source', referrer)
       localStorage.setItem('utm_medium', 'referrer')
