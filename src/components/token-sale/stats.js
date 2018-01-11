@@ -41,7 +41,7 @@ export default () => {
         </div>
       </div>
       <div css={{ display: 'inline-block', margin: '25px', height: '300px', verticalAlign: 'middle' }}>
-        + 7000 exchangers
+        + 7000 exchanges
         <div css={{ cursor: 'pointer', marginTop: rhythm(3) }} onClick={() => window.open("https://www.npmjs.com/package/squeezer-cli", "_blank")}>
 
           <img css={{ width: '180px' }} src={ExchangerIcon} alt="play video" />
