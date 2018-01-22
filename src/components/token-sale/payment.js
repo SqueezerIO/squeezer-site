@@ -13,7 +13,7 @@ import DASHPic from "../../assets/token-sale/payment/DASH.png"
 import XEMPic from "../../assets/token-sale/payment/XEM.png"
 import XMRPic from "../../assets/token-sale/payment/XMR.png"
 import BNBPic from "../../assets/token-sale/payment/BNB.jpg"
-import PaypalPic from "../../assets/token-sale/payment/AM_mc_vs_dc_ae.jpg"
+import MastercardPic from "../../assets/token-sale/mastercard.svg"
 
 const Payment = ({ title, pic, overrideCss }) => (
   <div css={{
@@ -42,6 +42,7 @@ export default () => (
       {/* <Payment title="XEM" pic={XEMPic} /> */}
       <Payment title="XMR" pic={XMRPic} />
       <Payment title="BNB" pic={BNBPic} />
+      <Payment title="MasterCard" pic={MastercardPic} />
     </div>
   </div>
 )
