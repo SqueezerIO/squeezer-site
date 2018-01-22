@@ -208,9 +208,9 @@ class ParticipateForm extends React.Component {
       setError(`Requested tokens amount exceed ${this.summary.balance}`)
     }
 
-    if (!citizenshipCertification) {
-      setError("Please select your citizenship certification")
-    }
+    // if (!citizenshipCertification) {
+    //   setError("Please select your citizenship certification")
+    // }
 
     // if (securityCode.length === 0 && !isError) {
     //   this.state.form.isReady = true;
@@ -368,13 +368,13 @@ class ParticipateForm extends React.Component {
               <input type="radio" id="p-paypal" name="selector" />
               <label for="p-paypal">&nbsp;PayPal</label>
             </div> */}
-            <div>
+            {/* <div>
               <input
                 name="citizenshipCertification"
                 type="checkbox"
                 checked={this.state.citizenshipCertification}
                 onChange={this.handleChange.bind(this)} /> I certify that the beneficial owner is not a citizen of <b>USA , China or South Korea</b>
-            </div>
+            </div> */}
             <div css={{ color: 'red', marginTop: '10px' }}>{this.state.error}</div>
             <div css={{
               background: presets.brand,

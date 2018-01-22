@@ -163,10 +163,6 @@ const Terms = ({ summary }) => {
               `${formatTime(summary.dates.sale.end)}`
           },
           {
-            title: 'Exchanger entry price',
-            description: `$${summary.entryPrice || '0.30'}`
-          },
-          {
             title: 'Tier 1',
             description: `${formatTime(summary.tiers.t1.start)} - ` +
               `${formatTime(summary.tiers.t1.end)} - $${summary.tiers.t1.value}`
