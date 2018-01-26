@@ -14,6 +14,7 @@ import XEMPic from "../../assets/token-sale/payment/XEM.png"
 import XMRPic from "../../assets/token-sale/payment/XMR.png"
 import BNBPic from "../../assets/token-sale/payment/BNB.jpg"
 import MastercardPic from "../../assets/token-sale/mastercard.svg"
+import MastercardVisaPic from "../../assets/mc-visa-network-logos2.png"
 
 const Payment = ({ title, pic, overrideCss }) => (
   <div css={{
@@ -31,7 +32,7 @@ const Payment = ({ title, pic, overrideCss }) => (
 export default () => (
   <div>
     <div css={{
-      height: '36px'
+      maxHeight: '72px'
     }}>
       <Payment title="BTC" pic={BTCPic} />
       <Payment title="BCH" pic={BCHPic} />
@@ -42,7 +43,7 @@ export default () => (
       {/* <Payment title="XEM" pic={XEMPic} /> */}
       <Payment title="XMR" pic={XMRPic} />
       <Payment title="BNB" pic={BNBPic} />
-      <Payment title="MasterCard" pic={MastercardPic} />
+      <Payment overrideCss={{width: '98px', marginTop: '5px'}} title="MasterCard Visa" pic={MastercardVisaPic} />
     </div>
   </div>
 )
