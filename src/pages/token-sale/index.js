@@ -39,8 +39,8 @@ class TokenSale extends React.Component {
         <div>
           <Masthead summary={this.state.summary} />
           <MainInfo summary={this.state.summary} />
-          <Providers />
           <Stats />
+          <Providers />
           <ProblemSolution />
           <TokenTerms summary={this.state.summary} />
           <RoadMap />
