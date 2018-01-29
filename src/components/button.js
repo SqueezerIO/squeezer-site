@@ -13,7 +13,7 @@ const Button = ({ to, overrideCSS, type, onClick, disabled, label}) => (
   <button
     css={{
       border: `1px solid #FFF`,
-      borderRadius: 0,
+      borderRadius: 5,
       boxShadow: `none`,
       color: '#FFF',
       fontSize: '25px',

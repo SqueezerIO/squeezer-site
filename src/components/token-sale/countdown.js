@@ -45,7 +45,7 @@ const WhiteListWidget = ({ overrideCss }) => (
         textAlign: 'center'
       },
       [presets.Desktop]: {
-        fontSize: scale(0.8).fontSize,
+        fontSize: scale(0.4).fontSize,
       }
     }}>Get whitelisted and enjoy your <b>{summaryData.bonuses.whitelist}%</b> bonus</div>
     <Whitelist
@@ -74,7 +74,7 @@ const CountdownPreSaleCompletion = () => (
     <Countdown
       date={dates.PreSaleEndCountDownTime}
       renderer={CountdownRender}
-      msg="JOIN CROWDSALE NOW ! Pre-sale ends in:"
+      msg="JOIN CROWDSALE NOW ! Pre-sale ends in :"
       activeTierBonus="true"
       participate="true"
       status="true"
@@ -104,7 +104,7 @@ const CountdownSaleCompletion = () => (
       renderer={CountdownRender}
       status="true"
       activeTierBonus="true"      
-      msg="JOIN CROWDSALE NOW ! Sale ends in:"
+      msg="JOIN CROWDSALE NOW ! Sale ends in :"
       participate="true"
       progress="true"
       completeRenderer={SaleComplete()}
@@ -127,7 +127,7 @@ const pl = (name, val, split) => {
           fontSize: '25px'
         },
         [presets.Desktop]: {
-          fontSize: '80px'          
+          fontSize: '60px'          
         }
       }}>{val}</div>
       <div css={{
@@ -150,7 +150,7 @@ const pl = (name, val, split) => {
       [presets.Desktop]: {
         marginLeft: '25px',
         marginRight: '25px',
-        fontSize: '70px'          
+        fontSize: '50px'          
       }
     }}>{split}</div>
   </div>
@@ -179,7 +179,7 @@ const CountdownRender = ({ days, hours, minutes, seconds, completed, msg, partic
               fontSize: '25px'
             },
             [presets.Desktop]: {
-              fontSize: '40px'
+              fontSize: '30px'
             },
             lineHeight: 1.4
           }}>
@@ -283,7 +283,7 @@ export default ({ summary }) => {
         date={dates.PreSaleStartCountDownTime}
         renderer={CountdownRender}
         whitelist="true"
-        msg="Token pre-sale starts in:"
+        msg="Token pre-sale starts in :"
         completeRenderer={CountdownPreSaleCompletion()}
       />
     </div>

@@ -1,6 +1,7 @@
 import { rhythm, scale } from "../../utils/typography"
 import presets from "../../utils/presets"
 import CountUp from 'react-countup';
+import Terminal from "../../components/terminal"
 
 const CountItem = ({ title, end }) => (
   <div css={{
