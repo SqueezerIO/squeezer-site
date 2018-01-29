@@ -2,7 +2,7 @@ import React from "react"
 import { rhythm, scale, options } from "../../../utils/typography"
 import presets from "../../../utils/presets"
 import Footer from "../../../components/footer"
-import { apiGetAccountDetails } from "../../../utils/api"
+import { apiGetSummary, apiGetAccountDetails } from "../../../utils/api"
 import Input from "../../../components/input"
 import Button from "../../../components/button"
 
@@ -13,7 +13,10 @@ class TokenSale extends React.Component {
       withdrawalForm: {
         btcAddress: ''
       },
-      account: {}
+      withdrawDisabled : true,
+      account: {},
+      endDate: null,
+      endDateTime: null
     }
   }
 
@@ -21,6 +24,19 @@ class TokenSale extends React.Component {
     apiGetAccountDetails()
       .then((res) => {
         this.setState({ account: res.data })
+      })
+
+    apiGetSummary()
+      .then((res) => {
+        this.setState({ 
+          endDate: new Date(res.data.dates.sale.end).toString()
+        })
+
+        if (new Date().getTime() >= new Date(res.data.dates.sale.end).getTime()) {
+          this.setState({
+            withdrawDisabled : false
+          })
+        } 
       })
   }
 
@@ -88,8 +104,11 @@ class TokenSale extends React.Component {
           <form onSubmit={this.onWithdrawalFormSubmit.bind(this)} autoComplete="off">
             <Input name="btcAddress" placeholder="BTC address" onChange={this.handleWithdrawalChange.bind(this)} value={this.state.withdrawalForm.btcAddress} />
             <div css={{ color: 'red', marginTop: '10px', marginBottom: '10px' }}>{this.state.error}</div>
-            <Button overrideCSS={{ backgroundColor: `${presets.brandLight} !important` }} label="Withdraw" type="submit" onClick={this.onSubmit} disabled={this.state.status === "sending" || this.state.status === "success" || this.state.status === "disabled"} />
+            <Button overrideCSS={{ backgroundColor: `${presets.brandLight} !important` , cursor : this.state.withdrawDisabled ? 'not-allowed' : 'pointer' }} label="Withdraw" type="submit" onClick={this.onSubmit} disabled={this.state.status === "sending" || this.state.status === "success" || this.state.status === "disabled" || this.state.withdrawDisabled} />
           </form>
+          <div css={{
+            color: 'red'
+          }}>NOTE: Commission will be available for the withdraw at the end of token sale (ICO) <b>{this.state.endDate}</b></div>
         </div>
       </div>
       <Footer />
