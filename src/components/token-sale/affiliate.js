@@ -57,11 +57,11 @@ const Affiliate = () => {
           }}>MARKETING PROGRAM</div>
           <div css={{
             marginTop: '25px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
             fontSize: '20px',
             color: presets.brandLight,
             lineHeight: '1'
-          }}>10% COMMISSION. INSTANT WITHDRAW</div>
+          }}>10% COMMISSION. PAID IN <b>BTC</b></div>
         </div>
       </div>
     </div>
