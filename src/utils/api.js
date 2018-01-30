@@ -11,7 +11,6 @@ if (typeof localStorage !== "undefined") {
 axios.interceptors.response.use((response) => {
   return response;
 }, function (error) {
-  // Do something with response error
   if (error.response.status === 401) {
     window.location = "/token-sale/account/login/"
   }

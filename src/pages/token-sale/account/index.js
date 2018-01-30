@@ -80,10 +80,11 @@ class TokenSale extends React.Component {
         <div>
           <h1>Affiliate</h1>
           <div css={{
-            fontFamily: 'sans-serif'
+            fontFamily: 'sans-serif',
+            fontSize: '14px'
           }}>
             Your affiliate link:
-            <br />
+            <br/>
             <b>https://squeezer.io/token-sale/?utm_medium=ref&utm_source={this.state.account.affiliateCode}</b>
           </div>
           <table css={{
