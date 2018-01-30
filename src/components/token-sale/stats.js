@@ -76,6 +76,7 @@ export default () => {
         <Terminal
           overrideCSS={{
             verticalAlign: 'top',
+            lineHeight: 1.8,
             [presets.Mobile]: {
               width: '100%',
               height: rhythm(14.5)
