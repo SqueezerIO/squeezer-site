@@ -149,6 +149,10 @@ const Terms = ({ summary }) => {
             description: `${commafy(summary.hardCap)} USD`
           },
           {
+            title: 'Purchase limits',
+            description: <div>Min. 100 USD<br/>Max. ( Personal cap ) 100 000 USD</div>
+          },
+          {
             title: 'Unsold tokens',
             description: <div>unsold tokens will be preserved on an escrow account and slow released lately trough the market</div>
           },

@@ -109,7 +109,7 @@ export default () => (
           {
             month : 3,
             year : 2018,
-            description: 'Add token on public exchanger(s)'
+            description: 'Add token on public exchange(s)'
           },
           {
             month : 4,
@@ -124,7 +124,7 @@ export default () => (
           {
             month : 1,
             year : 2019,
-            description: 'Add support to buy subscriptions with the SQZ token & start to build apps connected to the blockchain'
+            description: 'Add support to buy subscriptions with the SQZR token & start to build apps connected to the blockchain'
           },
         ]}
       />

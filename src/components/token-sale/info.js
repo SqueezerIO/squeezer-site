@@ -37,7 +37,7 @@ export default ({ summary , header }) => (
     padding: header ? '50px' : '150px 0px',
     textAlign: 'center'
   }}>
-    <InfoButton header={header} to="/docs/Squeezer.IO-White-Paper-January-2018.pdf" icon={DocsIcon} text="White paper">
+    <InfoButton header={header} to="/docs/Squeezer.IO-White-Paper-Final.pdf" icon={DocsIcon} text="White paper">
       <DocsIcon
         css={{ verticalAlign: `baseline`, marginLeft: `.2em`, cursor: 'pointer' }}
       />
