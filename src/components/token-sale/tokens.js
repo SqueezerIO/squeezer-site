@@ -5,7 +5,7 @@ import Input from "../../components/input"
 import FlagsPic from "../../assets/flags.png"
 import React from "react"
 import { validateEmail, validateWallet } from "../../utils/validate"
-import { apiAddNewTokenSalePurchase , apiGetTokenSaleWhitelisted, apiGetSecurityCode } from "../../utils/api"
+import { apiAddNewTokenSalePurchase, apiGetTokenSaleWhitelisted, apiGetSecurityCode } from "../../utils/api"
 import QuestionCircle from "react-icons/lib/fa/question-circle"
 import WindowClose from "react-icons/lib/fa/close"
 import RefreshPic from "react-icons/lib/fa/refresh"
@@ -17,92 +17,48 @@ import { css } from 'glamor'
 
 import "../../css/react-tel-input.css"
 
-// const PhoneInputStyle = css({
-//   height: '300px',
-//   'input[type=text]' : {
-//     border : '1px solid black !important'
-//   }
-// })
-// import Modal from 'react-modal';
-
-// const WalletHelpModal = ({self}) => {
-//   const customStyles = {
-//     overlay : {
-//       position          : 'fixed',
-//       top               : 0,
-//       left              : 0,
-//       right             : 0,
-//       bottom            : 0,
-//       backgroundColor   : 'rgba(0, 0, 0, 0.90)'
-//     },
-//     content: {
-//       top: '50%',
-//       left: '50%',
-//       right: 'auto',
-//       bottom: 'auto',
-//       marginRight: '-50%',
-//       transform: 'translate(-50%, -50%)'
-//     }
-//   };
-
-//   return (
-//     <Modal
-//     isOpen={self.state.walletHelpModalIsOpen}
-//     // onAfterOpen={this.afterOpenModal}
-//     onRequestClose={self.closeModal.bind(self)}
-//     style={customStyles}
-//     contentLabel="Example Modal"
-//   >
-//     <h2 ref={subtitle => self.subtitle = subtitle}>Hello</h2>
-//     <WindowClose css={{
-//       cursor: 'pointer',
-//       position: 'absolute',
-//       top: '15px',
-//       right: '15px'
-//     }} onClick={self.closeModal.bind(self)} />
-//     <div>I am a modal</div>
-//     <form>
-//       <input />
-//       <button>tab navigation</button>
-//       <button>stays</button>
-//       <button>inside</button>
-//       <button>the modal</button>
-//     </form>
-//   </Modal>
-//   )
-// }
-
 class ParticipateForm extends React.Component {
   constructor(props, ...args) {
     super(props, ...args)
     this.props = props
     this.summary = this.props.summary;
+    this.account = this.props.account;
     this.tier = this.summary.tiers[this.summary.activeTier];
     this.state = {
       form: {
         email: '',
         phone: '',
         walletAddress: '',
-        amount: '',
+        purchaseAmount: '',
         securityCode: '',
         citizenshipCertification: false,
-        isReady : false
+        isReady: false
       },
       // walletHelpModalIsOpen: false,
       whitelisted: false,
       error: null,
-      status: null
+      purchaseStatus: 'disabled',
+      transferStatus: 'disabled'
     }
-    this.totalTokens = 0    
+    this.purchaseTokens = 0,
+    this.availableTokens = 0
   }
 
   // openModal() {
-  //   this.setState({ walletHelpModalIsOpen: true });
+  //   this.setState({ walletHelpModalIsOpen: true })
   // }
 
   // closeModal() {
-  //   this.setState({ walletHelpModalIsOpen: false });
+  //   this.setState({ walletHelpModalIsOpen: false })
   // }
+
+  componentWillMount() {
+    apiGetTokenSaleWhitelisted(this.account.email).then((res) => {
+      if (res && res.message === 'success') {
+        this.setState({ whitelisted: true })
+      }
+    });
+  }
 
   componentDidMount() {
     const self = this
@@ -129,15 +85,6 @@ class ParticipateForm extends React.Component {
   handleChange(event) {
     this.state.form[event.target.name] = event.target.value;
 
-    if (event.target.name === "email" && validateEmail(event.target.value)) {
-      apiGetTokenSaleWhitelisted(event.target.value).then((res) => {
-        if (res && res.message === 'success') {
-          this.setState({ whitelisted: true })
-        }
-      });
-
-    }
-
     this.setState({ form: this.state.form });
   }
 
@@ -148,19 +95,19 @@ class ParticipateForm extends React.Component {
   }
 
   calculateTokens() {
-    let totalTokens = this.state.form.amount / this.tier.value
+    let purchaseTokens = this.state.form.purchaseAmount / this.tier.value
 
     if (this.state.whitelisted) {
-      const whitelistBonus = totalTokens * (this.summary.bonuses.whitelist / 100)
-      totalTokens += whitelistBonus
+      const whitelistBonus = purchaseTokens * (this.summary.bonuses.whitelist / 100)
+      purchaseTokens += whitelistBonus
     }
 
-    this.totalTokens = totalTokens
-    
-    return (totalTokens).toFixed(2)
+    this.purchaseTokens = purchaseTokens
+
+    return (purchaseTokens).toFixed(2)
   }
 
-  onFormSubmit(event) {
+  onPurchaseFormSubmit(event) {
     event.preventDefault()
 
     this.setState({
@@ -171,7 +118,7 @@ class ParticipateForm extends React.Component {
     const phone = this.state.form.phone;
     const securityCode = this.state.form.securityCode;
     const walletAddress = this.state.form.walletAddress;
-    const amount = Number(this.state.form.amount);
+    const amount = Number(this.state.form.purchaseAmount);
     const citizenshipCertification = this.state.form.citizenshipCertification;
     const minAmount = 100;
     const maxAmount = 100000;
@@ -185,13 +132,13 @@ class ParticipateForm extends React.Component {
       }
     }
 
-    if (!email || !validateEmail(email)) {
-      setError("Invalid email address")
-    }
+    // if (!email || !validateEmail(email)) {
+    //   setError("Invalid email address")
+    // }
 
-    if (!walletAddress || !validateWallet(walletAddress)) {
-      setError("Invalid wallet address")
-    }
+    // if (!walletAddress || !validateWallet(walletAddress)) {
+    //   setError("Invalid wallet address")
+    // }
 
     if (!amount || isNaN(amount)) {
       setError("Invalid amount")
@@ -209,13 +156,13 @@ class ParticipateForm extends React.Component {
       setError(`Maximum allowed amount is ${maxAmount} USD`)
     }
 
-    if (this.totalTokens > this.summary.balance) {
+    if (this.purchaseTokens > this.summary.balance) {
       setError(`Requested tokens amount exceed ${this.summary.balance}`)
     }
 
-    // if (!citizenshipCertification) {
-    //   setError("Please select your citizenship certification")
-    // }
+    if (!citizenshipCertification) {
+      setError("Please select your citizenship certification")
+    }
 
     // if (securityCode.length === 0 && !isError) {
     //   this.state.form.isReady = true;
@@ -246,23 +193,37 @@ class ParticipateForm extends React.Component {
         const ipnUrl = this.summary.coinpayments.ipnUrl;
         const invoice = res.data.invoice;
         const amountf = amount.toFixed(8);
-        
-        const paymentUrl = `https://www.coinpayments.net/index.php?cmd=_pay_simple&reset=1&merchant=${merchantId}` + 
-        `&amountf=${encodeURIComponent(amountf)}&want_shipping=0&currency=USD&item_name=Tokens&email=${encodeURIComponent(email)}&invoice=${invoice}` +
-        `&success_url=${encodeURIComponent(successUrl)}&ipn_url=${encodeURIComponent(ipnUrl)}`
+
+        const paymentUrl = `https://www.coinpayments.net/index.php?cmd=_pay_simple&reset=1&merchant=${merchantId}` +
+          `&amountf=${encodeURIComponent(amountf)}&want_shipping=0&currency=USD&item_name=Tokens&email=${encodeURIComponent(email)}&invoice=${invoice}` +
+          `&success_url=${encodeURIComponent(successUrl)}&ipn_url=${encodeURIComponent(ipnUrl)}`
 
         if (typeof window !== "undefined") {
-          window.location.href = paymentUrl;          
+          window.location.href = paymentUrl;
         }
       }).catch((error) => {
-        this.setState({ status: null})
-        setError(error)        
+        this.setState({ status: null })
+        setError(error)
       });
     }
   }
 
+  onTransferTokensFormSubmit(event) {
+    event.preventDefault()
+
+    this.setState({
+      error: null
+    })
+
+    const walletAddress = this.state.form.walletAddress
+
+    if (!walletAddress || !validateWallet(walletAddress)) {
+      setError("Invalid wallet address")
+    }
+  }
+
   resendSecurityCode() {
-    const phone = this.state.form.phone;    
+    const phone = this.state.form.phone;
     apiGetSecurityCode(phone);
   }
 
@@ -271,8 +232,7 @@ class ParticipateForm extends React.Component {
     return (
       <div css={{
         borderTop: `1px solid ${presets.veryLightBlue}`,
-        width: '100%',
-        padding: '75px 0px'
+        width: '100%'
       }}>
         <div css={{
           [presets.Mobile]: {
@@ -280,87 +240,50 @@ class ParticipateForm extends React.Component {
             margin: '0 auto'
           },
           [presets.Desktop]: {
-            display: 'inline-block',            
+            display: 'inline-block',
             width: rhythm(38)
           },
           verticalAlign: 'top'
         }}>
-          <div css={{ width: '280px', margin: '0 auto' }}>
-            <PercentageCircle radius={140} borderWidth={4} percent={Number(distributionPercent)} color={"#2ecc71"}>
-              <h1 css={{ margin: 0 }}>{distributionPercent}%</h1>
-              Token distribution
-            </PercentageCircle>
-          </div>
-          <Status summary={this.summary} overrideCss={{
-            color : '#3385ff'
-          }} />
         </div>
         <div css={{
           margin: '0 auto',
           paddingTop: '25px',
-          width : rhythm(13),
+          width: rhythm(13),
           [presets.Mobile]: {
             marginTop: '50px',
           },
           [presets.Desktop]: {
-            marginTop: '0px',            
-            display: 'inline-block'            
+            marginTop: '0px',
+            display: 'inline-block'
           },
           verticalAlign: 'top'
         }}>
-          {/* <h1 css={{
-            textAlign: 'center',
-            [presets.Mobile]: {
-              marginTop: '50px'         
-            },
-            [presets.Desktop]: {
-              marginTop: 0              
-            }
-          }}>Participate</h1> */}
-          <form onSubmit={this.onFormSubmit.bind(this)} autoComplete="off">
-          <Input name="email" placeholder="Email" onChange={this.handleChange.bind(this)} value={this.state.form.email} />
-          {/* <ReactTelInput
-            // name="phone"
-            // classNames={`${PhoneInputStyle}`}
-            defaultCountry={this.summary.clientCountry.toLowerCase()}
-            flagsImagePath={FlagsPic}
-            onBlur={this.handlePhoneChange.bind(this)}
-            onChange={this.handlePhoneChange.bind(this)} /> */}
-                
-          <Input overrideCss={{
-              display: 'inline-block',
-              verticalAlign: 'center'
-            }} name="walletAddress" placeholder="Wallet address" onChange={this.handleChange.bind(this)} value={this.state.form.walletAddress} />
-            <QuestionCircle onClick={() => window.open("/token-sale/create-wallet/", "_blank")} css={{
-              display: 'inline-block',
-              verticalAlign: 'center',
-              marginLeft: '5px',
-              cursor: 'pointer'
-            }} />
+          <form onSubmit={this.onPurchaseFormSubmit.bind(this)} autoComplete="off">
             {/* <WalletHelpModal self={this}/> */}
-            <Input name="amount" placeholder="Amount (USD)" onChange={this.handleChange.bind(this)} value={this.state.form.amount} />
-            <div css={{
+            <Input name="purchaseAmount" placeholder="Amount (USD)" onChange={this.handleChange.bind(this)} value={this.state.form.purchaseAmount} />
+            {/* <div css={{
               display: this.state.form.isReady ? 'block' : 'none'
             }}>
               <Input name="securityCode" placeholder="Security code" onChange={this.handleChange.bind(this)} value={this.state.form.securityCode} />
               <div onClick={this.resendSecurityCode.bind(this)} css={{
-                cursor : 'pointer',
-                color : '#3385ff',
-                marginTop : '-15px',
-                marginBottom : '10px'
-              }}><RefreshPic/> resend the code</div>
-            </div>
+                cursor: 'pointer',
+                color: '#3385ff',
+                marginTop: '-15px',
+                marginBottom: '10px'
+              }}><RefreshPic /> resend the code</div>
+            </div> */}
             <div css={{
               height: rhythm(1),
-              marginBottom: '30px',
+              marginBottom: '60px',
               // display: this.state.form.amount > 0 ? 'block' : 'none'
             }}>
-              <b>{this.calculateTokens()} {this.summary.token}</b> - <i>1 {this.summary.token} = {this.tier.value}$</i>
+              <b>{this.calculateTokens()} {this.summary.token}</b> ( <i>1 {this.summary.token} = ${this.tier.value}</i> )
               <div css={{
                 display: this.state.whitelisted ? 'block' : 'none',
                 marginBottom: '5px'
               }}>
-                <b>{this.summary.bonuses.whitelist}%</b> whitelist bonus
+                <b>+ {this.summary.bonuses.whitelist}%</b> whitelist bonus
               </div>
             </div>
             {/* <div css={{
@@ -373,24 +296,80 @@ class ParticipateForm extends React.Component {
               <input type="radio" id="p-paypal" name="selector" />
               <label for="p-paypal">&nbsp;PayPal</label>
             </div> */}
-            {/* <div>
+            <div>
               <input
                 name="citizenshipCertification"
                 type="checkbox"
                 checked={this.state.citizenshipCertification}
-                onChange={this.handleChange.bind(this)} /> I certify that the beneficial owner is not a citizen of <b>USA , China or South Korea</b>
-            </div> */}
+                onChange={this.handleChange.bind(this)} /> I certify that the beneficial owner is not a citizen of <b>USA , China , Singapore or South Korea</b>
+            </div>
             <div css={{ color: 'red', marginTop: '10px' }}>{this.state.error}</div>
             <div css={{
-              background: presets.brand,
               width: '285px',
               // margin: '0 auto',
               marginTop: '25px'
             }}>
-              <Button overrideCSS={{ width: '285px' }} label="Purchase tokens" type="submit" onClick={this.onSubmit} disabled={this.state.status === "sending" || this.state.status === "success" || this.state.status === "disabled"} />
+              <Button
+                overrideCSS={{
+                  backgroundColor: `${presets.brandLight} !important`,
+                  width: '285px',
+                  cursor: this.state.purchaseStatus === 'disabled' ? 'not-allowed' : 'pointer'
+                }}
+                label="Purchase tokens" type="submit"
+                onClick={this.onSubmit} disabled={this.state.purchaseStatus === "sending" || this.state.purchaseStatus === "success" || this.state.purchaseStatus === "disabled"}
+              />
             </div>
-            <br/>
-            <Payment/>
+            <br />
+            <Payment overrideCss={{ textAlign: 'center !important', width: '100%' }} />
+          </form>
+        </div>
+        <div css={{
+          margin: '0 auto',
+          paddingTop: '25px',
+          width: rhythm(13),
+          height: '365px',
+          [presets.Mobile]: {
+            marginTop: '50px',
+          },
+          [presets.Desktop]: {
+            marginTop: '0px',
+            display: 'inline-block',
+            borderLeft: `1px solid ${presets.veryLightBlue}`,
+            marginLeft: '42px',
+            paddingLeft: '60px'
+          },
+          verticalAlign: 'top'
+        }}>
+          <form onSubmit={this.onTransferTokensFormSubmit.bind(this)} autoComplete="off">
+            {/* <WalletHelpModal self={this}/> */}
+            <Input overrideCss={{
+              display: 'inline-block',
+              verticalAlign: 'top'
+            }} name="walletAddress" placeholder="Wallet address (ERC20)" onChange={this.handleChange.bind(this)} value={this.state.form.walletAddress} />
+            <div css={{
+              height: rhythm(1),
+              marginBottom: '40px',
+              // display: this.state.form.amount > 0 ? 'block' : 'none'
+            }}>
+              <b>Available tokens : {this.availableTokens} {this.summary.token}</b>
+            </div>
+            <div css={{
+              display: this.state.whitelisted ? 'block' : 'none',
+              marginBottom: '20px'
+            }}>
+              Token transfer options :<br/>
+              <br/>* ERC20 Wallet , myetherwallet.com
+              <br/>* SQZR Crypto Exchanges 
+            </div>
+            <Button
+              overrideCSS={{
+                backgroundColor: `${presets.brandLight} !important`,
+                width: '285px',
+                cursor: this.state.purchaseStatus === 'disabled' ? 'not-allowed' : 'pointer'
+              }}
+              label="Transfer tokens" type="submit"
+              onClick={this.onSubmit} disabled={this.state.purchaseStatus === "sending" || this.state.purchaseStatus === "success" || this.state.purchaseStatus === "disabled"}
+            />
           </form>
         </div>
       </div>
