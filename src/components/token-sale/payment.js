@@ -35,14 +35,14 @@ export default () => (
       maxHeight: '72px'
     }}>
       <Payment title="BTC" pic={BTCPic} />
-      <Payment title="BCH" pic={BCHPic} />
+      {/* <Payment title="BCH" pic={BCHPic} /> */}
       <Payment title="ETH" pic={ETHPic} />
-      <Payment title="ETC" pic={ETCPic} />
+      {/* <Payment title="ETC" pic={ETCPic} /> */}
       <Payment title="LTC" pic={LTCPic} />
-      <Payment title="DASH" pic={DASHPic} />
+      {/* <Payment title="DASH" pic={DASHPic} /> */}
       {/* <Payment title="XEM" pic={XEMPic} /> */}
-      <Payment title="XMR" pic={XMRPic} />
-      <Payment title="BNB" pic={BNBPic} />
+      {/* <Payment title="XMR" pic={XMRPic} /> */}
+      {/* <Payment title="BNB" pic={BNBPic} /> */}
       <Payment overrideCss={{width: '98px', marginTop: '5px'}} title="MasterCard Visa" pic={MastercardVisaPic} />
     </div>
   </div>

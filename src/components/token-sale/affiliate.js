@@ -61,7 +61,7 @@ const Affiliate = () => {
             fontSize: '20px',
             color: presets.brandLight,
             lineHeight: '1'
-          }}>10% COMMISSION. PAID IN <b>BTC</b></div>
+          }}>10% COMMISSION. PAID IN <b>ETH</b></div>
         </div>
       </div>
     </div>
