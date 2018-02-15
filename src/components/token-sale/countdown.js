@@ -34,7 +34,7 @@ const SaleComplete = () => (
 
 const WhiteListWidget = ({ overrideCss }) => (
   <div css={{ ...overrideCss }}>
-    <div css={{
+    {/* <div css={{
       color: presets.brandLighter,
       marginTop: rhythm(1),
       lineHeight: 1.2,
@@ -52,7 +52,7 @@ const WhiteListWidget = ({ overrideCss }) => (
       {...{
         action: '//squeezer.us17.list-manage.com/subscribe/post?u=c85492cf3a6e8f0992fe01e4e&id=d23e505112',
       }}
-    />
+    /> */}
   </div>
 )
 
@@ -160,7 +160,7 @@ const CountdownRender = ({ days, hours, minutes, seconds, completed, msg, partic
   const activeTier = summaryData.tiers[summaryData.activeTier]
   const finalTier = summaryData.tiers["t4"]
   const currentDiscountValue = Math.round(((finalTier.value - activeTier.value) / finalTier.value) * 100)
-  const distributionPercent = (100 - (summaryData.balance / summaryData.saleSupply * 100))
+  const distributionPercent = (summaryData.amount / summaryData.hardCap * 100)
 
   if (completed) {
     return completeRenderer || <div />
@@ -179,7 +179,7 @@ const CountdownRender = ({ days, hours, minutes, seconds, completed, msg, partic
               fontSize: '25px'
             },
             [presets.Desktop]: {
-              fontSize: '30px'
+              fontSize: '38px'
             },
             lineHeight: 1.4
           }}>
@@ -250,8 +250,8 @@ const CountdownRender = ({ days, hours, minutes, seconds, completed, msg, partic
           <div css={{
             width: '100%'
           }}>
-            <div css={{float: 'left'}}>{Math.round(summaryData.saleSupply - summaryData.balance)} {summaryData.token}</div>
-            <div css={{float: 'right'}}>{summaryData.saleSupply} {summaryData.token}</div>
+            <div css={{float: 'left'}}>{Math.round(summaryData.amount)} USD</div>
+            <div css={{float: 'right'}}>{summaryData.hardCap} USD</div>
           </div>
         </div>
       </div>

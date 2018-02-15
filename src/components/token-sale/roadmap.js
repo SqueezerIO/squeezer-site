@@ -20,7 +20,7 @@ const CreateRoadMap = ({ data }) => {
       position = 'left';      
     }
 
-    const roadmapPic = Number(currTime) > Number(`${val.year}${("0" + val.month).slice(-2)}`) ? RoadmapLineActive : RoadmapLine
+    const roadmapPic = Number(currTime) >= Number(`${val.year}${("0" + val.month).slice(-2)}`) ? RoadmapLineActive : RoadmapLine
 
     return (
       <div key={val.description} css={{

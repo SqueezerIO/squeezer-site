@@ -5,6 +5,7 @@ import Footer from "../../../components/footer"
 import { apiGetSummary, apiGetAccountDetails } from "../../../utils/api"
 import Input from "../../../components/input"
 import Button from "../../../components/button"
+import { css } from "glamor"
 
 class TokenSale extends React.Component {
   constructor(props, ...args) {
@@ -15,6 +16,7 @@ class TokenSale extends React.Component {
       },
       withdrawDisabled : true,
       account: {},
+      activePage: 'tokens',
       endDate: null,
       endDateTime: null
     }
@@ -53,11 +55,68 @@ class TokenSale extends React.Component {
     this.setState({ withdrawalForm: this.state.withdrawalForm });
   }
 
+  changeActivePage(page) {
+    console.log(page)
+    this.setState({ activePage: page })
+  }
+
   render() {
     return <div css={{
       width: '100%',
       display: this.state.account.email ? 'block' : 'none'
     }}>
+      <div 
+        css={{
+          backgroundColor: 'rgba(0, 153, 255, 0.7)',
+          padding: '8px 25px',
+          position: 'fixed',
+          width: '100%',
+          height: '40px',
+          ' a': {
+            color: '#FFF !important',
+            textDecoration: 'none',
+            marginRight: '25px'
+          }
+        }}
+      >
+        <div css={{
+          float: 'left',
+          [presets.Mobile]: {
+            display: 'none'
+          },
+          [presets.Table]: {
+            display: 'block'
+          },
+          [presets.Desktop]: {
+            display: 'block'
+          }
+        }}>
+          <a onClick={() => this.setState({ activePage: 'tokens' })} href="#">Tokens</a>
+          <a onClick={() => this.setState({ activePage: 'affiliate' })} href="#">Affiliate</a>
+          <a onClick={() => this.setState({ activePage: 'kyc' })} href="#">KYC</a>
+        </div>
+        <div onClick={() => window.location.replace("/token-sale/account/")} css={{
+          float: 'right',
+          // position: 'absolute',
+          // cursor: 'pointer',
+          color: '#FFF',
+          right: 0,
+          // top: '67px',
+          // right: '20px'
+        }}>
+          <span css={{ marginLeft: '5px', verticalAlign: 'middle' }}>Welcome <i>{this.state.account.email} | </i></span>
+          <div onClick={this.logout.bind(this)} css={{
+            color: presets.brandLight,
+            fontWeight: 'bold',
+            display: 'inline-block',
+            color: '#FFF',
+            verticalAlign: 'middle',
+            cursor: 'pointer'
+          }}>
+            Logout
+          </div>
+        </div>  
+      </div>
       <div css={{
         margin: '0 auto',
         padding: '75px 0',
@@ -68,16 +127,14 @@ class TokenSale extends React.Component {
           width: '700px'
         }
       }}>
-        Welcome <i>{this.state.account.email}</i>
-        <div onClick={this.logout.bind(this)} css={{
-          color: presets.brandLight,
-          fontWeight: 'bold',
-          float: 'right',
-          cursor: 'pointer'
+        <div css={{
+          display: this.state.activePage === 'tokens' ? 'block' : 'none'
         }}>
-          Logout
+          <h1>Tokens</h1>
         </div>
-        <div>
+        <div css={{
+          display: this.state.activePage === 'affiliate' ? 'block' : 'none'
+        }}>
           <h1>Affiliate</h1>
           <div css={{
             fontFamily: 'sans-serif',
@@ -110,6 +167,11 @@ class TokenSale extends React.Component {
           <div css={{
             color: 'red'
           }}>NOTE: Commission will be available for the withdraw at the end of token sale (ICO) <b>{this.state.endDate}</b></div>
+        </div>
+        <div css={{
+          display: this.state.activePage === 'kyc' ? 'block' : 'none'
+        }}>
+          <h1>KYC</h1>
         </div>
       </div>
       <Footer />

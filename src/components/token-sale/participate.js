@@ -174,6 +174,7 @@ class ParticipateForm extends React.Component {
     const amount = Number(this.state.form.amount);
     const citizenshipCertification = this.state.form.citizenshipCertification;
     const minAmount = 100;
+    const maxAmount = 100000;
 
     let isError = false
 
@@ -201,7 +202,11 @@ class ParticipateForm extends React.Component {
     // }
 
     if (amount && amount < minAmount) {
-      setError(`Minimum amount is ${minAmount} USD`)
+      setError(`Minimum allowed amount is ${minAmount} USD`)
+    }
+
+    if (amount && amount > maxAmount) {
+      setError(`Maximum allowed amount is ${maxAmount} USD`)
     }
 
     if (this.totalTokens > this.summary.balance) {
