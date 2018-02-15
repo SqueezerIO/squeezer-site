@@ -45,11 +45,11 @@ class ParticipateForm extends React.Component {
   }
 
   // openModal() {
-  //   this.setState({ walletHelpModalIsOpen: true });
+  //   this.setState({ walletHelpModalIsOpen: true })
   // }
 
   // closeModal() {
-  //   this.setState({ walletHelpModalIsOpen: false });
+  //   this.setState({ walletHelpModalIsOpen: false })
   // }
 
   componentWillMount() {
