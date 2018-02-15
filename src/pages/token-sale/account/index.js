@@ -131,6 +131,7 @@ class TokenSale extends React.Component {
           display: this.state.activePage === 'tokens' ? 'block' : 'none'
         }}>
           <h1>Tokens</h1>
+          Development in progress ...
         </div>
         <div css={{
           display: this.state.activePage === 'affiliate' ? 'block' : 'none'
@@ -172,6 +173,7 @@ class TokenSale extends React.Component {
           display: this.state.activePage === 'kyc' ? 'block' : 'none'
         }}>
           <h1>KYC</h1>
+          Development in progress ...
         </div>
       </div>
       <Footer />
