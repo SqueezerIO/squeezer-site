@@ -121,7 +121,7 @@ class TokenSale extends React.Component {
         </div>
         <div css={{
           margin: '0 auto',
-          padding: '75px 0',
+          padding: '20px 0',
           [presets.Mobile]: {
             width: '300px'
           },
@@ -146,7 +146,10 @@ class TokenSale extends React.Component {
               <div css={{
                 marginTop: '15px'
               }}>
-                Development in progress ...
+                KYC/AML verification will start on <b>31 February</b> .
+                <br/><br/>
+                <i>Note: Purchasing tokens without KYC/AML verification is enabled by default.
+                KYC/AML is required in order to transfer tokens to another wallet or exchange. </i>
               </div>
             </div>
           </div>

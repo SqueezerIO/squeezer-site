@@ -15,6 +15,7 @@ import Info from "../../components/token-sale/info"
 import Telegram from "../../components/token-sale/telegram"
 import Affiliate from "../../components/token-sale/affiliate"
 import Media from "../../components/token-sale/media"
+import Exchanges from "../../components/token-sale/exchanges"
 import ProblemSolution from "../../components/token-sale/problem-solution"
 import Newsletter from "../../components/newsletter"
 import { apiGetSummary } from "../../utils/api"
@@ -38,6 +39,7 @@ class TokenSale extends React.Component {
       return (
         <div>
           <Masthead summary={this.state.summary} />
+          <Exchanges/>
           <MainInfo summary={this.state.summary} />
           <Stats />
           <Providers />
