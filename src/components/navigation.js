@@ -235,6 +235,7 @@ export default ({ pathname }) => {
           position: 'absolute',
           cursor: 'pointer',
           color: '#FFF',
+          zIndex: 2,
           right: 0,
           top: '67px',
           right: '20px'
