@@ -41,7 +41,7 @@ class ParticipateForm extends React.Component {
       transferStatus: 'disabled'
     }
     this.purchaseTokens = 0,
-    this.availableTokens = 0
+      this.availableTokens = 0
   }
 
   // openModal() {
@@ -309,6 +309,11 @@ class ParticipateForm extends React.Component {
               // margin: '0 auto',
               marginTop: '25px'
             }}>
+              <div css={{
+                color: 'red',
+                marginBottom: '5px',
+                display: this.summary.icoActive ? 'none' : 'block'
+              }}>Purchasing tokens is available only on the ICO pre-sale/sale period.</div>
               <Button
                 overrideCSS={{
                   backgroundColor: `${presets.brandLight} !important`,
@@ -357,10 +362,15 @@ class ParticipateForm extends React.Component {
               display: this.state.whitelisted ? 'block' : 'none',
               marginBottom: '20px'
             }}>
-              Token transfer options :<br/>
-              <br/>* ERC20 Wallet , myetherwallet.com
-              <br/>* SQZR Crypto Exchanges 
+              Token transfer options :<br />
+              <br />* ERC20 Wallet , myetherwallet.com
+              <br />* SQZR Crypto Exchanges
             </div>
+            <div css={{
+                color: 'red',
+                marginBottom: '5px',
+                display: this.account.verified ? 'none' : 'block'
+              }}>Transferring tokens is available only for the KYC/AML users.</div>
             <Button
               overrideCSS={{
                 backgroundColor: `${presets.brandLight} !important`,
