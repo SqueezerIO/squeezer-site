@@ -146,7 +146,7 @@ class TokenSale extends React.Component {
               <div css={{
                 marginTop: '15px'
               }}>
-                KYC/AML verification will start on <b>31 February</b> .
+                KYC/AML verification will start on <b>3 March</b> .
                 <br/><br/>
                 <i>Note: Purchasing tokens without KYC/AML verification is enabled by default.
                 KYC/AML is required in order to transfer tokens to another wallet or exchange. </i>
