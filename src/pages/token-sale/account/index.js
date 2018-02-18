@@ -89,7 +89,7 @@ class TokenSale extends React.Component {
           <div css={{
             float: 'left',
             [presets.Mobile]: {
-              display: 'none'
+              display: 'block'
             },
             [presets.Table]: {
               display: 'block'
@@ -111,7 +111,15 @@ class TokenSale extends React.Component {
             // top: '67px',
             // right: '20px'
           }}>
-            <span css={{ marginLeft: '5px', verticalAlign: 'middle' }}>Welcome <i>{this.state.account.email} | </i></span>
+            <span css={{ 
+                          [presets.Mobile]: {
+                            display : 'none'
+                          },
+                          [presets.Tablet]: {
+                            display : 'initial'
+                          },
+              marginLeft: '5px', 
+              verticalAlign: 'middle' }}>Welcome <i>{this.state.account.email} | </i></span>
             <div onClick={this.logout.bind(this)} css={{
               color: presets.brandLight,
               fontWeight: 'bold',
