@@ -39,7 +39,7 @@ class TokenSale extends React.Component {
       return (
         <div>
           <Masthead summary={this.state.summary} />
-          <Exchanges/>
+          {/* <Exchanges/> */}
           <MainInfo summary={this.state.summary} />
           <Stats />
           <Providers />

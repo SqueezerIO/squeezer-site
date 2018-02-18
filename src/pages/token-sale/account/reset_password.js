@@ -1,11 +1,12 @@
 import React from "react"
 import { rhythm, scale, options } from "../../../utils/typography"
 import presets from "../../../utils/presets"
-import { apiLoginUser, apiRegisterUser, apiAddNewReferral } from "../../../utils/api"
+import { apiResetPassword } from "../../../utils/api"
 import Input from "../../../components/input"
 import Button from "../../../components/button"
 import Footer from "../../../components/footer"
 import { validateEmail } from "../../../utils/validate"
+import queryString from "query-string";
 
 class Login extends React.Component {
   constructor(props, ...args) {
@@ -30,9 +31,9 @@ class Login extends React.Component {
       error: null
     })
 
-    const email = this.state.form.email;
     const password = this.state.form.password;
     const passwordConfirm = this.state.form.passwordConfirm;
+    const queryParams = queryString.parse(this.props.location.search)
 
     let isError = false
 
@@ -41,10 +42,6 @@ class Login extends React.Component {
         this.setState({ error: error })
         isError = true
       }
-    }
-
-    if (!email || !validateEmail(email)) {
-      setError("Invalid email address")
     }
 
     if (!password) {
@@ -69,14 +66,12 @@ class Login extends React.Component {
         })
       }
 
-      const loginObj = {
-        email: email,
+      const resetObj = {
+        id: queryParams.id,
         password: password
       }
 
-      apiRegisterUser(loginObj).then((res) => {
-        localStorage.token = res.data.token
-
+      apiResetPassword(resetObj).then((res) => {
         if (typeof window !== "undefined") {
           window.location = "/token-sale/account/";
         }
@@ -96,8 +91,7 @@ class Login extends React.Component {
           margin: '0 auto'
         }}>
           <form onSubmit={this.onFormSubmit.bind(this)} autoComplete="off">
-            <h1 css={{ textAlign: "center" }}>Account Register</h1>
-            <Input name="email" placeholder="Email address" onChange={this.handleChange.bind(this)} value={this.state.form.email} />
+            <h1 css={{ textAlign: "center" }}>Reset Password</h1>
             <Input name="password" type="password" placeholder="Password" onChange={this.handleChange.bind(this)} value={this.state.form.password} />
             <Input name="passwordConfirm" type="password" placeholder="Password confirm" onChange={this.handleChange.bind(this)} value={this.state.form.passwordConfirm} />
             <div css={{ color: 'red', marginTop: '10px', marginBottom: '10px' }}>{this.state.error}</div>
@@ -105,9 +99,6 @@ class Login extends React.Component {
               width: '285px', backgroundColor: this.state.status === "sending" ? '#CDCDCD !important' : `${presets.brandLight} !important`
             }} label="Submit" type="submit" onClick={this.onSubmit} disabled={this.state.status === "sending" || this.state.status === "success" || this.state.status === "disabled"} />
           </form>
-          <div css={{ textAlign: 'center' }}>
-            <a href="/token-sale/account/login/">Go to account login</a>
-          </div>
         </div>
         <Footer />
       </div>

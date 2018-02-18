@@ -59,14 +59,18 @@ class Login extends React.Component {
       }
 
       apiLoginUser(loginObj).then((res) => {
-        localStorage.token = res.data.token
+        if (res.message !== "success") {
+          setError(res.message)
+        } else {
+          localStorage.token = res.data.token
 
-        if (typeof window !== "undefined") {
-          window.location = "/token-sale/account/";
+          if (typeof window !== "undefined") {
+            window.location = "/token-sale/account/";
+          }
         }
       }).catch((error) => {
         this.setState({ status: null })
-        setError(error)
+        setError(error.message)
       });
     }
   }
@@ -84,10 +88,17 @@ class Login extends React.Component {
             <Input name="email" placeholder="Email address" onChange={this.handleChange.bind(this)} value={this.state.form.email} />
             <Input name="password" type="password" placeholder="Password" onChange={this.handleChange.bind(this)} value={this.state.form.password} />
             <div css={{ color: 'red', marginTop: '10px', marginBottom: '10px' }}>{this.state.error}</div>
-            <Button overrideCSS={{ width: '285px', backgroundColor: `${presets.brandLight} !important` }} label="Login" type="submit" onClick={this.onSubmit} disabled={this.state.status === "sending" || this.state.status === "success" || this.state.status === "disabled"} />
+            <Button overrideCSS={{
+              width: '285px',
+              backgroundColor: this.state.status === "sending" ? '#CDCDCD !important' : `${presets.brandLight} !important`
+            }} label="Login" type="submit" onClick={this.onSubmit} disabled={this.state.status === "sending" || this.state.status === "success" || this.state.status === "disabled"}
+            />
           </form>
           <div css={{ textAlign: 'center' }}>
             <a href="/token-sale/account/register/">I don't have an account</a>
+          </div>
+          <div css={{ textAlign: 'center', marginTop: '5px' }}>
+            <a href="/token-sale/account/forgot_password/">I forgot my password</a>
           </div>
         </div>
         <Footer />
