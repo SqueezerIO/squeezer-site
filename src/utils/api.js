@@ -10,7 +10,7 @@ if (typeof localStorage !== "undefined") {
 
 // axios.interceptors.response.use((response) => {
 //   return response;
-// }, function (error) {
+// }, function (error) { 
 //   console.log(response)
 //   if (error.response.status === 401) {
 //     window.location = "/token-sale/account/login/"
