@@ -295,7 +295,7 @@ class ParticipateForm extends React.Component {
               <input type="radio" id="p-crypto" name="selector" />
               <label for="p-crypto">&nbsp;Cryptocurrency</label>
               &nbsp;&nbsp;&nbsp;&nbsp;
-              <input type="radio" id="p-paypal" name="selector" />
+              <input type="radio" id="p-paypal" name="selector" /> 
               <label for="p-paypal">&nbsp;PayPal</label>
             </div> */}
             <div>
