@@ -26,7 +26,12 @@ class TokenSale extends React.Component {
   componentWillMount() {
     apiGetAccountDetails()
       .then((res) => {
-        this.setState({ account: res.data })
+        if (res.message === "success") {
+          this.setState({ account: res.data })
+        }
+      })
+      .catch((err) => {
+        window.location = "/token-sale/account/login/"
       })
 
     apiGetSummary()
@@ -149,7 +154,7 @@ class TokenSale extends React.Component {
                 KYC/AML verification will start on <b>3 March</b> .
                 <br/><br/>
                 <i>Note: Purchasing tokens without KYC/AML verification is enabled by default.
-                KYC/AML is required in order to transfer tokens to another wallet or exchange. </i>
+                KYC/AML is required in order to transfer tokens to another wallet. </i>
               </div>
             </div>
           </div>
@@ -191,7 +196,7 @@ class TokenSale extends React.Component {
             </form>
             <div css={{
               color: 'red'
-            }}>NOTE: Commission will be available for the withdraw at the end of token sale (ICO) <b>{this.state.endDate}</b></div>
+            }}>NOTE: Commission will be available for the withdraw at the end of token sale<b>{this.state.endDate}</b></div>
           </div>
         </div>
         <Footer />

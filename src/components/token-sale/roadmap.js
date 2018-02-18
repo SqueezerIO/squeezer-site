@@ -107,11 +107,6 @@ export default () => (
             description: 'Transcending to the final token sale'
           },
           {
-            month : 3,
-            year : 2018,
-            description: 'Add token on public exchange(s)'
-          },
-          {
             month : 4,
             year : 2018,
             description: 'Hiring additional resources to build the blockchain cloud connectors'

@@ -31,7 +31,7 @@ class ParticipateForm extends React.Component {
         walletAddress: '',
         purchaseAmount: '',
         securityCode: '',
-        citizenshipCertification: false,
+        termsOptIn: false,
         isReady: false
       },
       // walletHelpModalIsOpen: false,
@@ -57,7 +57,9 @@ class ParticipateForm extends React.Component {
       if (res && res.message === 'success') {
         this.setState({ whitelisted: true })
       }
-    });
+    }).catch((error) => {
+      console.log(error)
+    });;
   }
 
   componentDidMount() {
@@ -119,7 +121,7 @@ class ParticipateForm extends React.Component {
     const securityCode = this.state.form.securityCode;
     const walletAddress = this.state.form.walletAddress;
     const amount = Number(this.state.form.purchaseAmount);
-    const citizenshipCertification = this.state.form.citizenshipCertification;
+    const termsOptIn = this.state.form.termsOptIn;
     const minAmount = 100;
     const maxAmount = 100000;
 
@@ -160,8 +162,8 @@ class ParticipateForm extends React.Component {
       setError(`Requested tokens amount exceed ${this.summary.balance}`)
     }
 
-    if (!citizenshipCertification) {
-      setError("Please select your citizenship certification")
+    if (!termsOptIn) {
+      setError("Please agree with terms & conditions")
     }
 
     // if (securityCode.length === 0 && !isError) {
@@ -293,27 +295,27 @@ class ParticipateForm extends React.Component {
               <input type="radio" id="p-crypto" name="selector" />
               <label for="p-crypto">&nbsp;Cryptocurrency</label>
               &nbsp;&nbsp;&nbsp;&nbsp;
-              <input type="radio" id="p-paypal" name="selector" />
+              <input type="radio" id="p-paypal" name="selector" /> 
               <label for="p-paypal">&nbsp;PayPal</label>
             </div> */}
             <div>
               <input
-                name="citizenshipCertification"
+                name="termsOptIn"
                 type="checkbox"
-                checked={this.state.citizenshipCertification}
-                onChange={this.handleChange.bind(this)} /> I certify that the beneficial owner is not a citizen of <b>USA , China , Singapore or South Korea</b>
+                checked={this.state.termsOptIn}
+                onChange={this.handleChange.bind(this)} /> I agree with the above <a target="_blank" href="/docs/terms.pdf">terms and conditions</a>
             </div>
             <div css={{ color: 'red', marginTop: '10px' }}>{this.state.error}</div>
             <div css={{
               width: '285px',
               // margin: '0 auto',
-              marginTop: '25px'
+              marginTop: '20px'
             }}>
               <div css={{
                 color: 'red',
                 marginBottom: '5px',
                 display: this.summary.icoActive ? 'none' : 'block'
-              }}>Purchasing tokens is available only on the ICO pre-sale/sale period.</div>
+              }}>Purchasing tokens is available only on the pre-sale/sale period.</div>
               <Button
                 overrideCSS={{
                   backgroundColor: `${presets.brandLight} !important`,
@@ -353,18 +355,16 @@ class ParticipateForm extends React.Component {
             }} name="walletAddress" placeholder="Wallet address (ERC20)" onChange={this.handleChange.bind(this)} value={this.state.form.walletAddress} />
             <div css={{
               height: rhythm(1),
-              marginBottom: '40px',
+              marginBottom: '20px',
               // display: this.state.form.amount > 0 ? 'block' : 'none'
             }}>
               <b>Available tokens : {this.availableTokens} {this.summary.token}</b>
             </div>
             <div css={{
-              display: this.state.whitelisted ? 'block' : 'none',
-              marginBottom: '20px'
+              marginBottom: '35px'
             }}>
               Token transfer options :<br />
-              <br />* ERC20 Wallet , myetherwallet.com
-              <br />* SQZR Crypto Exchanges
+              <br />* ERC20 Wallet
             </div>
             <div css={{
                 color: 'red',
