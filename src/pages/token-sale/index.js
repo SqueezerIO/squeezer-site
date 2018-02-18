@@ -29,9 +29,12 @@ class TokenSale extends React.Component {
   }
 
   componentWillMount() {
-    apiGetSummary().then((res) => {      
-      this.setState({summary : res.data})
-    })
+    apiGetSummary()
+      .then((res) => {
+        if (res.message === "success") {
+          this.setState({ summary: res.data })
+        }
+      })
   }
 
   render() {
@@ -39,7 +42,7 @@ class TokenSale extends React.Component {
       return (
         <div>
           <Masthead summary={this.state.summary} />
-          {/* <Exchanges/> */}
+          {/* <Exchanges /> */}
           <MainInfo summary={this.state.summary} />
           <Stats />
           <Providers />
@@ -56,7 +59,7 @@ class TokenSale extends React.Component {
         </div>
       )
     }
-    return <div/>;
+    return <div />;
   }
 }
 
