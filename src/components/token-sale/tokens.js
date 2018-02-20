@@ -37,11 +37,11 @@ class ParticipateForm extends React.Component {
       // walletHelpModalIsOpen: false,
       whitelisted: false,
       error: null,
-      purchaseStatus: 'disabled',
+      // purchaseStatus: 'disabled',
       transferStatus: 'disabled'
     }
     this.purchaseTokens = 0,
-      this.availableTokens = 0
+    this.availableTokens = this.account.tokens || 0
   }
 
   // openModal() {
@@ -57,9 +57,11 @@ class ParticipateForm extends React.Component {
       if (res && res.message === 'success') {
         this.setState({ whitelisted: true })
       }
+
+      return null;
     }).catch((error) => {
       console.log(error)
-    });;
+    });
   }
 
   componentDidMount() {
@@ -118,8 +120,8 @@ class ParticipateForm extends React.Component {
 
     const email = this.state.form.email;
     const phone = this.state.form.phone;
-    const securityCode = this.state.form.securityCode;
-    const walletAddress = this.state.form.walletAddress;
+    // const securityCode = this.state.form.securityCode;
+    // const walletAddress = this.state.form.walletAddress;
     const amount = Number(this.state.form.purchaseAmount);
     const termsOptIn = this.state.form.termsOptIn;
     const minAmount = 100;
@@ -180,10 +182,12 @@ class ParticipateForm extends React.Component {
       this.setState({ status: 'sending' })
 
       const purchaseObj = {
-        email: email,
-        phone: phone,
-        securityCode: securityCode,
-        walletAddress: walletAddress,
+        email: this.account.email,
+        amount: amount,
+        // phone: phone,
+        userId: this.account._id,
+        // securityCode: securityCode,
+        // walletAddress: walletAddress,
         utm_campaign: localStorage.utm_campaign,
         utm_medium: localStorage.utm_medium,
         utm_source: localStorage.utm_source
@@ -196,16 +200,20 @@ class ParticipateForm extends React.Component {
         const invoice = res.data.invoice;
         const amountf = amount.toFixed(8);
 
-        const paymentUrl = `https://www.coinpayments.net/index.php?cmd=_pay_simple&reset=1&merchant=${merchantId}` +
-          `&amountf=${encodeURIComponent(amountf)}&want_shipping=0&currency=USD&item_name=Tokens&email=${encodeURIComponent(email)}&invoice=${invoice}` +
-          `&success_url=${encodeURIComponent(successUrl)}&ipn_url=${encodeURIComponent(ipnUrl)}`
+        const item_name = `${this.purchaseTokens} ${this.summary.token} (Tokens)`;
+        const custom = 'Golden Data INC';
 
-        if (typeof window !== "undefined") {
+        const paymentUrl = `https://www.coinpayments.net/index.php?cmd=_pay_simple&reset=1&merchant=${merchantId}` +
+          `&amountf=${encodeURIComponent(amountf)}&want_shipping=0&currency=USD&item_name=${encodeURIComponent(item_name)}&email=${encodeURIComponent(email)}&invoice=${invoice}` +
+          `&success_url=${encodeURIComponent(successUrl)}&ipn_url=${encodeURIComponent(ipnUrl)}&custom=${encodeURIComponent(custom)}`
+
+        if (res.message === "success" && typeof window !== "undefined") {
           window.location.href = paymentUrl;
         }
       }).catch((error) => {
         this.setState({ status: null })
-        setError(error)
+        console.log(error.message)
+        setError(error.message)
       });
     }
   }
@@ -367,13 +375,13 @@ class ParticipateForm extends React.Component {
               <br />* ERC20 Wallet
             </div>
             <div css={{
-                color: 'red',
-                marginBottom: '5px',
-                display: this.account.verified ? 'none' : 'block'
-              }}>Transferring tokens is available only for the KYC/AML users.</div>
+              color: 'red',
+              marginBottom: '5px',
+              display: this.account.verified ? 'none' : 'block'
+            }}>Transferring tokens is available only for the KYC/AML users.</div>
             <Button
               overrideCSS={{
-                backgroundColor: `${presets.brandLight} !important`,
+                backgroundColor: this.state.status === "sending" ? '#CDCDCD !important' : `${presets.brandLight} !important`,
                 width: '285px',
                 cursor: this.state.purchaseStatus === 'disabled' ? 'not-allowed' : 'pointer'
               }}

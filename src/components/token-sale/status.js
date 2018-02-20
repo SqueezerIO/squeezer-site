@@ -47,7 +47,7 @@ export default ({ overrideCss, color, summary }) => (
     ...overrideCss
   }}>
     <CountItem title="USD" end={Math.round(summary.amount)} />
-    <CountItem title="Tokens sent" end={Math.round(summary.saleSupply - summary.balance)} />
+    {/* <CountItem title="Tokens sent" end={Math.round(summary.saleSupply - summary.balance)} /> */}
     <CountItem title={summary.contributors === 1 ? 'Contributor' : 'Contributors'} end={Math.round(summary.contributors)} />
   </div>
 )

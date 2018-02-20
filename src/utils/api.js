@@ -111,9 +111,11 @@ const apiGetSecurityCode = (phone) => {
 }
 
 const apiGetTokenSaleWhitelisted = (email) => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     axios.get(`/rest/v1/token-sale/whitelisted?email=${email}`).then((res) => {
       return resolve(res.data)
+    }).catch((err) => {
+      return reject(new Error(err.response.data.message))
     })
   })
 }
