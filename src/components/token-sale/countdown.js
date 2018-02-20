@@ -21,7 +21,7 @@ const SaleComplete = () => (
     }}>
       <h1 css={{ color: presets.brandLighter }}>
         Token sale completed . <br />
-        Thank you for your contribution !
+        Thank you for your participation !
     </h1>
     </div>
     <Status summary={summaryData} overrideCss={{
