@@ -381,7 +381,7 @@ class ParticipateForm extends React.Component {
             }}>Transferring tokens is available only for the KYC/AML users.</div>
             <Button
               overrideCSS={{
-                backgroundColor: this.state.status === "sending" ? '#CDCDCD !important' : `${presets.brandLight} !important`,
+                backgroundColor: `${presets.brandLight} !important`,
                 width: '285px',
                 cursor: this.state.purchaseStatus === 'disabled' ? 'not-allowed' : 'pointer'
               }}
