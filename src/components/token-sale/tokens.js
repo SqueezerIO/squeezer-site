@@ -17,6 +17,30 @@ import { css } from 'glamor'
 
 import "../../css/react-tel-input.css"
 
+const Transactions = ({ data, overrideCss }) => {
+  const content = data.map((val) => {
+    return (
+      <tr key={val.id}>
+        <td css={{
+          width: '25%',
+          paddingLeft: '10px !important',
+          fontWeight: 'bold'
+        }}>{val.id}</td>
+        <td css={{
+          paddingRight: '10px !important',
+        }}>{val.description}</td>
+      </tr>
+    );
+  });
+
+  return (
+    <table css={{ ...overrideCss }}>
+      <tbody>
+        {content}
+      </tbody>
+    </table>
+  );
+};
 class ParticipateForm extends React.Component {
   constructor(props, ...args) {
     super(props, ...args)
@@ -40,7 +64,7 @@ class ParticipateForm extends React.Component {
       // purchaseStatus: 'disabled',
       transferStatus: 'disabled'
     }
-    this.purchaseTokens = 0,
+    this.purchaseTokens = 0
     this.availableTokens = this.account.tokens || 0
   }
 
@@ -124,7 +148,7 @@ class ParticipateForm extends React.Component {
     // const walletAddress = this.state.form.walletAddress;
     const amount = Number(this.state.form.purchaseAmount);
     const termsOptIn = this.state.form.termsOptIn;
-    const minAmount = 100;
+    const minAmount = 3;
     const maxAmount = 100000;
 
     let isError = false
@@ -239,6 +263,21 @@ class ParticipateForm extends React.Component {
 
   render() {
     const distributionPercent = (100 - (this.summary.balance / this.summary.saleSupply * 100)).toFixed(2)
+
+    //   const transactions = this.state.friends.map(
+    //     function iterator( friend ) {
+    //         return(
+    //             <Friend
+    //                 key={ friend.id }
+    //                 friend={ friend }
+    //                 isSelected={ this.isSelected( friend ) }
+    //                 toggleSelection={ this.toggleSelection }>
+    //             </Friend>
+    //         );
+    //     },
+    //     this
+    // );
+
     return (
       <div css={{
         borderTop: `1px solid ${presets.veryLightBlue}`,
@@ -323,7 +362,7 @@ class ParticipateForm extends React.Component {
                 height: '45px',
                 color: 'red',
                 marginBottom: '5px'
-              }}><span css={{display: this.summary.icoActive ? 'none' : 'block'}}>Purchasing tokens is available only on the pre-sale/sale period.</span></div>
+              }}><span css={{ display: this.summary.icoActive ? 'none' : 'block' }}>Purchasing tokens is available only on the pre-sale/sale period.</span></div>
               <Button
                 overrideCSS={{
                   backgroundColor: this.state.status === "sending" ? '#CDCDCD !important' : `${presets.brandLight} !important`,
@@ -366,7 +405,7 @@ class ParticipateForm extends React.Component {
               marginBottom: '20px',
               // display: this.state.form.amount > 0 ? 'block' : 'none'
             }}>
-              <b>Available tokens : {this.availableTokens} {this.summary.token}</b>
+              <b>Purchased tokens : {this.availableTokens} {this.summary.token}</b>
             </div>
             <div css={{
               marginBottom: '35px'
@@ -378,7 +417,7 @@ class ParticipateForm extends React.Component {
               color: 'red',
               marginBottom: '5px',
               height: '45px'
-            }}><span css={{display: this.account.verified ? 'none' : 'block'}}>Transferring tokens is available only for the KYC/AML users.</span></div>
+            }}><span css={{ display: this.account.verified ? 'none' : 'block' }}>Transferring tokens is available only for the KYC/AML users.</span></div>
             <Button
               overrideCSS={{
                 backgroundColor: `${presets.brandLight} !important`,
@@ -390,6 +429,11 @@ class ParticipateForm extends React.Component {
             />
           </form>
         </div>
+        {/* <div>
+          <h2>Transactions</h2>
+          <Transactions data={ this.account.transactions } />
+          {transactions}
+        </div> */}
       </div>
     )
   }
