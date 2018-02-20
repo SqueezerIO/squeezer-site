@@ -320,10 +320,10 @@ class ParticipateForm extends React.Component {
               marginTop: '20px'
             }}>
               <div css={{
+                height: '45px',
                 color: 'red',
-                marginBottom: '5px',
-                display: this.summary.icoActive ? 'none' : 'block'
-              }}>Purchasing tokens is available only on the pre-sale/sale period.</div>
+                marginBottom: '5px'
+              }}><span css={{display: this.summary.icoActive ? 'none' : 'block'}}>Purchasing tokens is available only on the pre-sale/sale period.</span></div>
               <Button
                 overrideCSS={{
                   backgroundColor: this.state.status === "sending" ? '#CDCDCD !important' : `${presets.brandLight} !important`,
@@ -377,8 +377,8 @@ class ParticipateForm extends React.Component {
             <div css={{
               color: 'red',
               marginBottom: '5px',
-              display: this.account.verified ? 'none' : 'block'
-            }}>Transferring tokens is available only for the KYC/AML users.</div>
+              height: '45px'
+            }}><span css={{display: this.account.verified ? 'none' : 'block'}}>Transferring tokens is available only for the KYC/AML users.</span></div>
             <Button
               overrideCSS={{
                 backgroundColor: `${presets.brandLight} !important`,
