@@ -177,7 +177,7 @@ export default ({ pathname }) => {
             },
           }}
         >
-          <NavItem linkTo="/token-sale/">Token Sale (ICO)</NavItem>
+          <NavItem linkTo="/token-sale/">Token Sale</NavItem>
           <NavItem linkTo="/framework/">Framework</NavItem>
           <NavItem linkTo="/docs/">Docs</NavItem>
           <NavItem linkTo="/community/">Community</NavItem>

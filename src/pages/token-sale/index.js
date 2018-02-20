@@ -51,7 +51,7 @@ class TokenSale extends React.Component {
           <RoadMap />
           <Team />
           <Info summary={this.state.summary} />
-          <Affiliate />
+          <Affiliate summary={this.state.summary} />
           <Media />
           <Telegram />
           <Newsletter />

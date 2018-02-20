@@ -1,7 +1,7 @@
 import presets from "../../utils/presets"
 import AffiliatePic from "../../assets/token-sale/affiliate.png"
 
-const Affiliate = () => {
+const Affiliate = ({summary}) => {
   return (
     <div id="affiliate" css={{
       textAlign: 'center',
@@ -61,7 +61,7 @@ const Affiliate = () => {
             fontSize: '20px',
             color: presets.brandLight,
             lineHeight: '1'
-          }}>10% COMMISSION. PAID IN <b>ETH</b></div>
+          }}>${summary.affiliate.commission}% COMMISSION. PAID IN <b>ETH</b></div>
         </div>
       </div>
     </div>

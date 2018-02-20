@@ -2,7 +2,7 @@ import React from "react"
 import { rhythm, scale, options } from "../../../utils/typography"
 import presets from "../../../utils/presets"
 import Footer from "../../../components/footer"
-import { apiGetSummary, apiGetAccountDetails } from "../../../utils/api"
+import { apiGetTokenSaleWhitelisted, apiGetSummary, apiGetAccountDetails } from "../../../utils/api"
 import Input from "../../../components/input"
 import Button from "../../../components/button"
 import Tokens from "../../../components/token-sale/tokens"
@@ -29,6 +29,8 @@ class TokenSale extends React.Component {
         if (res.message === "success") {
           this.setState({ account: res.data })
         }
+
+        return null;
       })
       .catch((err) => {
         window.location = "/token-sale/account/login/"
@@ -46,7 +48,11 @@ class TokenSale extends React.Component {
             withdrawDisabled: false
           })
         }
-      })
+
+        return null;
+      }).catch((error) => {
+        console.log(error)
+      });
   }
 
   logout() {
@@ -111,15 +117,16 @@ class TokenSale extends React.Component {
             // top: '67px',
             // right: '20px'
           }}>
-            <span css={{ 
-                          [presets.Mobile]: {
-                            display : 'none'
-                          },
-                          [presets.Tablet]: {
-                            display : 'initial'
-                          },
-              marginLeft: '5px', 
-              verticalAlign: 'middle' }}>Welcome <i>{this.state.account.email} | </i></span>
+            <span css={{
+              [presets.Mobile]: {
+                display: 'none'
+              },
+              [presets.Tablet]: {
+                display: 'initial'
+              },
+              marginLeft: '5px',
+              verticalAlign: 'middle'
+            }}>Welcome <i>{this.state.account.email} | </i></span>
             <div onClick={this.logout.bind(this)} css={{
               color: presets.brandLight,
               fontWeight: 'bold',
@@ -160,7 +167,7 @@ class TokenSale extends React.Component {
                 marginTop: '15px'
               }}>
                 KYC/AML verification will start on <b>3 March</b> .
-                <br/><br/>
+                <br /><br />
                 <i>Note: Purchasing tokens without KYC/AML verification is enabled by default.
                 KYC/AML is required in order to transfer tokens to another wallet. </i>
               </div>

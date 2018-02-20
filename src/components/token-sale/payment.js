@@ -43,7 +43,7 @@ export default () => (
       {/* <Payment title="XEM" pic={XEMPic} /> */}
       {/* <Payment title="XMR" pic={XMRPic} /> */}
       {/* <Payment title="BNB" pic={BNBPic} /> */}
-      <Payment overrideCss={{width: '98px', marginTop: '5px'}} title="MasterCard Visa" pic={MastercardVisaPic} />
+      {/* <Payment overrideCss={{width: '98px', marginTop: '5px'}} title="MasterCard Visa" pic={MastercardVisaPic} /> */}
     </div>
   </div>
 )
