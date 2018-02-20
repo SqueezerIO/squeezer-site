@@ -148,7 +148,7 @@ class ParticipateForm extends React.Component {
     // const walletAddress = this.state.form.walletAddress;
     const amount = Number(this.state.form.purchaseAmount);
     const termsOptIn = this.state.form.termsOptIn;
-    const minAmount = 3;
+    const minAmount = 100;
     const maxAmount = 100000;
 
     let isError = false
