@@ -61,8 +61,7 @@ const Affiliate = ({summary}) => {
             fontSize: '20px',
             color: presets.brandLight,
             lineHeight: '1'
-          // }}>${summary.affiliate.commission}% COMMISSION. PAID IN <b>ETH</b></div>
-          }}>10% COMMISSION. PAID IN <b>ETH</b></div>
+          }}>${summary.affiliate.commission}% COMMISSION. PAID IN <b>ETH</b></div>
           </div>
       </div>
     </div>
