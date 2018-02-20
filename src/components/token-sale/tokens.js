@@ -326,7 +326,7 @@ class ParticipateForm extends React.Component {
               }}>Purchasing tokens is available only on the pre-sale/sale period.</div>
               <Button
                 overrideCSS={{
-                  backgroundColor: `${presets.brandLight} !important`,
+                  backgroundColor: this.state.status === "sending" ? '#CDCDCD !important' : `${presets.brandLight} !important`,
                   width: '285px',
                   cursor: this.state.purchaseStatus === 'disabled' ? 'not-allowed' : 'pointer'
                 }}
