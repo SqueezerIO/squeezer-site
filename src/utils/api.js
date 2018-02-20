@@ -1,9 +1,8 @@
 import axios from 'axios'
 import Promise from 'bluebird'
 
-// axios.defaults.baseURL = 'https://api.squeezer.io';
+axios.defaults.baseURL = 'https://api.squeezer.io';
 // axios.defaults.baseURL = 'http://localhost:4001';
-axios.defaults.baseURL =  'https://stmd7arve4.execute-api.us-east-1.amazonaws.com/prod';
 
 if (typeof localStorage !== "undefined") {
   axios.defaults.headers.common['x-access-token'] = localStorage.token;
