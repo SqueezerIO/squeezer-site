@@ -61,7 +61,7 @@ class ParticipateForm extends React.Component {
       // walletHelpModalIsOpen: false,
       whitelisted: false,
       error: null,
-      // purchaseStatus: 'disabled',
+      purchaseStatus: 'disabled',
       transferStatus: 'disabled'
     }
     this.purchaseTokens = 0
