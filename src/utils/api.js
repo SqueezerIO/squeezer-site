@@ -14,7 +14,7 @@ if (typeof localStorage !== "undefined") {
 //   console.log(response)
 //   if (error.response.status === 401) {
 //     window.location = "/token-sale/account/login/"
-//   }
+//   } 
 // });
 
 const apiLoginUser = (item) => {
