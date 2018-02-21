@@ -34,7 +34,7 @@ const SaleComplete = () => (
 
 const WhiteListWidget = ({ overrideCss }) => (
   <div css={{ ...overrideCss }}>
-    {/* <div css={{
+    <div css={{
       color: presets.brandLighter,
       marginTop: rhythm(1),
       lineHeight: 1.2,
@@ -45,14 +45,14 @@ const WhiteListWidget = ({ overrideCss }) => (
         textAlign: 'center'
       },
       [presets.Desktop]: {
-        fontSize: scale(0.4).fontSize,
+        fontSize: scale(0.8).fontSize,
       }
-    }}>Get whitelisted and enjoy your <b>{summaryData.bonuses.whitelist}%</b> bonus</div>
+    }}>Get whitelisted and enjoy your <b>{summaryData.bonuses.whitelist}%</b> bonus.<br/><b>6000</b> participants whitelisted.</div>
     <Whitelist
       {...{
         action: '//squeezer.us17.list-manage.com/subscribe/post?u=c85492cf3a6e8f0992fe01e4e&id=d23e505112',
       }}
-    /> */}
+    />
   </div>
 )
 
