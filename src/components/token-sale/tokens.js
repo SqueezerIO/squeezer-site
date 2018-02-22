@@ -350,7 +350,7 @@ class ParticipateForm extends React.Component {
                 name="termsOptIn"
                 type="checkbox"
                 checked={this.state.termsOptIn}
-                onChange={this.handleChange.bind(this)} /> I agree with the above <a target="_blank" href="/docs/terms.pdf">terms and conditions</a>
+                onChange={this.handleChange.bind(this)} /> I agree with the above <a target="_blank" href="/docs/token-sale/terms.pdf">terms and conditions</a>
             </div>
             <div css={{ color: 'red', marginTop: '10px' }}>{this.state.error}</div>
             <div css={{
