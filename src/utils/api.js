@@ -1,7 +1,7 @@
 import axios from 'axios'
 import Promise from 'bluebird'
 
-axios.defaults.baseURL = 'https://api.squeezer.io';
+axios.defaults.baseURL = 'https://api.squeezer.io/prod';
 // axios.defaults.baseURL = 'http://localhost:4001';
 
 if (typeof localStorage !== "undefined") {
@@ -19,7 +19,7 @@ if (typeof localStorage !== "undefined") {
 
 const apiLoginUser = (item) => {
   return new Promise((resolve, reject) => {
-    axios.post('/rest/v1/user/login', item).then((res) => {
+    axios.post('/rest/v1/token-sale/account/login', item).then((res) => {
       return resolve(res.data)
     }).catch((err) => {
       return reject(new Error(err.response.data.message))
@@ -29,7 +29,7 @@ const apiLoginUser = (item) => {
 
 const apiForgotPassword = (item) => {
   return new Promise((resolve, reject) => {
-    axios.post('/rest/v1/user/forgot_password', item).then((res) => {
+    axios.post('/rest/v1/token-sale/account/forgot_password', item).then((res) => {
       return resolve(res.data)
     }).catch((err) => {
       return reject(new Error(err.response.data.message))
@@ -39,7 +39,7 @@ const apiForgotPassword = (item) => {
 
 const apiResetPassword = (item) => {
   return new Promise((resolve, reject) => {
-    axios.post('/rest/v1/user/reset_password', item).then((res) => {
+    axios.post('/rest/v1/token-sale/account/reset_password', item).then((res) => {
       return resolve(res.data)
     }).catch((err) => {
       return reject(new Error(err.response.data.message))
@@ -49,7 +49,7 @@ const apiResetPassword = (item) => {
 
 const apiRegisterUser = (item) => {
   return new Promise((resolve, reject) => {
-    axios.post('/rest/v1/user/register', item).then((res) => {
+    axios.post('/rest/v1/token-sale/account/register', item).then((res) => {
       return resolve(res.data)
     }).catch((err) => {
       return reject(new Error(err.response.data.message))
@@ -69,7 +69,7 @@ const apiGetSummary = () => {
 
 const apiGetAccountDetails = () => {
   return new Promise((resolve, reject) => {
-    axios.get('/rest/v1/user/details').then((res) => {
+    axios.get('/rest/v1/token-sale/account/details').then((res) => {
       return resolve(res.data)
     }).catch((err) => {
       return reject(new Error(err.response.data.message))
@@ -90,7 +90,7 @@ const apiAddNewTokenSalePurchase = (item) => {
 const apiAddNewReferral = (item) => {
   console.log(item)
   return new Promise((resolve, reject) => {
-    axios.post('/rest/v1/affiliate/add/referral', item).then((res) => {
+    axios.post('/rest/v1/token-sale/affiliate/referral/new', item).then((res) => {
       return resolve(res.data)
     }).catch((err) => {
       return reject(new Error(err.response.data.message))
