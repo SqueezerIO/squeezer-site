@@ -1,26 +1,36 @@
-Squeezer.IO SITE
-================
+# [Squeezer Site](https://squeezer.io)
 
-### Generate a new site
+The site is builded with [GatsbyJS](https://www.gatsbyjs.org/) , a static PWA (Progressive Web App) generator , which makes Squeezer site running really , really , really fast .
 
-Site it's generated with the help of [Jekyll](https://jekyllrb.com/) and 
-it's generated from the site source which it's stored on the `src/` directory. 
+## Running the website on your local machine
 
-The website it's stored on GitHub pages via `docs` directory therefore new website gets 
-automatically deployed when new files to `docs` directory are pushed.
+### Clone the repository
 
-In order to generate a new site please follow the instructions : 
+`git clone https://github.com/SqueezerIO/squeezer`
 
-    $ sudo gem install jekyll jekyll-paginate-v2 jekyll-feed
-    $ npm install 
-    $ npm start # it will start a browser sync instance in a new browser
-    $ npm run build # will save new generated static files to docs directory
-    
-    
-### Run tests
+### Install packages
 
-#### Eslint ( JS code syntax checker )
-    $ npm run eslint
-    
-#### JS inspect ( JS code duplicate checker )
-    $ npm run jsinspect    
+`yarn install`
+
+### Install Squeezer docs
+
+`yarn run installDocs`
+
+### Run site on your local machine
+
+`yarn run develop`
+
+## Add a blog post
+
+### Add yourself as an author
+
+`content/blog/authors/`
+
+### Add a new blog post
+
+`content/blog/posts/`
+
+### Deploy website
+
+Use a separate branch from `master` and make a PR . We are using [netlifly](https://www.netlify.com/) for blazing 
+fast static websites . You can preview your deployment at `https://YOUR_BRANCH--squeezer-site.netlify.com` .
