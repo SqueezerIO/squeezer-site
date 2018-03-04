@@ -417,7 +417,7 @@ class ParticipateForm extends React.Component {
               color: 'red',
               marginBottom: '5px',
               height: '45px'
-            }}><span css={{ display: this.account.verified ? 'none' : 'block' }}>Transferring tokens is available only for the KYC/AML users.</span></div>
+            }}><span css={{ display: this.account.verified ? 'none' : 'block' }}>Tokens transfer will be available after Token sale ends.</span></div>
             <Button
               overrideCSS={{
                 backgroundColor: `${presets.brandLight} !important`,
