@@ -152,7 +152,6 @@ const IndexRoute = createReactClass({
             </Cards>
           </div>
         </div>
-        <Team/>
         <Newsletter/>
         <Footer/>
       </div>
