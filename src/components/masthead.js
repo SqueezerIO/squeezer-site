@@ -115,7 +115,7 @@ const MastheadContent = () => (
             css={{ verticalAlign : `baseline`, marginLeft : `.2em` }}
           />
         </CtaButton>
-        <CtaButton to="/token-sale/" overrideCSS={{
+        <CtaButton to="https://tokensale.squeezer.io" overrideCSS={{
           margin : '50px 0px 0px 50px',
           color  : '#fff !important',          
           border : '1px solid #fff !important'
