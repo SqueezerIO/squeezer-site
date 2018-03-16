@@ -4,10 +4,13 @@ import createReactClass from "create-react-class"
 const IndexRoute = createReactClass({
   render() {
     if (typeof window !== "undefined") {
-      window.location = "https://tokensale.squeezer.io"
+      if (!(/bot|google|baidu|bing|msn|duckduckgo|teoma|slurp|yandex/i
+        .test(navigator.userAgent))) {
+        window.location = "https://tokensale.squeezer.io"
+      }
     }
 
-    return <div/>
+    return <div />
   }
 })
 

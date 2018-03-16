@@ -177,7 +177,7 @@ export default ({ pathname }) => {
             },
           }}
         >
-          <NavItem linkTo="/token-sale/">Token Sale</NavItem>
+          <NavItem linkTo="https://tokensale.squeezer.io">Token Sale</NavItem>
           <NavItem linkTo="/framework/">Framework</NavItem>
           <NavItem linkTo="/docs/">Docs</NavItem>
           <NavItem linkTo="/community/">Community</NavItem>
@@ -231,7 +231,7 @@ export default ({ pathname }) => {
           <a href="#affiliate">Affiliate</a>
           <a href="#media">Media</a>
         </div>
-        <div onClick={() => window.location.replace("/token-sale/account/")} css={{
+        <div onClick={() => window.location.replace("https://tokensale.squeezer.io")} css={{
           position: 'absolute',
           cursor: 'pointer',
           color: '#FFF',
