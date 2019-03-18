@@ -11,8 +11,9 @@ exports.onCreateDevServer = () => {
 
 exports.onPreBuild = () => {
   console.log("Copying locales")
+  
 
-  // fs.unlinkSync(__dirname, "/public/locales")
+  fsExtra.removeSync(path.join(__dirname, "/public/locales"))
 
   fsExtra.copySync(
     path.join(__dirname, "/src/locales"),
