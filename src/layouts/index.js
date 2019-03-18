@@ -1,183 +1,115 @@
 import React from "react"
-import Helmet from "react-helmet"
+import { Link } from "gatsby"
 
-import Navigation from "../components/navigation"
-import MobileNavigation from "../components/navigation-mobile"
-import SidebarBody from "../components/sidebar-body"
-import docsSidebar from "../../content/docs/doc-links.yaml"
+import LanguageSwitcher from "../components/languageSwitcher"
+
 import { rhythm, scale } from "../utils/typography"
 import presets from "../utils/presets"
-import colors from "../utils/colors"
-import createReactClass from "create-react-class"
-import traverse from "traverse"
-import queryString from "query-string";
 
+import { I18nextProvider } from 'react-i18next'
+import i18n from "../utils/i18n"
 
-import "../css/prism-coy.css"
+class Layout extends React.Component {
+  componentDidMount() {
+    // Create references to html/body elements
+    // this.htmlElement = document.querySelector(`html`)
+    // this.bodyElement = document.querySelector(`body`)
+    // // Cache the window width.
+    // windowWidth = window.innerWidth
+  }
+  componentWillReceiveProps(nextProps) {
+    // if we're changing to a non-homepage page, put things in
+    // a modal (unless we're on mobile).
+    // if (windowWidth > 750) {
+    // // Freeze the background from scrolling.
+    // this.htmlElement.style.overflow = `hidden`
+    // this.bodyElement.style.overflow = `hidden`
+    // // Always set overflow-y to scroll so the scrollbar stays visible avoiding
+    // // weird jumping.
+    // this.htmlElement.style.overflowY = `scroll`
+    // } else {
+    // // Otherwise we're navigating back home so delete old home so the
+    // // modal can be destroyed.
+    // delete this.modalBackgroundChildren
+    // this.htmlElement.style.overflow = `visible`
+    // this.bodyElement.style.overflow = `visible`
+    // // Always set overflow-y to scroll so the scrollbar stays visible avoiding
+    // // weird jumping.
+    // this.htmlElement.style.overflowY = `scroll`
+    // }
+  }
 
-// Import Futura PT typeface
-import "../fonts/Webfonts/futurapt_book_macroman/stylesheet.css"
-import "../fonts/Webfonts/futurapt_bookitalic_macroman/stylesheet.css"
-import "../fonts/Webfonts/futurapt_demi_macroman/stylesheet.css"
-import "../fonts/Webfonts/futurapt_demiitalic_macroman/stylesheet.css"
-
-// Other fonts
-import "typeface-spectral"
-import "typeface-space-mono"
-
-module.exports = createReactClass({
-  propTypes() {
-    return {
-      children: React.PropTypes.any
-    }
-  },
-  loadMenu(props) {
-    const menuTree = []
-    let activeLink = null
-    let index = 0
-    let parentLinks = [], parentLink, rootParent
-
-    docsSidebar.forEach((section, index) => {
-      let links = []
-      traverse(section.links).forEach(function () {
-        const deep = this.level
-        const node = this.node
-        const key = this.key
-        let linkId = `sidebar-link-${index}`
-        let path = typeof node === 'string' ? this.node : '#'
-
-        if (deep === 1) {
-          parentLink = 0
-          rootParent = linkId
-        } else {
-          parentLink = parentLinks[deep - 1]
-        }
-
-        let linkObj = {
-          id: linkId,
-          title: key,
-          type: typeof node === 'string' ? 'children' : 'parent',
-          path: path,
-          parent: parentLink,
-          rootParent: rootParent,
-          deep: deep,
-          active: false,
-          display: false
-        }
-
-        if (props.location.pathname === path) {
-          activeLink = linkObj
-        }
-
-        if (key) {
-          links.push(linkObj)
-        }
-
-        if (typeof node !== 'string') {
-          parentLinks[deep] = linkId
-        }
-
-        index++
-      })
-
-      menuTree.push({
-        title: section.title,
-        key: section.title,
-        links: links
-      })
-    })
-    return {
-      tree: menuTree,
-      activeLink: activeLink
-    }
-  },
   render() {
-    const queryParams = queryString.parse(this.props.location.search)
-    if (queryParams && queryParams.utm_source) {
-      localStorage.setItem('utm_source', queryParams.utm_source)
-      localStorage.setItem('utm_medium', queryParams.utm_medium)
-      localStorage.setItem('utm_campaign', queryParams.utm_campaign)
-    } else if (typeof document !== "undefined" && document.referrer && !localStorage.utm_source) {
-      const referrer = document.referrer.replace('https://', '').split(/[/?#]/)[0]
-      localStorage.setItem('utm_source', referrer)
-      localStorage.setItem('utm_medium', 'referrer')
-    }
-
-    const isHomepage = this.props.location.pathname == `/`
-    const hasSidebar =
-      this.props.location.pathname.slice(0, 6) === `/docs/` ||
-      this.props.location.pathname.slice(0, 10) === `/packages/` ||
-      this.props.location.pathname.slice(0, 10) === `/enterprise/`
-    const menu = this.loadMenu(this.props)
-    const sidebarStyles = {
-      borderRight: `1px solid ${colors.b[0]}`,
-      backgroundColor: presets.sidebar,
-      float: `left`,
-      width: rhythm(10),
-      display: `none`,
-      position: `fixed`,
-      overflowY: `auto`,
-      height: `calc(100vh - ${presets.headerHeight})`,
-      WebkitOverflowScrolling: `touch`,
-      "::-webkit-scrollbar": {
-        width: `6px`,
-        height: `6px`,
-      },
-      "::-webkit-scrollbar-thumb": {
-        background: presets.lightBlue,
-      },
-      "::-webkit-scrollbar-track": {
-        background: presets.brandLighter,
-      },
-    }
-
     return (
-      <div>
-        <Helmet defaultTitle={`Squeezer Framework`} titleTemplate={`%s | Squeezer Framework`}>
-          <meta name="twitter:site" content="@squeezerio" />
-          <meta name="og:type" content="website" />
-          <meta name="og:site_name" content="Squeezer.IO" />
-        </Helmet>
-        <Navigation pathname={this.props.location.pathname} />
+      <I18nextProvider i18n={i18n}>
         <div
-          className={hasSidebar ? `main-body has-sidebar` : `main-body`}
           css={{
-            paddingTop: 0,
-            [presets.Tablet]: {
-              margin: `0 auto`,
-              paddingTop: isHomepage ? 0 : presets.headerHeight,
-            },
+            background: `rgba(0,0,0,0.03)`,
+            minHeight: `100vh`,
           }}
         >
-          {/* TODO Move this under docs/index.js once Gatsby supports multiple levels
-               of layouts */}
           <div
             css={{
-              ...sidebarStyles,
-              [presets.Tablet]: {
-                display:
-                  this.props.location.pathname.slice(0, 6) === `/docs/` ||
-                    this.props.location.pathname.slice(0, 10) === `/packages/`
-                    ? `block`
-                    : `none`,
-              },
+              background: `white`,
+              borderBottom: `1px solid rgba(0,0,0,0.08)`,
             }}
           >
-            <SidebarBody menu={menu} />
+            <div
+              css={{
+                padding: rhythm(3 / 4),
+                paddingBottom: `calc(${rhythm(3 / 4)} - 1px)`,
+                maxWidth: 960,
+                margin: `0 auto`,
+                overflow: `hidden`,
+              }}
+            >
+              <Link
+                to="/"
+                css={{
+                  display: `inline-block`,
+                  float: `left`,
+                  textDecoration: `none`,
+                }}
+              >
+                <h1
+                  data-testid="site-title"
+                  css={{
+                    ...scale(4 / 5),
+                    lineHeight: 1,
+                    margin: 0,
+                    overflow: `hidden`,
+                  }}
+                >
+                  <span
+                    css={{
+                      paddingLeft: `calc(${rhythm(1)} - 1px)`,
+                      borderLeft: `1px solid rgba(0,0,0,0.3)`,
+                      lineHeight: 1,
+                      marginLeft: rhythm(1),
+                    }}
+                  >
+                    Squeezer Platform
+                </span>
+                </h1>
+              </Link>
+              <LanguageSwitcher />
+            </div>
           </div>
           <div
             css={{
+              maxWidth: 960,
+              margin: `0 auto`,
               [presets.Tablet]: {
-                paddingLeft: hasSidebar ? rhythm(10) : 0,
+                padding: rhythm(3 / 4),
               },
             }}
           >
-            {this.props.children()}
+            {this.props.children}
           </div>
         </div>
-        <MobileNavigation />
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
-      </div>
+      </I18nextProvider>
     )
-  },
-})
+  }
+}
+
+export default Layout
