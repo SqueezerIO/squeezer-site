@@ -7,6 +7,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "browser-env": "^3.2.5",
+    "classnames": "^2.2.6",
     "fs-extra": "^7.0.0",
     "gatsby": "^2.0.0",
     "gatsby-plugin-glamor": "^2.0.5",
