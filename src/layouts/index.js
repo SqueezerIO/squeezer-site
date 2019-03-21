@@ -112,35 +112,6 @@ class Layout extends React.Component {
                 alt="logo"
                 css={{ width: '200px', height: '80px', display: `inline-block`, float: `left`, margin: 0}}
               />
-              {/*<Link*/}
-                {/*to="/"*/}
-                {/*css={{*/}
-                  {/*display: `inline-block`,*/}
-                  {/*float: `center`,*/}
-                  {/*textDecoration: `none`,*/}
-                {/*}}*/}
-              {/*>*/}
-                {/*<h1*/}
-                  {/*data-testid="site-title"*/}
-                  {/*css={{*/}
-                    {/*...scale(4 / 5),*/}
-                    {/*lineHeight: 1,*/}
-                    {/*margin: 0,*/}
-                    {/*overflow: `hidden`,*/}
-                  {/*}}*/}
-                {/*>*/}
-                  {/*<span*/}
-                    {/*css={{*/}
-                      {/*paddingLeft: `calc(${rhythm(1)} - 1px)`,*/}
-                      {/*borderLeft: `1px solid rgba(0,0,0,0.3)`,*/}
-                      {/*lineHeight: 1,*/}
-                      {/*marginLeft: rhythm(1),*/}
-                    {/*}}*/}
-                  {/*>*/}
-                    {/*Squeezer Platform*/}
-                {/*</span>*/}
-                {/*</h1>*/}
-              {/*</Link>*/}
               <div css={{
                 display: `flex`,
                 textDecoration: `none`,
