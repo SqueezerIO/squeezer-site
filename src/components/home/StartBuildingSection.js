@@ -73,23 +73,25 @@ export default class StartBuildingSection extends Component {
                 fontSize: '2.3rem',
                 letterSpacing: '.9px',
                 marginLeft: '1rem',
+                [presets.Mobile]: { marginLeft: 0 }
               }}>START BUILDING TOP-NOTCH DAPPS, IS FREE !</p>
             </div>
-            <p css={{display: 'flex', padding: '2rem 10rem 2rem 3rem', color: '#fff', fontFamily: 'Khula', fontSize: '18px', letterSpacing: '1px',
-              [presets.Desktop]: {padding: '0 2rem 0 0'}}}>
+            <p css={{display: 'flex', padding: '2rem 6rem 2rem 3rem', color: '#fff', fontFamily: 'Khula', fontSize: '18px', letterSpacing: '1px',
+              [presets.Desktop]: {padding: '0 1rem 0 0'}, [presets.Phablet]: {padding: '0 1rem 0 0', textAlign: 'center'}}}>
               Feel free to try our solution, we offer $25 credit to all new users.
               Setting up a new project is super easy and if you need help we’ll
               make sure that you will get it just in time.
             </p>
-            <ButtonSecondary
-              title='get free account'
-              style={{
-                width: '12rem', height: '55px',	fontWeight: 'bold', fontSize: '18px', color: '#004CA5', lineHeight: '50px', marginLeft: '3rem'
-              }}
-              mediaquery={{[presets.Desktop]: {
-                  display: 'block', margin: 'auto !important',
-                }}}
-            />
+              <ButtonSecondary
+                title='get free account'
+                style={{
+                  width: '12rem', height: '3rem',	fontWeight: 'bold', fontSize: '18px', color: '#004CA5', lineHeight: '50px', marginLeft: '3rem',
+                }}
+                mediaquery={{[presets.Desktop]: {
+                    display: 'block', margin: 'auto !important', width: '100% !important', padding: '0 !important'
+                  }}}
+                mediaqueryPhablet={{[presets.Phablet]: { fontSize: '14px !important', height: '6rem !important', marginTop: '3rem !important' }}}
+              />
           </div>
         </div>
       </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '../layouts';
-import Footer from '../footer';
 
 import { withNamespaces } from 'react-i18next';
 import MainSection from '../components/home/MainSection';
@@ -17,8 +16,6 @@ class HomePage extends React.Component {
         <ProductsSection />
         <DeveloperSection />
         <StartBuildingSection />
-        
-        <Footer />
       </Layout>
     )
   }

@@ -3,7 +3,7 @@ import presets from "../../utils/presets";
 
 export default class ButtonSecondary extends Component {
   render() {
-    const { title, onClick, style, mediaquery } = this.props;
+    const { title, onClick, style, mediaquery, mediaqueryPhablet } = this.props;
     
     return (
       <button
@@ -18,10 +18,12 @@ export default class ButtonSecondary extends Component {
           fontSize: '14px',
           fontFamily: 'Khula',
           lineHeight: '40px',
+          whiteSpace: 'no-wrap',
           [presets.Desktop]: mediaquery,
+          [presets.Phablet]: mediaqueryPhablet,
           ':hover': {
             cursor: 'pointer'
-          }
+          },
         }}
       >
         {title}

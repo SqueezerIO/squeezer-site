@@ -46,7 +46,7 @@ export default class ProductsSection extends Component {
         css={{
           margin: `0 auto`,
           marginTop: `5rem`,
-          maxWidth: `100vh`,
+          // maxWidth: `100vh`,
           minHeight: `20vh`,
           position: 'relative',
           display: 'flex',
@@ -61,7 +61,7 @@ export default class ProductsSection extends Component {
         <img
           src={productsImage}
           css={{
-            maxWidth: '100vh',
+            // maxWidth: '100vh',
             height: 'auto',
             width: 'auto \ 9',
             [presets.Desktop]: {

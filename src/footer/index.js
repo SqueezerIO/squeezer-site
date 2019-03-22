@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
-import presets from "../utils/presets";
+import presets from '../utils/presets';
+import ButtonPrimary from '../components/button/ButtonPrimary';
+import BlankA from '../components/hyperlink';
+import telegramImage from '../../static/images/footer/telegram-black.png';
+import mediumImage from '../../static/images/footer/medium.png';
+import playImage from '../../static/images/footer/play_black1.png';
+import facebookImage from '../../static/images/footer/facebook-f-brands.svg';
+import twitterImage from '../../static/images/footer/twitter-brands.svg';
+import gitImage from '../../static/images/footer/github-brands.svg';
 
 const footerItems = [
   {
@@ -110,23 +118,55 @@ export default class Footer extends Component {
     </div>
   );
   
+  renderSocialIcon = (link, image) => (
+    <li>
+      <BlankA href={link}>
+        <img css={{width: '25px', height: '25px'}} src={image} alt={image} />
+      </BlankA>
+    </li>
+  );
+  
   render() {
     return (
       <div css={{
         display: 'flex',
-        maxWidth: `100vh`,
-        margin: `0 auto`,
         marginTop: `2rem`,
         minHeight: `20vh`,
-        padding: '3rem',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        [presets.Hd]: {
+          marginTop: `8rem`,
+          padding: '3rem',
+          justifyContent: 'space-between',
+        },
         [presets.Desktop]: {
-          marginTop: `20rem`,
+          justifyContent: 'center',
+          marginTop: '10rem',
+        },
+        [presets.Phablet]: {
+          alignContent: 'center',
+          display: 'block',
+          marginTop: '50rem',
+        },
+        [presets.Mobile]: {
+          marginTop: '70rem',
         }
       }}>
+        <div css={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between'}}>
         {footerItems.map(({title, items}) => (
-          <div css={{width: '20rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between'}}>
-            <div css={{margin: '0 .5rem'}}>
-              <div key={title} css={{
+            <div key={title} css={{
+              margin: '0 1rem',
+              width: '10rem',
+              [presets.Hd]: {
+                margin: '.5rem 2rem',
+                textAlign: 'center',
+              },
+              [presets.Phablet]: {
+                textAlign: 'center',
+                width: '15rem',
+              }
+            }}>
+              <div css={{
                 textTransform: 'uppercase',
                 color: '#454545',
                 fontFamily: "DIN Condensed",
@@ -139,10 +179,34 @@ export default class Footer extends Component {
               </div>
               {this.renderColumn(items)}
             </div>
-          </div>
         ))}
-        <div>
-          Sign up for our newsletter to stay up to date
+          <div  css={{display: 'flex', flexDirection: 'column', width: '15rem', justifyContent: 'space-between', marginLeft: '-.5rem',
+            [presets.Hd]: {display: 'block', margin: 'auto', marginTop: '1rem', textAlign: 'center',},
+            [presets.Mobile]: {width: '12rem'}
+          }}>
+            <h3 css={{color: '#454545', fontFamily: "Khula", fontSize: '20px', fontWeight: 'normal', letterSpacing: '1.01px', margin: 0}}>
+              Sign up for our newsletter to stay up to date.
+            </h3>
+            <div css={{display: 'flex', height: '2rem', [presets.Hd]: {marginTop: '1rem'}, [presets.Mobile]: { display: 'block', margin: '1rem'}}}>
+              <input
+                type="text"
+                placeholder='Email address'
+                css={{display: 'flex', 	border: '1px solid #DADADA', padding: '.5rem'}}
+              />
+              <ButtonPrimary title='sign up' style={{display:'flex', width: '5.6rem', lineHeight: '35px', justifyContent: 'center', fontSize: '.7rem'}}
+              />
+            </div>
+            <ul css={{listStyle: 'none', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', margin: 0,
+              [presets.Hd]: {marginTop: '2rem'}, [presets.Mobile]: {marginTop: '4rem'}
+            }}>
+              {this.renderSocialIcon('', twitterImage)}
+              {this.renderSocialIcon('', facebookImage)}
+              {this.renderSocialIcon('', gitImage)}
+              {this.renderSocialIcon('', mediumImage)}
+              {this.renderSocialIcon('', telegramImage)}
+              {this.renderSocialIcon('', playImage)}
+            </ul>
+          </div>
         </div>
       </div>
     );

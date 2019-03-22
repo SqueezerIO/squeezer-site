@@ -12,7 +12,6 @@ export default class MainSection extends Component {
           margin: 0,
           padding: 0,
           marginTop: `3rem`,
-          maxWidth: `100vh`,
           minHeight: `40vh`,
           position: 'relative',
           display: 'flex',
@@ -58,7 +57,7 @@ export default class MainSection extends Component {
         <img
           src={mainImage}
           css={{
-            maxWidth: '100vh', height: 'auto', width: 'auto\9'
+            /*maxWidth: '100vh',*/ height: 'auto', width: 'auto\9'
           }}
         />
       </div>

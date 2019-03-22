@@ -19,7 +19,7 @@ export default class ButtonPrimary extends Component {
         [presets.Desktop]: mediaquery,
         ':hover': {
           cursor: 'pointer'
-        }
+        },
     });
     
     return (
