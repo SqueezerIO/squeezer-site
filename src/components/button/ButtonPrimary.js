@@ -5,7 +5,6 @@ import presets from "../../utils/presets";
 export default class ButtonPrimary extends Component {
   render() {
     const { title, onClick, style, mediaquery } = this.props;
-    console.log('style', mediaquery);
     
     const buttonClass = css({
       border: '1px solid #1890FF',

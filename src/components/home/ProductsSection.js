@@ -80,7 +80,7 @@ export default class ProductsSection extends Component {
           }
         }}>
           <div className={`${cardsContainer}`}>
-            {cardItems.map(({title, image, description, path}) => <Card title={title} image={image} description={description} path={path}/>)}
+            {cardItems.map(({title, image, description, path}) => <Card key={title} title={title} image={image} description={description} path={path}/>)}
           </div>
         </div>
       </div>

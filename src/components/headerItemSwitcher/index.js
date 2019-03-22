@@ -31,9 +31,8 @@ class HeaderItemSwitcher extends Component {
     const { header, component } = this.props;
     
     const renderContent = component.map((item, index) => (
-      <Link to={item.path} css={{ textDecoration: `none` }}>
+      <Link to={item.path} css={{ textDecoration: `none` }} key={index}>
         <div
-          key={index}
           css={{
             padding: '5px 22px',
             ':hover': {

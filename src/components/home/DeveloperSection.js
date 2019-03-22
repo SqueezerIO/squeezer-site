@@ -42,7 +42,7 @@ export default class DeveloperSection extends Component {
           <div css={{position: 'absolute', bottom: '7rem', left: '6.5rem', [presets.Desktop]: {
               position: 'relative', marginTop: '8rem', left: 0
             }}}>
-            <Link css={{display: 'flex', alignContent: 'center', ':hover': {
+            <Link to='' css={{display: 'flex', alignContent: 'center', ':hover': {
                 cursor: 'pointer'
               }}}>
               <img src={checkDocs} alt='checkDocs' css={{height: '16px', marginTop: '.2rem'}} />
