@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'gatsby';
 
 import presets from '../../utils/presets';
-import assetImage from '../../../public/images/home/docs/asset_6@4x.png';
-import checkDocs from '../../../public/images/home/docs/check_docs.png';
-import arrow from '../../../public/images/home/products/icon_greenArrow.png';
+import assetImage from '../../../static/images/home/docs/asset_6@4x.png';
+import checkDocs from '../../../static/images/home/docs/check_docs.png';
+import arrow from '../../../static/images/home/products/icon_greenArrow.png';
 
 export default class DeveloperSection extends Component {
   render() {

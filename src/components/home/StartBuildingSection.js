@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import presets from '../../utils/presets';
-import assetWhiteImage from '../../../public/images/home/docs/asset_6@4x_white.png';
+import assetWhiteImage from '../../../static/images/home/docs/asset_6@4x_white.png';
 import ButtonSecondary from '../button/ButtonSecondary';
 
 export default class StartBuildingSection extends Component {

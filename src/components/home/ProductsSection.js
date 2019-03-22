@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { css } from 'glamor';
 
 import presets from '../../utils/presets';
-import productsImage from '../../../public/images/home/products.png';
+import productsImage from '../../../static/images/home/products.png';
 import Card from '../card';
-import frameworkIcon from '../../../public/images/home/products/framework-icon.png';
-import platformIcon from '../../../public/images/home/products/icon_collaborate.png';
-import blockchainIcon from '../../../public/images/home/products/icon_blockchain.png';
+import frameworkIcon from '../../../static/images/home/products/framework-icon.png';
+import platformIcon from '../../../static/images/home/products/icon_collaborate.png';
+import blockchainIcon from '../../../static/images/home/products/icon_blockchain.png';
 
 const cardItems = [
   {
@@ -80,7 +80,9 @@ export default class ProductsSection extends Component {
           }
         }}>
           <div className={`${cardsContainer}`}>
-            {cardItems.map(({title, image, description, path}) => <Card key={title} title={title} image={image} description={description} path={path}/>)}
+            {cardItems.map(({title, image, description, path}) => (
+              <Card key={title} title={title} image={image} description={description} path={path}/>
+            ))}
           </div>
         </div>
       </div>

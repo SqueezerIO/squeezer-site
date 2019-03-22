@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import presets from '../../utils/presets';
 import ButtonPrimary from '../button/ButtonPrimary';
 import ButtonSecondary from '../button/ButtonSecondary';
-import mainImage from '../../../public/images/home/main.png';
+import mainImage from '../../../static/images/home/main.png';
 
 export default class MainSection extends Component {
   render() {

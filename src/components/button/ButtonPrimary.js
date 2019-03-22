@@ -16,7 +16,10 @@ export default class ButtonPrimary extends Component {
         fontSize: '14px',
         fontFamily: 'Khula',
         lineHeight: '40px',
-        [presets.Desktop]: mediaquery
+        [presets.Desktop]: mediaquery,
+        ':hover': {
+          cursor: 'pointer'
+        }
     });
     
     return (

@@ -11,7 +11,7 @@ import presets from "../utils/presets"
 import { I18nextProvider } from 'react-i18next'
 import i18n from "../utils/i18n"
 
-import logo from '../../public/images/logo-blue.svg';
+import logo from '../../static/images/logo-blue.svg';
 
 const products = [
   {

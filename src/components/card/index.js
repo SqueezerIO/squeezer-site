@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from "gatsby"
 
-import learnMore from '../../../public/images/home/products/learn_more.png';
-import arrow from '../../../public/images/home/products/icon_greenArrow.png';
+import learnMore from '../../../static/images/home/products/learn_more.png';
+import arrow from '../../../static/images/home/products/icon_greenArrow.png';
 import presets from "../../utils/presets";
 
 export default class Card extends Component {
