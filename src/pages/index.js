@@ -6,6 +6,7 @@ import MainSection from '../components/home/MainSection';
 import ProductsSection from '../components/home/ProductsSection';
 import DeveloperSection from '../components/home/DeveloperSection';
 import StartBuildingSection from '../components/home/StartBuildingSection';
+import MemberEEA from '../components/home/MemberEEA';
 
 class HomePage extends React.Component {
   
@@ -15,6 +16,7 @@ class HomePage extends React.Component {
         <MainSection />
         <ProductsSection />
         <DeveloperSection />
+        <MemberEEA />
         <StartBuildingSection />
       </Layout>
     )

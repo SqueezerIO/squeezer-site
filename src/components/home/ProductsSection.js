@@ -4,9 +4,9 @@ import { css } from 'glamor';
 import presets from '../../utils/presets';
 import productsImage from '../../../static/images/home/products.png';
 import Card from '../card';
-import frameworkIcon from '../../../static/images/home/products/framework-icon.png';
-import platformIcon from '../../../static/images/home/products/icon_collaborate.png';
-import blockchainIcon from '../../../static/images/home/products/icon_blockchain.png';
+import frameworkIcon from '../../../static/images/homeSVG/framework.svg';
+import platformIcon from '../../../static/images/homeSVG/platform-icon.svg';
+import blockchainIcon from '../../../static/images/homeSVG/chainkit-icon.svg';
 
 const cardItems = [
   {
@@ -32,10 +32,13 @@ const cardItems = [
 export default class ProductsSection extends Component {
   render() {
     const cardsContainer = css({
+      position: 'relative',
       display: 'flex',
-      justifyContent: 'space-around',
+      justifyContent: 'center',
       maxWidth: 'inherit',
       alignContent: 'center',
+      marginTop: '69px',
+      flexWrap: 'wrap',
       [presets.Desktop]: {
         display: 'block',
         marginTop: 0,
@@ -48,7 +51,7 @@ export default class ProductsSection extends Component {
           margin: `0 auto`,
           marginTop: `5rem`,
           minHeight: `20vh`,
-          maxWidth: '1200px',
+          maxWidth: '100vw',
           position: 'relative',
           display: 'flex',
           alignContent: 'center',
@@ -62,28 +65,19 @@ export default class ProductsSection extends Component {
         <img
           src={productsImage}
           css={{
-            height: 'auto',
-            width: 'auto \ 9',
+            // height: 'auto',
+            // width: 'auto \ 9',
+            position: 'absolute',
             [presets.Desktop]: {
               transform: 'rotate(90deg)',
             },
           }}
         />
     
-        <div css={{
-          position: 'absolute',
-          top: '18%',
-          left: 0,
-          right: 0,
-          [presets.Desktop]: {
-            top: '-10rem',
-          }
-        }}>
-          <div className={`${cardsContainer}`}>
-            {cardItems.map(({title, image, description, path}) => (
-              <Card key={title} title={title} image={image} description={description} path={path}/>
-            ))}
-          </div>
+        <div className={`${cardsContainer}`}>
+          {cardItems.map(({title, image, description, path}) => (
+            <Card key={title} title={title} image={image} description={description} path={path}/>
+          ))}
         </div>
       </div>
     );

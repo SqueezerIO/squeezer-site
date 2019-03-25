@@ -3,6 +3,13 @@ import {
   MOBILE_MEDIA_QUERY,
   TABLET_MEDIA_QUERY,
 } from "typography-breakpoint-constants"
+import { css } from 'glamor';
+
+import Khula from '../../static/Khula/Khula-Light.ttf';
+import DIN from '../../static/d-din/D-DIN.ttf';
+
+css.global('@font-face', { fontFamily: 'Khula', src: Khula });
+css.global('@font-face', { fontFamily: 'DIN Condensed', src: DIN });
 
 const options = {
   baseFontSize: `18px`,

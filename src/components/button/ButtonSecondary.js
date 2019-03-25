@@ -19,6 +19,7 @@ export default class ButtonSecondary extends Component {
           fontFamily: 'Khula',
           lineHeight: '40px',
           whiteSpace: 'no-wrap',
+          fontWeight: 'bold',
           [presets.Desktop]: mediaquery,
           [presets.Phablet]: mediaqueryPhablet,
           ':hover': {

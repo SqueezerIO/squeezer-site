@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "gatsby"
 
-import learnMore from '../../../static/images/home/products/learn_more.png';
 import arrow from '../../../static/images/home/products/icon_greenArrow.png';
-import presets from "../../utils/presets";
 
 export default class Card extends Component {
   render() {
@@ -11,33 +9,29 @@ export default class Card extends Component {
     
     return (
       <div css={{
-        height: '15.5rem',
-        width: '17.5rem',
+        height: '285px',
+        width: '375px',
         borderRadius: '3px',
         backgroundColor: '#005499',
         boxShadow: '0 24px 30px 0 rgba(0,0,0,0.5)',
         padding: '1.5rem',
-        [presets.Desktop]: {
-          margin: '1rem auto',
-        }
+        margin: '23px',
       }}>
         <div css={{ display: 'flex', alignItems: 'center' }}>
-          <img src={image} alt='image' css={{marginRight: '1rem'}} />
+          <img src={image} alt='image' css={{marginRight: '1rem', height: '50px', width: '50px'}} />
           <h2 css={{
-            color: '#FFFFFF',	fontFamily: 'Khula',	fontSize: '28px',	fontWeight: 'bold', textTransform: 'uppercase'
+            color: '#FFFFFF',	fontFamily: 'Khula',	fontSize: '30px',	fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px', lineHeight: '40px', marginTop: '7px'
           }}>{title}</h2>
         </div>
-        <p css={{color: '#FFFFFF',	fontFamily: 'Khula',	fontSize: '15px', letterSpacing: '1.7px'}}>
+        <p css={{color: '#FFFFFF', fontFamily: 'Khula', fontSize: '18px', letterSpacing: '1px', lineHeight: '24px', height: '120px', width: '303px', fontWeight: 200}}>
           {description}
         </p>
         
-        <div css={{bottom: '0', position: 'absolute', [presets.Desktop]: {
-            position: 'relative',
-          }}}>
-          <Link to={path} css={{display: 'flex', alignContent: 'center', ':hover': {
-              cursor: 'pointer'
+        <div css={{position: 'relative'}}>
+          <Link to={path} css={{display: 'flex', alignContent: 'center', ':link': {textDecoration: 'none'},':hover': {
+              cursor: 'pointer',
             }}}>
-            <img src={learnMore} alt='learnMore' css={{height: '16px', marginTop: '.2rem'}} />
+            <div css={{color: '#00DE72', fontSize: '18px', fontWeight: 'bold', textTransform: 'uppercase', fontFamily: 'Khula', letterSpacing: '1px'}}>learn more</div>
             <img src={arrow} alt='arrow' css={{marginLeft: '1rem'}} />
           </Link>
         </div>

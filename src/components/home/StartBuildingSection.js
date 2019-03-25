@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import presets from '../../utils/presets';
-import assetWhiteImage from '../../../static/images/home/docs/asset_6@4x_white.png';
+import assetWhiteImage from '../../../static/images/home/docs/redo.svg';
 import ButtonSecondary from '../button/ButtonSecondary';
 
 export default class StartBuildingSection extends Component {
@@ -8,30 +8,40 @@ export default class StartBuildingSection extends Component {
     return (
       <div
         css={{
-          margin: `0 auto`,
-          maxWidth: `960px`,
+          margin: `5rem auto`,
+          maxWidth: `1200px`,
           minHeight: `20vh`,
           position: 'relative',
           display: 'flex',
           padding: '3rem 7rem',
           justifyContent: 'space-between',
           [presets.Desktop]: {
-            padding: '0 3rem',
+            padding: 0,
           },
           [presets.Phablet]: { marginTop: `5rem`}
         }}
       >
         <div css={{
-          position: 'relative', height: '322px',	display: 'flex', flex: 1,borderRadius: '1px',	backgroundColor: '#e6f2ff',	boxShadow: '0 2px 4px 0 rgba(0,0,0,0.5)',
-          [presets.Desktop]: {
+          position: 'relative', width: '905px', height: '322px', borderRadius: '1px',
+          [presets.Hd]: {
             marginTop: 0,
-            width: 0,
-            height: 0
+            width: '100%',
+            height: 'auto'
           },
-        }}>
+        }} >
+          <div css={{
+            height: '322px', borderRadius: '1px',	opacity: '0.24', backgroundColor: '#007EE6',	boxShadow: '0 2px 4px 0 rgba(0,0,0,0.5)',
+            [presets.Desktop]: {
+              marginTop: 0,
+              width: 0,
+              height: 0
+            },
+          }} >
+          </div>
           <div css={{
             position: 'absolute',
             height: '317px',
+            width: '900px',
             flex: 1,
             display: 'flex',
             flexDirection: 'column',
@@ -41,57 +51,59 @@ export default class StartBuildingSection extends Component {
             borderRadius: '1px',
             backgroundColor: '#005499',
             boxShadow: '0 2px 4px 0 rgba(0,0,0,0.5)',
-            padding: '1rem 2.5rem',
-            [presets.Desktop]: {
+            padding: '26px 205px 23px 40px',
+            [presets.Hd]: {
+              padding: '1rem',
               display: 'block',
               marginTop: 0,
               height: 'auto',
+              width: '100%',
               top: 0,
               right: 0,
               left: 0
-            }
-          }}>
+            },
+          }}
+          >
             <div css={{display: 'flex'}}>
-              <div css={{[presets.Desktop]: {display: 'flex', alignContent: 'center', justifyContent: 'center'}}}>
+              <div css={{width: '50px', height: '80px', display: 'flex'}}>
                 <img
                   src={assetWhiteImage}
                   alt='assetWhiteImage'
                   css={{
-                    width: '40px', height: '40px', position: 'absolute', left: '3%', [presets.Desktop]: {position: 'relative', left: '7%'
-                    }
+                   width: '50px', height: '40px',
                   }}
-                />
-                <img
-                  src={assetWhiteImage}
-                  alt='assetWhiteImage'
-                  css={{width: '40px', height: '40px'}}
                 />
               </div>
               <p css={{
                 color: '#FFFFFF',
+                width: '537px',
+                height: '35px',
                 fontFamily: "DIN Condensed",
-                fontSize: '2rem',
+                fontSize: '35px',
                 letterSpacing: '.9px',
-                marginLeft: '.5rem',
-                [presets.Mobile]: { marginLeft: 0 }
+                lineHeight: '42px',
+                marginLeft: '.7rem',
+                [presets.Phablet]: {marginLeft: '1.2rem'}
               }}>START BUILDING TOP-NOTCH DAPPS, IS FREE !</p>
             </div>
-            <p css={{display: 'flex', padding: '2rem 6rem 2rem 3rem', color: '#fff', fontFamily: 'Khula', fontSize: '18px', letterSpacing: '1px',
-              [presets.Desktop]: {padding: '0 1rem 0 0'}, [presets.Phablet]: {padding: '0 1rem 0 0', textAlign: 'center'}}}>
-              Feel free to try our solution, we offer $25 credit to all new users.
-              Setting up a new project is super easy and if you need help we’ll
-              make sure that you will get it just in time.
-            </p>
+            <div css={{height: '187px', width: '603px', [presets.Phablet]: {width: 'auto', 'height': 'auto', marginTop: '5rem'}}}>
+              <p css={{padding: '0rem 0rem 0rem 3.5rem', color: '#fff', fontFamily: 'Khula', fontSize: '20px', letterSpacing: '.9px', lineHeight: '27px', fontWeight: '200',
+                [presets.Phablet]: {padding: '0 1rem 0 0', textAlign: 'center'}}}>
+                Feel free to try our solution, we offer <b>$25</b> credit to all new users.
+                Setting up a new project is super easy and if you need help we’ll
+                make sure that you will get it just in time.
+              </p>
               <ButtonSecondary
                 title='get free account'
                 style={{
-                  width: '12rem', height: 'auto',	fontWeight: 'bold', fontSize: '18px', color: '#004CA5', lineHeight: '50px', marginLeft: '3rem',
+                  width: '262px', height: '56px',	fontWeight: 'bold', fontSize: '20px', color: '#004CA5', marginLeft: '3.5rem',
                 }}
                 mediaquery={{[presets.Desktop]: {
-                    display: 'block', margin: 'auto !important', width: '100% !important', padding: '0 !important'
+                    display: 'block', margin: 'auto !important'/*, width: '100% !important'*/, padding: '0 !important'
                   }}}
-                mediaqueryPhablet={{[presets.Phablet]: { fontSize: '14px !important', height: '6rem !important', marginTop: '3rem !important' }}}
+                mediaqueryPhablet={{[presets.Phablet]: { fontSize: '14px !important', height: '4rem !important', marginTop: '3rem !important', marginLeft: 'auto !important', width: '200px !important' }}}
               />
+            </div>
           </div>
         </div>
       </div>

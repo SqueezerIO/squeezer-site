@@ -5,41 +5,60 @@ import ButtonPrimary from '../components/button/ButtonPrimary';
 import ButtonSecondary from '../components/button/ButtonSecondary';
 
 import { I18nextProvider } from 'react-i18next'
-import i18n from "../utils/i18n"
+import i18n from '../utils/i18n'
 import presets from '../utils/presets';
 
-
 import logo from '../../static/images/logo-blue.svg';
-import Footer from "../footer";
+import Footer from '../footer';
+import frameworkIcon from '../../static/images/homeSVG/framework.svg';
+import platformIcon from '../../static/images/homeSVG/platform-icon.svg';
+import blockchainIcon from '../../static/images/homeSVG/chainkit-icon.svg';
 
 const products = [
   {
     title: 'Framework',
-    path: '/framework-page'
+    path: '/framework-page',
+    image: frameworkIcon,
+    description: 'Develop dApps on local machine'
   },
   {
     title: 'Platform',
-    path: '/platform-page'
+    path: '/platform-page',
+    image: platformIcon,
+    description: 'Share project & collaborate with team'
   },
   {
     title: 'Chainkit',
-    path: '/chainkit-page'
+    path: '/chainkit-page',
+    image: blockchainIcon,
+    description: 'Access blockchain as a service (Baas)'
   }
 ];
 
-const platforms = [
+const developers = [
   {
-    title: 'Framework',
-    path: '/framework-page'
+    title: 'Docs',
+    path: '/',
+    description: 'Learn how to use Squeezer tools'
   },
   {
-    title: 'Framework',
-    path: '/framework-page'
+    title: 'Examples',
+    path: '/f',
+    description: 'Comprehensive use cases'
   },
   {
-    title: 'Framework',
-    path: '/framework-page'
+    title: 'Support',
+    path: '/',
+    description: "Join our chat now. Let's talk !"
   },
+];
+
+const company = [
+  {
+    title: 'Team',
+    path: '/',
+    description: 'Check out awsome team'
+  }
 ];
 
 class Layout extends React.Component {
@@ -65,7 +84,7 @@ class Layout extends React.Component {
             <div
               css={{
                 padding: '1px',
-                maxWidth: `960px`,
+                maxWidth: `1200px`,
                 margin: `0 auto`,
                 overflow: `hidden`,
                 display: 'flex',
@@ -84,8 +103,8 @@ class Layout extends React.Component {
                 justifyContent: 'space-between'
               }}>
                 <HeaderItemSwitcher header='products' component={products}/>
-                <HeaderItemSwitcher header='developers' component={products}/>
-                <HeaderItemSwitcher header='company' component={products}/>
+                <HeaderItemSwitcher header='developers' component={developers}/>
+                <HeaderItemSwitcher header='company' component={company}/>
               </div>
               
               <div

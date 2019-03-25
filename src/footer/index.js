@@ -104,10 +104,11 @@ export default class Footer extends Component {
         <Link to={item.path} key={index} css={{
           color: '#004CA5',
           fontFamily: "Khula",
-          fontSize: '1rem',
-          fontWeight: 'normal',
+          fontSize: '19px',
+          fontWeight: '200',
           marginBottom: '.3rem',
-          letterSpacing: '1px',
+          letterSpacing: '.96px',
+          lineHeight: '26px',
           ':link': {
             textDecoration: 'none'
           }
@@ -131,6 +132,7 @@ export default class Footer extends Component {
       <div css={{
         display: 'flex',
         marginTop: `2rem`,
+        marginBottom: '4rem',
         minHeight: `20vh`,
         flexWrap: 'wrap',
         justifyContent: 'center',
@@ -170,9 +172,10 @@ export default class Footer extends Component {
                 textTransform: 'uppercase',
                 color: '#454545',
                 fontFamily: "DIN Condensed",
-                fontSize: '1.4rem',
-                fontWeight: 'normal',
+                fontSize: '20px',
+                fontWeight: '200',
                 letterSpacing: '.9px',
+                lineHeight: '24px',
                 marginBottom: '1rem'
               }}>
                 {title}
@@ -180,20 +183,23 @@ export default class Footer extends Component {
               {this.renderColumn(items)}
             </div>
         ))}
-          <div  css={{display: 'flex', flexDirection: 'column', width: '15rem', justifyContent: 'space-between', marginLeft: '-.5rem',
+          <div  css={{display: 'flex', flexDirection: 'column', width: '327px', justifyContent: 'space-between', marginLeft: '-.5rem',
             [presets.Hd]: {display: 'block', margin: 'auto', marginTop: '1rem', textAlign: 'center',},
             [presets.Mobile]: {width: '12rem'}
-          }}>
+          }}
+          >
             <h3 css={{color: '#454545', fontFamily: "Khula", fontSize: '20px', fontWeight: 'normal', letterSpacing: '1.01px', margin: 0}}>
               Sign up for our newsletter to stay up to date.
             </h3>
-            <div css={{display: 'flex', height: '2rem', [presets.Hd]: {marginTop: '1rem'}, [presets.Mobile]: { display: 'block', margin: '1rem'}}}>
+            <div css={{display: 'flex', height: '39px', [presets.Hd]: {marginTop: '1rem'}, [presets.Mobile]: { display: 'block', margin: '1rem'}}}>
               <input
                 type="text"
                 placeholder='Email address'
-                css={{display: 'flex', 	border: '1px solid #DADADA', padding: '.5rem'}}
+                css={{
+                  display: 'flex', border: '1px solid #DADADA', padding: '.5rem', width: '224px',
+                '::placeholder': {color: '#D3D3D3'}}}
               />
-              <ButtonPrimary title='sign up' style={{display:'flex', width: '5.6rem', lineHeight: '35px', justifyContent: 'center', fontSize: '.6rem'}}
+              <ButtonPrimary title='sign up' style={{display:'flex', width: '103px', lineHeight: '39px', justifyContent: 'center', fontSize: '15px', letterSpacing:'.9px'}}
               />
             </div>
             <ul css={{listStyle: 'none', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', margin: 0,
