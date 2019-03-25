@@ -34,6 +34,7 @@ export default class ProductsSection extends Component {
     const cardsContainer = css({
       display: 'flex',
       justifyContent: 'space-around',
+      maxWidth: 'inherit',
       alignContent: 'center',
       [presets.Desktop]: {
         display: 'block',
@@ -46,8 +47,8 @@ export default class ProductsSection extends Component {
         css={{
           margin: `0 auto`,
           marginTop: `5rem`,
-          // maxWidth: `100vh`,
           minHeight: `20vh`,
+          maxWidth: '1200px',
           position: 'relative',
           display: 'flex',
           alignContent: 'center',
@@ -61,7 +62,6 @@ export default class ProductsSection extends Component {
         <img
           src={productsImage}
           css={{
-            // maxWidth: '100vh',
             height: 'auto',
             width: 'auto \ 9',
             [presets.Desktop]: {

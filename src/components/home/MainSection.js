@@ -57,7 +57,7 @@ export default class MainSection extends Component {
         <img
           src={mainImage}
           css={{
-            /*maxWidth: '100vh',*/ height: 'auto', width: 'auto\9'
+            height: 'auto', width: 'auto\9'
           }}
         />
       </div>

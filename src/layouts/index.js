@@ -51,7 +51,7 @@ class Layout extends React.Component {
             minHeight: `100vh`,
             [presets.Desktop]: {
               overflow: `hidden`,
-              maxWidth: '75vh'
+              maxWidth: '100vw'
             },
             padding: 0,
             margin: 0,

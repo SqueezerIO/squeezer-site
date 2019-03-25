@@ -193,7 +193,7 @@ export default class Footer extends Component {
                 placeholder='Email address'
                 css={{display: 'flex', 	border: '1px solid #DADADA', padding: '.5rem'}}
               />
-              <ButtonPrimary title='sign up' style={{display:'flex', width: '5.6rem', lineHeight: '35px', justifyContent: 'center', fontSize: '.7rem'}}
+              <ButtonPrimary title='sign up' style={{display:'flex', width: '5.6rem', lineHeight: '35px', justifyContent: 'center', fontSize: '.6rem'}}
               />
             </div>
             <ul css={{listStyle: 'none', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', margin: 0,
