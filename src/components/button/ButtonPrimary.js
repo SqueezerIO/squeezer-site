@@ -13,9 +13,11 @@ export default class ButtonPrimary extends Component {
         backgroundColor: '#1890FF',
         color: 'white',
         textTransform: 'uppercase',
-        fontSize: '14px',
+        fontSize: '15px',
         fontFamily: 'Khula',
         lineHeight: '40px',
+        fontWeight: 'bold',
+        letterSpacing: '.1px',
         [presets.Desktop]: mediaquery,
         ':hover': {
           cursor: 'pointer'

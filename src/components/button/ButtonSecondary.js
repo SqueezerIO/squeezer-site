@@ -15,11 +15,12 @@ export default class ButtonSecondary extends Component {
           backgroundColor: '#FFFFFF',
           color: '#092D5D',
           textTransform: 'uppercase',
-          fontSize: '14px',
+          fontSize: '15px',
           fontFamily: 'Khula',
           lineHeight: '40px',
           whiteSpace: 'no-wrap',
           fontWeight: 'bold',
+          letterSpacing: '.1px',
           [presets.Desktop]: mediaquery,
           [presets.Phablet]: mediaqueryPhablet,
           ':hover': {

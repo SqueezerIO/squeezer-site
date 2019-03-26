@@ -1,5 +1,5 @@
 import React from "react"
-
+import { Link } from 'gatsby';
 import HeaderItemSwitcher from '../components/headerItemSwitcher';
 import ButtonPrimary from '../components/button/ButtonPrimary';
 import ButtonSecondary from '../components/button/ButtonSecondary';
@@ -9,6 +9,7 @@ import i18n from '../utils/i18n'
 import presets from '../utils/presets';
 
 import logo from '../../static/images/logo-blue.svg';
+import hiring from '../../static/images/hiring.svg';
 import Footer from '../footer';
 import frameworkIcon from '../../static/images/homeSVG/framework.svg';
 import platformIcon from '../../static/images/homeSVG/platform-icon.svg';
@@ -62,6 +63,10 @@ const company = [
 ];
 
 class Layout extends React.Component {
+  logoClick = () => {
+    return <Link to='/' />
+  };
+  
   render() {
     return (
       <I18nextProvider i18n={i18n}>
@@ -89,18 +94,28 @@ class Layout extends React.Component {
                 overflow: `hidden`,
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
               }}
             >
+              <Link to='/' css={{display: 'flex'}}>
+                <img
+                  src={logo}
+                  alt="logo"
+                  css={{ width: '200px', height: '80px', display: `inline-block`, float: `left`, margin: 0,
+                    cursor: 'pointer'
+                  }}
+                />
+              </Link>
+  
               <img
-                src={logo}
-                alt="logo"
-                css={{ width: '200px', height: '80px', display: `inline-block`, float: `left`, margin: 0}}
+                src={hiring}
+                alt="hiring"
+                css={{ width: '83px', height: '25px', marginLeft: '-130px'}}
               />
               <div css={{
                 display: `flex`,
                 textDecoration: `none`,
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
               }}>
                 <HeaderItemSwitcher header='products' component={products}/>
                 <HeaderItemSwitcher header='developers' component={developers}/>

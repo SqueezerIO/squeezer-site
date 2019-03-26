@@ -146,12 +146,7 @@ export default class Footer extends Component {
           marginTop: '10rem',
         },
         [presets.Phablet]: {
-          alignContent: 'center',
-          display: 'block',
-          marginTop: '50rem',
-        },
-        [presets.Mobile]: {
-          marginTop: '70rem',
+          alignContent: 'center', display: 'block', marginTop: '30rem',
         }
       }}>
         <div css={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between'}}>
@@ -185,13 +180,14 @@ export default class Footer extends Component {
         ))}
           <div  css={{display: 'flex', flexDirection: 'column', width: '327px', justifyContent: 'space-between', marginLeft: '-.5rem',
             [presets.Hd]: {display: 'block', margin: 'auto', marginTop: '1rem', textAlign: 'center',},
+            [presets.Phablet]: {width: '280px'},
             [presets.Mobile]: {width: '12rem'}
           }}
           >
             <h3 css={{color: '#454545', fontFamily: "Khula", fontSize: '20px', fontWeight: 'normal', letterSpacing: '1.01px', margin: 0}}>
               Sign up for our newsletter to stay up to date.
             </h3>
-            <div css={{display: 'flex', height: '39px', [presets.Hd]: {marginTop: '1rem'}, [presets.Mobile]: { display: 'block', margin: '1rem'}}}>
+            <div css={{display: 'flex', height: '39px', [presets.Hd]: {marginTop: '1rem'}, [presets.Mobile]: { display: 'block', margin: '1rem', width: '200px'}}}>
               <input
                 type="text"
                 placeholder='Email address'

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="83px" height="25px" viewBox="0 0 83 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>hiring</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="header" transform="translate(-192.000000, 0.000000)">
+            <g id="Company">
+                <g transform="translate(192.000000, 0.000000)">
+                    <g id="hiring">
+                        <rect id="Rectangle-10" fill="#06DD72" x="0" y="0" width="83" height="25" rx="3"></rect>
+                        <text id="We’re-hiring" font-family="Khula-Bold, Khula" font-size="11" font-weight="bold" letter-spacing="1.0125" fill="#FFFFFF">
+                            <tspan x="6" y="16">We’re hiring</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
