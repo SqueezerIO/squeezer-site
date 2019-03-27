@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import presets from "../../utils/presets";
-import chartImage from "../../../static/images/Squeezer_Assets_framework_page/iconfinder_chart-graph-flexible-predict_4095915.svg";
-import assetImage from "../../../static/images/homeSVG/green.svg";
-import terminalImage from "../../../static/images/Squeezer_Assets_framework_page/terminal-code.svg";
-import frameworkBlueImage from "../../../static/images/homeSVG/framework-blue.svg";
+import presets from "../../../utils/presets";
+import chartImage from "../../../../static/images/Squeezer_Assets_framework_page/iconfinder_chart-graph-flexible-predict_4095915.svg";
+import assetImage from "../../../../static/images/homeSVG/green.svg";
+import terminalImage from "../../../../static/images/Squeezer_Assets_framework_page/terminal-code.svg";
+import frameworkBlueImage from "../../../../static/images/homeSVG/framework-blue.svg";
 import {css} from "glamor";
-import chekItem from "../../../static/images/Squeezer_Assets_framework_page/chekItem.svg";
+import chekItem from "../../../../static/images/Squeezer_Assets_framework_page/chekItem.svg";
 
 export default class ProductsFlexibleUsage extends Component {
   renderItem = text => (
@@ -29,6 +29,9 @@ export default class ProductsFlexibleUsage extends Component {
       flexDirection: 'column',
       marginLeft: 0,
       width: '340px',
+      [presets.Phablet]: {
+        fontSize: '20px',
+      }
     });
     
     return (

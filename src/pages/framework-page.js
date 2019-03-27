@@ -3,10 +3,10 @@ import Layout from '../layouts';
 
 import StartBuildingSection from '../components/home/StartBuildingSection';
 import frameworkIStockFramework from '../../static/images/Squeezer_Assets_framework_page/iStock-910860194-background.svg';
-import ProductsTitleSection from "../components/products/ProductsTitleSection";
+import ProductsTitleSection from "../components/products/framework/ProductsTitleSection";
 
-import ProductsFlexibleUsage from '../components/products/ProductsFlexibleUsage';
-import ProductsMultipleApproaches from '../components/products/ProductsMultipleApproaches';
+import ProductsFlexibleUsage from '../components/products/framework/ProductsFlexibleUsage';
+import ProductsMultipleApproaches from '../components/products/framework/ProductsMultipleApproaches';
 const subtitles = ['use cases'];
 
 export default class FrameworkPage extends Component {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import ButtonPrimary from "../button/ButtonPrimary";
-import presets from "../../utils/presets";
-import ButtonSecondary from "../button/ButtonSecondary";
-import frameworkIcon from "../../../static/images/homeSVG/framework.svg";
-import platformIcon from '../../../static/images/homeSVG/platform-icon.svg';
-import chainkitIcon from '../../../static/images/homeSVG/chainkit-icon.svg';
+import ButtonPrimary from "../../button/ButtonPrimary";
+import presets from "../../../utils/presets";
+import ButtonSecondary from "../../button/ButtonSecondary";
+import frameworkIcon from "../../../../static/images/homeSVG/framework.svg";
+import platformIcon from '../../../../static/images/homeSVG/platform-icon.svg';
+import chainkitIcon from '../../../../static/images/homeSVG/chainkit-icon.svg';
 
 export default class ProductsTitleSection extends Component {
   renderIcon = (title) => {

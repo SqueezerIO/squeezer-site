@@ -8,7 +8,9 @@ import onClickOutside from "react-onclickoutside";
 
 const linkStyle = css({
   color: '#1890FF',
-  fontSize: '18px',
+  fontSize: '16px',
+  fontWeight: 'bold',
+  letterSpacing: '1px',
   fontFamily: 'Khula',
   ':link, :visited': {
     textDecoration: 'none'
@@ -114,12 +116,12 @@ class HeaderItemSwitcher extends Component {
             position: 'absolute',
             zIndex: '2000',
             marginTop: '12px',
-            marginLeft: '-145px',
+            marginLeft: '-175px',
             background: '#FFF',
-            boxShadow: '0px 0px 5px 0px #092D5D',
+            boxShadow: '0px 2px 10px 0px #092D5D4D',
             borderRadius: '4px',
-            padding: '1rem 1rem 0 1rem',
-            width: '390px',
+            padding: '1rem 1rem 0 2rem',
+            width: '440px',
           }}>
             {renderContent}
           </div>

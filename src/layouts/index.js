@@ -68,22 +68,25 @@ class Layout extends React.Component {
   };
   
   render() {
+    const { color } = this.props;
     return (
       <I18nextProvider i18n={i18n}>
         <div
           css={{
+            padding: '0 2rem',
+            margin: 0,
             minHeight: `100vh`,
             [presets.Desktop]: {
               overflow: `hidden`,
-              maxWidth: '100vw'
+              maxWidth: '100vw',
             },
-            padding: 0,
-            margin: 0,
           }}
         >
           <div
             css={{
-              background: `transparent`,
+              maxWidth: '100vw',
+              background: color ? color : `transparent`,
+              padding: '0 2rem',
             }}
           >
             <div
@@ -145,7 +148,6 @@ class Layout extends React.Component {
           <div
             css={{
               margin: `0 auto`,
-              padding: '0 2rem',
             }}
           >
             {this.props.children}
