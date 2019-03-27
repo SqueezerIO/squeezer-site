@@ -18,30 +18,30 @@ const linkStyle = css({
 class HeaderItemSwitcher extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       showSelector: false
     }
   }
-  
+
   showSelector = () => {
     const val = this.state.showSelector ? false : true
-    
+
     this.setState({
       showSelector: val
     })
   };
-  
+
   handleClickOutside(evt) {
     this.setState({
       showSelector: false
     })
   };
-  
+
   renderLinks = (title, path) => {
     return (
       <div css={{width: '60%', textTransform: 'uppercase'}}>
-      
+
       {title === 'Framework' ? <Link to={path} className={`${linkStyle}`}>read docs</Link> : (
         <div css={{display: 'flex', justifyContent: 'space-between', 'a:link, a:visited': {
             textDecoration: 'none'
@@ -51,11 +51,11 @@ class HeaderItemSwitcher extends Component {
         </div>)}
       </div>);
   };
-  
+
   renderContentChild = (item, header) => (
-    <div css={{textDecoration: `none`, display: 'flex', marginBottom: '16px'}}>
+    <div css={{textDecoration: 'none', display: 'flex', marginBottom: '16px'}}>
       {item.image ? <img src={item.image} alt='image' css={{marginRight: '.5rem', width: '32px', height: '32px'}} /> : null}
-  
+
       <div css={{ display: 'flex', alignItems: 'start', flexDirection: 'column', width: '100%' }}>
         <h2 css={{
           color: '#023775',	fontFamily: 'Khula',	fontSize: '20px',	fontWeight: 'bold', textTransform: 'uppercase', marginTop: '8px',
@@ -68,12 +68,12 @@ class HeaderItemSwitcher extends Component {
       </div>
     </div>
   );
-  
+
   render() {
     const { header, component } = this.props;
-    
+
     const renderContent = component.map((item, index) => (
-      <div css={{ textDecoration: `none`, display: 'flex', marginBottom: '16px'}} key={index}>
+      <div css={{ textDecoration: 'none', display: 'flex', marginBottom: '16px'}} key={index}>
         {header === 'products' ? this.renderContentChild(item, header) : (
           <Link to={item.path} css={{':link, :visited': {
               textDecoration: 'none'
@@ -83,7 +83,7 @@ class HeaderItemSwitcher extends Component {
         )}
       </div>
     ));
-    
+
     return (
       <div css={{
         display: 'inline-block',

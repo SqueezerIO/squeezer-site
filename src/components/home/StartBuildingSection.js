@@ -103,7 +103,8 @@ export default class StartBuildingSection extends Component {
                   color: '#004CA5',
                   marginLeft: '3.5rem',
                   borderRadius: '3px',
-                  lineHeight: '53px',
+                  border: '0px',
+                  lineHeight: '57px',
                   boxShadow: '0 0 0 0 rgba(0,0,0,0.0)'
                 }}
                 mediaquery={{[presets.Desktop]: {

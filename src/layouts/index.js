@@ -13,7 +13,7 @@ import hiring from '../../static/images/hiring.svg';
 import Footer from '../footer';
 import frameworkIcon from '../../static/images/homeSVG/framework.svg';
 import platformIcon from '../../static/images/homeSVG/platform-icon.svg';
-import blockchainIcon from '../../static/images/homeSVG/chainkit-icon.svg';
+import chainkitIcon from '../../static/images/homeSVG/chainkit-icon.svg';
 
 const products = [
   {
@@ -31,7 +31,7 @@ const products = [
   {
     title: 'Chainkit',
     path: '/chainkit-page',
-    image: blockchainIcon,
+    image: chainkitIcon,
     description: 'Access blockchain as a service (Baas)'
   }
 ];
