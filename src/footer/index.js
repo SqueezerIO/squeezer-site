@@ -16,15 +16,15 @@ const footerItems = [
     items: [
       {
         name: 'Framework',
-        path: '/framework-page'
+        path: '/products/framework'
       },
       {
         name: 'Platform',
-        path: '/platform-page'
+        path: '/products/platform'
       },
       {
         name: 'Chainkit',
-        path: '/chainkit-page'
+        path: '/products/chainkit'
       }
     ]
   },
@@ -131,13 +131,13 @@ export default class Footer extends Component {
     return (
       <div css={{
         display: 'flex',
-        marginTop: `2rem`,
+        marginTop: '2rem',
         marginBottom: '4rem',
-        minHeight: `20vh`,
+        minHeight: '20vh',
         flexWrap: 'wrap',
         justifyContent: 'center',
         [presets.Hd]: {
-          marginTop: `8rem`,
+          marginTop: '8rem',
           padding: '3rem',
           justifyContent: 'space-between',
         },

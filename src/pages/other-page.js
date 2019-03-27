@@ -4,11 +4,11 @@ import { Link } from "gatsby"
 const OtherPage = () => (
   <div
     css={{
-      display: `flex`,
-      alignItems: `center`,
-      justifyContent: `center`,
-      flexDirection: `column`,
-      height: `100vh`,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexDirection: 'column',
+      height: '100vh',
     }}
   >
     <h1>Weeee...</h1>
