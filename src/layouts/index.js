@@ -18,19 +18,19 @@ import chainkitIcon from '../../static/images/homeSVG/chainkit-icon.svg';
 const products = [
   {
     title: 'Framework',
-    path: '/framework-page',
+    path: '/products/framework',
     image: frameworkIcon,
     description: 'Develop dApps on local machine'
   },
   {
     title: 'Platform',
-    path: '/platform-page',
+    path: '/products/platform',
     image: platformIcon,
     description: 'Share project & collaborate with team'
   },
   {
     title: 'Chainkit',
-    path: '/chainkit-page',
+    path: '/products/chainkit',
     image: chainkitIcon,
     description: 'Access blockchain as a service (Baas)'
   }
@@ -69,7 +69,7 @@ class Layout extends React.Component {
 
   render() {
     const { color } = this.props;
-    
+
     return (
       <I18nextProvider i18n={i18n}>
         <div

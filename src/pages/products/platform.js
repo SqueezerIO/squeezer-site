@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import Layout from '../layouts';
-import StartBuildingSection from '../components/home/StartBuildingSection';
-import frameworkIStockPlatform from '../../static/images/Squeezer_Assets_platform_page/iStock-910860194-bakcground_platform.svg';
-import ProductsTitleSection from "../components/products/framework/ProductsTitleSection";
-import FeaturesSection from '../components/products/platform/FeaturesSection';
-import PlatformSection from '../components/products/platform/PlatformSection';
-import PricingSection from '../components/products/platform/PricingSection';
+import Layout from '../../layouts';
+import StartBuildingSection from '../../components/home/StartBuildingSection';
+import frameworkIStockPlatform from '../../../static/images/Squeezer_Assets_platform_page/iStock-910860194-bakcground_platform.svg';
+import ProductsTitleSection from "../../components/products/framework/ProductsTitleSection";
+import FeaturesSection from '../../components/products/platform/FeaturesSection';
+import PlatformSection from '../../components/products/platform/PlatformSection';
 
 const subtitles = ['features', 'pricing'];
 const prices = [

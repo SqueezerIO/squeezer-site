@@ -13,19 +13,19 @@ const cardItems = [
     title: 'framework',
     image: frameworkIcon,
     description: 'Convenient way to build and debug dApps on your local machine. Writing production-ready code is a breeze.',
-    path: '/framework-page'
+    path: '/products/framework'
   },
   {
     title: 'platform',
     image: platformIcon,
     description: 'Collaborate with your team, use continuous integration and deploy apps with just a simple code push.',
-    path: '/platform-page'
+    path: '/products/platform'
   },
   {
     title: 'chainkit',
     image: chainkitIcon,
     description: 'Send, receive or react to blockchain transactions. ChainKit is the easiest and securest way to access blockchain as a service.',
-    path: '/chainkit-page'
+    path: '/products/chainkit'
   }
 ];
 
