@@ -56,7 +56,7 @@ class HeaderItemSwitcher extends Component {
 
   renderContentChild = (item, header) => (
     <div css={{textDecoration: 'none', display: 'flex', marginBottom: '16px'}}>
-      {item.image ? <img src={item.image} alt='image' css={{marginRight: '.5rem', width: '32px', height: '32px'}} /> : null}
+      {item.image ? <img src={item.image} alt='image' css={{marginRight: '.8rem', width: '32px', height: '32px', marginTop: '3px'}} /> : null}
 
       <div css={{ display: 'flex', alignItems: 'start', flexDirection: 'column', width: '100%' }}>
         <h2 css={{
