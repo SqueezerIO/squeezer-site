@@ -5,6 +5,7 @@ import frameworkIStockPlatform from '../../../static/images/Squeezer_Assets_plat
 import ProductsTitleSection from "../../components/products/framework/ProductsTitleSection";
 import FeaturesSection from '../../components/products/platform/FeaturesSection';
 import PlatformSection from '../../components/products/platform/PlatformSection';
+import PricingSection from '../../components/products/platform/PricingSection';
 
 const subtitles = ['features', 'pricing'];
 const prices = [
