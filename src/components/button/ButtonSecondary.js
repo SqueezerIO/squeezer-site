@@ -17,7 +17,7 @@ export default class ButtonSecondary extends Component {
           textTransform: 'uppercase',
           fontSize: '15px',
           fontFamily: 'Khula',
-          lineHeight: '40px',
+          lineHeight: '38px',
           whiteSpace: 'no-wrap',
           fontWeight: 'bold',
           letterSpacing: '.1px',

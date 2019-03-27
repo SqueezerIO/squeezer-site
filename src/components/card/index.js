@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from "gatsby"
 
-import arrow from '../../../static/images/home/products/icon_greenArrow.png';
+import arrow from '../../../static/images/homeSVG/icon_arrowGreen.svg';
 
 export default class Card extends Component {
   render() {
     const { title, image, description, path } = this.props;
-    
+
     return (
       <div css={{
         height: '285px',
@@ -26,13 +26,13 @@ export default class Card extends Component {
         <p css={{color: '#FFFFFF', fontFamily: 'Khula', fontSize: '18px', letterSpacing: '1px', lineHeight: '24px', height: '120px', width: '303px', fontWeight: 200}}>
           {description}
         </p>
-        
+
         <div css={{position: 'relative'}}>
           <Link to={path} css={{display: 'flex', alignContent: 'center', ':link': {textDecoration: 'none'},':hover': {
               cursor: 'pointer',
             }}}>
             <div css={{color: '#00DE72', fontSize: '18px', fontWeight: 'bold', textTransform: 'uppercase', fontFamily: 'Khula', letterSpacing: '1px'}}>learn more</div>
-            <img src={arrow} alt='arrow' css={{marginLeft: '1rem'}} />
+            <img src={arrow} alt='arrow' css={{width: '40px', height: '23px', marginLeft: '20px'}} />
           </Link>
         </div>
       </div>

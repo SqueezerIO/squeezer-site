@@ -13,7 +13,7 @@ import hiring from '../../static/images/hiring.svg';
 import Footer from '../footer';
 import frameworkIcon from '../../static/images/homeSVG/framework.svg';
 import platformIcon from '../../static/images/homeSVG/platform-icon.svg';
-import blockchainIcon from '../../static/images/homeSVG/chainkit-icon.svg';
+import chainkitIcon from '../../static/images/homeSVG/chainkit-icon.svg';
 
 const products = [
   {
@@ -31,7 +31,7 @@ const products = [
   {
     title: 'Chainkit',
     path: '/chainkit-page',
-    image: blockchainIcon,
+    image: chainkitIcon,
     description: 'Access blockchain as a service (Baas)'
   }
 ];
@@ -66,88 +66,89 @@ class Layout extends React.Component {
   logoClick = () => {
     return <Link to='/' />
   };
-  
+
   render() {
     const { color } = this.props;
+    
     return (
       <I18nextProvider i18n={i18n}>
         <div
           css={{
             padding: '0 2rem',
             margin: 0,
-            minHeight: `100vh`,
+            minHeight: '100vh',
             [presets.Desktop]: {
-              overflow: `hidden`,
-              maxWidth: '100vw',
+              overflow: 'hidden',
+              maxWidth: '100vw'
             },
           }}
         >
           <div
             css={{
               maxWidth: '100vw',
-              background: color ? color : `transparent`,
+              background: color ? color : 'transparent',
               padding: '0 2rem',
             }}
           >
             <div
               css={{
                 padding: '1px',
-                maxWidth: `1200px`,
-                margin: `0 auto`,
-                overflow: `hidden`,
+                maxWidth: '1200px',
+                margin: '0 auto',
+                overflow: 'hidden',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'space-between',
+                justifyContent: 'space-between'
               }}
             >
               <Link to='/' css={{display: 'flex'}}>
                 <img
                   src={logo}
                   alt="logo"
-                  css={{ width: '200px', height: '80px', display: `inline-block`, float: `left`, margin: 0,
+                  css={{ width: '200px', height: '80px', display: 'inline-block', float: 'left', margin: 0,
                     cursor: 'pointer'
                   }}
                 />
               </Link>
-  
+
               <img
                 src={hiring}
                 alt="hiring"
                 css={{ width: '83px', height: '25px', marginLeft: '-130px'}}
               />
               <div css={{
-                display: `flex`,
-                textDecoration: `none`,
+                display: 'flex',
+                textDecoration: 'none',
                 justifyContent: 'space-between',
               }}>
                 <HeaderItemSwitcher header='products' component={products}/>
                 <HeaderItemSwitcher header='developers' component={developers}/>
                 <HeaderItemSwitcher header='company' component={company}/>
               </div>
-              
+
               <div
                 css={{
-                  display: `flex`,
-                  textDecoration: `none`,
+                  display: 'flex',
+                  textDecoration: 'none',
                   justifyContent: 'space-between',
                 }}
               >
                 <ButtonSecondary
                   title='login'
                   onClick={() => console.log('clicked login')}
-                  style={{width: '103px', height: '39px'}}
+                  style={{width: '103px', height: '39px', lineHeight: '38px'}}
                 />
                 <ButtonPrimary
                   title='register'
                   onClick={() => console.log('clicked register')}
-                  style={{ marginLeft: '17px', width: '103px', height: '39px' }}
+                  style={{marginLeft: '17px', width: '103px', height: '39px', lineHeight: '38px'}}
                 />
               </div>
             </div>
           </div>
           <div
             css={{
-              margin: `0 auto`,
+              margin: '0 auto',
             }}
           >
             {this.props.children}

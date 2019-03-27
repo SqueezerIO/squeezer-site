@@ -6,7 +6,7 @@ import productsImage from '../../../static/images/home/products.png';
 import Card from '../card';
 import frameworkIcon from '../../../static/images/homeSVG/framework.svg';
 import platformIcon from '../../../static/images/homeSVG/platform-icon.svg';
-import blockchainIcon from '../../../static/images/homeSVG/chainkit-icon.svg';
+import chainkitIcon from '../../../static/images/homeSVG/chainkit-icon.svg';
 
 const cardItems = [
   {
@@ -23,7 +23,7 @@ const cardItems = [
   },
   {
     title: 'chainkit',
-    image: blockchainIcon,
+    image: chainkitIcon,
     description: 'Send, receive or react to blockchain transactions. ChainKit is the easiest and securest way to access blockchain as a service.',
     path: '/chainkit-page'
   }
@@ -44,22 +44,22 @@ export default class ProductsSection extends Component {
         marginTop: 0,
       }
     });
-    
+
     return (
       <div
         css={{
-          margin: `0 auto`,
-          marginTop: `5rem`,
-          minHeight: `20vh`,
+          margin: '0 auto',
+          marginTop: '5rem',
+          minHeight: '20vh',
           maxWidth: '100vw',
           position: 'relative',
           display: 'flex',
           alignContent: 'center',
           justifyContent: 'center',
           [presets.Desktop]: {
-            marginTop: `20rem`,
+            marginTop: '20rem',
           },
-          [presets.Phablet]: { marginTop: `12rem`}
+          [presets.Phablet]: { marginTop: '12rem'}
         }}
       >
         <img
@@ -73,7 +73,7 @@ export default class ProductsSection extends Component {
             },
           }}
         />
-    
+
         <div className={`${cardsContainer}`}>
           {cardItems.map(({title, image, description, path}) => (
             <Card key={title} title={title} image={image} description={description} path={path}/>

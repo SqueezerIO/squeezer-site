@@ -11,14 +11,14 @@ export default class MainSection extends Component {
         css={{
           margin: 0,
           padding: 0,
-          marginTop: `3rem`,
-          minHeight: `40vh`,
+          marginTop: '3rem',
+          minHeight: '40vh',
           position: 'relative',
           display: 'flex',
           justifyContent: 'center',
           textAlign: 'center',
           [presets.Desktop]: {
-            marginTop: `1rem`,
+            marginTop: '1rem',
             padding: 0,
           }
         }}
@@ -35,12 +35,12 @@ export default class MainSection extends Component {
           <h3 css={{color: '#092D5D', fontFamily: 'Khula', fontSize: '18px', lineHeight: '24px', fontWeight: '400'}}>
             Blockchain agnostic integration for payments & smart contracts
           </h3>
-      
+
           <div css={{left: 'auto', right: 'auto', marginTop: '4rem'}}>
             <ButtonPrimary
               title='get free account'
               onClick={() => console.log('clicked free')}
-              style={{ width: '163px', height: '39px'}}
+              style={{ width: '163px', height: '39px', lineHeight: '38px', boxShadow: '0 0 0 0 rgba(0,0,0,0.0)'}}
               mediaquery={{[presets.Desktop]: {
                   display: 'block', margin: 'auto', width: '9rem !important'
                 }}}
@@ -48,14 +48,14 @@ export default class MainSection extends Component {
             <ButtonSecondary
               title='check the docs'
               onClick={() => console.log('clicked docs')}
-              style={{ marginLeft: '17px', width: '163px', height: '39px'}}
+              style={{ marginLeft: '17px', width: '163px', height: '39px', lineHeight: '38px', boxShadow: '0 0 0 0 rgba(0,0,0,0.0)'}}
               mediaquery={{[presets.Desktop]: {
                   display: 'block', margin: 'auto !important', width: '9rem !important', marginTop: '1rem !important'
                 }}}
             />
           </div>
         </div>
-    
+
         <img
           src={mainImage}
           css={{

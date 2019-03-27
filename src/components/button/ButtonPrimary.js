@@ -15,7 +15,7 @@ export default class ButtonPrimary extends Component {
         textTransform: 'uppercase',
         fontSize: '15px',
         fontFamily: 'Khula',
-        lineHeight: '40px',
+        lineHeight: '38px',
         fontWeight: 'bold',
         letterSpacing: '.1px',
         [presets.Desktop]: mediaquery,
