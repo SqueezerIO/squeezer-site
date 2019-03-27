@@ -3,27 +3,27 @@ import { Link } from 'gatsby';
 
 import presets from '../../utils/presets';
 import assetImage from '../../../static/images/homeSVG/green.svg';
-import arrow from '../../../static/images/home/products/icon_greenArrow.png';
+import arrow from '../../../static/images/homeSVG/icon_arrowGreen.svg';
 
 export default class DeveloperSection extends Component {
   render() {
     return (
       <div
         css={{
-          margin: `0 auto`,
-          marginTop: `10rem`,
-          maxWidth: `1200px`,
-          minHeight: `20vh`,
+          margin: '0 auto',
+          marginTop: '10rem',
+          maxWidth: '1200px',
+          minHeight: '20vh',
           position: 'relative',
           display: 'flex',
           justifyContent: 'space-between',
           padding: '1rem',
           [presets.Desktop]: {
-            marginTop: `5rem`,
+            marginTop: '5rem',
             flexDirection: 'column',
             alignItems: 'center',
           },
-          [presets.Phablet]: { marginTop: `12rem`}
+          [presets.Phablet]: { marginTop: '12rem'}
         }}
       >
         <div css={{display: 'flex', marginRight: '122px', [presets.Desktop]: {
@@ -37,18 +37,18 @@ export default class DeveloperSection extends Component {
               color: '#004CA5',	fontFamily: 'DIN Condensed',	fontSize: '45px',	letterSpacing: '1px',
               lineHeight: '54px', textTransform: 'uppercase',
             }}>tuned for <br></br> developers</p>
-        
+
             <div>
               <Link to='' css={{display: 'flex', alignContent: 'center', width: '100%', ':link': {textDecoration: 'none'}, ':hover': {
                   cursor: 'pointer'
                 }}}>
                 <div css={{color: '#00DE72', fontSize: '22px', fontWeight: '600', width: '189px', textTransform: 'uppercase', fontFamily: 'Khula', letterSpacing: '1px', whiteSpace: 'no-wrap'}}>check the docs</div>
-                <img src={arrow} alt='arrow' css={{marginLeft: '6px'}} />
+                <img src={arrow} alt='arrow' css={{width: '40px', height: '23px', marginLeft: '10px'}} />
               </Link>
             </div>
           </div>
         </div>
-    
+
         <div css={{display: 'flex',
           height: '263px',
           width: '798px',

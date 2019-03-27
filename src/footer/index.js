@@ -3,12 +3,12 @@ import { Link } from 'gatsby';
 import presets from '../utils/presets';
 import ButtonPrimary from '../components/button/ButtonPrimary';
 import BlankA from '../components/hyperlink';
-import telegramImage from '../../static/images/footer/telegram-black.png';
-import mediumImage from '../../static/images/footer/medium.png';
-import playImage from '../../static/images/footer/play_black1.png';
-import facebookImage from '../../static/images/footer/facebook-f-brands.svg';
-import twitterImage from '../../static/images/footer/twitter-brands.svg';
-import gitImage from '../../static/images/footer/github-brands.svg';
+import telegramImage from '../../static/images/footer/telegram-footer.svg';
+import mediumImage from '../../static/images/footer/medium-footer.svg';
+import playImage from '../../static/images/footer/play_black-footer.svg';
+import facebookImage from '../../static/images/footer/facebook-footer.svg';
+import twitterImage from '../../static/images/footer/twitter-footer.svg';
+import gitImage from '../../static/images/footer/github-footer.svg';
 
 const footerItems = [
   {
@@ -118,7 +118,7 @@ export default class Footer extends Component {
       ))}
     </div>
   );
-  
+
   renderSocialIcon = (link, image) => (
     <li>
       <BlankA href={link}>
@@ -126,7 +126,7 @@ export default class Footer extends Component {
       </BlankA>
     </li>
   );
-  
+
   render() {
     return (
       <div css={{
@@ -192,8 +192,7 @@ export default class Footer extends Component {
                 type="text"
                 placeholder='Email address'
                 css={{
-                  display: 'flex', border: '1px solid #DADADA', padding: '.5rem', width: '224px',
-                '::placeholder': {color: '#D3D3D3'}}}
+                  display: 'flex', border: '1px solid #DADADA', padding: '.5rem', width: '224px', fontFamily: "Khula", '::placeholder': {color: '#D3D3D3'}}}
               />
               <ButtonPrimary title='sign up' style={{display:'flex', width: '103px', lineHeight: '39px', justifyContent: 'center', fontSize: '15px', letterSpacing:'.9px'}}
               />

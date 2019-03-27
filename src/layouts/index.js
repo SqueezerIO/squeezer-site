@@ -66,15 +66,15 @@ class Layout extends React.Component {
   logoClick = () => {
     return <Link to='/' />
   };
-  
+
   render() {
     return (
       <I18nextProvider i18n={i18n}>
         <div
           css={{
-            minHeight: `100vh`,
+            minHeight: '100vh',
             [presets.Desktop]: {
-              overflow: `hidden`,
+              overflow: 'hidden',
               maxWidth: '100vw'
             },
             padding: 0,
@@ -83,68 +83,68 @@ class Layout extends React.Component {
         >
           <div
             css={{
-              background: `transparent`,
+              background: 'transparent',
             }}
           >
             <div
               css={{
                 padding: '1px',
-                maxWidth: `1200px`,
-                margin: `0 auto`,
-                overflow: `hidden`,
+                maxWidth: '1200px',
+                margin: '0 auto',
+                overflow: 'hidden',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'space-between',
+                justifyContent: 'space-between'
               }}
             >
               <Link to='/' css={{display: 'flex'}}>
                 <img
                   src={logo}
                   alt="logo"
-                  css={{ width: '200px', height: '80px', display: `inline-block`, float: `left`, margin: 0,
+                  css={{ width: '200px', height: '80px', display: 'inline-block', float: 'left', margin: 0,
                     cursor: 'pointer'
                   }}
                 />
               </Link>
-  
+
               <img
                 src={hiring}
                 alt="hiring"
                 css={{ width: '83px', height: '25px', marginLeft: '-130px'}}
               />
               <div css={{
-                display: `flex`,
-                textDecoration: `none`,
+                display: 'flex',
+                textDecoration: 'none',
                 justifyContent: 'space-between',
               }}>
                 <HeaderItemSwitcher header='products' component={products}/>
                 <HeaderItemSwitcher header='developers' component={developers}/>
                 <HeaderItemSwitcher header='company' component={company}/>
               </div>
-              
+
               <div
                 css={{
-                  display: `flex`,
-                  textDecoration: `none`,
+                  display: 'flex',
+                  textDecoration: 'none',
                   justifyContent: 'space-between',
                 }}
               >
                 <ButtonSecondary
                   title='login'
                   onClick={() => console.log('clicked login')}
-                  style={{width: '103px', height: '39px'}}
+                  style={{width: '103px', height: '39px', lineHeight: '38px'}}
                 />
                 <ButtonPrimary
                   title='register'
                   onClick={() => console.log('clicked register')}
-                  style={{ marginLeft: '17px', width: '103px', height: '39px' }}
+                  style={{marginLeft: '17px', width: '103px', height: '39px', lineHeight: '38px'}}
                 />
               </div>
             </div>
           </div>
           <div
             css={{
-              margin: `0 auto`,
+              margin: '0 auto',
               padding: '0 2rem',
             }}
           >
