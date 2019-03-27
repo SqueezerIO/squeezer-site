@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { FaAngleDown } from 'react-icons/fa';
 import { withNamespaces } from 'react-i18next';
 import { Link } from 'gatsby';
 import { css } from 'glamor'
 
 import onClickOutside from "react-onclickoutside";
+import triangleIcon from '../../../static/images/triangle.svg';
 
 const linkStyle = css({
   color: '#1890FF',
@@ -105,12 +105,13 @@ class HeaderItemSwitcher extends Component {
           }}
         >
           {header}
-          <FaAngleDown css={{
+          <img src={triangleIcon} alt={triangleIcon} css={{
             color: '#092D5D',
             display: 'inline-block',
             verticalAlign: 'middle',
             marginLeft: '.5rem',
-          }} />
+            marginTop: '.9rem'
+          }}/>
           <div css={{
             display: this.state.showSelector ? 'auto' : 'none',
             position: 'absolute',
