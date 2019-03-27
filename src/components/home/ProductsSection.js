@@ -44,22 +44,22 @@ export default class ProductsSection extends Component {
         marginTop: 0,
       }
     });
-    
+
     return (
       <div
         css={{
-          margin: `0 auto`,
-          marginTop: `5rem`,
-          minHeight: `20vh`,
+          margin: '0 auto',
+          marginTop: '5rem',
+          minHeight: '20vh',
           maxWidth: '100vw',
           position: 'relative',
           display: 'flex',
           alignContent: 'center',
           justifyContent: 'center',
           [presets.Desktop]: {
-            marginTop: `20rem`,
+            marginTop: '20rem',
           },
-          [presets.Phablet]: { marginTop: `12rem`}
+          [presets.Phablet]: { marginTop: '12rem'}
         }}
       >
         <img
@@ -73,7 +73,7 @@ export default class ProductsSection extends Component {
             },
           }}
         />
-    
+
         <div className={`${cardsContainer}`}>
           {cardItems.map(({title, image, description, path}) => (
             <Card key={title} title={title} image={image} description={description} path={path}/>
