@@ -21,7 +21,7 @@ export default class ProductsFlexibleUsage extends Component {
       listStyle: 'none',
       fontSize: '23px',
       color: '#023775',
-      fontFamily: 'Khaula',
+      fontFamily: 'Khula',
       fontWeight: '200',
       letterSpacing: '1.28px',
       lineHeight: '31px',

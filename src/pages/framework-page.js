@@ -12,7 +12,7 @@ const subtitles = ['use cases'];
 export default class FrameworkPage extends Component {
   render() {
     return (
-      <Layout>
+      <Layout color="#F8FCFF">
         <ProductsTitleSection
           product='Framework'
           image={frameworkIStockFramework}
