@@ -14,6 +14,8 @@ import Footer from '../footer';
 import frameworkIcon from '../../static/images/homeSVG/framework.svg';
 import platformIcon from '../../static/images/homeSVG/platform-icon.svg';
 import chainkitIcon from '../../static/images/homeSVG/chainkit-icon.svg';
+import MobileNav from '../components/sidebar';
+import { FaListUl } from "react-icons/fa";
 
 const products = [
   {
@@ -76,6 +78,24 @@ const company = [
 ];
 
 class Layout extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = { open: false };
+  }
+  
+  closeNav = () => {
+    this.setState({
+      open: false,
+    });
+  };
+  
+  onToggleNavigation = () => {
+    this.setState({
+      open: !this.state.open,
+    });
+  };
+  
   logoClick = () => {
     return <Link to='/' />
   };
@@ -102,7 +122,8 @@ class Layout extends React.Component {
               background: color ? color : 'transparent',
               padding: '0 2rem',
               [presets.Desktop]: {
-                background: 'transparent'
+                background: 'transparent',
+                padding: '0 1rem'
               }
             }}
           >
@@ -114,9 +135,40 @@ class Layout extends React.Component {
                 overflow: 'hidden',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
               }}
             >
+              <button css={{display: 'none', [presets.Desktop]: {display: 'inline-block'}}} onClick={this.onToggleNavigation}>
+                <FaListUl css={{color: '#092D5D',
+                  display: 'none',
+                  [presets.Desktop]: {display: 'inline-block', float: 'left', margin: 0,}
+                }}/>
+              </button>
+              <MobileNav open={this.state.open} closeNav={this.closeNav}>
+                <HeaderItemSwitcher header='products' component={products}/>
+                <HeaderItemSwitcher header='developers' component={developers}/>
+                <HeaderItemSwitcher header='company' component={company}/>
+                <div
+                  css={{
+                    display: 'none',
+                    [presets.Phablet]: {
+                      display: 'flex', textDecoration: 'none', flexDirection: 'column', alignItems: 'left', paddingLeft: '1rem'
+                    }
+                  }}
+                >
+                  <ButtonSecondary
+                    title='login'
+                    onClick={() => console.log('clicked login')}
+                    style={{width: '50%', height: '39px', lineHeight: '38px'}}
+                  />
+                  <ButtonPrimary
+                    title='register'
+                    onClick={() => console.log('clicked register')}
+                    style={{marginTop: '17px', width: '50%', height: '39px', lineHeight: '38px'}}
+                  />
+                </div>
+              </MobileNav>
+              
               <Link to='/' css={{display: 'flex'}}>
                 <img
                   src={logo}
@@ -126,27 +178,30 @@ class Layout extends React.Component {
                   }}
                 />
               </Link>
-
+              
               <img
                 src={hiring}
                 alt="hiring"
-                css={{ width: '83px', height: '25px', marginLeft: '-130px'}}
+                css={{ width: '83px', height: '25px', marginLeft: '-130px', [presets.Hd]: {marginLeft: '-30px'},
+                  [presets.Desktop]: {marginLeft: -100}, [presets.Phablet]: { marginLeft: -10}
+                }}
               />
               <div css={{
                 display: 'flex',
                 textDecoration: 'none',
                 justifyContent: 'space-between',
+                [presets.Desktop]: { display: 'none'}
               }}>
                 <HeaderItemSwitcher header='products' component={products}/>
                 <HeaderItemSwitcher header='developers' component={developers}/>
                 <HeaderItemSwitcher header='company' component={company}/>
               </div>
-
               <div
                 css={{
                   display: 'flex',
                   textDecoration: 'none',
                   justifyContent: 'space-between',
+                  [presets.Phablet]: { display: 'none'}
                 }}
               >
                 <ButtonSecondary
@@ -166,6 +221,7 @@ class Layout extends React.Component {
             css={{
               margin: '0 auto',
             }}
+            onClick={this.closeNav}
           >
             {this.props.children}
             <Footer />

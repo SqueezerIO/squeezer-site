@@ -44,6 +44,7 @@ export default class MainSection extends Component {
               mediaquery={{[presets.Desktop]: {
                   display: 'block', margin: 'auto', width: '9rem !important'
                 }}}
+              mediaqueryPhablet={{[presets.Phablet]: {fontSize: '12px !important'}}}
             />
             <ButtonSecondary
               title='check the docs'
@@ -52,6 +53,7 @@ export default class MainSection extends Component {
               mediaquery={{[presets.Desktop]: {
                   display: 'block', margin: 'auto !important', width: '9rem !important', marginTop: '1rem !important'
                 }}}
+              mediaqueryPhablet={{[presets.Phablet]: {fontSize: '12px !important'}}}
             />
           </div>
         </div>

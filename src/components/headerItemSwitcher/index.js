@@ -3,6 +3,7 @@ import { withNamespaces } from 'react-i18next';
 import { Link } from 'gatsby';
 import { css } from 'glamor'
 
+import presets from '../../utils/presets'
 import onClickOutside from "react-onclickoutside";
 import triangleIcon from '../../../static/images/triangle.svg';
 
@@ -27,7 +28,7 @@ class HeaderItemSwitcher extends Component {
   }
 
   showSelector = () => {
-    const val = this.state.showSelector ? false : true
+    const val = this.state.showSelector ? false : true;
 
     this.setState({
       showSelector: val
@@ -42,12 +43,12 @@ class HeaderItemSwitcher extends Component {
 
   renderLinks = (title, path) => {
     return (
-      <div css={{width: '60%', textTransform: 'uppercase'}}>
+      <div css={{width: '60%', textTransform: 'uppercase', [presets.Phablet]: {width: '92%'}}}>
 
       {title === 'Framework' ? <Link to={path.docsPath} className={`${linkStyle}`}>read docs</Link> : (
         <div css={{display: 'flex', justifyContent: 'space-between', 'a:link, a:visited': {
-            textDecoration: 'none'
-          }}}>
+            textDecoration: 'none'}, [presets.Mobile]: {flexDirection: 'column'}
+          }}>
           <Link to={path.featurePath} className={`${linkStyle}`}>features</Link>
           <Link to={path.pricingPath} className={`${linkStyle}`}>pricing</Link>
         </div>)}
@@ -56,14 +57,18 @@ class HeaderItemSwitcher extends Component {
 
   renderContentChild = (item, header) => (
     <Link to={item.path.pagePath ? item.path.pagePath : item.path} css={{textDecoration: 'none', display: 'flex', marginBottom: '16px'}}>
-      {item.image ? <img src={item.image} alt='image' css={{marginRight: '.8rem', width: '32px', height: '32px', marginTop: '3px'}} /> : null}
+      {item.image ? <img src={item.image} alt='image' css={{marginRight: '.8rem', width: '32px', height: '32px', marginTop: '3px',
+        [presets.Phablet]: {display: 'none'}
+      }} /> : null}
 
       <div css={{ display: 'flex', alignItems: 'start', flexDirection: 'column', width: '100%' }}>
         <h2 css={{
           color: '#023775',	fontFamily: 'Khula',	fontSize: '20px',	fontWeight: 'bold', textTransform: 'uppercase', marginTop: '8px',
           marginBottom: '5px', letterSpacing: '1px'
         }}>{item.title}</h2>
-        <p css={{color: '#023775', fontFamily: 'Khula',	fontSize: '16px', letterSpacing: '1px', marginTop: 0, marginBottom: '7px'}}>
+        <p css={{color: '#023775', fontFamily: 'Khula',	fontSize: '16px', letterSpacing: '1px', marginTop: 0, marginBottom: '7px',
+          [presets.Phablet]: {width: '200px'}, [presets.Mobile]: {display: 'none'}
+        }}>
           {item.description}
         </p>
         {header === 'products' ? this.renderLinks(item.title, item.path) : null}
@@ -110,7 +115,10 @@ class HeaderItemSwitcher extends Component {
             display: 'inline-block',
             verticalAlign: 'middle',
             marginLeft: '.5rem',
-            marginTop: '.9rem'
+            marginTop: '.9rem',
+            [presets.Desktop]: {
+              transform: 'rotate(-90deg)'
+            }
           }}/>
           <div css={{
             display: this.state.showSelector ? 'auto' : 'none',
@@ -123,6 +131,14 @@ class HeaderItemSwitcher extends Component {
             borderRadius: '4px',
             padding: '1rem 1rem 0 2rem',
             width: '440px',
+            [presets.Desktop]: {
+              position: 'fixed',
+              marginLeft: '140px',
+              marginTop: '-35px',
+            },
+            [presets.Phablet]: {
+              marginLeft: '110px',
+            },
           }}>
             {renderContent}
           </div>

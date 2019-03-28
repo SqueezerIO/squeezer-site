@@ -4,7 +4,7 @@ import presets from "../../utils/presets";
 
 export default class ButtonPrimary extends Component {
   render() {
-    const { title, onClick, style, mediaquery } = this.props;
+    const { title, onClick, style, mediaquery, mediaqueryPhablet } = this.props;
     
     const buttonClass = css({
       border: '1px solid #1890FF',
@@ -22,6 +22,7 @@ export default class ButtonPrimary extends Component {
         ':hover': {
           cursor: 'pointer'
         },
+        [presets.Phablet]: mediaqueryPhablet
     });
     
     return (
