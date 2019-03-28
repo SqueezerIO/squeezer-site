@@ -70,7 +70,7 @@ const developers = [
 const company = [
   {
     title: 'Team',
-    path: '/',
+    path: '/company/team',
     description: 'Check out awsome team'
   }
 ];

@@ -13,9 +13,10 @@ export default class ProductsTitleSection extends Component {
         return <img src={frameworkIcon} alt='image' css={{marginRight: '.5rem', height: '40px', width: '40px'}} />;
       case 'Platform':
         return <img src={platformIcon} alt='image' css={{marginRight: '.5rem', height: '40px', width: '40px'}} />;
-      default:
+      case 'Chainkit':
         return <img src={chainkitIcon} alt='image' css={{marginRight: '.5rem', height: '40px', width: '40px'}} />;
-  
+      default:
+        return null;
     }
   };
   
