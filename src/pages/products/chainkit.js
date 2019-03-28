@@ -4,6 +4,7 @@ import StartBuildingSection from '../../components/home/StartBuildingSection';
 import chainkitImage from '../../../static/images/Squeezer_Assets_chainkit_page/iStock-910860194-background-chainkit.svg';
 import ProductsTitleSection from "../../components/products/framework/ProductsTitleSection";
 import PricingSection from "../../components/products/platform/PricingSection";
+import BlockchainAccess from '../../components/products/chainkit/BlockchainAccess';
 
 const subtitles = ['features', 'pricing'];
 const prices = [
@@ -49,6 +50,7 @@ export default class ChainkitPage extends Component {
           subtitles={subtitles}
         />
         
+        <BlockchainAccess />
         <PricingSection prices={prices} title1={'Outbound Transaction'} title2={'Inbound Transaction'} />
         <StartBuildingSection />
       </Layout>
