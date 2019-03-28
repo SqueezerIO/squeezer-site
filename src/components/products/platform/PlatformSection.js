@@ -67,7 +67,7 @@ export default class PlatformSection extends Component {
       <div css={{
         margin: '0',
         maxWidth: '100vw',
-        minHeight: '160vh',
+        minHeight: '200vh',
         marginTop: '15rem',
         [presets.Hd]: {
           marginTop: '10rem',

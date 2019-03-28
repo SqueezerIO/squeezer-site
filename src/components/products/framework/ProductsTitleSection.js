@@ -24,7 +24,7 @@ export default class ProductsTitleSection extends Component {
     const { product, image, title, description, subtitles } = this.props;
   
     return (
-    <div css={{ minHeight: `50vh`}}>
+    <div css={{ minHeight: '50vh'}}>
       <div css={{margin: '0 auto', maxWidth: '1200px', position: 'relative'}}>
         <div css={{position: 'absolute', zIndex: '200', top: '20%', left: '2%',
           [presets.Desktop]: {position: 'relative'}}}>
