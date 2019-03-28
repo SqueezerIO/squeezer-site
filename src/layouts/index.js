@@ -138,12 +138,12 @@ class Layout extends React.Component {
                 justifyContent: 'space-between',
               }}
             >
-              <button css={{display: 'none', [presets.Desktop]: {display: 'inline-block'}}} onClick={this.onToggleNavigation}>
+              <div css={{display: 'none', [presets.Desktop]: {display: 'block', backgroundColor: 'none', cursor: 'pointer'}}} onClick={this.onToggleNavigation}>
                 <FaListUl css={{color: '#092D5D',
                   display: 'none',
-                  [presets.Desktop]: {display: 'inline-block', float: 'left', margin: 0,}
+                  [presets.Desktop]: { display: 'inline-block', float: 'left', margin: 0, }
                 }}/>
-              </button>
+              </div>
               <MobileNav open={this.state.open} closeNav={this.closeNav}>
                 <HeaderItemSwitcher header='products' component={products}/>
                 <HeaderItemSwitcher header='developers' component={developers}/>
@@ -152,19 +152,19 @@ class Layout extends React.Component {
                   css={{
                     display: 'none',
                     [presets.Phablet]: {
-                      display: 'flex', textDecoration: 'none', flexDirection: 'column', alignItems: 'left', paddingLeft: '1rem'
+                      display: 'flex', textDecoration: 'none', flexDirection: 'column', alignItems: 'left'
                     }
                   }}
                 >
                   <ButtonSecondary
                     title='login'
                     onClick={() => console.log('clicked login')}
-                    style={{width: '50%', height: '39px', lineHeight: '38px'}}
+                    style={{width: '100%', height: '39px', lineHeight: '38px'}}
                   />
                   <ButtonPrimary
                     title='register'
                     onClick={() => console.log('clicked register')}
-                    style={{marginTop: '17px', width: '50%', height: '39px', lineHeight: '38px'}}
+                    style={{marginTop: '17px', width: '100%', height: '39px', lineHeight: '38px'}}
                   />
                 </div>
               </MobileNav>

@@ -93,8 +93,13 @@ class HeaderItemSwitcher extends Component {
 
     return (
       <div css={{
-        display: 'inline-block',
-        marginLeft: '15px'
+        display: 'flex',
+        width: 150,
+        justifyContent: 'space-between',
+          [presets.Phablet]: {
+            display: 'block',
+            width: '100%'
+          }
       }}>
         <div
           onClick={() => this.showSelector()}
