@@ -88,6 +88,9 @@ class Layout extends React.Component {
               maxWidth: '100vw',
               background: color ? color : 'transparent',
               padding: '0 2rem',
+              [presets.Desktop]: {
+                background: 'transparent'
+              }
             }}
           >
             <div
