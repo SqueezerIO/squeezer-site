@@ -87,7 +87,7 @@ class Layout extends React.Component {
       <I18nextProvider i18n={i18n}>
         <div
           css={{
-            padding: '0 2rem',
+            padding: '0', //2rem',
             margin: 0,
             minHeight: '100vh',
             [presets.Desktop]: {

@@ -4,9 +4,9 @@ import platformImage from '../../../../static/images/Squeezer_Assets_platform_pa
 import iconData from '../../../../static/images/Squeezer_Assets_platform_page/iconfinder_thin-1526_data_-.svg';
 import iconLocation from '../../../../static/images/Squeezer_Assets_platform_page/iconfinder_PROJECT_FEATURES_1041342.svg';
 import iconManagement from '../../../../static/images/Squeezer_Assets_platform_page/iconfinder_thin-1575_project_management_tasks_1806465.svg';
-import importProjectImage from '../../../../static/images/Squeezer_Assets_platform_page/customise-project-screenshot.svg';
-import emptyProjectImage from '../../../../static/images/Squeezer_Assets_platform_page/import-project-screenshot.svg';
-import debugProjectImage from '../../../../static/images/Squeezer_Assets_platform_page/debug-project-screenshot.svg';
+import importProjectImage from '../../../../static/images/Squeezer_Assets_platform_page/screenshot2.svg';
+import emptyProjectImage from '../../../../static/images/Squeezer_Assets_platform_page/screenshot1.svg';
+import debugProjectImage from '../../../../static/images/Squeezer_Assets_platform_page/screenshot3.svg';
 import first from '../../../../static/images/Squeezer_Assets_platform_page/1.svg';
 import second from '../../../../static/images/Squeezer_Assets_platform_page/2.svg';
 import third from '../../../../static/images/Squeezer_Assets_platform_page/3.svg';
@@ -45,9 +45,9 @@ export default class PlatformSection extends Component {
   
   renderSectionItems = () => (
     items.map(({title, icon, image}, index) => (
-      <div css={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', marginTop: '120px', [presets.Hd]: {justifyContent: 'center', marginTop: '100px'}}}>
+      <div css={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', marginTop: '120px', [presets.Hd]: {justifyContent: 'space-around', marginTop: '100px'}}}>
         <div css={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', [presets.Hd]: {order: 1},
-         [presets.Hd]: {marginTop: '50px', order: 1}
+         [presets.Desktop]: {marginTop: '0px', order: 1}
         }} style={index === 1 ? {order: 2} : {}}>
           <img src={icon} alt={icon} css={{width: '100px', height: '100px', [presets.Hd]: {width: '70px', height: '70px'}}}/>
           <div css={{display: 'flex'}}>
@@ -57,7 +57,7 @@ export default class PlatformSection extends Component {
             }}>{title}</h3>
           </div>
         </div>
-        <img src={image} alt={image} css={{width: '700px', height: '368.83px', backgroundColor: 'pink', [presets.Desktop]: {width: '400px', height: '168.83px'}}}/>
+        <img src={image} alt={image} css={{width: '600px', height: '348px', boxShadow: '0 2px 10px 0 #BEBEBE', [presets.Desktop]: {width: '290px', height: '168.83px'}}}/>
       </div>
     ))
   );

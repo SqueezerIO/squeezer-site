@@ -73,7 +73,7 @@ export default class ProductsMultipleApproaches extends Component {
               margin: '0',
               padding: 0,
               maxWidth: '100vw',
-              minHeight: `80vh`,
+              minHeight: '60vh',
               position: 'relative',
               zIndex: '1',
               opacity: '0.3',

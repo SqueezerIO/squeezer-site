@@ -99,7 +99,7 @@ export default class FeaturesSection extends Component {
               </div>
             </div>
             <div css={{height: '100%', width: '520px', display: 'flex', flexDirection: 'column', [presets.Hd]: {marginTop: '15rem'},
-              [presets.Phablet]: {marginTop: '10rem'}}}>
+              [presets.Phablet]: {marginTop: '10rem', alignItems: 'center'}}}>
               {this.renderFeature('Intuitive deployments', intuitiveImage, 'Our platform will ensure that only services where code was changed will be choosed for deploy.')}
               {this.renderFeature('Multi provider', locationImage, 'Select the provider and the region where you want to deploy your dApp.')}
               {this.renderFeature('Smart testing', testingImage, 'Run tests against new or modified services, your QA team will love this one.')}
