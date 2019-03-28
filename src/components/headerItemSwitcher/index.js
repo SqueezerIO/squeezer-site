@@ -44,18 +44,18 @@ class HeaderItemSwitcher extends Component {
     return (
       <div css={{width: '60%', textTransform: 'uppercase'}}>
 
-      {title === 'Framework' ? <Link to={path} className={`${linkStyle}`}>read docs</Link> : (
+      {title === 'Framework' ? <Link to={path.docsPath} className={`${linkStyle}`}>read docs</Link> : (
         <div css={{display: 'flex', justifyContent: 'space-between', 'a:link, a:visited': {
             textDecoration: 'none'
           }}}>
-          <Link to={path} className={`${linkStyle}`}>features</Link>
-          <Link to={path} className={`${linkStyle}`}>pricing</Link>
+          <Link to={path.featurePath} className={`${linkStyle}`}>features</Link>
+          <Link to={path.pricingPath} className={`${linkStyle}`}>pricing</Link>
         </div>)}
       </div>);
   };
 
   renderContentChild = (item, header) => (
-    <div css={{textDecoration: 'none', display: 'flex', marginBottom: '16px'}}>
+    <Link to={item.path.pagePath ? item.path.pagePath : item.path} css={{textDecoration: 'none', display: 'flex', marginBottom: '16px'}}>
       {item.image ? <img src={item.image} alt='image' css={{marginRight: '.8rem', width: '32px', height: '32px', marginTop: '3px'}} /> : null}
 
       <div css={{ display: 'flex', alignItems: 'start', flexDirection: 'column', width: '100%' }}>
@@ -68,7 +68,7 @@ class HeaderItemSwitcher extends Component {
         </p>
         {header === 'products' ? this.renderLinks(item.title, item.path) : null}
       </div>
-    </div>
+    </Link>
   );
 
   render() {
@@ -77,11 +77,11 @@ class HeaderItemSwitcher extends Component {
     const renderContent = component.map((item, index) => (
       <div css={{ textDecoration: 'none', display: 'flex', marginBottom: '16px'}} key={index}>
         {header === 'products' ? this.renderContentChild(item, header) : (
-          <Link to={item.path} css={{':link, :visited': {
+          <div css={{':link, :visited': {
               textDecoration: 'none'
             }}}>
             {this.renderContentChild(item, header)}
-          </Link>
+          </div>
         )}
       </div>
     ));

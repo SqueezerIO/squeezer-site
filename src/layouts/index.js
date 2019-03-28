@@ -18,19 +18,32 @@ import chainkitIcon from '../../static/images/homeSVG/chainkit-icon.svg';
 const products = [
   {
     title: 'Framework',
-    path: '/products/framework',
+    path: {
+      pagePath: '/products/framework',
+      docsPath: '/',
+    },
     image: frameworkIcon,
     description: 'Develop dApps on local machine'
   },
   {
     title: 'Platform',
-    path: '/products/platform',
+    path: {
+      pagePath: '/products/platform',
+      featurePath: '/',
+      pricingPath: '/',
+    },
     image: platformIcon,
     description: 'Share project & collaborate with team'
   },
   {
     title: 'Chainkit',
-    path: '/products/chainkit',
+    path: {
+      pagePath: '/products/chainkit',
+      featurePath: '/',
+      pricingPath: '/',
+    },
+    featurePath: '/',
+    pricingPath: '/',
     image: chainkitIcon,
     description: 'Access blockchain as a service (Baas)'
   }
@@ -44,7 +57,7 @@ const developers = [
   },
   {
     title: 'Examples',
-    path: '/f',
+    path: '/',
     description: 'Comprehensive use cases'
   },
   {
