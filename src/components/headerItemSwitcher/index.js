@@ -29,9 +29,9 @@ class HeaderItemSwitcher extends Component {
     }
   }
 
-  showSelector = (header) => {
+  showSelector = () => {
     const val = !this.state.showSelector;
-    console.log('header', header);
+  console.log('showSelector', val);
     this.setState({
       showSelector: val
     })
@@ -71,7 +71,7 @@ class HeaderItemSwitcher extends Component {
 
   renderLinks = (title, path) => {
     return (
-      <div css={{width: '60%', textTransform: 'uppercase', [presets.Phablet]: {width: '92%'}}}>
+      <div css={{width: '180px', textTransform: 'uppercase'}}>
 
       {title === 'Framework' ? <Link to={path.docsPath} className={`${linkStyle}`}>read docs</Link> : (
         <div css={{display: 'flex', justifyContent: 'space-between', 'a:link, a:visited': {
@@ -130,9 +130,9 @@ class HeaderItemSwitcher extends Component {
           }
       }}>
         <div
-          onClick={() => this.showSelector}
-          onPointerEnter={this.hoverButton}
-          onMouseLeave={this.leaveButton}
+          onClick={() => this.showSelector()}
+          // onPointerEnter={this.hoverButton}
+          // onMouseLeave={this.leaveButton}
           css={{
             cursor: 'pointer',
             padding: '4px 5px 4px 5px',
@@ -175,8 +175,8 @@ class HeaderItemSwitcher extends Component {
               marginLeft: '110px',
             },
           }}
-             onMouseEnter={this.hoverItem}
-             onMouseLeave={this.leaveItem}
+             // onMouseEnter={this.hoverItem}
+             // onMouseLeave={this.leaveItem}
           >
             {renderContent}
           </div>
