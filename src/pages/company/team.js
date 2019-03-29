@@ -82,7 +82,7 @@ export default class TeamPage extends Component {
           product=''
           image={teamImage}
           title={`CHECK OUT OUR<br/>AWSOME TEAM`}
-          description='LALALA. '
+          description='This is the core team behind Squeezer. The ones who made everything happen.'
           subtitles={[]}
         />
   
