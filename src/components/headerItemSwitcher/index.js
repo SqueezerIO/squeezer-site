@@ -23,13 +23,15 @@ class HeaderItemSwitcher extends Component {
     super(props);
 
     this.state = {
-      showSelector: false
+      showSelector: false,
+      mouseOverItem: false,
+      mouseOverButton: false
     }
   }
 
-  showSelector = () => {
-    const val = this.state.showSelector ? false : true;
-
+  showSelector = (header) => {
+    const val = !this.state.showSelector;
+    console.log('header', header);
     this.setState({
       showSelector: val
     })
@@ -39,6 +41,32 @@ class HeaderItemSwitcher extends Component {
     this.setState({
       showSelector: false
     })
+  };
+  
+  hoverButton = () => {
+    this.setState({ showSelector: true, mouseOverButton: true, mouseOverItem: false });
+  };
+  
+  leaveButton = () => {
+    setTimeout(() => {
+      if (!this.state.mouseOverItem) {
+        setTimeout(() => {
+          this.setState({showSelector: false});
+        }, 0);
+      }
+    }, 50);
+  };
+  
+  hoverItem = () => {
+    this.setState({
+      showSelector: true, mouseOverItem: true, mouseOverButton: false
+    })
+  };
+  
+  leaveItem = () => {
+    setTimeout(() => {
+      this.setState({ showSelector: false, mouseOver: false });
+    }, 100);
   };
 
   renderLinks = (title, path) => {
@@ -78,6 +106,7 @@ class HeaderItemSwitcher extends Component {
 
   render() {
     const { header, component } = this.props;
+    const open = this.state.mouseOverButton || this.state.mouseOverMenu;
 
     const renderContent = component.map((item, index) => (
       <div css={{ textDecoration: 'none', display: 'flex', marginBottom: '16px'}} key={index}>
@@ -102,7 +131,9 @@ class HeaderItemSwitcher extends Component {
           }
       }}>
         <div
-          onClick={() => this.showSelector()}
+          onClick={() => this.showSelector}
+          onPointerEnter={this.hoverButton}
+          onMouseLeave={this.leaveButton}
           css={{
             cursor: 'pointer',
             padding: '4px 5px 4px 5px',
@@ -144,7 +175,10 @@ class HeaderItemSwitcher extends Component {
             [presets.Phablet]: {
               marginLeft: '110px',
             },
-          }}>
+          }}
+             onMouseEnter={this.hoverItem}
+             onMouseLeave={this.leaveItem}
+          >
             {renderContent}
           </div>
         </div>

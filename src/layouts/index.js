@@ -182,7 +182,7 @@ class Layout extends React.Component {
               <img
                 src={hiring}
                 alt="hiring"
-                css={{ width: '83px', height: '25px', marginLeft: '-130px', [presets.Hd]: {marginLeft: '-30px'},
+                css={{ width: '83px', height: '25px', marginLeft: '-130px', [presets.Hd]: {marginLeft: '-20px'},
                   [presets.Desktop]: {marginLeft: -100}, [presets.Phablet]: { marginLeft: -10}
                 }}
               />

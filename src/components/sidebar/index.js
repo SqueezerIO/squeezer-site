@@ -7,7 +7,6 @@ class MobileNav extends Component {
   
   render() {
     const {open, closeNav, children} = this.props;
-    console.log('OPen', open);
     const navClass = css({
       position: 'fixed',
       backgroundColor: 'white',
