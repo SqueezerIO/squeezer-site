@@ -37,7 +37,7 @@ export default class BlockchainAccess extends Component {
   
   render() {
     return (
-      <div css={{ minHeight: '90vh', [presets.Hd]: {minHeight: '30vh'}, [presets.Phablet]: {minHeight: '20vh'}}}>
+      <div css={{ minHeight: '90vh', marginTop: '20rem', [presets.Hd]: {minHeight: '30vh'}, [presets.Phablet]: {minHeight: '20vh'}}}>
         <div css={{margin: '0 auto', maxWidth: '1200px', position: 'relative'}}>
           <div css={{position: 'absolute', width: '100%', zIndex: '200', [presets.Hd]: { marginTop: '100px'}, [presets.Desktop]: { marginTop: '0px'},
             [presets.Desktop]: {position: 'relative'}

@@ -117,7 +117,7 @@ export default class FeaturesSection extends Component {
             position: 'relative',
             zIndex: '1',
             opacity: '0.3',
-            marginTop: '10rem',
+            marginTop: '20rem',
             backgroundColor: '#E6F4FF',
             [presets.Hd]: {
               minHeight: '80vh',

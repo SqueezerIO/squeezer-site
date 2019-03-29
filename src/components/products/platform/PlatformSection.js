@@ -71,15 +71,17 @@ export default class PlatformSection extends Component {
         marginTop: '15rem',
         [presets.Hd]: {
           marginTop: '10rem',
+          minHeight: '120vh',
         },
         [presets.Desktop]: {
           padding: '1rem',
           display: 'block',
           margin: 'auto',
+          minHeight: '100vh',
         },
         [presets.Phablet]: {
           marginTop: '0rem',
-          minHeight: '260vh',
+          minHeight: '210vh',
         },
         [presets.Mobile]: {
           marginTop: '0rem',

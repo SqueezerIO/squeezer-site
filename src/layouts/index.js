@@ -220,6 +220,7 @@ class Layout extends React.Component {
           <div
             css={{
               margin: '0 auto',
+              position: this.state.open ? 'fixed !important' : '',
             }}
             onClick={this.closeNav}
           >

@@ -10,7 +10,7 @@ import asset from '../../../../static/images/shape-3.svg';
 export default class ProductsMultipleApproaches extends Component {
   renderApproach = (title, image, description) => (
     <div css={{
-      height: '200px',
+      height: '160px',
       borderRadius: '3px',
       padding: '1.5rem',
     }}>
@@ -20,7 +20,7 @@ export default class ProductsMultipleApproaches extends Component {
           color: '#023775',	fontFamily: "DIN Condensed",	fontSize: '23px',	fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '.33px', lineHeight: '28px', marginTop: '5px', whiteSpace: 'no-wrap'
         }}>{title}</h3>
       </div>
-      <p css={{color: '#023775', fontFamily: 'Khula', fontSize: '16px', letterSpacing: '.7px', lineHeight: '22px', height: '120px', width: '225px', fontWeight: 200, marginLeft: '80px'}}>
+      <p css={{color: '#023775', fontFamily: 'Khula', fontSize: '16px', letterSpacing: '.7px', lineHeight: '22px', height: '120px', width: '225px', fontWeight: 200, marginLeft: '80px', marginTop: '-15px'}}>
         {description}
       </p>
     </div>
@@ -44,13 +44,16 @@ export default class ProductsMultipleApproaches extends Component {
                 marginLeft: '70px',
                 marginTop: '100px',
                 [presets.Desktop]: {
+                  marginLeft: '85px',
+                },
+                [presets.Desktop]: {
                   textAlign: 'center',
                   margin: 'auto'
                 }
               }}>
                 Multiple approaches
               </h2>
-              <img src={squeezerIcon} alt="squeezerIcon" css={{ marginLeft: '250px', marginTop: '25px',
+              <img src={squeezerIcon} alt="squeezerIcon" css={{ marginLeft: '200px', marginTop: '25px',
                 [presets.Desktop]: {width: 0, height: 0}}}/>
             </div>
   
@@ -60,11 +63,11 @@ export default class ProductsMultipleApproaches extends Component {
                 {this.renderApproach('blockchain payments', paymentImage, 'Easy integration for crypto payments on retail businesses.')}
                 {this.renderApproach('voting systems', votingImage, 'Blockchain based for top-level safety and voting process decentralization.')}
               </div>
-              <div css={{display: 'flex', flex: 1, flexDirection: 'column', flexWrap: 'wrap', alignContent: 'center', marginLeft: '100px', [presets.Desktop]: {marginLeft: 0}}}>
+              <div css={{display: 'flex', flex: 1, flexDirection: 'column', flexWrap: 'wrap', alignContent: 'center', marginLeft: '35px', [presets.Desktop]: {marginLeft: 0}}}>
                 {this.renderApproach('secure authentication', bankingImage, 'Decentralized identity is the next evolution step from the traditional login systems.')}
                 {this.renderApproach('banking', bankingImage, 'Implementing the security and transparency aspects of blockchain technology into their transaction processes.')}
               </div>
-              <img src={asset} alt='asset' css={{opacity: '.64', marginTop: '-80px', marginLeft: '100px', [presets.Hd]: {width: 0, height: 0}}}/>
+              <img src={asset} alt='asset' css={{opacity: '.64', marginTop: '-180px', marginLeft: '100px', [presets.Hd]: {width: 0, height: 0}}}/>
             </div>
           </div>
         </div>

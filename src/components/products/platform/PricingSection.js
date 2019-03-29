@@ -22,9 +22,6 @@ export default class PricingSection extends Component {
         [presets.Desktop]:{
           padding: '0 1rem'
         },
-        [presets.Phablet]:{
-          padding: 0
-        }
       }}>
         <div css={{display: 'flex', [presets.Hd]:{justifyContent: 'center', marginTop: '100px'}}}>
           <img src={assetImage} alt={assetImage} css={{marginTop: '-65px'}}/>

@@ -107,7 +107,11 @@ export default class ProductsTitleSection extends Component {
                 marginLeft: 0,
                 marginTop: '40px'
               },}}>
-              <div css={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '500px', flexWrap: 'wrap', marginLeft: '40px',}}>
+              <div css={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '500px', flexWrap: 'wrap', marginLeft: '40px',
+                [presets.Phablet]: {
+                  justifyContent: 'space-around',
+                  marginLeft: '0px'
+                }}}>
                 {subtitles.map(item => <h2 key={item} css={{
                   height: '24px',
                   width: '97px',
@@ -118,7 +122,8 @@ export default class ProductsTitleSection extends Component {
                   letterSpacing: '0.87px',
                   lineHeight: '24px',
                   textTransform: 'uppercase',
-                  marginTop: '12px'
+                  marginTop: '12px',
+                  
                 }}>{item}</h2>)}
                 <div css={{ display: 'inline-flex', flexWrap: 'wrap'}}>
                   {this.renderIcon(product)}
@@ -138,7 +143,7 @@ export default class ProductsTitleSection extends Component {
           margin: '0',
           padding: 0,
           maxWidth: '100vw',
-          minHeight: `65vh`,
+          minHeight: `75vh`,
           position: 'relative',
           zIndex: '1',
           opacity: '0.3',

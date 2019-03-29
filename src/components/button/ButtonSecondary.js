@@ -21,6 +21,7 @@ export default class ButtonSecondary extends Component {
           whiteSpace: 'no-wrap',
           fontWeight: 'bold',
           letterSpacing: '.1px',
+          border: 0,
           [presets.Desktop]: mediaquery,
           [presets.Phablet]: mediaqueryPhablet,
           ':hover': {
