@@ -106,7 +106,6 @@ class HeaderItemSwitcher extends Component {
 
   render() {
     const { header, component } = this.props;
-    const open = this.state.mouseOverButton || this.state.mouseOverMenu;
 
     const renderContent = component.map((item, index) => (
       <div css={{ textDecoration: 'none', display: 'flex', marginBottom: '16px'}} key={index}>
