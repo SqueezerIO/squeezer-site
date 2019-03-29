@@ -40,7 +40,7 @@ export default class MainSection extends Component {
             <ButtonPrimary
               title='get free account'
               onClick={() => console.log('clicked free')}
-              style={{ width: '163px', height: '39px', lineHeight: '38px', border: '1px solid #979797'}}
+              style={{ width: '163px', height: '39px', lineHeight: '38px', border: '1px solid #979797', boxShadow: '0 0 0 0 rgba(0,0,0,0.0)'}}
               mediaquery={{[presets.Desktop]: {
                   display: 'block', margin: 'auto', width: '9rem !important'
                 }}}
@@ -49,7 +49,7 @@ export default class MainSection extends Component {
             <ButtonSecondary
               title='check the docs'
               onClick={() => console.log('clicked docs')}
-              style={{ marginLeft: '17px', width: '163px', height: '39px', lineHeight: '38px', border: '1px solid #979797'}}
+              style={{ marginLeft: '17px', width: '163px', height: '39px', lineHeight: '38px', border: '1px solid #979797', boxShadow: '0 0 0 0 rgba(0,0,0,0.0)'}}
               mediaquery={{[presets.Desktop]: {
                   display: 'block', margin: 'auto !important', width: '9rem !important', marginTop: '1rem !important'
                 }}}
