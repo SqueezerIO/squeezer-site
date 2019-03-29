@@ -51,7 +51,7 @@ export default class ChainkitPage extends Component {
         />
         
         <BlockchainAccess />
-        <PricingSection prices={prices} title1={'Outbound Transaction'} title2={'Inbound Transaction'} />
+        <PricingSection id={'chainkit-pricing'} prices={prices} title1={'Outbound Transaction'} title2={'Inbound Transaction'} />
         <StartBuildingSection />
       </Layout>
     );

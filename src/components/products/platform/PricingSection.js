@@ -5,13 +5,13 @@ import presets from '../../../utils/presets';
 
 export default class PricingSection extends Component {
   render() {
-    const { prices, title1, title2 } = this.props;
+    const { prices, title1, title2, id } = this.props;
     const cellStyle = css({height: '92px', width: '240px', backgroundColor: '#F7FBFF'});
     const intervalStyle = css({marginTop: '7%',height: '24px', color: '#023775', fontFamily: 'Khula',	fontSize: '18px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '24px'});
     const priceStyle = css({marginTop: '7%', height: '24px', color: '#0075FE', fontFamily: 'Khula',	fontSize: '18px',	fontWeight: '200', letterSpacing: '.87px', lineHeight: '24px'});
     
     return (
-      <div css={{
+      <div id={id} css={{
         margin: '0 auto',
         padding: 0,
         maxWidth: '1200px',

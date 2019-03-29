@@ -31,8 +31,8 @@ const products = [
     title: 'Platform',
     path: {
       pagePath: '/products/platform',
-      featurePath: '/',
-      pricingPath: '/',
+      featurePath: '/products/platform/#platform-features',
+      pricingPath: '/products/platform/#platform-pricing',
     },
     image: platformIcon,
     description: 'Share project & collaborate with team'
@@ -41,8 +41,8 @@ const products = [
     title: 'Chainkit',
     path: {
       pagePath: '/products/chainkit',
-      featurePath: '/',
-      pricingPath: '/',
+      featurePath: '/products/chainkit/#chainkit-features',
+      pricingPath: '//products/chainkit/#chainkit-pricing',
     },
     featurePath: '/',
     pricingPath: '/',

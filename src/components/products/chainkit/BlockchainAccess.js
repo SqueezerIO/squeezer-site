@@ -52,7 +52,7 @@ export default class BlockchainAccess extends Component {
                 },
               }} >
               </div>
-              <div css={{
+              <div id='chainkit-features' css={{
                 position: 'absolute',
                 height: '279px',
                 width: '514px',

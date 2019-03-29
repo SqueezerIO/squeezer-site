@@ -52,7 +52,7 @@ export default class PlatformPage extends Component {
         />
         <FeaturesSection />
         <PlatformSection />
-        <PricingSection prices={prices} title1={'Team members'} title2={'Deployments'} />
+        <PricingSection id='platform-pricing' prices={prices} title1={'Team members'} title2={'Deployments'} />
         <StartBuildingSection />
       </Layout>
     );

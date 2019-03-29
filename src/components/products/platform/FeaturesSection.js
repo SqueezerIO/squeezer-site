@@ -37,7 +37,7 @@ export default class FeaturesSection extends Component {
   
   render() {
     return (
-      <div css={{ minHeight: '50vh'}}>
+      <div id='platform-features' css={{ minHeight: '50vh'}}>
         <div css={{margin: '0 auto', maxWidth: '1200px', position: 'relative'}}>
           <div css={{position: 'absolute', width: '100%', zIndex: '200', padding: '80px', display: 'flex', flexWrap: 'wrap', [presets.Desktop]: {position: 'relative', display: 'flex', justifyContent: 'center', padding: '0'}}}>
             <div css={{height: '100%', width: '520px', position: 'relative'}}>
