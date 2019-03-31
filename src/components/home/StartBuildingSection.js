@@ -95,6 +95,7 @@ export default class StartBuildingSection extends Component {
               </p>
               <ButtonSecondary
                 title='get free account'
+                onClick={() => location.href = 'https://platform.squeezer.io' }
                 style={{
                   width: '262px',
                   height: '56px',
