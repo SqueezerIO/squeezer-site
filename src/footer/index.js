@@ -39,34 +39,34 @@ const footerItems = [
         name: 'Examples',
         path: '/'
       },
-      {
-        name: 'Support',
-        path: '/'
-      },
-      {
-        name: 'Network status',
-        path: '/'
-      }
+      // {
+      //   name: 'Support',
+      //   path: '/'
+      // },
+      // {
+      //   name: 'Network status',
+      //   path: '/'
+      // }
     ]
   },
   {
     title: 'Company',
     items: [
-      {
-        name: 'Careers',
-        path: '/'
-      },
-      {
-        name: 'Blog',
-        path: '/'
-      },
-      {
-        name: 'Press',
-        path: '/'
-      },
+      // {
+      //   name: 'Careers',
+      //   path: '/'
+      // },
+      // {
+      //   name: 'Blog',
+      //   path: '/'
+      // },
+      // {
+      //   name: 'Press',
+      //   path: '/'
+      // },
       {
         name: 'Team',
-        path: '/'
+        path: '/company/team'
       },
       {
         name: 'Terms & conditions',
@@ -200,12 +200,12 @@ export default class Footer extends Component {
             <ul css={{listStyle: 'none', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', margin: 0,
               [presets.Hd]: {marginTop: '2rem'}, [presets.Mobile]: {marginTop: '4rem'}
             }}>
-              {this.renderSocialIcon('', twitterImage)}
-              {this.renderSocialIcon('', facebookImage)}
-              {this.renderSocialIcon('', gitImage)}
-              {this.renderSocialIcon('', mediumImage)}
-              {this.renderSocialIcon('', telegramImage)}
-              {this.renderSocialIcon('', playImage)}
+            {this.renderSocialIcon('https://twitter.com/SqueezerIO', twitterImage)}
+            {this.renderSocialIcon('https://www.facebook.com/Squeezer.IO', facebookImage)}
+            {this.renderSocialIcon('https://github.com/SqueezerIO', gitImage)}
+            {this.renderSocialIcon('https://medium.com/@squeezer', mediumImage)}
+            {this.renderSocialIcon('https://telegram.me/squeezerio', telegramImage)}
+            {this.renderSocialIcon('https://www.youtube.com/channel/UC4oipFLgQW7e98Gei-7NEIQ', playImage)}
             </ul>
           </div>
         </div>
