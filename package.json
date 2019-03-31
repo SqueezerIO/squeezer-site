@@ -1,7 +1,7 @@
 {
-  "name": "squeezer-platform-site",
+  "name": "squeezer-site",
   "private": true,
-  "description": "Squeezer Platform Site",
+  "description": "Squeezer Site",
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {

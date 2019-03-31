@@ -158,12 +158,12 @@ class Layout extends React.Component {
                 >
                   <ButtonSecondary
                     title='login'
-                    onClick={() => console.log('clicked login')}
+                    onClick={() => location.href = 'https://platform.squeezer.io'}
                     style={{width: '100%', height: '39px', lineHeight: '38px'}}
                   />
                   <ButtonPrimary
                     title='register'
-                    onClick={() => console.log('clicked register')}
+                    onClick={() => location.href = 'https://platform.squeezer.io'}
                     style={{marginTop: '17px', width: '100%', height: '39px', lineHeight: '38px'}}
                   />
                 </div>
@@ -206,12 +206,12 @@ class Layout extends React.Component {
               >
                 <ButtonSecondary
                   title='login'
-                  onClick={() => console.log('clicked login')}
+                  onClick={() => location.href = 'https://platform.squeezer.io'}
                   style={{width: '103px', height: '39px', lineHeight: '38px'}}
                 />
                 <ButtonPrimary
                   title='register'
-                  onClick={() => console.log('clicked register')}
+                  onClick={() => location.href = 'https://platform.squeezer.io'}
                   style={{marginLeft: '17px', width: '103px', height: '39px', lineHeight: '38px'}}
                 />
               </div>
