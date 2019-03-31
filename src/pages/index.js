@@ -1,18 +1,26 @@
-import React from "react"
-import createReactClass from "create-react-class"
+import React from 'react';
+import Layout from '../layouts';
 
-const IndexRoute = createReactClass({
+import { withNamespaces } from 'react-i18next';
+import MainSection from '../components/home/MainSection';
+import ProductsSection from '../components/home/ProductsSection';
+import DeveloperSection from '../components/home/DeveloperSection';
+import StartBuildingSection from '../components/home/StartBuildingSection';
+import MemberEEA from '../components/home/MemberEEA';
+
+class HomePage extends React.Component {
+  
   render() {
-    if (typeof window !== "undefined") {
-
-      if (!(/bot|google|baidu|bing|msn|duckduckgo|teoma|slurp|yandex/i
-        .test(navigator.userAgent))) {
-        window.location = "https://tokensale.squeezer.io"
-      }
-    }
-
-    return <div />
+    return (
+      <Layout>
+        <MainSection />
+        <ProductsSection />
+        <DeveloperSection />
+        <MemberEEA />
+        <StartBuildingSection />
+      </Layout>
+    )
   }
-})
+}
 
-export default IndexRoute
+export default withNamespaces('Home')(HomePage)

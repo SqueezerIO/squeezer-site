@@ -1,183 +1,236 @@
 import React from "react"
-import Helmet from "react-helmet"
+import { Link } from 'gatsby';
+import HeaderItemSwitcher from '../components/headerItemSwitcher';
+import ButtonPrimary from '../components/button/ButtonPrimary';
+import ButtonSecondary from '../components/button/ButtonSecondary';
 
-import Navigation from "../components/navigation"
-import MobileNavigation from "../components/navigation-mobile"
-import SidebarBody from "../components/sidebar-body"
-import docsSidebar from "../../content/docs/doc-links.yaml"
-import { rhythm, scale } from "../utils/typography"
-import presets from "../utils/presets"
-import colors from "../utils/colors"
-import createReactClass from "create-react-class"
-import traverse from "traverse"
-import queryString from "query-string";
+import { I18nextProvider } from 'react-i18next'
+import i18n from '../utils/i18n'
+import presets from '../utils/presets';
 
+import logo from '../../static/images/logo-blue.svg';
+import hiring from '../../static/images/hiring.svg';
+import Footer from '../footer';
+import frameworkIcon from '../../static/images/homeSVG/framework.svg';
+import platformIcon from '../../static/images/homeSVG/platform-icon.svg';
+import chainkitIcon from '../../static/images/homeSVG/chainkit-icon.svg';
+import MobileNav from '../components/sidebar';
+import { FaListUl } from "react-icons/fa";
 
-import "../css/prism-coy.css"
-
-// Import Futura PT typeface
-import "../fonts/Webfonts/futurapt_book_macroman/stylesheet.css"
-import "../fonts/Webfonts/futurapt_bookitalic_macroman/stylesheet.css"
-import "../fonts/Webfonts/futurapt_demi_macroman/stylesheet.css"
-import "../fonts/Webfonts/futurapt_demiitalic_macroman/stylesheet.css"
-
-// Other fonts
-import "typeface-spectral"
-import "typeface-space-mono"
-
-module.exports = createReactClass({
-  propTypes() {
-    return {
-      children: React.PropTypes.any
-    }
+const products = [
+  {
+    title: 'Framework',
+    path: {
+      pagePath: '/products/framework',
+      docsPath: '/',
+    },
+    image: frameworkIcon,
+    description: 'Develop dApps on local machine'
   },
-  loadMenu(props) {
-    const menuTree = []
-    let activeLink = null
-    let index = 0
-    let parentLinks = [], parentLink, rootParent
-
-    docsSidebar.forEach((section, index) => {
-      let links = []
-      traverse(section.links).forEach(function () {
-        const deep = this.level
-        const node = this.node
-        const key = this.key
-        let linkId = `sidebar-link-${index}`
-        let path = typeof node === 'string' ? this.node : '#'
-
-        if (deep === 1) {
-          parentLink = 0
-          rootParent = linkId
-        } else {
-          parentLink = parentLinks[deep - 1]
-        }
-
-        let linkObj = {
-          id: linkId,
-          title: key,
-          type: typeof node === 'string' ? 'children' : 'parent',
-          path: path,
-          parent: parentLink,
-          rootParent: rootParent,
-          deep: deep,
-          active: false,
-          display: false
-        }
-
-        if (props.location.pathname === path) {
-          activeLink = linkObj
-        }
-
-        if (key) {
-          links.push(linkObj)
-        }
-
-        if (typeof node !== 'string') {
-          parentLinks[deep] = linkId
-        }
-
-        index++
-      })
-
-      menuTree.push({
-        title: section.title,
-        key: section.title,
-        links: links
-      })
-    })
-    return {
-      tree: menuTree,
-      activeLink: activeLink
-    }
+  {
+    title: 'Platform',
+    path: {
+      pagePath: '/products/platform',
+      featurePath: '/products/platform/#platform-features',
+      pricingPath: '/products/platform/#platform-pricing',
+    },
+    image: platformIcon,
+    description: 'Share project & collaborate with team'
   },
+  {
+    title: 'Chainkit',
+    path: {
+      pagePath: '/products/chainkit',
+      featurePath: '/products/chainkit/#chainkit-features',
+      pricingPath: '//products/chainkit/#chainkit-pricing',
+    },
+    featurePath: '/',
+    pricingPath: '/',
+    image: chainkitIcon,
+    description: 'Access blockchain as a service (Baas)'
+  }
+];
+
+const developers = [
+  {
+    title: 'Docs',
+    path: '/',
+    description: 'Learn how to use Squeezer tools'
+  },
+  {
+    title: 'Examples',
+    path: '/',
+    description: 'Comprehensive use cases'
+  },
+  {
+    title: 'Support',
+    path: '/',
+    description: "Join our chat now. Let's talk !"
+  },
+];
+
+const company = [
+  {
+    title: 'Team',
+    path: '/company/team',
+    description: 'Check out awsome team'
+  }
+];
+
+class Layout extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = { open: false };
+  }
+  
+  closeNav = () => {
+    this.setState({
+      open: false,
+    });
+  };
+  
+  onToggleNavigation = () => {
+    this.setState({
+      open: !this.state.open,
+    });
+  };
+  
+  logoClick = () => {
+    return <Link to='/' />
+  };
+
   render() {
-    const queryParams = queryString.parse(this.props.location.search)
-    if (queryParams && queryParams.utm_source) {
-      localStorage.setItem('utm_source', queryParams.utm_source)
-      localStorage.setItem('utm_medium', queryParams.utm_medium)
-      localStorage.setItem('utm_campaign', queryParams.utm_campaign)
-    } else if (typeof document !== "undefined" && document.referrer && !localStorage.utm_source) {
-      const referrer = document.referrer.replace('https://', '').split(/[/?#]/)[0]
-      localStorage.setItem('utm_source', referrer)
-      localStorage.setItem('utm_medium', 'referrer')
-    }
-
-    const isHomepage = this.props.location.pathname == `/`
-    const hasSidebar =
-      this.props.location.pathname.slice(0, 6) === `/docs/` ||
-      this.props.location.pathname.slice(0, 10) === `/packages/` ||
-      this.props.location.pathname.slice(0, 10) === `/enterprise/`
-    const menu = this.loadMenu(this.props)
-    const sidebarStyles = {
-      borderRight: `1px solid ${colors.b[0]}`,
-      backgroundColor: presets.sidebar,
-      float: `left`,
-      width: rhythm(10),
-      display: `none`,
-      position: `fixed`,
-      overflowY: `auto`,
-      height: `calc(100vh - ${presets.headerHeight})`,
-      WebkitOverflowScrolling: `touch`,
-      "::-webkit-scrollbar": {
-        width: `6px`,
-        height: `6px`,
-      },
-      "::-webkit-scrollbar-thumb": {
-        background: presets.lightBlue,
-      },
-      "::-webkit-scrollbar-track": {
-        background: presets.brandLighter,
-      },
-    }
+    const { color } = this.props;
 
     return (
-      <div>
-        <Helmet defaultTitle={`Squeezer Framework`} titleTemplate={`%s | Squeezer Framework`}>
-          <meta name="twitter:site" content="@squeezerio" />
-          <meta name="og:type" content="website" />
-          <meta name="og:site_name" content="Squeezer.IO" />
-        </Helmet>
-        <Navigation pathname={this.props.location.pathname} />
+      <I18nextProvider i18n={i18n}>
         <div
-          className={hasSidebar ? `main-body has-sidebar` : `main-body`}
           css={{
-            paddingTop: 0,
-            [presets.Tablet]: {
-              margin: `0 auto`,
-              paddingTop: isHomepage ? 0 : presets.headerHeight,
+            padding: '0', //2rem',
+            margin: 0,
+            minHeight: '100vh',
+            [presets.Desktop]: {
+              overflow: 'hidden',
+              maxWidth: '100vw'
             },
           }}
         >
-          {/* TODO Move this under docs/index.js once Gatsby supports multiple levels
-               of layouts */}
           <div
             css={{
-              ...sidebarStyles,
-              [presets.Tablet]: {
-                display:
-                  this.props.location.pathname.slice(0, 6) === `/docs/` ||
-                    this.props.location.pathname.slice(0, 10) === `/packages/`
-                    ? `block`
-                    : `none`,
-              },
+              maxWidth: '100vw',
+              background: color ? color : 'transparent',
+              padding: '0 2rem',
+              [presets.Desktop]: {
+                background: 'transparent',
+                padding: '0 1rem'
+              }
             }}
           >
-            <SidebarBody menu={menu} />
+            <div
+              css={{
+                padding: '1px',
+                maxWidth: '1200px',
+                margin: '0 auto',
+                overflow: 'hidden',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
+              <div css={{display: 'none', [presets.Desktop]: {display: 'block', backgroundColor: 'none', cursor: 'pointer'}}} onClick={this.onToggleNavigation}>
+                <FaListUl css={{color: '#092D5D',
+                  display: 'none',
+                  [presets.Desktop]: { display: 'inline-block', float: 'left', margin: 0, }
+                }}/>
+              </div>
+              <MobileNav open={this.state.open} closeNav={this.closeNav}>
+                <HeaderItemSwitcher header='products' component={products}/>
+                <HeaderItemSwitcher header='developers' component={developers}/>
+                <HeaderItemSwitcher header='company' component={company}/>
+                <div
+                  css={{
+                    display: 'none',
+                    [presets.Phablet]: {
+                      display: 'flex', textDecoration: 'none', flexDirection: 'column', alignItems: 'left'
+                    }
+                  }}
+                >
+                  <ButtonSecondary
+                    title='login'
+                    onClick={() => location.href = 'https://platform.squeezer.io'}
+                    style={{width: '100%', height: '39px', lineHeight: '38px'}}
+                  />
+                  <ButtonPrimary
+                    title='register'
+                    onClick={() => location.href = 'https://platform.squeezer.io'}
+                    style={{marginTop: '17px', width: '100%', height: '39px', lineHeight: '38px'}}
+                  />
+                </div>
+              </MobileNav>
+              
+              <Link to='/' css={{display: 'flex'}}>
+                <img
+                  src={logo}
+                  alt="logo"
+                  css={{ width: '200px', height: '80px', display: 'inline-block', float: 'left', margin: 0,
+                    cursor: 'pointer'
+                  }}
+                />
+              </Link>
+              
+              <img
+                src={hiring}
+                alt="hiring"
+                css={{ width: '83px', height: '25px', marginLeft: '-130px', [presets.Hd]: {marginLeft: '-20px'},
+                  [presets.Desktop]: {marginLeft: -100}, [presets.Phablet]: { marginLeft: -10}
+                }}
+              />
+              <div css={{
+                display: 'flex',
+                textDecoration: 'none',
+                justifyContent: 'space-between',
+                [presets.Desktop]: { display: 'none'}
+              }}>
+                <HeaderItemSwitcher header='products' component={products}/>
+                <HeaderItemSwitcher header='developers' component={developers}/>
+                <HeaderItemSwitcher header='company' component={company}/>
+              </div>
+              <div
+                css={{
+                  display: 'flex',
+                  textDecoration: 'none',
+                  justifyContent: 'space-between',
+                  [presets.Phablet]: { display: 'none'}
+                }}
+              >
+                <ButtonSecondary
+                  title='login'
+                  onClick={() => location.href = 'https://platform.squeezer.io'}
+                  style={{width: '103px', height: '39px', lineHeight: '38px'}}
+                />
+                <ButtonPrimary
+                  title='register'
+                  onClick={() => location.href = 'https://platform.squeezer.io'}
+                  style={{marginLeft: '17px', width: '103px', height: '39px', lineHeight: '38px'}}
+                />
+              </div>
+            </div>
           </div>
           <div
             css={{
-              [presets.Tablet]: {
-                paddingLeft: hasSidebar ? rhythm(10) : 0,
-              },
+              margin: '0 auto',
+              position: this.state.open ? 'fixed !important' : '',
             }}
+            onClick={this.closeNav}
           >
-            {this.props.children()}
+            {this.props.children}
+            <Footer />
           </div>
         </div>
-        <MobileNavigation />
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
-      </div>
+      </I18nextProvider>
     )
-  },
-})
+  }
+}
+
+export default Layout

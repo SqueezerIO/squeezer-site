@@ -1,21 +1,22 @@
-import colors from "./colors"
+// import colors from "./colors"
 
 module.exports = {
-  mobile: `(min-width: 320px)`,
-  Mobile: `@media (min-width: 320px)`,
-  phablet: `(min-width: 550px)`,
-  Phablet: `@media (min-width: 550px)`,
-  tablet: `(min-width: 750px)`,
-  Tablet: `@media (min-width: 750px)`,
-  desktop: `(min-width: 1000px)`,
-  Desktop: `@media (min-width: 1000px)`,
-  hd: `(min-width: 1200px)`,
-  Hd: `@media (min-width: 1200px)`,
-  VHd: `@media (min-width: 1450px)`,
-  VVHd: `@media (min-width: 1650px)`,
+  mobile: `(max-width: 320px)`,
+  Mobile: `@media (max-width: 320px)`,
+  phablet: `(max-width: 550px)`,
+  Phablet: `@media (max-width: 550px)`,
+  tablet: `(max-width: 750px)`,
+  Tablet: `@media (max-width: 750px)`,
+  desktop: `(max-width: 1000px)`,
+  Desktop: `@media (max-width: 1000px)`,
+  hd: `(max-width: 1200px)`,
+  Hd: `@media (max-width: 1200px)`,
+  VHd: `@media (max-width: 1450px)`,
+  VVHd: `@media (max-width: 1650px)`,
   maxWidth: 35,
   maxWidthWithSidebar: 26,
   lightBlue: `#86c3f9`,
+  darkBlue: `#062f4f`,
   veryLightBlue: `#cfe7fc`,
   sidebar: `#fbfafc`,
   calm: `rgba(38, 32, 44, .5)`,
@@ -23,10 +24,11 @@ module.exports = {
   // @see https://www.figma.com/file/J6IYJEtdRmwJQOrcZ2DfvxDD/Gatsby
   brand: `#1C90F3`,
   brandLight: `#3d9ff5`,
-  brandLighter: `#F5F3F7`,
+  brandLighter: `#eff3f6`,
   // bolder palette by @ArchieHicklin
   // @see https://github.com/gatsbyjs/gatsby/issues/1173#issuecomment-309415650
-  accent: `#42B983`, // "Mustard"
+  accent: `#12d47d`, // "Mustard"
+  warning: `#f3554a`,
   accentDark : `#111C30`,
   radius: 2,
   radiusLg: 4,
@@ -42,5 +44,5 @@ module.exports = {
     speedFast: `100ms`,
   },
   logoOffset: 1.7,
-  headerHeight: `3.5rem`,
+  headerHeight: `60px`,
 }
