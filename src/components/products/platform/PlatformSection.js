@@ -42,7 +42,7 @@ export default class PlatformSection extends Component {
         return <img src={third} alt={third} css={{width: '39px', height: '39px', marginRight: '10px', marginTop: '-5px'}}/>;
     }
   };
-  
+
   renderSectionItems = () => (
     items.map(({title, icon, image}, index) => (
       <div css={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', marginTop: '120px', [presets.Hd]: {justifyContent: 'space-around', marginTop: '100px'}}}>
@@ -61,13 +61,13 @@ export default class PlatformSection extends Component {
       </div>
     ))
   );
-  
+
   render() {
     return (
       <div css={{
         margin: '0',
         maxWidth: '100vw',
-        minHeight: '200vh',
+        minHeight: '180vh',
         marginTop: '15rem',
         [presets.Hd]: {
           marginTop: '10rem',

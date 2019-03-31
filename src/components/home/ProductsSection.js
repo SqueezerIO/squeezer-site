@@ -65,8 +65,8 @@ export default class ProductsSection extends Component {
         <img
           src={productsImage}
           css={{
-            // height: 'auto',
-            // width: 'auto \ 9',
+            height: '465',
+            width: '1600',
             position: 'absolute',
             [presets.Desktop]: {
               transform: 'rotate(90deg)',

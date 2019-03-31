@@ -34,7 +34,7 @@ export default class BlockchainAccess extends Component {
       </p>
     </div>
   );
-  
+
   render() {
     return (
       <div css={{ minHeight: '90vh', marginTop: '20rem', [presets.Hd]: {minHeight: '30vh'}, [presets.Phablet]: {minHeight: '20vh'}}}>
@@ -105,7 +105,7 @@ export default class BlockchainAccess extends Component {
                 {this.renderService('Wallet Security', walletSecurityImage, 'Chainkit empowers the end user to manage and store his own private credentials.')}
                 {this.renderService('Bidirectional Payment Channels', bidirectionalImage, 'Get integration for both inbound and outbound blockchain transactions.')}
               </div>
-            
+
               <div css={{display: 'flex', flex: 1, flexDirection: 'column', flexWrap: 'wrap', alignContent: 'center', [presets.Desktop]: {marginLeft: 0}}}>
                 {this.renderService('Blockchain agnostic', blockchainImage, 'We help you access different blockchains or switch between them with only one line of code.')}
                 {this.renderService('Smart contract secure access', smartContactImage, 'Squeezer adds an extra layer on the top of your smart contract to protect private methods and make it easier to access.')}
@@ -113,13 +113,13 @@ export default class BlockchainAccess extends Component {
             </div>
           </div>
         </div>
-  
+
         <div
           css={{
             margin: '0 auto',
             padding: 0,
             maxWidth: '1200px',
-            minHeight: '80vh',
+            minHeight: '70vh',
             position: 'relative',
             zIndex: '1',
             opacity: '0.3',
@@ -134,7 +134,7 @@ export default class BlockchainAccess extends Component {
             }
           }}>
         </div>
-        <img src={chainKitImage} alt="chainKitImage" css={{width: '510px', height: '510px', marginLeft: '600px', marginTop: '-700px', position: 'absolute', zIndex: 200, [presets.Hd]: { display: 'none'}}}/>
+        <img src={chainKitImage} alt="chainKitImage" css={{width: '510px', height: '510px', marginLeft: '775px', marginTop: '-630px', position: 'absolute', zIndex: 200, [presets.Hd]: { display: 'none'}}}/>
       </div>
     );
   }

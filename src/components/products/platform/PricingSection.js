@@ -9,13 +9,13 @@ export default class PricingSection extends Component {
     const cellStyle = css({height: '92px', width: '240px', backgroundColor: '#F7FBFF'});
     const intervalStyle = css({marginTop: '7%',height: '24px', color: '#023775', fontFamily: 'Khula',	fontSize: '18px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '24px'});
     const priceStyle = css({marginTop: '7%', height: '24px', color: '#0075FE', fontFamily: 'Khula',	fontSize: '18px',	fontWeight: '200', letterSpacing: '.87px', lineHeight: '24px'});
-    
+
     return (
       <div id={id} css={{
         margin: '0 auto',
         padding: 0,
         maxWidth: '1200px',
-        minHeight: '50vh',
+        minHeight: '47vh',
         [presets.Hd]:{
           padding: '0 8rem'
         },
@@ -29,7 +29,7 @@ export default class PricingSection extends Component {
             width: '243px', color: '#004CA5',	fontFamily: 'DIN Condensed',	fontSize: '45px',	fontWeight: 'bold', letterSpacing: '1px', lineHeight: '54px', marginLeft: '13px', marginBottom: '73px'
           }}>PAY-AS-YOU-GO</h2>
         </div>
-  
+
         <div css={{display: 'flex',maxWidth: '1200px', justifyContent: 'center', textAlign: 'center',
           [presets.Hd]: {flexDirection: 'column', marginTop: '80px'}
         }}>
@@ -44,7 +44,7 @@ export default class PricingSection extends Component {
             </div>
           ))}
         </div>
-        
+
         <div css={{display: 'flex',maxWidth: '1200px', justifyContent: 'center', textAlign: 'center', [presets.Hd]: {flexDirection: 'column'}}}>
           <div css={{display: 'flex', flexDirection: 'column',[presets.Hd]:{flexDirection: 'row', justifyContent: 'end', margin: 'auto', marginTop: '-560px', marginLeft: '150px',
               [presets.Phablet]: {marginLeft: '80px'}
@@ -67,7 +67,7 @@ export default class PricingSection extends Component {
                 <div className={priceStyle} dangerouslySetInnerHTML={{ __html: item.price1 }}>
                 </div>
               </div>
-              
+
               <div className={cellStyle}>
                 <div className={intervalStyle}>{item.interval2}</div>
                 <div className={priceStyle} dangerouslySetInnerHTML={{ __html: item.price2 }}>
@@ -75,11 +75,11 @@ export default class PricingSection extends Component {
               </div>
             </div>
           ))}
-  
+
           <h3 css={{display: 'none', [presets.Phablet]: {display: 'block', height: '92px', backgroundColor: '#F7FBFF', width: '240px', marginLeft: '80px',
             color: '#023775', fontFamily: 'Khula',	fontSize: '18px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '92px', verticalAlign: 'middle'}
           }}>{title2}</h3>
-          
+
           {prices.map(item => (
             <div css={{display: 'none', [presets.Phablet]: {display: 'flex', flexDirection: 'row', justifyContent: 'end', marginLeft: '0'}}}>
               <div css={{height: '92px'}}></div>

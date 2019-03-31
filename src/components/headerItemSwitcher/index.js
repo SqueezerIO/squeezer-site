@@ -42,11 +42,11 @@ class HeaderItemSwitcher extends Component {
       showSelector: false
     })
   };
-  
+
   hoverButton = () => {
     this.setState({ showSelector: true, mouseOverButton: true, mouseOverItem: false });
   };
-  
+
   leaveButton = () => {
     setTimeout(() => {
       if (!this.state.mouseOverItem) {
@@ -56,13 +56,13 @@ class HeaderItemSwitcher extends Component {
       }
     }, 50);
   };
-  
+
   hoverItem = () => {
     this.setState({
       showSelector: true, mouseOverItem: true, mouseOverButton: false
     })
   };
-  
+
   leaveItem = () => {
     setTimeout(() => {
       this.setState({ showSelector: false, mouseOver: false });
@@ -131,8 +131,8 @@ class HeaderItemSwitcher extends Component {
       }}>
         <div
           onClick={() => this.showSelector()}
-          // onPointerEnter={this.hoverButton}
-          // onMouseLeave={this.leaveButton}
+          onPointerEnter={this.hoverButton}
+          onMouseLeave={this.leaveButton}
           css={{
             cursor: 'pointer',
             padding: '4px 5px 4px 5px',
@@ -175,8 +175,8 @@ class HeaderItemSwitcher extends Component {
               marginLeft: '110px',
             },
           }}
-             // onMouseEnter={this.hoverItem}
-             // onMouseLeave={this.leaveItem}
+             onMouseEnter={this.hoverItem}
+             onMouseLeave={this.leaveItem}
           >
             {renderContent}
           </div>

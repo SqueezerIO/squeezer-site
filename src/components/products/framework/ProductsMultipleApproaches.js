@@ -25,7 +25,7 @@ export default class ProductsMultipleApproaches extends Component {
       </p>
     </div>
   );
-  
+
   render() {
     return (
       <div css={{ minHeight: `50vh`}}>
@@ -53,10 +53,10 @@ export default class ProductsMultipleApproaches extends Component {
               }}>
                 Multiple approaches
               </h2>
-              <img src={squeezerIcon} alt="squeezerIcon" css={{ marginLeft: '200px', marginTop: '27px',
+              <img src={squeezerIcon} alt="squeezerIcon" css={{ marginLeft: '200px', marginTop: '35px',
                 [presets.Desktop]: {width: 0, height: 0}}}/>
             </div>
-  
+
             <div css={{display: 'flex', width: '900px', marginLeft: '50px',
               [presets.Desktop]: {display: 'block', width: '100%', marginLeft: 0}}}>
               <div css={{display: 'flex', flex: 1, flexDirection: 'column', flexWrap: 'wrap', alignContent: 'center'}}>

@@ -19,10 +19,10 @@ export default class ProductsTitleSection extends Component {
         return null;
     }
   };
-  
+
   render() {
     const { product, image, title, description, subtitles } = this.props;
-  
+
     return (
     <div css={{ minHeight: '50vh'}}>
       <div css={{margin: '0 auto', maxWidth: '1200px', position: 'relative'}}>
@@ -61,7 +61,7 @@ export default class ProductsTitleSection extends Component {
                 },
               }} dangerouslySetInnerHTML={{ __html: title }}>
               </h1>
-          
+
               <p css={{
                 height: '93px',
                 width: '400px',
@@ -78,7 +78,7 @@ export default class ProductsTitleSection extends Component {
                   width: '300px'
                 },
               }}>{description}</p>
-          
+
               <div css={{left: 'auto', right: 'auto', marginTop: '1rem'}}>
                 <ButtonPrimary
                   title='get free account'
@@ -123,7 +123,7 @@ export default class ProductsTitleSection extends Component {
                   lineHeight: '24px',
                   textTransform: 'uppercase',
                   marginTop: '12px',
-                  
+
                 }}>{item}</h2>)}
                 <div css={{ display: 'inline-flex', flexWrap: 'wrap'}}>
                   {this.renderIcon(product)}
@@ -132,7 +132,7 @@ export default class ProductsTitleSection extends Component {
                   }}>{product}</h3>
                 </div>
               </div>
-          
+
               <img src={image} alt='frameworkIStock' css={{height: '526px', width: '559px', marginTop: '40px'}} />
             </div>
           </div>
@@ -143,7 +143,7 @@ export default class ProductsTitleSection extends Component {
           margin: '0',
           padding: 0,
           maxWidth: '100vw',
-          minHeight: `75vh`,
+          minHeight: `64vh`,
           position: 'relative',
           zIndex: '1',
           opacity: '0.3',

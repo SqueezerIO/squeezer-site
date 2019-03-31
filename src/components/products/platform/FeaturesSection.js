@@ -34,7 +34,7 @@ export default class FeaturesSection extends Component {
       </p>
     </div>
   );
-  
+
   render() {
     return (
       <div id='platform-features' css={{ minHeight: '50vh'}}>
@@ -107,13 +107,13 @@ export default class FeaturesSection extends Component {
             </div>
           </div>
         </div>
-  
+
         <div
           css={{
             margin: '0 auto',
             padding: 0,
             maxWidth: '1200px',
-            minHeight: '80vh',
+            minHeight: '71vh',
             position: 'relative',
             zIndex: '1',
             opacity: '0.3',

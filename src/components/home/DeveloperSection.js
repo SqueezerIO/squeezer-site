@@ -11,7 +11,7 @@ export default class DeveloperSection extends Component {
       <div
         css={{
           margin: '0 auto',
-          marginTop: '10rem',
+          marginTop: '12rem',
           maxWidth: '1200px',
           minHeight: '20vh',
           position: 'relative',
