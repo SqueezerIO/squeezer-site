@@ -113,7 +113,7 @@ export default class FeaturesSection extends Component {
             margin: '0 auto',
             padding: 0,
             maxWidth: '1200px',
-            minHeight: '71vh',
+            minHeight: '75vh',
             position: 'relative',
             zIndex: '1',
             opacity: '0.3',

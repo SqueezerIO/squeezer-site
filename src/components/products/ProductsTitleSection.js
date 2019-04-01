@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import ButtonPrimary from "../../button/ButtonPrimary";
-import presets from "../../../utils/presets";
-import ButtonSecondary from "../../button/ButtonSecondary";
-import frameworkIcon from "../../../../static/images/homeSVG/framework.svg";
-import platformIcon from '../../../../static/images/homeSVG/platform-icon.svg';
-import chainkitIcon from '../../../../static/images/homeSVG/chainkit-icon.svg';
+import ButtonPrimary from "../button/ButtonPrimary";
+import presets from "../../utils/presets";
+import ButtonSecondary from "../button/ButtonSecondary";
+import frameworkIcon from "../../../static/images/homeSVG/framework.svg";
+import platformIcon from '../../../static/images/homeSVG/platform-icon.svg';
+import chainkitIcon from '../../../static/images/homeSVG/chainkit-icon.svg';
 
 export default class ProductsTitleSection extends Component {
   renderIcon = (title) => {
@@ -107,10 +107,11 @@ export default class ProductsTitleSection extends Component {
                 marginLeft: 0,
                 marginTop: '40px'
               },}}>
-              <div css={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '500px', flexWrap: 'wrap', marginLeft: '40px',
+              <div css={{display: 'flex', justifyContent: 'space-between', width: '480px', flexWrap: 'wrap', marginLeft: '40px',
                 [presets.Phablet]: {
+                  width: '300px',
                   justifyContent: 'space-around',
-                  marginLeft: '0px'
+                  marginLeft: '0px',
                 }}}>
                 {subtitles.map(item => <h2 key={item} css={{
                   height: '24px',
@@ -143,7 +144,7 @@ export default class ProductsTitleSection extends Component {
           margin: '0',
           padding: 0,
           maxWidth: '100vw',
-          minHeight: `64vh`,
+          minHeight: `80vh`,
           position: 'relative',
           zIndex: '1',
           opacity: '0.3',

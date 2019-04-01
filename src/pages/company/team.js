@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Layout from "../../layouts";
 
 import teamImage from "../../../static/images/Squeezer_Assets_team_page/iconfinder_67_team_group_leadership_business_teamwork_creative_skills_process_4172902.svg";
-import ProductsTitleSection from "../../components/products/framework/ProductsTitleSection";
+import ProductsTitleSection from "../../components/products/ProductsTitleSection";
 import StartBuildingSection from "../../components/home/StartBuildingSection";
 import AlexL from '../../../static/images/Squeezer_Assets_team_page/alex-lazar_full_background.svg';
 import AlexS from '../../../static/images/Squeezer_Assets_team_page/alex-sabau_full_background.svg';
@@ -92,9 +92,10 @@ export default class TeamPage extends Component {
           maxWidth: '1200px',
           minHeight: '50vh',
           textAlign: 'center',
-          marginTop: '100px',
+          marginTop: '15rem',
           [presets.Hd]:{
-            padding: '0'
+            padding: '0',
+            marginTop: '5rem',
           }
         }}>
           <h2 css={{width: '100%', height: '45px', color: '#004CA5',	fontFamily: 'DIN Condensed',	fontSize: '45px',	fontWeight: 'bold', letterSpacing: '1px', lineHeight: '54px'
