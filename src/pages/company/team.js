@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Layout from "../../layouts";
 
 import teamImage from "../../../static/images/Squeezer_Assets_team_page/iconfinder_67_team_group_leadership_business_teamwork_creative_skills_process_4172902.svg";
-import ProductsTitleSection from "../../components/products/framework/ProductsTitleSection";
+import ProductsTitleSection from "../../components/products/ProductsTitleSection";
 import StartBuildingSection from "../../components/home/StartBuildingSection";
 import AlexL from '../../../static/images/Squeezer_Assets_team_page/alex-lazar_full_background.svg';
 import AlexS from '../../../static/images/Squeezer_Assets_team_page/alex-sabau_full_background.svg';
