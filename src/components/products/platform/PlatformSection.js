@@ -100,7 +100,7 @@ export default class PlatformSection extends Component {
             </div>
           </div>
         </div>
-        <img src={platformImage} alt="platformImage" css={{width: '858px', height: '858px', position: 'relative', marginLeft: '630px', marginTop: '350px', zIndex: 1, maxWidth: '100vw',
+        <img src={platformImage} alt="platformImage" css={{width: 'auto', height: '858px', overflow:'hidden', marginLeft: '500px', marginTop: '350px', zIndex: 1, maxWidth: '100vw',
           [presets.Hd]: {width: 0, height: 0}}}/>
       </div>
     );
