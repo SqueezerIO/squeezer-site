@@ -107,10 +107,11 @@ export default class ProductsTitleSection extends Component {
                 marginLeft: 0,
                 marginTop: '40px'
               },}}>
-              <div css={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '500px', flexWrap: 'wrap', marginLeft: '40px',
+              <div css={{display: 'flex', justifyContent: 'space-between', width: '480px', flexWrap: 'wrap', marginLeft: '40px',
                 [presets.Phablet]: {
+                  width: '300px',
                   justifyContent: 'space-around',
-                  marginLeft: '0px'
+                  marginLeft: '0px',
                 }}}>
                 {subtitles.map(item => <h2 key={item} css={{
                   height: '24px',

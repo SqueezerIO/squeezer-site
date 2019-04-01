@@ -69,6 +69,7 @@ export default class PlatformSection extends Component {
         maxWidth: '100vw',
         minHeight: '180vh',
         marginTop: '15rem',
+        marginBottom: '5rem',
         [presets.Hd]: {
           marginTop: '10rem',
           minHeight: '120vh',

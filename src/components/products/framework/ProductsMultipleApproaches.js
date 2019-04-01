@@ -67,7 +67,7 @@ export default class ProductsMultipleApproaches extends Component {
                 {this.renderApproach('secure authentication', bankingImage, 'Decentralized identity is the next evolution step from the traditional login systems.')}
                 {this.renderApproach('banking', bankingImage, 'Implementing the security and transparency aspects of blockchain technology into their transaction processes.')}
               </div>
-              <img src={asset} alt='asset' css={{opacity: '.64', marginTop: '-180px', marginLeft: '100px', [presets.Hd]: {width: 0, height: 0}}}/>
+              <img src={asset} alt='asset' css={{opacity: '.64', marginTop: '-180px', marginLeft: '100px', width: 336, height: 480, [presets.Hd]: {width: 0, height: 0}}}/>
             </div>
           </div>
         </div>

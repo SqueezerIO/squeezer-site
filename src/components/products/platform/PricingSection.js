@@ -96,6 +96,7 @@ export default class PricingSection extends Component {
                 fontSize: '20px',
                 fontWeight: 'bold',
                 letterSpacing: '.87px',
+                marginRight: '284px'
               }}>
                 Tier {item.id}
                 <div css={{marginLeft: '80px', marginTop: '-100px'}}>
