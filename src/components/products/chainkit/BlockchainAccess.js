@@ -133,6 +133,8 @@ export default class BlockchainAccess extends Component {
              display: 'none'
             }
           }}>
+          {/*<img src={chainKitImage} alt="chainKitImage" css={{width: '510px', opacity: 1,height: '510px', marginLeft: '5px', marginTop: '30px', position: 'relative', zIndex: 200, [presets.Hd]: { display: 'none'}}}/>*/}
+
         </div>
         <img src={chainKitImage} alt="chainKitImage" css={{width: '510px', height: '510px', marginLeft: '775px', marginTop: '-630px', position: 'absolute', zIndex: 200, [presets.Hd]: { display: 'none'}}}/>
       </div>

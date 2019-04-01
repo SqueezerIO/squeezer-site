@@ -11,12 +11,17 @@ import DIN from '../../static/d-din1/D-DIN.otf';
 css.global('@font-face', { fontFamily: 'Khula', src: Khula });
 css.global('@font-face', { fontFamily: 'DIN Condensed', src: DIN });
 
-
 const options = {
   baseFontSize: `18px`,
   baseLineHeight: 1.45,
   blockMarginBottom: 0.75,
   scaleRatio: 2.15,
+  headerFontFamily: [
+    'Khula',
+    'DIN Condensed',
+    "sans-serif",
+  ],
+  bodyFontFamily: ["Georgia", 'Khula', 'DIN Condensed', "serif"],
   overrideStyles: ({ rhythm, scale }, options) => {
     return {
       "h1,h2,h3,h4": {
