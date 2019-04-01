@@ -5,11 +5,12 @@ import {
 } from "typography-breakpoint-constants"
 import { css } from 'glamor';
 
-import Khula from '../../static/Khula/Khula-Light.ttf';
-import DIN from '../../static/d-din/D-DIN.ttf';
+import Khula from '../../static/khula1/khula-light.otf';
+import DIN from '../../static/d-din1/D-DIN.otf';
 
 css.global('@font-face', { fontFamily: 'Khula', src: Khula });
 css.global('@font-face', { fontFamily: 'DIN Condensed', src: DIN });
+
 
 const options = {
   baseFontSize: `18px`,
