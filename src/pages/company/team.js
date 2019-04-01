@@ -92,9 +92,10 @@ export default class TeamPage extends Component {
           maxWidth: '1200px',
           minHeight: '50vh',
           textAlign: 'center',
-          marginTop: '100px',
+          marginTop: '15rem',
           [presets.Hd]:{
-            padding: '0'
+            padding: '0',
+            marginTop: '5rem',
           }
         }}>
           <h2 css={{width: '100%', height: '45px', color: '#004CA5',	fontFamily: 'DIN Condensed',	fontSize: '45px',	fontWeight: 'bold', letterSpacing: '1px', lineHeight: '54px'
