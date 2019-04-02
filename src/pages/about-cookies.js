@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from "react-helmet"
 import Layout from '../layouts';
 import StartBuildingSection from '../components/home/StartBuildingSection';
 
