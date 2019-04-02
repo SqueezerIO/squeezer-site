@@ -13,6 +13,9 @@ export default class FrameworkPage extends Component {
   render() {
     return (
       <Layout color="#F8FCFF">
+        <Helmet>
+          <title>Framework</title>
+        </Helmet>
         <ProductsTitleSection
           product='Framework'
           image={frameworkIStockFramework}

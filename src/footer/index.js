@@ -69,16 +69,8 @@ const footerItems = [
         path: '/company/team'
       },
       {
-        name: 'Privacy Policy',
-        path: '/privacy-policy'
-      },
-      {
-        name: 'Terms of Service',
-        path: '/terms-of-service'
-      },
-      {
-        name: 'About Cookies',
-        path: '/about-cookies'
+        name: 'Terms & conditions',
+        path: '/'
       }
     ]
   },
@@ -107,7 +99,7 @@ const footerItems = [
 
 export default class Footer extends Component {
   renderColumn = (items) => (
-    <div css={{display: 'flex', flexDirection: 'column', textTransform: 'none'}}>
+    <div css={{ display: 'flex', flexDirection: 'column', textTransform: 'none' }}>
       {items.map((item, index) => (
         <Link to={item.path} key={index} css={{
           color: '#004CA5',
@@ -130,7 +122,7 @@ export default class Footer extends Component {
   renderSocialIcon = (link, image) => (
     <li>
       <BlankA href={link}>
-        <img css={{width: '25px', height: '25px'}} src={image} alt={image} />
+        <img css={{ width: '25px', height: '25px' }} src={image} alt={image} />
       </BlankA>
     </li>
   );
@@ -157,8 +149,8 @@ export default class Footer extends Component {
           alignContent: 'center', display: 'block', marginTop: '30rem',
         }
       }}>
-        <div css={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between'}}>
-        {footerItems.map(({title, items}) => (
+        <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+          {footerItems.map(({ title, items }) => (
             <div key={title} css={{
               margin: '0 1rem',
               width: '10rem',
@@ -185,28 +177,24 @@ export default class Footer extends Component {
               </div>
               {this.renderColumn(items)}
             </div>
-        ))}
-          <div  css={{display: 'flex', flexDirection: 'column', width: '327px', justifyContent: 'space-between', marginLeft: '-.5rem',
-            [presets.Hd]: {display: 'block', margin: 'auto', marginTop: '1rem', textAlign: 'center',},
-            [presets.Phablet]: {width: '280px'},
-            [presets.Mobile]: {width: '12rem'}
+          ))}
+          <div css={{
+            display: 'flex', flexDirection: 'column', width: '327px', justifyContent: 'space-between', marginLeft: '-.5rem',
+            [presets.Hd]: { display: 'block', margin: 'auto', marginTop: '1rem', textAlign: 'center', },
+            [presets.Phablet]: { width: '280px' },
+            [presets.Mobile]: { width: '12rem' }
           }}
           >
-            <h3 css={{color: '#454545', fontFamily: "Khula", fontSize: '20px', fontWeight: 'normal', letterSpacing: '1.01px', margin: 0}}>
-              Sign up for our newsletter to stay up to date.
-            </h3>
-            <div css={{display: 'flex', height: '39px', [presets.Hd]: {marginTop: '1rem'}, [presets.Mobile]: { display: 'block', margin: '1rem', width: '200px'}}}>
-              <input
-                type="text"
-                placeholder='Email address'
-                css={{
-                  display: 'flex', border: '1px solid #DADADA', padding: '.5rem', width: '224px', fontFamily: "Khula", '::placeholder': {color: '#D3D3D3'}}}
-              />
-              <ButtonPrimary title='sign up' style={{display:'flex', width: '103px', lineHeight: '39px', justifyContent: 'center', fontSize: '15px', letterSpacing:'.9px'}}
-              />
+            <link rel="stylesheet" href="https://emailoctopus.com/bundles/emailoctopuslist/css/formEmbed.css" />
+            <div class="email-octopus-form-wrapper">
+              <h3 css={{ color: '#454545', fontFamily: "Khula", fontSize: '20px', fontWeight: 'normal', letterSpacing: '1.01px', margin: 0 }}>
+                Sign up for our newsletter to stay up to date.
+                </h3>
+              <ButtonPrimary onClick={() => window.open('https://emailoctopus.com/lists/1a8d8062-792c-11e8-a3c9-06b79b628af2/forms/subscribe', '_blank')} title='Subscribe for newsletter' style={{ marginTop: '10px', padding: '3px 15px', display: 'flex', width: 'auto', lineHeight: '39px', justifyContent: 'center', fontSize: '15px', letterSpacing: '.9px' }}/>
             </div>
-            <ul css={{listStyle: 'none', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', margin: 0,
-              [presets.Hd]: {marginTop: '2rem'}, [presets.Mobile]: {marginTop: '4rem'}
+            <ul css={{
+              listStyle: 'none', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', margin: 0,
+              [presets.Hd]: { marginTop: '2rem' }, [presets.Mobile]: { marginTop: '4rem' }
             }}>
               {this.renderSocialIcon('https://twitter.com/SqueezerIO', twitterImage)}
               {this.renderSocialIcon('https://www.facebook.com/Squeezer.IO', facebookImage)}

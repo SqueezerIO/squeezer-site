@@ -1,4 +1,5 @@
 import React from "react"
+import Helmet from "react-helmet"
 import { Link } from 'gatsby';
 import HeaderItemSwitcher from '../components/headerItemSwitcher';
 import ButtonPrimary from '../components/button/ButtonPrimary';
@@ -80,22 +81,22 @@ const company = [
 class Layout extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = { open: false };
   }
-  
+
   closeNav = () => {
     this.setState({
       open: false,
     });
   };
-  
+
   onToggleNavigation = () => {
     this.setState({
       open: !this.state.open,
     });
   };
-  
+
   logoClick = () => {
     return <Link to='/' />
   };
@@ -104,131 +105,142 @@ class Layout extends React.Component {
     const { color } = this.props;
 
     return (
-      <I18nextProvider i18n={i18n}>
-        <div
-          css={{
-            padding: '0', //2rem',
-            margin: 0,
-            minHeight: '100vh',
-            [presets.Desktop]: {
-              overflow: 'hidden',
-              maxWidth: '100vw'
-            },
-          }}
-        >
+      <div>
+        <Helmet defaultTitle={`Squeezer`} titleTemplate={`Squeezer - %s`}>
+          <meta name="twitter:site" content="@squeezerio" />
+          <meta name="og:type" content="website" />
+          <meta name="og:site_name" content="Squeezer.IO" />
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+        </Helmet>
+        <I18nextProvider i18n={i18n}>
           <div
             css={{
-              maxWidth: '100vw',
-              background: color ? color : 'transparent',
-              padding: '0 2rem',
+              padding: '0', //2rem',
+              margin: 0,
+              minHeight: '100vh',
               [presets.Desktop]: {
-                background: 'transparent',
-                padding: '0 1rem'
-              }
+                overflow: 'hidden',
+                maxWidth: '100vw'
+              },
             }}
           >
             <div
               css={{
-                padding: '1px',
-                maxWidth: '1200px',
-                margin: '0 auto',
-                overflow: 'hidden',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
+                maxWidth: '100vw',
+                background: color ? color : 'transparent',
+                padding: '0 2rem',
+                [presets.Desktop]: {
+                  background: 'transparent',
+                  padding: '0 1rem'
+                }
               }}
             >
-              <div css={{display: 'none', [presets.Desktop]: {display: 'block', backgroundColor: 'none', cursor: 'pointer'}}} onClick={this.onToggleNavigation}>
-                <FaListUl css={{color: '#092D5D',
-                  display: 'none',
-                  [presets.Desktop]: { display: 'inline-block', float: 'left', margin: 0, }
-                }}/>
-              </div>
-              <MobileNav open={this.state.open} closeNav={this.closeNav}>
-                <HeaderItemSwitcher header='products' component={products}/>
-                <HeaderItemSwitcher header='developers' component={developers}/>
-                <HeaderItemSwitcher header='company' component={company}/>
+              <div
+                css={{
+                  padding: '1px',
+                  maxWidth: '1200px',
+                  margin: '0 auto',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <div css={{ display: 'none', [presets.Desktop]: { display: 'block', backgroundColor: 'none', cursor: 'pointer' } }} onClick={this.onToggleNavigation}>
+                  <FaListUl css={{
+                    color: '#092D5D',
+                    display: 'none',
+                    [presets.Desktop]: { display: 'inline-block', float: 'left', margin: 0, }
+                  }} />
+                </div>
+                <MobileNav open={this.state.open} closeNav={this.closeNav}>
+                  <HeaderItemSwitcher header='products' component={products} />
+                  <HeaderItemSwitcher header='developers' component={developers} />
+                  <HeaderItemSwitcher header='company' component={company} />
+                  <div
+                    css={{
+                      display: 'none',
+                      [presets.Phablet]: {
+                        display: 'flex', textDecoration: 'none', flexDirection: 'column', alignItems: 'left'
+                      }
+                    }}
+                  >
+                    <ButtonSecondary
+                      title='login'
+                      onClick={() => location.href = 'https://platform.squeezer.io'}
+                      style={{ width: '100%', height: '39px', lineHeight: '38px' }}
+                    />
+                    <ButtonPrimary
+                      title='register'
+                      onClick={() => location.href = 'https://platform.squeezer.io'}
+                      style={{ marginTop: '17px', width: '100%', height: '39px', lineHeight: '38px' }}
+                    />
+                  </div>
+                </MobileNav>
+
+                <Link to='/' css={{ display: 'flex' }}>
+                  <img
+                    src={logo}
+                    alt="logo"
+                    css={{
+                      width: '200px', height: '80px', display: 'inline-block', float: 'left', margin: 0,
+                      cursor: 'pointer'
+                    }}
+                  />
+                </Link>
+
+                <img
+                  src={hiring}
+                  alt="hiring"
+                  css={{
+                    width: '83px', height: '25px', marginLeft: '-130px', [presets.Hd]: { marginLeft: '-20px' },
+                    [presets.Desktop]: { marginLeft: -100 }, [presets.Phablet]: { marginLeft: -10 }
+                  }}
+                />
+                <div css={{
+                  display: 'flex',
+                  textDecoration: 'none',
+                  justifyContent: 'space-between',
+                  [presets.Desktop]: { display: 'none' }
+                }}>
+                  <HeaderItemSwitcher header='products' component={products} />
+                  <HeaderItemSwitcher header='developers' component={developers} />
+                  <HeaderItemSwitcher header='company' component={company} />
+                </div>
                 <div
                   css={{
-                    display: 'none',
-                    [presets.Phablet]: {
-                      display: 'flex', textDecoration: 'none', flexDirection: 'column', alignItems: 'left'
-                    }
+                    display: 'flex',
+                    textDecoration: 'none',
+                    justifyContent: 'space-between',
+                    [presets.Phablet]: { display: 'none' }
                   }}
                 >
                   <ButtonSecondary
                     title='login'
                     onClick={() => location.href = 'https://platform.squeezer.io'}
-                    style={{width: '100%', height: '39px', lineHeight: '38px'}}
+                    style={{ width: '103px', height: '39px', lineHeight: '38px' }}
                   />
                   <ButtonPrimary
                     title='register'
                     onClick={() => location.href = 'https://platform.squeezer.io'}
-                    style={{marginTop: '17px', width: '100%', height: '39px', lineHeight: '38px'}}
+                    style={{ marginLeft: '17px', width: '103px', height: '39px', lineHeight: '38px' }}
                   />
                 </div>
-              </MobileNav>
-              
-              <Link to='/' css={{display: 'flex'}}>
-                <img
-                  src={logo}
-                  alt="logo"
-                  css={{ width: '200px', height: '80px', display: 'inline-block', float: 'left', margin: 0,
-                    cursor: 'pointer'
-                  }}
-                />
-              </Link>
-              
-              <img
-                src={hiring}
-                alt="hiring"
-                css={{ width: '83px', height: '25px', marginLeft: '-130px', [presets.Hd]: {marginLeft: '-20px'},
-                  [presets.Desktop]: {marginLeft: -100}, [presets.Phablet]: { marginLeft: -10}
-                }}
-              />
-              <div css={{
-                display: 'flex',
-                textDecoration: 'none',
-                justifyContent: 'space-between',
-                [presets.Desktop]: { display: 'none'}
-              }}>
-                <HeaderItemSwitcher header='products' component={products}/>
-                <HeaderItemSwitcher header='developers' component={developers}/>
-                <HeaderItemSwitcher header='company' component={company}/>
-              </div>
-              <div
-                css={{
-                  display: 'flex',
-                  textDecoration: 'none',
-                  justifyContent: 'space-between',
-                  [presets.Phablet]: { display: 'none'}
-                }}
-              >
-                <ButtonSecondary
-                  title='login'
-                  onClick={() => location.href = 'https://platform.squeezer.io'}
-                  style={{width: '103px', height: '39px', lineHeight: '38px'}}
-                />
-                <ButtonPrimary
-                  title='register'
-                  onClick={() => location.href = 'https://platform.squeezer.io'}
-                  style={{marginLeft: '17px', width: '103px', height: '39px', lineHeight: '38px'}}
-                />
               </div>
             </div>
+            <div
+              css={{
+                margin: '0 auto',
+                position: this.state.open ? 'fixed !important' : '',
+              }}
+              onClick={this.closeNav}
+            >
+              {this.props.children}
+              <Footer />
+            </div>
           </div>
-          <div
-            css={{
-              margin: '0 auto',
-              position: this.state.open ? 'fixed !important' : '',
-            }}
-            onClick={this.closeNav}
-          >
-            {this.props.children}
-            <Footer />
-          </div>
-        </div>
-      </I18nextProvider>
+        </I18nextProvider>
+      </div>
     )
   }
 }
