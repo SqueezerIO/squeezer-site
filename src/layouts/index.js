@@ -110,7 +110,6 @@ class Layout extends React.Component {
           <meta name="twitter:site" content="@squeezerio" />
           <meta name="og:type" content="website" />
           <meta name="og:site_name" content="Squeezer.IO" />
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
         </Helmet>
         <I18nextProvider i18n={i18n}>
           <div
