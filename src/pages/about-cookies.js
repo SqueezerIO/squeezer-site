@@ -17,7 +17,7 @@ export default class AboutCookies extends Component {
           margin: '0 auto',
           padding: '75px 0'
         }}>
-          <h1 css={{fontFamily: 'DIN Condensed', fontSize: '45px',	fontWeight: 'bold', textAlign: 'center'}}>About cookies</h1>
+          <h1 css={{fontFamily: 'DIN Condensed', fontSize: '45px',	fontWeight: 'bold', textAlign: 'center'}}>ABOUT COOKIES</h1>
           <h2 css={{fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold'}}>General information about cookies and how they are used</h2>
           <h3 css={{fontFamily: 'Khula', fontSize: '16px', fontWeight: 'Regular'}}>
             Cookies are a piece of data sent from a web site and stored in your browsers memory.<p></p>
