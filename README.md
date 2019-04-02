@@ -15,4 +15,4 @@ The site is builded with [GatsbyJS](https://www.gatsbyjs.org/) , a static PWA (P
 ### Deploy website
 
 Use a separate branch from `master` and make a PR . We are using [netlifly](https://www.netlify.com/) for blazing 
-fast static websites . You can preview your deployment at `https://YOUR_BRANCH--squeezer-token-sale.netlify.com` .
+fast static websites . You can preview your deployment at `https://YOUR_BRANCH--squeezer-token-sale.netlify.com` . 
