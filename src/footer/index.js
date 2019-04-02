@@ -69,8 +69,16 @@ const footerItems = [
         path: '/company/team'
       },
       {
+        name: 'Privacy Policy',
+        path: '/privacy-policy'
+      },
+      {
         name: 'Terms & conditions',
-        path: '/'
+        path: '/terms-of-service'
+      },
+      {
+        name: 'About Cookies',
+        path: '/about-cookies'
       }
     ]
   },
