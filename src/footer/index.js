@@ -185,13 +185,10 @@ export default class Footer extends Component {
             [presets.Mobile]: { width: '12rem' }
           }}
           >
-            <link rel="stylesheet" href="https://emailoctopus.com/bundles/emailoctopuslist/css/formEmbed.css" />
-            <div class="email-octopus-form-wrapper">
-              <h3 css={{ color: '#454545', fontFamily: "Khula", fontSize: '20px', fontWeight: 'normal', letterSpacing: '1.01px', margin: 0 }}>
-                Sign up for our newsletter to stay up to date.
+            <h3 css={{ color: '#454545', fontFamily: "Khula", fontSize: '20px', fontWeight: 'normal', letterSpacing: '1.01px', margin: 0 }}>
+              Sign up for our newsletter to stay up to date.
                 </h3>
-              <ButtonPrimary onClick={() => window.open('https://emailoctopus.com/lists/1a8d8062-792c-11e8-a3c9-06b79b628af2/forms/subscribe', '_blank')} title='Subscribe for newsletter' style={{ marginTop: '10px', padding: '3px 15px', display: 'flex', width: 'auto', lineHeight: '39px', justifyContent: 'center', fontSize: '15px', letterSpacing: '.9px' }}/>
-            </div>
+            <ButtonPrimary onClick={() => window.open('https://emailoctopus.com/lists/1a8d8062-792c-11e8-a3c9-06b79b628af2/forms/subscribe', '_blank')} title='Subscribe for newsletter' style={{ marginTop:'50px', marginBottom:'50px', padding: '3px 15px', display: 'flex', width: 'auto', lineHeight: '39px', justifyContent: 'center', fontSize: '15px', letterSpacing: '.9px' }} />
             <ul css={{
               listStyle: 'none', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', margin: 0,
               [presets.Hd]: { marginTop: '2rem' }, [presets.Mobile]: { marginTop: '4rem' }
