@@ -21,3 +21,18 @@ exports.onPreBuild = () => {
   )
 }
 
+exports.onCreateWebpackConfig = ({ plugins, actions }) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+      ],
+    },
+    plugins: [
+      plugins.define({
+        'process.env': {
+          'NODE_ENV': process.env.NODE_ENV
+        }
+      }),
+    ],
+  })
+}
