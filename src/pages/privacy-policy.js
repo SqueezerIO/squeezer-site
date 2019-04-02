@@ -20,7 +20,7 @@ export default class PrivacyPolicy extends Component {
           <h1 css={{fontFamily: 'DIN Condensed', fontSize: '45px',	fontWeight: 'bold', textAlign: 'center'}}>PRIVACY POLICY</h1>
           <h2 css={{fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold'}}>1. Identity of Squeezer</h2>
           <h3 css={{fontFamily: 'Khula', fontSize: '16px', fontWeight: 'Regular'}}>
-            If there are any questions regarding this Privacy Policy you may contact us at info@squeeser.io<p></p>
+            If there are any questions regarding this Privacy Policy you may contact us at info@squeezer.io<p></p>
             Company address:<p></p>
             Golden Data INC.<br></br>
             New Horizon, Ground Floor, 3 1⁄2<br></br>
