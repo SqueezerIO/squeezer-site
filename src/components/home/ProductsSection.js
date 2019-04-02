@@ -51,12 +51,15 @@ export default class ProductsSection extends Component {
           margin: '0 auto',
           marginTop: '5rem',
           minHeight: '20vh',
-          maxWidth: '100vw',
           position: 'relative',
           display: 'flex',
           alignContent: 'center',
           justifyContent: 'center',
+          [presets.Mobile]: {
+            maxWidth: '20vw',
+          },
           [presets.Desktop]: {
+            maxWidth: '100vw',
             marginTop: '20rem',
           },
           [presets.Phablet]: { marginTop: '12rem'}

@@ -10,7 +10,7 @@ export default class Card extends Component {
     return (
       <div css={{
         height: '285px',
-        width: '375px',
+        maxWidth: '375px',
         borderRadius: '3px',
         backgroundColor: '#005499',
         boxShadow: '0 24px 30px 0 rgba(0,0,0,0.5)',

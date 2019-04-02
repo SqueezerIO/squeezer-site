@@ -39,7 +39,7 @@ export default class MemberEEA extends Component {
            </p>
           <img src={eeaImage} alt="eeaImage" css={{width: '249px', height: '142px'}}/>
          </div>
-          <img src={eea} alt="eea" css={{width: '804px', height: '336px',[presets.Hd]: {marginTop: '20px'}}}/>
+          <img src={eea} alt="eea" css={{width: '804px', height: 'auto',[presets.Hd]: {marginTop: '20px'}}}/>
         </div>
       </div>
     );
