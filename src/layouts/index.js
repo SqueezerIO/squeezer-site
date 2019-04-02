@@ -55,17 +55,17 @@ const products = [
 const developers = [
   {
     title: 'Docs',
-    path: '/',
+    path: 'https://docs.squeezer.io',
     description: 'Learn how to use Squeezer tools'
   },
   {
     title: 'Examples',
-    path: '/',
+    path: 'https://github.com/SqueezerIO/example-projects',
     description: 'Comprehensive use cases'
   },
   {
     title: 'Support',
-    path: '/',
+    path: 'https://gitter.im/SqueezerIO/squeezer/',
     description: "Join our chat now. Let's talk !"
   },
 ];
@@ -171,7 +171,7 @@ class Layout extends React.Component {
                     />
                     <ButtonPrimary
                       title='register'
-                      onClick={() => location.href = 'https://platform.squeezer.io'}
+                      onClick={() => location.href = 'https://platform.squeezer.io/user/register/'}
                       style={{ marginTop: '17px', width: '100%', height: '39px', lineHeight: '38px' }}
                     />
                   </div>
@@ -221,7 +221,7 @@ class Layout extends React.Component {
                   />
                   <ButtonPrimary
                     title='register'
-                    onClick={() => location.href = 'https://platform.squeezer.io'}
+                    onClick={() => location.href = 'https://platform.squeezer.io/user/register/'}
                     style={{ marginLeft: '17px', width: '103px', height: '39px', lineHeight: '38px' }}
                   />
                 </div>

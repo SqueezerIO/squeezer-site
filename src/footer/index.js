@@ -39,10 +39,10 @@ const footerItems = [
         name: 'Examples',
         path: 'https://github.com/SqueezerIO/example-projects'
       },
-      // {
-      //   name: 'Support',
-      //   path: '/'
-      // },
+      {
+        name: 'Support',
+        path: 'https://gitter.im/SqueezerIO/squeezer/'
+      },
       // {
       //   name: 'Network status',
       //   path: '/'
@@ -99,7 +99,7 @@ const footerItems = [
       },
       {
         name: 'Linkedin',
-        path: 'https://github.com/SqueezerIO'
+        path: 'https://www.linkedin.com/company/squeezerio/'
       }
     ]
   }
