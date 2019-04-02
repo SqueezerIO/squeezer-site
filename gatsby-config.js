@@ -17,6 +17,19 @@ module.exports = {
         pathToConfigModule: `src/utils/typography.js`,
       },
     },
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-cookiehub`,
+      options: {
+        // your cookiehub widget ID
+        cookihubId: `1af90ac3`,
+        // your google analytics tracking id
+        trackingId: `UA-98210236-2`,
+        // Puts tracking script in the head instead of the body
+        head: true,
+        // enable ip anonymization
+        anonymize: true,        
+      },
+    },
   ],
 };

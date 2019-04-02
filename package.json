@@ -10,6 +10,7 @@
     "classnames": "^2.2.6",
     "fs-extra": "^7.0.0",
     "gatsby": "^2.0.0",
+    "gatsby-plugin-cookiehub": "^1.0.0",
     "gatsby-plugin-glamor": "^2.0.5",
     "gatsby-plugin-google-analytics": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.5",
@@ -39,7 +40,7 @@
   "main": "n/a",
   "scripts": {
     "develop": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths",
+    "deploy": "NODE_ENV=production gatsby build --prefix-paths",
     "build": "gatsby build",
     "start": "npm run develop"
   },
