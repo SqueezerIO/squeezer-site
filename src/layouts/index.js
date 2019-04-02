@@ -22,7 +22,7 @@ const products = [
     title: 'Framework',
     path: {
       pagePath: '/products/framework',
-      docsPath: '/',
+      docsPath: 'https://docs.squeezer.io',
     },
     image: frameworkIcon,
     description: 'Develop dApps on local machine'
