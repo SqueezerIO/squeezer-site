@@ -10,7 +10,7 @@ exports.onRouteUpdate = function (_ref) {
   var trackingId = window.GATSBY_PLUGIN_COOKIEHUB_GA_TRACKING_ID;
   var anonymize = window.GATSBY_PLUGIN_COOKIEHUB_ANONYMIZE || false;
 
-  if (!trackingId || process.env.NODE_ENV !== "production" || typeof gtag !== "function") {
+  if (!trackingId) {
     return;
   }
 
