@@ -29,7 +29,7 @@ export default class DeveloperSection extends Component {
         <div css={{display: 'flex', marginRight: '122px', [presets.Desktop]: {
             display: 'block', height: '260px', marginRight: 0
           }}}>
-          <div css={{width: '50px', height: '80px', display: 'flex'}}>
+          <div css={{width: '50px', height: '80px', display: 'inline-block',float: 'left'}}>
             <img src={assetImage} alt='assetImage' css={{width: '50px', height: '40px'}} />
           </div>
           <div css={{marginLeft: '20px', width: '250px', [presets.Hd]: { width: 'auto', height: 'auto'}}}>
