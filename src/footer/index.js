@@ -69,8 +69,8 @@ const footerItems = [
         path: '/company/team'
       },
       {
-        name: 'Terms & conditions',
-        path: '/'
+        name: 'Privacy Policy',
+        path: '/privacy-policy'
       }
     ]
   },
