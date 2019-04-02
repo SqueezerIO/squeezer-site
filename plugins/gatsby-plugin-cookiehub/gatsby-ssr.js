@@ -35,7 +35,7 @@ exports.onRenderBody = function (_ref, pluginOptions) {
   var setHeadComponents = _ref.setHeadComponents,
       setPostBodyComponents = _ref.setPostBodyComponents;
 
-  if (!pluginOptions.cookihubId || !pluginOptions.gtagId) {
+  if (process.env.NODE_ENV !== 'production' || !pluginOptions.cookihubId || !pluginOptions.gtagId) {
     return null;
   }
 
