@@ -19,7 +19,7 @@ const teamMembers = [
   {
     image: Nick,
     name: 'Nick Chisiu',
-    position: 'Co-Founder and Chief Developer',
+    position: 'CEO and Chief Developer',
     linkedin: '',
     twitter: '',
     description: 'Nick is a specialist in microservices architecture, framework design, and blockchain development. He worked as a blockchain consultant at Consensys (top blockchain development companies), Marriott & Genentech.'
@@ -74,7 +74,7 @@ export default class TeamPage extends Component {
       </BlankA>
     </li>
   );
-  
+
   render() {
     return (
       <Layout color="#F8FCFF">
@@ -85,7 +85,7 @@ export default class TeamPage extends Component {
           description='This is the core team behind Squeezer. The ones who made everything happen.'
           subtitles={[]}
         />
-  
+
         <div css={{
           margin: '0 auto',
           padding: 0,
@@ -102,7 +102,7 @@ export default class TeamPage extends Component {
           }}>
             CORE TEAM
           </h2>
-          
+
           <div css={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', margin: 0, [presets.Desktop]: {justifyContent: 'center', marginTop: '100px'}}}>
             {teamMembers.map((member) => (
               <div css={{display: 'flex', flexDirection: 'column', width: '339px', alignItems: 'center', margin: '111px 20px 20px 20px', [presets.Desktop]: {margin: '20px'}}}>
@@ -113,12 +113,12 @@ export default class TeamPage extends Component {
                 <h4 css={{color: '#969696',	fontFamily: 'Khula',	fontSize: '20px',	fontWeight: '500', lineHeight: '27px'}}>
                   {member.position}
                 </h4>
-  
+
                 <ul css={{listStyle: 'none', display: 'flex', justifyContent: 'space-between', margin: 0, width: '86px'}}>
                   {this.renderSocialIcon(member.linkedin, facebookImage)}
                   {this.renderSocialIcon(member.twitter, twitterImage)}
                 </ul>
-                
+
                 <p css={{width: '339px', height: '243px', color: '#969696',	fontFamily: 'Khula',	fontSize: '20px',	fontWeight: '600', lineHeight: '27px', [presets.Desktop]: {height: 'auto'}, [presets.Mobile]: {width: '200px'}}}>
                   {member.description}
                 </p>
@@ -126,7 +126,7 @@ export default class TeamPage extends Component {
             ))}
           </div>
         </div>
-        
+
         <StartBuildingSection />
       </Layout>
     );
