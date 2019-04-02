@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from "react-helmet"
 import Layout from '../../layouts';
 import StartBuildingSection from '../../components/home/StartBuildingSection';
 import frameworkIStockPlatform from '../../../static/images/Squeezer_Assets_platform_page/iStock-910860194-bakcground_platform.svg';
@@ -43,6 +44,9 @@ export default class PlatformPage extends Component {
   render() {
     return (
       <Layout color="#F8FCFF">
+        <Helmet>
+          <title>Platform</title>
+        </Helmet>
         <ProductsTitleSection
           product='Platform'
           image={frameworkIStockPlatform}

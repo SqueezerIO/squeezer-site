@@ -42,6 +42,9 @@ export default class ChainkitPage extends Component {
   render() {
     return (
       <Layout color="#F8FCFF">
+        <Helmet>
+          <title>ChainKit</title>
+        </Helmet>
         <ProductsTitleSection
           product='Chainkit'
           image={chainkitImage}
@@ -49,7 +52,7 @@ export default class ChainkitPage extends Component {
           description='Start building a serverless dApp by using ChainKit and have it deployed in seconds. '
           subtitles={subtitles}
         />
-        
+
         <BlockchainAccess />
         <PricingSection id={'chainkit-pricing'} prices={prices} title1={'Outbound Transaction'} title2={'Inbound Transaction'} />
         <StartBuildingSection />

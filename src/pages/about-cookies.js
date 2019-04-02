@@ -7,6 +7,9 @@ export default class AboutCookies extends Component {
   render() {
     return (
       <Layout color="#F8FCFF">
+        <Helmet>
+          <title>About Cookies</title>
+        </Helmet>
         <div css={{
           width: '100%',
           maxWidth: '800px',

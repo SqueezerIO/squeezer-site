@@ -7,6 +7,9 @@ export default class PrivacyPolicy extends Component {
   render() {
     return (
       <Layout color="#F8FCFF">
+        <Helmet>
+          <title>Privacy Policy</title>
+        </Helmet>
         <div css={{
           width: '100%',
           maxWidth: '800px',
