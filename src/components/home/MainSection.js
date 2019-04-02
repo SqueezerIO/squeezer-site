@@ -30,7 +30,7 @@ export default class MainSection extends Component {
             build serverless dapps
           </h2>
           <h1 css={{textTransform: 'uppercase', fontWeight: 'bold', color: '#092D5D', fontSize: '55px', lineHeight: '66px', fontFamily: "DIN Condensed"}}>
-            ACCESS BLOCKCHAIN AS A SERVICE
+            ACCESS BLOCKCHAIN AS A SERVICE (BaaS)
           </h1>
           <h3 css={{color: '#092D5D', fontFamily: 'Khula', fontSize: '18px', lineHeight: '24px', fontWeight: '400'}}>
             Blockchain agnostic integration for payments & smart contracts
