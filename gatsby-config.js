@@ -34,6 +34,7 @@ module.exports = {
         cookihubId: `1af90ac3`,
         // your google analytics tracking id
         trackingId: `UA-98210236-2`,
+        gtagId: true,
         // Puts tracking script in the head instead of the body
         head: false,
         // enable ip anonymization
