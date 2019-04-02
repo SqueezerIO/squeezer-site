@@ -28,7 +28,7 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     {
-      resolve: require.resolve(`./plugins/gatsby-plugin-cookiehub`),
+      resolve: `gatsby-plugin-cookiehub`,
       options: {
         // your cookiehub widget ID
         cookihubId: `1af90ac3`,
