@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withNamespaces } from 'react-i18next';
-import { Link } from 'gatsby';
+import Link from '../link';
 import { css } from 'glamor'
 
 import presets from '../../utils/presets'
@@ -73,7 +73,7 @@ class HeaderItemSwitcher extends Component {
     return (
       <div css={{width: '180px', textTransform: 'uppercase'}}>
 
-      {title === 'Framework' ? <Link to={path.docsPath} className={`${linkStyle}`}>read docs</Link> : (
+      {title === 'Framework' ? <Link to={path.docsPath} className={`${linkStyle}`}>features</Link> : (
         <div css={{display: 'flex', justifyContent: 'space-between', 'a:link, a:visited': {
             textDecoration: 'none'}, [presets.Mobile]: {flexDirection: 'column'}
           }}>

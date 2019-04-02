@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'gatsby';
+import Link from '../components/link';
 import presets from '../utils/presets';
 import ButtonPrimary from '../components/button/ButtonPrimary';
 import BlankA from '../components/hyperlink';
@@ -33,11 +33,11 @@ const footerItems = [
     items: [
       {
         name: 'Docs',
-        path: '/'
+        path: 'https://docs.squeezer.io'
       },
       {
         name: 'Examples',
-        path: '/'
+        path: 'https://github.com/SqueezerIO/example-projects'
       },
       // {
       //   name: 'Support',
@@ -79,19 +79,19 @@ const footerItems = [
     items: [
       {
         name: 'Twitter',
-        path: '/'
+        path: 'https://twitter.com/SqueezerIO'
       },
       {
         name: 'Youtube',
-        path: '/'
+        path: 'https://www.youtube.com/channel/UC4oipFLgQW7e98Gei-7NEIQ'
       },
       {
         name: 'Github',
-        path: '/'
+        path: 'https://github.com/SqueezerIO'
       },
       {
         name: 'Linkedin',
-        path: '/'
+        path: 'https://github.com/SqueezerIO'
       }
     ]
   }
