@@ -106,7 +106,7 @@ class Layout extends React.Component {
 
     return (
       <div>
-        <Helmet defaultTitle={`Squeezer`} titleTemplate={`Squeezer - %s`}>
+        <Helmet defaultTitle={`Squeezer - Build Serverless dApps`} titleTemplate={`Squeezer - %s`}>
           <meta name="twitter:site" content="@squeezerio" />
           <meta name="og:type" content="website" />
           <meta name="og:site_name" content="Squeezer.IO" />
