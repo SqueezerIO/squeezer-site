@@ -19,6 +19,11 @@ exports.onPreBuild = () => {
     path.join(__dirname, "/src/locales"),
     path.join(__dirname, "/public/locales")
   )
+
+  fsExtra.copySync(
+    path.join(__dirname, "_redirects"),
+    path.join(__dirname, "/public/_redirects")
+  )
 }
 
 exports.onCreateWebpackConfig = ({ plugins, actions }) => {
