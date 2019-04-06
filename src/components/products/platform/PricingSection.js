@@ -13,7 +13,7 @@ export default class PricingSection extends Component {
     return (
       <div id={id} css={{
         margin: '0 auto',
-        padding: 0,
+        paddingTop: '35vh',
         maxWidth: '1200px',
         minHeight: '47vh',
         [presets.Hd]:{
@@ -35,8 +35,8 @@ export default class PricingSection extends Component {
         }}>
           <div css={{width: '240px'}}>
           </div>
-          {prices.map(({id}) => (
-            <div css={{width: '240px', height: '53px', color: '#0075FE', fontFamily: 'Khula',	fontSize: '25px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '33px',
+          {prices.map(({id}, index) => (
+            <div key={index} css={{width: '240px', height: '53px', color: '#0075FE', fontFamily: 'Khula',	fontSize: '25px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '33px',
               [presets.Hd]:{width: '100px', height: '92px', lineHeight: '92px', verticalAlign: 'middle', marginBottom: '20px'},
               [presets.Phablet]: {fontSize: '20px', width: '58px'}
             }}>
@@ -58,8 +58,8 @@ export default class PricingSection extends Component {
               color: '#023775', fontFamily: 'Khula',	fontSize: '18px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '92px', verticalAlign: 'middle',
             }}>{title2}</h3>
           </div>
-          {prices.map(item => (
-            <div css={{display: 'flex', flexDirection: 'column', [presets.Hd]: {flexDirection: 'row', justifyContent: 'end', margin: 'auto', marginLeft: '150px',
+          {prices.map((item, index) => (
+            <div key={index} css={{display: 'flex', flexDirection: 'column', [presets.Hd]: {flexDirection: 'row', justifyContent: 'end', margin: 'auto', marginLeft: '150px',
                 [presets.Phablet]: {marginLeft: '80px'}
               }}}>
               <div css={{height: '92px', backgroundColor: '#F7FBFF', marginBottom: '20px', [presets.Hd]: {marginRight: '20px', width: '240px'}, [presets.Phablet]:{marginRight: '100px'}}}>
@@ -80,8 +80,8 @@ export default class PricingSection extends Component {
             color: '#023775', fontFamily: 'Khula',	fontSize: '18px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '92px', verticalAlign: 'middle'}
           }}>{title2}</h3>
 
-          {prices.map(item => (
-            <div css={{display: 'none', [presets.Phablet]: {display: 'flex', flexDirection: 'row', justifyContent: 'end', marginLeft: '0'}}}>
+          {prices.map((item, index) => (
+            <div key={index} css={{display: 'none', [presets.Phablet]: {display: 'flex', flexDirection: 'row', justifyContent: 'end', marginLeft: '0'}}}>
               <div css={{height: '92px'}}></div>
               <div css={{
                 display: 'flex',

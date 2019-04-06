@@ -196,7 +196,7 @@ export default class Footer extends Component {
             <h3 css={{ color: '#454545', fontFamily: "Khula", fontSize: '20px', fontWeight: 'normal', letterSpacing: '1.01px', margin: 0 }}>
               Sign up for our newsletter to stay up to date.
                 </h3>
-            <ButtonPrimary onClick={() => window.open('https://emailoctopus.com/lists/1a8d8062-792c-11e8-a3c9-06b79b628af2/forms/subscribe', '_blank')} title='Subscribe for newsletter' style={{ marginTop:'50px', marginBottom:'50px', padding: '3px 15px', display: 'flex', width: 'auto', lineHeight: '39px', justifyContent: 'center', fontSize: '15px', letterSpacing: '.9px' }} />
+            <ButtonPrimary onClick={() => window.open('https://emailoctopus.com/lists/1a8d8062-792c-11e8-a3c9-06b79b628af2/forms/subscribe', '_blank')} title='Subscribe for newsletter' style={{ marginTop: '50px', marginBottom: '50px', padding: '3px 15px', display: 'flex', width: 'auto', lineHeight: '39px', justifyContent: 'center', fontSize: '15px', letterSpacing: '.9px' }} />
             <ul css={{
               listStyle: 'none', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', margin: 0,
               [presets.Hd]: { marginTop: '2rem' }, [presets.Mobile]: { marginTop: '4rem' }
@@ -208,6 +208,11 @@ export default class Footer extends Component {
               {this.renderSocialIcon('https://telegram.me/squeezerio', telegramImage)}
               {this.renderSocialIcon('https://www.youtube.com/channel/UC4oipFLgQW7e98Gei-7NEIQ', playImage)}
             </ul>
+            <div css={{ fontFamily: "Khula", marginTop: '25px' }}>
+              For investments and other inquiries email us at &nbsp;
+              <a css={{ color: '#438EED' }} href="mailto:info@squeezer.io?subject=Squeezer Inquiry">
+                info@squeezer.io</a>
+            </div>
           </div>
         </div>
       </div>
