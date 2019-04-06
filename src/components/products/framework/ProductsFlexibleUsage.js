@@ -4,7 +4,7 @@ import chartImage from "../../../../static/images/Squeezer_Assets_framework_page
 import assetImage from "../../../../static/images/Squeezer_Assets_framework_page/Asset1@30x.svg";
 import terminalImage from "../../../../static/images/Squeezer_Assets_framework_page/terminal-code.svg";
 import frameworkBlueImage from "../../../../static/images/homeSVG/framework-blue.svg";
-import Terminal from "./terminal"
+import Terminal from "./Terminal"
 import { css } from "glamor";
 import chekItem from "../../../../static/images/Squeezer_Assets_framework_page/chekItem.svg";
 
