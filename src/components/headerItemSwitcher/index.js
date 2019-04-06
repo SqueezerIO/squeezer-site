@@ -84,7 +84,7 @@ class HeaderItemSwitcher extends Component {
   };
 
   renderContentChild = (item, header) => (
-    <Link to={item.path.pagePath ? item.path.pagePath : item.path} css={{textDecoration: 'none', display: 'flex', marginBottom: '16px'}}>
+    <div onClick={() => location.href = item.path.pagePath ? item.path.pagePath : item.path} css={{textDecoration: 'none', display: 'flex', marginBottom: '16px'}}>
       {item.image ? <img src={item.image} alt='image' css={{marginRight: '.8rem', width: '32px', height: '32px', marginTop: '3px',
         [presets.Phablet]: {display: 'none'}
       }} /> : null}
@@ -101,7 +101,7 @@ class HeaderItemSwitcher extends Component {
         </p>
         {header === 'products' ? this.renderLinks(item.title, item.path) : null}
       </div>
-    </Link>
+    </div>
   );
 
   render() {

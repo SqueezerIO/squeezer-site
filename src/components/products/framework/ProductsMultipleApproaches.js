@@ -3,6 +3,7 @@ import presets from "../../../utils/presets";
 
 import squeezerIcon from '../../../../static/images/Squeezer_Assets_framework_page/Squeezer-Logo-Icon.svg';
 import paymentImage from '../../../../static/images/Squeezer_Assets_framework_page/payment.2c49c711.svg';
+import secureImage from '../../../../static/images/Squeezer_Assets_framework_page/secure.svg';
 import bankingImage from '../../../../static/images/Squeezer_Assets_framework_page/banking.svg';
 import votingImage from '../../../../static/images/Squeezer_Assets_framework_page/voting-icon.svg';
 import asset from '../../../../static/images/shape-3.svg';
@@ -28,7 +29,7 @@ export default class ProductsMultipleApproaches extends Component {
 
   render() {
     return (
-      <div css={{ minHeight: `50vh`}}>
+      <div css={{ paddingTop:'10rem', minHeight: `50vh`}}>
         <div css={{margin: '0 auto', maxWidth: '1200px', position: 'relative'}}>
           <div css={{position: 'absolute', zIndex: '200', [presets.Desktop]: {position: 'relative', margin: 'auto'}}}>
             <div css={{display: 'flex', width: '900px', [presets.Desktop]: {display: 'block', width: '100%'}}}>
@@ -36,6 +37,7 @@ export default class ProductsMultipleApproaches extends Component {
                 fontSize: '45px',
                 color: '#023775',
                 fontFamily: 'DIN Condensed',
+                textTransform: 'uppercase',
                 textTransform: 'uppercase',
                 fontWeight: 'bold',
                 letterSpacing: '0.65px',
@@ -53,7 +55,7 @@ export default class ProductsMultipleApproaches extends Component {
               }}>
                 Multiple approaches
               </h2>
-              <img src={squeezerIcon} alt="squeezerIcon" css={{ marginLeft: '200px', marginTop: '35px',
+              <img src={squeezerIcon} alt="squeezerIcon" css={{ marginLeft: '200px', marginTop: '25px',
                 [presets.Desktop]: {width: 0, height: 0}}}/>
             </div>
 
@@ -64,8 +66,8 @@ export default class ProductsMultipleApproaches extends Component {
                 {this.renderApproach('voting systems', votingImage, 'Blockchain based for top-level safety and voting process decentralization.')}
               </div>
               <div css={{display: 'flex', flex: 1, flexDirection: 'column', flexWrap: 'wrap', alignContent: 'center', marginLeft: '35px', [presets.Desktop]: {marginLeft: 0}}}>
-                {this.renderApproach('secure authentication', bankingImage, 'Decentralized identity is the next evolution step from the traditional login systems.')}
-                {this.renderApproach('banking', bankingImage, 'Implementing the security and transparency aspects of blockchain technology into their transaction processes.')}
+                {this.renderApproach('secure authentication', secureImage, 'Decentralized identity is the next evolution step from the traditional login systems.')}
+                {this.renderApproach('banking', bankingImage, 'Implementing the security and transparency aspects of blockchain technology into banking processes.')}
               </div>
               <img src={asset} alt='asset' css={{opacity: '.64', marginTop: '-180px', marginLeft: '100px', width: 336, height: 480, [presets.Hd]: {width: 0, height: 0}}}/>
             </div>
@@ -76,7 +78,7 @@ export default class ProductsMultipleApproaches extends Component {
               margin: '0',
               padding: 0,
               maxWidth: '100vw',
-              minHeight: '85vh',
+              minHeight: '95vh',
               position: 'relative',
               zIndex: '1',
               opacity: '0.3',

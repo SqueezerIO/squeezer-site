@@ -119,7 +119,7 @@ export default class BlockchainAccess extends Component {
             margin: '0 auto',
             padding: 0,
             maxWidth: '1200px',
-            minHeight: '70vh',
+            minHeight: '95vh',
             position: 'relative',
             zIndex: '1',
             opacity: '0.3',

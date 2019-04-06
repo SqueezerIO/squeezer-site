@@ -32,7 +32,6 @@ const items = [
 
 export default class PlatformSection extends Component {
   renderIndexImage = (index) => {
-    console.log(index);
     switch (index) {
       case 0:
         return <img src={first} alt={first} css={{width: '39px', height: '39px', marginRight: '10px', marginTop: '-5px'}}/>;
@@ -45,7 +44,7 @@ export default class PlatformSection extends Component {
 
   renderSectionItems = () => (
     items.map(({title, icon, image}, index) => (
-      <div css={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', marginTop: '120px', [presets.Hd]: {justifyContent: 'space-around', marginTop: '100px'}}}>
+      <div key={index} css={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', marginTop: '120px', [presets.Hd]: {justifyContent: 'space-around', marginTop: '100px'}}}>
         <div css={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', [presets.Hd]: {order: 1},
          [presets.Desktop]: {marginTop: '0px', order: 1}
         }} style={index === 1 ? {order: 2} : {}}>
@@ -68,7 +67,7 @@ export default class PlatformSection extends Component {
         margin: '0',
         maxWidth: '100vw',
         minHeight: '180vh',
-        marginTop: '15rem',
+        marginTop: '25rem',
         marginBottom: '5rem',
         [presets.Hd]: {
           marginTop: '10rem',
