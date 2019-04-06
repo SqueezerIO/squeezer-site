@@ -55,7 +55,7 @@ export default class ProductsMultipleApproaches extends Component {
               }}>
                 Multiple approaches
               </h2>
-              <img src={squeezerIcon} alt="squeezerIcon" css={{ marginLeft: '200px', marginTop: '25px',
+              <img src={squeezerIcon} alt="squeezerIcon" css={{ marginLeft: '200px', marginTop: '30px',
                 [presets.Desktop]: {width: 0, height: 0}}}/>
             </div>
 
