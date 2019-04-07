@@ -13,8 +13,9 @@ const linkStyle = css({
   fontWeight: 'bold',
   letterSpacing: '1px',
   fontFamily: 'Khula',
-  ':link, :visited': {
-    textDecoration: 'none'
+  ':link, :visited, :active': {
+    textDecoration: 'none',
+    outline: 'none'
   }
 });
 
@@ -73,7 +74,7 @@ class HeaderItemSwitcher extends Component {
     return (
       <div css={{width: '180px', textTransform: 'uppercase'}}>
 
-      {title === 'Framework' ? <Link to={path.docsPath} className={`${linkStyle}`}>features</Link> : (
+      {title === 'Framework' ? <Link to={path.docsPath} className={`${linkStyle}`}>getting started</Link> : (
         <div css={{display: 'flex', justifyContent: 'space-between', 'a:link, a:visited': {
             textDecoration: 'none'}, [presets.Mobile]: {flexDirection: 'column'}
           }}>
@@ -84,21 +85,24 @@ class HeaderItemSwitcher extends Component {
   };
 
   renderContentChild = (item, header) => (
-    <div onClick={() => location.href = item.path.pagePath ? item.path.pagePath : item.path} css={{textDecoration: 'none', display: 'flex', marginBottom: '16px'}}>
+    <div css={{textDecoration: 'none', display: 'flex', marginBottom: '16px'}}>
       {item.image ? <img src={item.image} alt='image' css={{marginRight: '.8rem', width: '32px', height: '32px', marginTop: '3px',
         [presets.Phablet]: {display: 'none'}
       }} /> : null}
 
       <div css={{ display: 'flex', alignItems: 'start', flexDirection: 'column', width: '100%' }}>
-        <h2 css={{
-          color: '#023775',	fontFamily: 'Khula',	fontSize: '20px',	fontWeight: 'bold', textTransform: 'uppercase', marginTop: '8px',
-          marginBottom: '5px', letterSpacing: '1px'
-        }}>{item.title}</h2>
-        <p css={{color: '#023775', fontFamily: 'Khula',	fontSize: '16px', letterSpacing: '1px', marginTop: 0, marginBottom: '7px',
-          [presets.Phablet]: {width: '200px'}, [presets.Mobile]: {display: 'none'}
-        }}>
-          {item.description}
-        </p>
+        <div onClick={() => location.href = item.path.pagePath ? item.path.pagePath : item.path}>
+          <h2 css={{
+            color: '#023775', fontFamily: 'Khula', fontSize: '20px', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '8px',
+            marginBottom: '5px', letterSpacing: '1px'
+          }}>{item.title}</h2>
+          <p css={{
+            color: '#023775', fontFamily: 'Khula', fontSize: '16px', letterSpacing: '1px', marginTop: 0, marginBottom: '7px',
+            [presets.Phablet]: { width: '200px' }, [presets.Mobile]: { display: 'none' }
+          }}>
+            {item.description}
+          </p>
+        </div>
         {header === 'products' ? this.renderLinks(item.title, item.path) : null}
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from "react"
 import Helmet from "react-helmet"
+import { css } from 'glamor'
 import { Link } from 'gatsby';
 import HeaderItemSwitcher from '../components/headerItemSwitcher';
 import ButtonPrimary from '../components/button/ButtonPrimary';
@@ -78,6 +79,12 @@ const company = [
   }
 ];
 
+const bodyStyle = css({
+  ':visited' : {
+    outline: 'none'
+  }
+});
+
 class Layout extends React.Component {
   constructor(props) {
     super(props);
@@ -105,7 +112,7 @@ class Layout extends React.Component {
     const { color } = this.props;
 
     return (
-      <div>
+      <div className={`${bodyStyle}`}>
         <Helmet defaultTitle={`Squeezer - Build Serverless dApps`} titleTemplate={`Squeezer - %s`}>
           <meta name="twitter:site" content="@squeezerio" />
           <meta name="og:type" content="website" />
