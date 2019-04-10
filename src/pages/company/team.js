@@ -22,7 +22,7 @@ const teamMembers = [
     position: 'CEO and Chief Developer',
     linkedin: 'https://www.linkedin.com/in/nick-chisiu/',
     twitter: 'https://twitter.com/nickchisiu',
-    description: 'Nick is a specialist in microservices architecture, framework design, and blockchain development. He worked as a blockchain consultant at Consensys (top blockchain development companies), Marriott & Genentech.'
+    description: 'Nick is a specialist in microservices architecture, framework design, and blockchain development. He worked as a blockchain consultant at Consensys, Marriott Hotels & Genentech (Roche Group). He studied Economic Informatics and is the creator of the Proof of Twins (PoT) blockchain algorithm.'
   },
   {
     image: AlexS,
@@ -54,7 +54,7 @@ const teamMembers = [
     position: 'Support Manager',
     linkedin: 'https://www.linkedin.com/in/tia-chisiu-03b45164/',
     twitter: 'https://twitter.com/TiaChisiu',
-    description: 'Tia is an experienced support staff member with precise proofreading and editing skills.'
+    description: 'Tia is an experienced support staff member with precise proofreading and editing skills. Adionally '
   },
   {
     image: Odi,
@@ -81,7 +81,7 @@ export default class TeamPage extends Component {
         <ProductsTitleSection
           product=''
           image={teamImage}
-          title={`CHECK OUT OUR<br/>AWSOME TEAM`}
+          title={`CHECK OUT OUR<br/>AWESOME TEAM`}
           description='This is the core team behind Squeezer. The ones who made everything happen.'
           subtitles={[]}
         />
@@ -119,7 +119,7 @@ export default class TeamPage extends Component {
                   {this.renderSocialIcon(member.twitter, twitterImage)}
                 </ul>
 
-                <p css={{width: '339px', height: '243px', color: '#969696',	fontFamily: 'Khula',	fontSize: '20px',	fontWeight: '400', lineHeight: '27px', [presets.Desktop]: {height: 'auto'}, [presets.Mobile]: {width: '200px'}}}>
+                <p css={{width: '339px', height: '243px', color: '#808080',	fontFamily: 'Khula',	fontSize: '18px',	fontWeight: '400', lineHeight: '27px', [presets.Desktop]: {height: 'auto'}, [presets.Mobile]: {width: '200px'}}}>
                   {member.description}
                 </p>
               </div>
