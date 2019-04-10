@@ -20,47 +20,47 @@ const teamMembers = [
     image: Nick,
     name: 'Nick Chisiu',
     position: 'CEO and Chief Developer',
-    linkedin: '',
-    twitter: '',
+    linkedin: 'https://www.linkedin.com/in/nick-chisiu/',
+    twitter: 'https://twitter.com/nickchisiu',
     description: 'Nick is a specialist in microservices architecture, framework design, and blockchain development. He worked as a blockchain consultant at Consensys (top blockchain development companies), Marriott & Genentech.'
   },
   {
     image: AlexS,
     name: 'Alex Sabau',
     position: 'Product Owner',
-    linkedin: '',
-    twitter: '',
+    linkedin: 'https://www.linkedin.com/in/alex-sabau/',
+    twitter: 'https://twitter.com/alex86sabau',
     description: 'Alex has a solid background in the tech industry of over 10 years. He was involved in almost all aspects of a product development, starting from server administration to customer service, quality assurance and product delivery, for major clients such as: Tillster, Baskin Robbins, Demco Software, CalAmp, EDR - Collateral360 and Pfizer.'
   },
   {
     image: AlexL,
     name: 'Alex Lazar',
     position: 'VP of Engineering',
-    linkedin: '',
-    twitter: '',
+    linkedin: 'https://www.linkedin.com/in/alextkd123/',
+    twitter: 'https://twitter.com/alexlazar86',
     description: 'At base Alex Lazar is an experienced software engineer & architect with an extended experience in designing, architecting and developing web-based and native rich interface applications for mobile and desktop devices. Having technical skills and expertise in both front-end and back-end development.'
   },
   {
     image: Flavius,
     name: 'Flavius Fulea',
     position: 'Marketing Chief',
-    linkedin: '',
-    twitter: '',
+    linkedin: 'https://www.linkedin.com/in/flavius-fulea-9478b7a2/',
+    twitter: 'https://twitter.com/FlaviusFulea',
     description: 'Flavius is a former art designer with exceptional skills in digital advertising and social media content. He delivers great art work and boosts our social activity on a daily basis.'
   },
   {
     image: Tia,
     name: 'Tia Chisiu',
     position: 'Support Manager',
-    linkedin: '',
-    twitter: '',
+    linkedin: 'https://www.linkedin.com/in/tia-chisiu-03b45164/',
+    twitter: 'https://twitter.com/TiaChisiu',
     description: 'Tia is an experienced support staff member with precise proofreading and editing skills.'
   },
   {
     image: Odi,
     name: 'Odi Onyejekwe',
     position: 'Business Developer',
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/odi-onyejekwe-0a546071/',
     twitter: '',
     description: 'Odi works closely with the sales team to identify potential clients in the targeted market and complete necessary research on the prospective client’s business requirements. Odi has experience on business development (Food Panda - largest online food delivery platform)'
   }
@@ -119,7 +119,7 @@ export default class TeamPage extends Component {
                   {this.renderSocialIcon(member.twitter, twitterImage)}
                 </ul>
 
-                <p css={{width: '339px', height: '243px', color: '#969696',	fontFamily: 'Khula',	fontSize: '20px',	fontWeight: '600', lineHeight: '27px', [presets.Desktop]: {height: 'auto'}, [presets.Mobile]: {width: '200px'}}}>
+                <p css={{width: '339px', height: '243px', color: '#969696',	fontFamily: 'Khula',	fontSize: '20px',	fontWeight: '400', lineHeight: '27px', [presets.Desktop]: {height: 'auto'}, [presets.Mobile]: {width: '200px'}}}>
                   {member.description}
                 </p>
               </div>
