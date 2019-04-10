@@ -41,6 +41,14 @@ const teamMembers = [
     description: 'At base Alex Lazar is an experienced software engineer & architect with an extended experience in designing, architecting and developing web-based and native rich interface applications for mobile and desktop devices. Having technical skills and expertise in both front-end and back-end development.'
   },
   {
+    image: Odi,
+    name: 'Odi Onyejekwe',
+    position: 'Business Developer',
+    linkedin: 'https://www.linkedin.com/in/odi-onyejekwe-0a546071/',
+    twitter: '',
+    description: 'Odi works closely with the sales team to identify potential clients in the targeted market and complete necessary research on the prospective client’s business requirements. Odi has experience on business development (Food Panda - largest online food delivery platform)'
+  },
+  {
     image: Flavius,
     name: 'Flavius Fulea',
     position: 'Marketing Chief',
@@ -55,14 +63,6 @@ const teamMembers = [
     linkedin: 'https://www.linkedin.com/in/tia-chisiu-03b45164/',
     twitter: 'https://twitter.com/TiaChisiu',
     description: 'Tia is an experienced support staff member with precise proofreading and editing skills. Adionally '
-  },
-  {
-    image: Odi,
-    name: 'Odi Onyejekwe',
-    position: 'Business Developer',
-    linkedin: 'https://www.linkedin.com/in/odi-onyejekwe-0a546071/',
-    twitter: '',
-    description: 'Odi works closely with the sales team to identify potential clients in the targeted market and complete necessary research on the prospective client’s business requirements. Odi has experience on business development (Food Panda - largest online food delivery platform)'
   }
 ];
 
