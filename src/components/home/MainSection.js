@@ -33,7 +33,7 @@ export default class MainSection extends Component {
             ACCESS BLOCKCHAIN AS A SERVICE (BaaS)
           </h1>
           <h3 css={{color: '#092D5D', fontFamily: 'Khula', fontSize: '18px', lineHeight: '24px', fontWeight: '400'}}>
-            Blockchain agnostic integration for payments & smart contracts
+            Agnostic integration for two-way payment systems & smart contracts
           </h3>
 
           <div css={{left: 'auto', right: 'auto', marginTop: '4rem'}}>
