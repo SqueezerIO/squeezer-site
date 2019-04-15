@@ -79,6 +79,10 @@ const footerItems = [
       {
         name: 'About Cookies',
         path: '/about-cookies'
+      },
+      {
+        name: 'White Paper',
+        path: '../../docs/Squeezer_White_Paper.pdf'
       }
     ]
   },

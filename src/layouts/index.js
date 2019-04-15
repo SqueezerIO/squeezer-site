@@ -44,7 +44,7 @@ const products = [
     path: {
       pagePath: '/products/chainkit',
       featurePath: '/products/chainkit/#chainkit-features',
-      pricingPath: '//products/chainkit/#chainkit-pricing',
+      pricingPath: '/products/chainkit/#chainkit-pricing',
     },
     featurePath: '/',
     pricingPath: '/',
