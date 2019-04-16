@@ -73,7 +73,7 @@ const footerItems = [
         path: '/privacy-policy'
       },
       {
-        name: 'Terms & conditions',
+        name: 'Terms of Service',
         path: '/terms-of-service'
       },
       {
