@@ -59,6 +59,11 @@ export default class MainSection extends Component {
             <div onClick={() => window.open('https://github.com/SqueezerIO/squeezer', '_blank')} css={{
               fontFamily: 'Khula',
               fontWeight: 'bold',
+              border: '1px solid black',
+              paddingTop: '5px',
+              margin: '0 auto',
+              height: '40px',
+              width: '225px',
               marginTop: '50px',
               cursor: 'pointer'
             }}>
