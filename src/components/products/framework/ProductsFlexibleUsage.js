@@ -125,7 +125,7 @@ export default class ProductsFlexibleUsage extends Component {
                 },
                 {
                   type: 'command',
-                  text: 'sqz create --template api-nodejs'
+                  text: 'sqz create --project my-first-project --template https://github.com/SqueezerIO/squeezer-2way-payment'
                 },
                 {
                   type: 'comment',
@@ -149,19 +149,15 @@ export default class ProductsFlexibleUsage extends Component {
                 },
                 {
                   type: 'command',
-                  text: 'sqz compile --cloud --stage dev'
+                  text: 'sqz compile'
                 },
                 {
                   type: 'comment',
-                  text: 'Deploy functions',
+                  text: 'Run project',
                 },
                 {
                   type: 'command',
-                  text: 'sqz deploy'
-                },
-                {
-                  type: 'comment',
-                  text: 'https://your-app-id.execute-api.com/dev',
+                  text: 'sqz serve'
                 }
               ]}
             />

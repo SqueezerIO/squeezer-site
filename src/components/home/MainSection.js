@@ -3,6 +3,7 @@ import presets from '../../utils/presets';
 import ButtonPrimary from '../button/ButtonPrimary';
 import ButtonSecondary from '../button/ButtonSecondary';
 import mainImage from '../../../static/images/homeSVG/Background-image-stock.svg';
+import gitImage from '../../../static/images/footer/github-footer.svg';
 
 export default class MainSection extends Component {
   render() {
@@ -55,6 +56,17 @@ export default class MainSection extends Component {
                 }}}
               mediaqueryPhablet={{[presets.Phablet]: {fontSize: '12px !important'}}}
             />
+            <div onClick={() => window.open('https://github.com/SqueezerIO/squeezer', '_blank')} css={{
+              fontFamily: 'Khula',
+              fontWeight: 'bold',
+              marginTop: '50px',
+              cursor: 'pointer'
+            }}>
+              <img css={{ display: 'inline-block', verticalAlign: 'middle', width: '25px', height: '25px' }} src={gitImage} alt={gitImage} />
+              <div css={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '10px', marginTop: '-15px' }}>
+                2,776 GitHub stars
+              </div>
+            </div>
           </div>
         </div>
 
