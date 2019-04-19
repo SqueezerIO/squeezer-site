@@ -64,7 +64,7 @@ export default class MainSection extends Component {
               margin: '0 auto',
               height: '40px',
               width: '225px',
-              marginTop: '50px',
+              marginTop: '75px',
               cursor: 'pointer'
             }}>
               <img css={{ display: 'inline-block', verticalAlign: 'middle', width: '25px', height: '25px' }} src={gitImage} alt={gitImage} />
