@@ -69,7 +69,7 @@ export default class MainSection extends Component {
             }}>
               <img css={{ display: 'inline-block', verticalAlign: 'middle', width: '25px', height: '25px' }} src={gitImage} alt={gitImage} />
               <div css={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '10px', marginTop: '-15px' }}>
-                2,776 GitHub stars
+                3,164 GitHub stars
               </div>
             </div>
           </div>
