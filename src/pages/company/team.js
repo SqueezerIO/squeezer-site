@@ -22,7 +22,7 @@ const teamMembers = [
     position: 'CEO and Chief Developer',
     linkedin: 'https://www.linkedin.com/in/nick-chisiu/',
     twitter: 'https://twitter.com/nickchisiu',
-    description: 'Nick is a specialist in microservices architecture, framework design, and blockchain development. He worked as a blockchain consultant at Consensys, Marriott Hotels & Genentech (Roche Group). He studied Economic Informatics and is the creator of the Proof of Twins (PoT) blockchain algorithm.'
+    description: 'Nick is a specialist in blockchain development, microservices architecture and framework design. He worked as a blockchain consultant at Consensys, Marriott Hotels & Genentech (Roche Group). He studied Economic Informatics and is the creator of the Proof of Twins (PoT) blockchain algorithm.'
   },
   {
     image: AlexS,
@@ -62,7 +62,7 @@ const teamMembers = [
     position: 'Support Manager',
     linkedin: 'https://www.linkedin.com/in/tia-chisiu-03b45164/',
     twitter: 'https://twitter.com/TiaChisiu',
-    description: 'Tia is an experienced support staff member with precise proofreading and editing skills. Adionally '
+    description: 'Tia is an experienced support staff member with precise proofreading and editing skills. She worked on real estate where she offered premium services.'
   }
 ];
 
