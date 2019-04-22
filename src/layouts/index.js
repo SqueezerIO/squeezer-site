@@ -76,6 +76,11 @@ const company = [
     title: 'Team',
     path: '/company/team',
     description: 'Check out awsome team'
+  },
+  {
+    title: 'Whitepaper',
+    path: '/docs/Squeezer_White_Paper.pdf',
+    description: 'Project whitepaper'
   }
 ];
 
