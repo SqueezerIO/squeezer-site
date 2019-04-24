@@ -58,8 +58,9 @@ export default class MainSection extends Component {
             />
             <div onClick={() => window.open('https://github.com/SqueezerIO/squeezer', '_blank')} css={{
               fontFamily: 'Khula',
-              fontWeight: 'bold',
-              border: '1px solid #bfbfbf',
+              // fontWeight: 'bold',
+              color: '#404040',
+              // border: '1px solid #bfbfbf',
               paddingTop: '5px',
               margin: '0 auto',
               height: '40px',
@@ -69,7 +70,7 @@ export default class MainSection extends Component {
             }}>
               <img css={{ display: 'inline-block', verticalAlign: 'middle', width: '25px', height: '25px' }} src={gitImage} alt={gitImage} />
               <div css={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '10px', marginTop: '-15px' }}>
-                3,164 GitHub stars
+                <b>3,164</b> GitHub stars
               </div>
             </div>
           </div>
