@@ -40,9 +40,9 @@ export default class PartnersAndInvestors extends Component {
       <div id="media" css={{
         background: '#FFF',
         textAlign: 'center',
-        margin: '150px 0'
+        margin: '75px 0'
       }}>
-        <div overrideCss={{
+        <div css={{
           zIndex: 1,
           padding: '100px 15px'
         }}>
