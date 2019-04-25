@@ -83,6 +83,10 @@ const footerItems = [
       {
         name: 'White Paper',
         path: '../../docs/Squeezer_White_Paper.pdf'
+      },
+      {
+        name: 'Pitch Deck',
+        path: '../../docs/Squeezer_Pitch_Deck.pdf'
       }
     ]
   },
