@@ -17,11 +17,11 @@ const Source = ({ pic, link, title, overrideCss }) => (
     <img css={{
       width: 'auto',
       height: '45px',
-      WebkitFilter: 'grayscale(0%)',
-      filter: 'grayscale(0%)',
+      WebkitFilter: 'grayscale(1000%)',
+      filter: 'grayscale(1000%)',
       ':hover': {
-        filter: 'grayscale(100%)',
-        WebkitFilter: 'grayscale(100%)',
+        filter: 'grayscale(0%)',
+        WebkitFilter: 'grayscale(0%)',
       }
     }} alt={title} src={pic} />
   </div>
