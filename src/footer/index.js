@@ -37,7 +37,7 @@ const footerItems = [
       },
       {
         name: 'Examples',
-        path: 'https://github.com/SqueezerIO/example-projects'
+        path: 'https://github.com/SqueezerIO/squeezer#example-projects'
       },
       {
         name: 'Support',

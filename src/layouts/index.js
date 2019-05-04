@@ -61,7 +61,7 @@ const developers = [
   },
   {
     title: 'Examples',
-    path: 'https://github.com/SqueezerIO/example-projects',
+    path: 'https://github.com/SqueezerIO/squeezer#example-projects',
     description: 'Comprehensive use cases'
   },
   {
