@@ -103,7 +103,7 @@ export default class BlockchainAccess extends Component {
             }}>
               <div css={{display: 'flex', flex: 1, flexDirection: 'column', flexWrap: 'wrap', alignContent: 'center'}}>
                 {this.renderService('Wallet Security', walletSecurityImage, 'Chainkit empowers the end user to manage and store his own private credentials.')}
-                {this.renderService('Bidirectional Payment Channels', bidirectionalImage, 'Get integration for both inbound and outbound blockchain transactions.')}
+                {this.renderService('Bidirectional Payment Channels', bidirectionalImage, 'Get integration for both inbound and outbound onchain transactions.')}
               </div>
 
               <div css={{display: 'flex', flex: 1, flexDirection: 'column', flexWrap: 'wrap', alignContent: 'center', [presets.Desktop]: {marginLeft: 0}}}>
