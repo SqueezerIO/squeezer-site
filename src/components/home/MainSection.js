@@ -65,13 +65,37 @@ export default class MainSection extends Component {
               margin: '0 auto',
               height: '40px',
               width: '225px',
-              marginTop: '75px',
+              marginTop: '50px',
               cursor: 'pointer'
             }}>
               <img css={{ display: 'inline-block', verticalAlign: 'middle', width: '25px', height: '25px' }} src={gitImage} alt={gitImage} />
               <div css={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '10px', marginTop: '-15px' }}>
                 <b>3,164</b> GitHub stars
               </div>
+            </div>
+            <div css={{marginTop: '25px'}}>
+              <ButtonSecondary
+                title='read whitepaper'
+                onClick={() => location.href = '/docs/Squeezer_White_Paper.pdf'}
+                style={{ width: '163px', height: '39px', lineHeight: '38px', border: 0 }}
+                mediaquery={{
+                  [presets.Desktop]: {
+                    display: 'block', margin: 'auto', width: '9rem !important'
+                  }
+                }}
+                mediaqueryPhablet={{ [presets.Phablet]: { fontSize: '12px !important' } }}
+              />
+              <ButtonSecondary
+                title='token economics'
+                onClick={() => location.href = '/docs/Squeezer_Token_Economics_website.pdf'}
+                style={{ marginLeft: '17px', width: '163px', height: '39px', lineHeight: '38px', border: 0 }}
+                mediaquery={{
+                  [presets.Desktop]: {
+                    display: 'block', margin: 'auto', width: '9rem !important'
+                  }
+                }}
+                mediaqueryPhablet={{ [presets.Phablet]: { fontSize: '12px !important' } }}
+              />
             </div>
           </div>
         </div>
