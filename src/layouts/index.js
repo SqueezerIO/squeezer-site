@@ -18,6 +18,7 @@ import platformIcon from '../../static/images/homeSVG/platform-icon.svg';
 import chainkitIcon from '../../static/images/homeSVG/chainkit-icon.svg';
 import MobileNav from '../components/sidebar';
 import { FaListUl } from "react-icons/fa";
+import Countdown from 'react-countdown-now';
 
 const products = [
   {
@@ -85,10 +86,62 @@ const company = [
 ];
 
 const bodyStyle = css({
-  ':visited' : {
+  ':visited': {
     outline: 'none'
   }
 });
+
+const countdownRenderer = ({ days, hours, minutes, seconds, completed }) => {
+  if (completed) {
+    // Render a completed state
+    return <span />;
+  } else {
+    // Render a countdown
+    return <table css={{
+      width: '200px',
+      padding: 0,
+      margin: '2px auto',
+      ' td' : {
+        border: 0,
+        padding: '1px',
+        textAlign: 'center'
+      }
+    }}>
+      <tr css={{
+        fontSize:'22px'
+      }}>
+        <td>
+          {days}
+        </td>
+        <td>
+          {hours}
+        </td>
+        <td>
+          {minutes}
+        </td>
+        <td>
+          {seconds}
+        </td>
+      </tr>
+      <tr css={{
+        fontWeight: 'bold'
+      }}>
+        <td>
+          {days > 1 ? 'days' : 'day'}
+        </td>
+        <td>
+          hours
+        </td>
+        <td>
+          min
+        </td>
+        <td>
+          sec
+        </td>
+      </tr>
+    </table>;
+  }
+};
 
 class Layout extends React.Component {
   constructor(props) {
@@ -123,6 +176,18 @@ class Layout extends React.Component {
           <meta name="og:type" content="website" />
           <meta name="og:site_name" content="Squeezer.IO" />
         </Helmet>
+        <div css={{
+          background: '#1A90FF',
+          padding: '15px 0px',
+          fontSize: '20px',
+          color: 'white',
+          fontFamily: 'Khula',
+          textAlign: 'center'
+        }}>
+          Squeezer <b>IEO</b> will start on <b>10 June (17:00 PM GMT+8)</b> on BitForex. For more details please  <a css={{ color: 'white' }} target="_blank" href="https://support.bitforex.com/hc/en-us/articles/360028676651">click here</a>
+          <br />
+          <Countdown date={new Date(1560157200000)} renderer={countdownRenderer} />
+        </div>
         <I18nextProvider i18n={i18n}>
           <div
             css={{
