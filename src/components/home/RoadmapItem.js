@@ -46,7 +46,7 @@ export default class RoadMap extends Component {
           display: this.state.show ? 'block' : 'none'
         }}>
           {subtasks.map((subtask, subtaskIndex) => (
-            <div css={{
+            <div key={subtaskIndex} css={{
               marginBottom: '15px'
             }}>
               <div css={{ fontWeight: 'bold' }}>{subtask.name}</div>

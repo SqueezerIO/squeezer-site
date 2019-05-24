@@ -80,7 +80,7 @@ export default class RoadMap extends Component {
               marginTop: '35px'
             }}>
               {roadmapTasks.map((task, index) => (
-                <RoadmapItem task={task} index={index} />
+                <RoadmapItem key={index} task={task} index={index} />
               ))}
             </div>
           </div>
