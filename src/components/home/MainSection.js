@@ -38,41 +38,6 @@ export default class MainSection extends Component {
           </h3>
 
           <div css={{left: 'auto', right: 'auto', marginTop: '4rem'}}>
-            <ButtonPrimary
-              title='get free account'
-              onClick={() => location.href = 'https://platform.squeezer.io' }
-              style={{ width: '163px', height: '39px', lineHeight: '38px', border: '1px solid #1890FF', boxShadow: '0 0 0 0 rgba(0,0,0,0.0)'}}
-              mediaquery={{[presets.Desktop]: {
-                  display: 'block', margin: 'auto', width: '9rem !important'
-                }}}
-              mediaqueryPhablet={{[presets.Phablet]: {fontSize: '12px !important'}}}
-            />
-            <ButtonSecondary
-              title='check the docs'
-              onClick={() => location.href = 'https://docs.squeezer.io'}
-              style={{ marginLeft: '17px', width: '163px', height: '39px', lineHeight: '38px', border: '1px solid #979797', boxShadow: '0 0 0 0 rgba(0,0,0,0.0)'}}
-              mediaquery={{[presets.Desktop]: {
-                  display: 'block', margin: 'auto !important', width: '9rem !important', marginTop: '1rem !important'
-                }}}
-              mediaqueryPhablet={{[presets.Phablet]: {fontSize: '12px !important'}}}
-            />
-            <div onClick={() => window.open('https://github.com/SqueezerIO/squeezer', '_blank')} css={{
-              fontFamily: 'Khula',
-              // fontWeight: 'bold',
-              color: '#404040',
-              // border: '1px solid #bfbfbf',
-              paddingTop: '5px',
-              margin: '0 auto',
-              height: '40px',
-              width: '225px',
-              marginTop: '50px',
-              cursor: 'pointer'
-            }}>
-              <img css={{ display: 'inline-block', verticalAlign: 'middle', width: '25px', height: '25px' }} src={gitImage} alt={gitImage} />
-              <div css={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '10px', marginTop: '-15px' }}>
-                <b>3,164</b> GitHub stars
-              </div>
-            </div>
             <div css={{marginTop: '25px'}}>
               <ButtonSecondary
                 title='read whitepaper'
@@ -97,6 +62,42 @@ export default class MainSection extends Component {
                 mediaqueryPhablet={{ [presets.Phablet]: { fontSize: '12px !important' } }}
               />
             </div>
+            <div onClick={() => window.open('https://github.com/SqueezerIO/squeezer', '_blank')} css={{
+              fontFamily: 'Khula',
+              // fontWeight: 'bold',
+              color: '#404040',
+              // border: '1px solid #bfbfbf',
+              paddingTop: '5px',
+              margin: '0 auto',
+              marginBottom: '35px',
+              height: '40px',
+              width: '225px',
+              marginTop: '50px',
+              cursor: 'pointer'
+            }}>
+              <img css={{ display: 'inline-block', verticalAlign: 'middle', width: '25px', height: '25px' }} src={gitImage} alt={gitImage} />
+              <div css={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '10px', marginTop: '-15px' }}>
+                <b>3,164</b> GitHub stars
+              </div>
+            </div>
+            <ButtonPrimary
+              title='get free account'
+              onClick={() => location.href = 'https://platform.squeezer.io' }
+              style={{ width: '163px', height: '39px', lineHeight: '38px', border: '1px solid #1890FF', boxShadow: '0 0 0 0 rgba(0,0,0,0.0)'}}
+              mediaquery={{[presets.Desktop]: {
+                  display: 'block', margin: 'auto', width: '9rem !important'
+                }}}
+              mediaqueryPhablet={{[presets.Phablet]: {fontSize: '12px !important'}}}
+            />
+            <ButtonSecondary
+              title='check the docs'
+              onClick={() => location.href = 'https://docs.squeezer.io'}
+              style={{ marginLeft: '17px', width: '163px', height: '39px', lineHeight: '38px', border: '1px solid #979797', boxShadow: '0 0 0 0 rgba(0,0,0,0.0)'}}
+              mediaquery={{[presets.Desktop]: {
+                  display: 'block', margin: 'auto !important', width: '9rem !important', marginTop: '1rem !important'
+                }}}
+              mediaqueryPhablet={{[presets.Phablet]: {fontSize: '12px !important'}}}
+            />
           </div>
         </div>
 

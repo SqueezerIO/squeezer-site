@@ -8,6 +8,7 @@ import DeveloperSection from '../components/home/DeveloperSection';
 import StartBuildingSection from '../components/home/StartBuildingSection';
 import MemberEEA from '../components/home/MemberEEA';
 import PartnersInvestors from '../components/home/PartnersAndInvestors';
+import RoadMap from '../components/home/Roadmap';
 import FeaturedIn from '../components/home/FeaturedIn';
 
 class HomePage extends React.Component {
@@ -18,6 +19,7 @@ class HomePage extends React.Component {
         <MainSection />
         <ProductsSection />
         <DeveloperSection />
+        <RoadMap/>
         <MemberEEA />
         <PartnersInvestors/>
         <FeaturedIn />
