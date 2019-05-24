@@ -108,7 +108,7 @@ export default class BlockchainAccess extends Component {
             }}>
               <div css={{ display: 'flex', flex: 1, flexDirection: 'column', flexWrap: 'wrap', alignContent: 'center' }}>
                 {this.renderService('Wallet Security', walletSecurityImage, 'Chainkit empowers the end user to manage and store his own private credentials, additionally double wallet encryption is enabled by default.')}
-                {this.renderService('Instant Chain Transactions', chainImage, 'Transactions are made instantly without waiting the blockchain confirmations or other delay issues.')}s
+                {this.renderService('Instant Chain Transactions', chainImage, 'Transactions are made instantly without waiting the blockchain confirmations or other delay issues.')}
               </div>
               <div css={{ display: 'flex', flex: 1, flexDirection: 'column', flexWrap: 'wrap', alignContent: 'center', [presets.Desktop]: { marginLeft: 0 } }}>
                 {this.renderService('Bidirectional Payment Channels', bidirectionalImage, 'Get integration for both inbound and outbound onchain transactions.')}

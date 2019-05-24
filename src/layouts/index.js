@@ -101,44 +101,48 @@ const countdownRenderer = ({ days, hours, minutes, seconds, completed }) => {
       width: '200px',
       padding: 0,
       margin: '2px auto',
-      ' td' : {
+      ' td': {
         border: 0,
         padding: '1px',
         textAlign: 'center'
       }
     }}>
-      <tr css={{
-        fontSize:'22px'
-      }}>
-        <td>
-          {days}
+      <tbody>
+
+        <tr css={{
+          fontSize: '22px'
+        }}>
+          <td>
+            {days}
+          </td>
+          <td>
+            {hours}
+          </td>
+          <td>
+            {minutes}
+          </td>
+          <td>
+            {seconds}
+          </td>
+        </tr>
+        <tr css={{
+          fontWeight: 'bold'
+        }}>
+          <td>
+            {days > 1 ? 'days' : 'day'}
+          </td>
+          <td>
+            hours
         </td>
-        <td>
-          {hours}
+          <td>
+            min
         </td>
-        <td>
-          {minutes}
+          <td>
+            sec
         </td>
-        <td>
-          {seconds}
-        </td>
-      </tr>
-      <tr css={{
-        fontWeight: 'bold'
-      }}>
-        <td>
-          {days > 1 ? 'days' : 'day'}
-        </td>
-        <td>
-          hours
-        </td>
-        <td>
-          min
-        </td>
-        <td>
-          sec
-        </td>
-      </tr>
+        </tr>
+      </tbody>
+
     </table>;
   }
 };
