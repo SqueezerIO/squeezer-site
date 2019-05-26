@@ -54,12 +54,10 @@ export default class MainSection extends Component {
                 title='token economics'
                 onClick={() => location.href = '/docs/Squeezer_Token_Economics_website.pdf'}
                 style={{ marginLeft: '17px', width: '163px', height: '39px', lineHeight: '38px', border: 0 }}
-                mediaquery={{
-                  [presets.Desktop]: {
-                    display: 'block', margin: 'auto', width: '9rem !important'
-                  }
-                }}
-                mediaqueryPhablet={{ [presets.Phablet]: { fontSize: '12px !important' } }}
+                mediaquery={{[presets.Desktop]: {
+                  display: 'block', margin: 'auto !important', width: '9rem !important', marginTop: '1rem !important'
+                }}}
+                mediaqueryPhablet={{[presets.Phablet]: {fontSize: '12px !important'}}}
               />
             </div>
             <div onClick={() => window.open('https://github.com/SqueezerIO/squeezer', '_blank')} css={{
