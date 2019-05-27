@@ -17,6 +17,7 @@ import frameworkIcon from '../../static/images/homeSVG/framework.svg';
 import platformIcon from '../../static/images/homeSVG/platform-icon.svg';
 import chainkitIcon from '../../static/images/homeSVG/chainkit-icon.svg';
 import MobileNav from '../components/sidebar';
+import Telegram from '../components/telegram'
 import { FaListUl } from "react-icons/fa";
 import Countdown from 'react-countdown-now';
 
@@ -192,6 +193,7 @@ class Layout extends React.Component {
           <br />
           <Countdown date={new Date(1560157200000)} renderer={countdownRenderer} />
         </div>
+        <Telegram/>
         <I18nextProvider i18n={i18n}>
           <div
             css={{
