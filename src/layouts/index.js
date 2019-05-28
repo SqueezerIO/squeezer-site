@@ -16,6 +16,7 @@ import Footer from '../footer';
 import frameworkIcon from '../../static/images/homeSVG/framework.svg';
 import platformIcon from '../../static/images/homeSVG/platform-icon.svg';
 import chainkitIcon from '../../static/images/homeSVG/chainkit-icon.svg';
+import bitforexIcon from '../../static/images/bitforex-icon.png';
 import MobileNav from '../components/sidebar';
 import Telegram from '../components/telegram'
 import { FaListUl } from "react-icons/fa";
@@ -189,7 +190,11 @@ class Layout extends React.Component {
           fontFamily: 'Khula',
           textAlign: 'center'
         }}>
-          Squeezer <b>IEO</b> will start on <b>10 June (17:00 PM GMT+8)</b> on BitForex. For more details please  <a css={{ color: 'white' }} target="_blank" href="https://support.bitforex.com/hc/en-us/articles/360028676651">click here</a>
+          <div css={{display:'inline-block', verticalAlign: 'middle'}}>Squeezer <b>IEO</b> will start on <b>10 June (17:00 PM GMT+8)</b> on</div>    
+          &nbsp;       
+          <img src={bitforexIcon} alt='image' css={{margin:0, height: '18px', width: 'auto', display:'inline-block', verticalAlign: 'middle'}} /> 
+          <div css={{display:'inline-block', verticalAlign: 'middle'}}>BitForex. For more details please  <a css={{ color: 'white' }} target="_blank" href="https://support.bitforex.com/hc/en-us/articles/360028676651">click here</a></div>
+          &nbsp;
           <br />
           <Countdown date={new Date(1560157200000)} renderer={countdownRenderer} />
         </div>

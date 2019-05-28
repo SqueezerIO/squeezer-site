@@ -10,6 +10,7 @@ import MemberEEA from '../components/home/MemberEEA';
 import PartnersInvestors from '../components/home/PartnersAndInvestors';
 import RoadMap from '../components/home/Roadmap';
 import FeaturedIn from '../components/home/FeaturedIn';
+import SqueezerInNumbers from '../components/home/SqueezerInNumbers';
 
 class HomePage extends React.Component {
   
@@ -17,6 +18,7 @@ class HomePage extends React.Component {
     return (
       <Layout>
         <MainSection />
+        <SqueezerInNumbers/>
         <ProductsSection />
         <DeveloperSection />
         <RoadMap/>
