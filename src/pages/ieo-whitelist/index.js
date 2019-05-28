@@ -157,7 +157,7 @@ export default class WhiteListPage extends Component {
         captcha: captcha
       }
 
-      axios.post('https://api.squeezer.io/prod/rest/v1/project/ieo-whitelist', submitObj).then((res) => {
+      axios.post('https://platform.api.squeezer.io/prod/rest/v1/project/ieo-whitelist', submitObj).then((res) => {
         const { message } = res.data
         console.log(res);
 
