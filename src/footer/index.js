@@ -87,6 +87,10 @@ const footerItems = [
       {
         name: 'Pitch Deck',
         path: '../../docs/Squeezer_Pitch_Deck.pdf'
+      },
+      {
+        name: 'Token Terms',
+        path: '../../docs/token-terms.pdf'
       }
     ]
   },
