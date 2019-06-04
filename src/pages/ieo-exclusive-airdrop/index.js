@@ -102,6 +102,7 @@ export default class WhiteListPage extends Component {
         amount: '',
         whitelistCode: '',
       },
+      ref: makeid(6),
       copied: false,
       captcha: null,
       showActivationLink: false,
@@ -205,7 +206,7 @@ export default class WhiteListPage extends Component {
       origin = window.location.origin
     }
 
-    const affiliateUrl = `${origin}/ieo-exclusive-airdrop/?ref=${makeid(6)}`
+    const affiliateUrl = `${origin}/ieo-exclusive-airdrop/?ref=${this.state.ref}`
 
     return (
       <Layout color="#F8FCFF">
