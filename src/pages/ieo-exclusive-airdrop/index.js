@@ -217,7 +217,7 @@ export default class WhiteListPage extends Component {
           width: '100%',
           maxWidth: '800px',
           margin: '0 auto',
-          padding: '75px 0'
+          padding: '75px 0 0 0'
         }}>
           <h1 css={{ fontFamily: 'DIN Condensed', fontSize: '45px', fontWeight: 'bold', textAlign: 'center' }}>SQUEEZER IEO EXCLUSIVE AIRDROP</h1>
           <img src={ieoBanner} alt="ieoBanner" css={{ width: '800px', height: 'auto', position: 'relative' }} />
@@ -271,7 +271,8 @@ export default class WhiteListPage extends Component {
         <div id="whitelist-form" css={{
           width: '300px',
           margin: '0 auto',
-          fontFamily: 'Khula'
+          fontFamily: 'Khula',
+          paddingTop: '50px'
         }}>
           <h1 css={{
             marginTop: '45px',
