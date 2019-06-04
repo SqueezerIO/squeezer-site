@@ -35,7 +35,7 @@ export default class Airdrop extends Component {
           <h3 css={{fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular'}}>Set you alarm clock at 4:50 PM (GMT +8) on June 10th - 10 minutes before the token sale start. Receive 25% bonus from your initial contribution if you are in the first 100 buyers.</h3><br></br>
           <h2 css={{fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold'}}>4. Click the “Buy Tokens” button</h2>
           <h3 css={{fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular'}}>For every IEO participant we give out $75 in SQR tokens, all you need to do is buy SQR tokens worth minimum the individual cap ($50). Also for every 3 friends you invite to contribute in the IEO you receive $50 in BTC.</h3><br></br>
-          <h2 css={{fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold'}}>4. Enjoy your exclusive 3 days of trading just for IEO participants</h2>
+          <h2 css={{fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold'}}>5. Enjoy your exclusive 3 days of trading just for the IEO participants</h2>
           <img src={sqrTable} alt="sqrTable" css={{ width: '800px', height: 'auto', position: 'relative'}} />
         </div>
         <StartBuildingSection />
