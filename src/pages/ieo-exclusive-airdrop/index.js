@@ -92,8 +92,12 @@ export default class WhiteListPage extends Component {
   constructor(props, ...args) {
     super(props, ...args)
 
+    let origin = null
+    if (typeof window !== 'undefined') {
+      origin = window.location.origin
+    }
 
-    const affiliateUrl = `${window.location.origin}/ieo-exclusive-airdrop/?affId=${makeid(6)}`;
+    const affiliateUrl = `${origin}/ieo-exclusive-airdrop/?affId=${makeid(6)}`;
 
     this.state = {
       form: {
@@ -151,7 +155,6 @@ export default class WhiteListPage extends Component {
     const captcha = this.state.captcha;
     const affId = getParameterByName('affId');
 
-    console.log(affId);
     let isError = false
 
     const setError = (error) => {
