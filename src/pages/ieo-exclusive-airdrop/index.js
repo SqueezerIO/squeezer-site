@@ -210,7 +210,7 @@ export default class WhiteListPage extends Component {
     return (
       <Layout color="#F8FCFF">
         <Helmet>
-          <title>Squeezer Airdrop</title>
+          <title>Exclusive Airdrop</title>
         </Helmet>
         <div css={{
           width: '100%',
