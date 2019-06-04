@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import ReCAPTCHA from "react-google-recaptcha"
 import Layout from "../../layouts";
 import axios from "axios";
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import { Helmet } from "react-helmet"
 import ieoBanner from '../../../static/images/ieo/sqrxbitforex.jpg';
 import sqrTable from '../../../static/images/ieo/SQRtable.png';
+import IeoReferral from '../../../static/images/ieo/referral.png';
+import CopyImg from '../../../static/images/copy.png';
 
 import StartBuildingSection from "../../components/home/StartBuildingSection";
 import presets from "../../utils/presets";
@@ -72,18 +75,18 @@ const getParameterByName = (name, url) => {
   if (!url) url = window.location.href;
   name = name.replace(/[\[\]]/g, '\\$&');
   var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-      results = regex.exec(url);
+    results = regex.exec(url);
   if (!results) return null;
   if (!results[2]) return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
 const makeid = (length) => {
-  var result           = '';
-  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var result = '';
+  var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var charactersLength = characters.length;
-  for ( var i = 0; i < length; i++ ) {
-     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
   return result;
 }
@@ -92,13 +95,6 @@ export default class WhiteListPage extends Component {
   constructor(props, ...args) {
     super(props, ...args)
 
-    let origin = null
-    if (typeof window !== 'undefined') {
-      origin = window.location.origin
-    }
-
-    const affiliateUrl = `${origin}/ieo-exclusive-airdrop/?affId=${makeid(6)}`;
-
     this.state = {
       form: {
         email: '',
@@ -106,10 +102,10 @@ export default class WhiteListPage extends Component {
         amount: '',
         whitelistCode: '',
       },
+      copied: false,
       captcha: null,
       showActivationLink: false,
-      activationLinkLoading: false,
-      affiliateUrl
+      activationLinkLoading: false
     }
   }
 
@@ -153,7 +149,7 @@ export default class WhiteListPage extends Component {
     const amount = this.state.form.amount;
     const whitelistCode = this.state.form.whitelistCode;
     const captcha = this.state.captcha;
-    const affId = getParameterByName('affId');
+    const ref = getParameterByName('ref');
 
     let isError = false
 
@@ -188,13 +184,14 @@ export default class WhiteListPage extends Component {
         walletAddress: walletAddress,
         amount: amount,
         whitelistCode: whitelistCode,
-        affId,
+        ref,
+        affId: makeid(6),
         captcha: captcha
       }
 
       axios.post('https://platform.api.squeezer.io/prod/rest/v1/project/ieo-whitelist', submitObj).then((res) => {
       // axios.post('http://localhost:4001/rest/v1/project/ieo-whitelist', submitObj).then((res) => {
-          const { message } = res.data
+        const { message } = res.data
         console.log(res);
 
         setError(message)
@@ -203,6 +200,13 @@ export default class WhiteListPage extends Component {
   }
 
   render() {
+    let origin = 'https:/squeezer.io/'
+    if (typeof window !== 'undefined') {
+      origin = window.location.origin
+    }
+
+    const affiliateUrl = `${origin}/ieo-exclusive-airdrop/?ref=${makeid(6)}`
+
     return (
       <Layout color="#F8FCFF">
         <Helmet>
@@ -220,21 +224,46 @@ export default class WhiteListPage extends Component {
             - EVERY <span css={{ color: '#3399ff' }}>IEO</span> WHITELISTED PARTICIPANT GETS <span css={{ color: '#3399ff' }}>$75</span> IN SQR TOKENS<p></p>
             - FOR EVERY <span css={{ color: '#ff9933' }}>3 FRIENDS</span> YOU INVITE TO PARTICIPATE IN THE IEO YOU GET <span css={{ color: '#ff9933' }}>$50</span> IN ETH<br></br><br></br>
           </h2>
-          <h4 css={{textAlign:'center'}}>
-          Your own affiliate link: <a href={this.state.affiliateUrl}>{this.state.affiliateUrl}</a>
+          <h4 css={{ textAlign: 'center' }}>
+            Use the link bellow and share with your friends: <br />
+            <a href={affiliateUrl}>{affiliateUrl}</a>
+            &nbsp;
+            <CopyToClipboard text={affiliateUrl}
+              onCopy={() => this.setState({ copied: true })}>
+              {/* <span style={{
+                fontSize:'12px',
+                color: '#1990ff',
+                display: 'inline-block',
+                verticalAlign: 'middle',
+                cursor: 'pointer'
+              }}> */}
+              <img
+                src={CopyImg} alt="copy" css={{
+                  width: 'auto', height: '14px', border: 0, position: 'relative',
+                  fontSize: '12px',
+                  paddingLeft: '5px',
+                  marginTop: '15px',
+                  color: '#1990ff',
+                  display: 'inline-block',
+                  verticalAlign: 'middle',
+                  cursor: 'pointer'
+                }} />
+              {/* </span> */}
+            </CopyToClipboard>
           </h4>
+          <img src={IeoReferral} alt="ieoReferral" css={{ width: '800px', height: 'auto', position: 'relative' }} />
           <h2 css={{ fontFamily: 'Khula', fontSize: '26px', fontWeight: 'bold', textAlign: 'center' }}>...</h2><br></br>
           <h2 css={{ fontFamily: 'Khula', fontSize: '26px', fontWeight: 'bold', textAlign: 'center' }}>Step-By-Step Instructions For IEO Participants</h2><br></br>
           <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>1. Whitelist for the IEO Aidrop</h2>
           <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>In order to be able to participate on the IEO Exclusive Airdrop you need to submit the form at the bottom of the page <a href="#whitelist-form">Whitelist Form</a>.</h3><br></br>
           <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>2. Signup for Bitforex and verify your account.</h2>
           <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>We recommend to do this in advance not to rush off on the day of the token sale start. Only the verified user accounts are allowed to participate in the IEO.</h3><br></br>
-          <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>3. Exchange crypto for BTC</h2>
-          <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>You can buy SQR only with BTC during the IEO, so don’t forget to make the exchange in advance on Bitforex.</h3><br></br>
+          <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>3. Exchange crypto for ETH</h2>
+          <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>You can buy SQR only with ETH during the IEO, so don’t forget to make the exchange in advance on Bitforex.</h3><br></br>
           <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>4. Set a reminder with 10 minutes before the token sale start</h2>
           <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>Set you alarm clock at 4:50 PM (GMT +8) on June 10th - 10 minutes before the token sale start. Receive 25% bonus from your initial contribution if you are in the first 100 buyers.</h3><br></br>
           <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>5. Click the “Buy Tokens” button</h2>
-          <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>For every IEO participant we give out $75 in SQR tokens, all you need to do is buy SQR tokens worth minimum the individual cap ($50). Also for every 3 friends you invite to contribute in the IEO you receive $50 in BTC.</h3><br></br>
+          <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>For every IEO participant we give out $75 in SQR tokens, all you need to do is buy SQR tokens worth minimum the individual cap ($50). Also for every 3 friends you invite to contribute in the IEO you receive $50 in ETH.</h3><br></br>
           <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>6. Enjoy your exclusive 3 days of trading just for the IEO participants</h2>
           <img src={sqrTable} alt="sqrTable" css={{ width: '800px', height: 'auto', position: 'relative' }} />
         </div>
