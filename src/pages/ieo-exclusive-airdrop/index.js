@@ -6,6 +6,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import { Helmet } from "react-helmet"
 import ieoBanner from '../../../static/images/ieo/sqrxbitforex.jpg';
+import ptoBanner from '../../../static/images/ieo/sqrxbitforex-pto.jpg';
 import sqrTable from '../../../static/images/ieo/SQRtable.png';
 import IeoReferral from '../../../static/images/ieo/referral.png';
 import CopyImg from '../../../static/images/copy.png';
@@ -204,23 +205,30 @@ export default class WhiteListPage extends Component {
 
   render() {
     let origin = 'https:/squeezer.io/'
+    let orgUrl = 'https://squeezer.io/ieo-exclusive-airdrop/'
     if (typeof window !== 'undefined') {
       origin = window.location.origin
+      orgUrl = window.location.href
     }
+    const source = getParameterByName('source');
+    const title = source === 'bitforex' ? 'PTO' : 'IEO';
+    const banner = source === 'bitforex' ? ptoBanner : ieoBanner;
 
     const affiliateUrl = `${origin}/ieo-exclusive-airdrop/?ref=${this.state.ref}`
+    const metaTitle = `Squeezer - ${title} Exclusive Airdrop`
+    const metaDesc = `EVERY ${title} WHITELISTED PARTICIPANT GETS $75 IN SQR TOKENS. FOR EVERY 3 FRIENDS YOU INVITE TO PARTICIPATE IN THE ${title} YOU GET $50 IN ETH.`
 
     return (
       <Layout color="#F8FCFF">
         <Helmet>
-          <title>IEO Exclusive Airdrop</title>
-          <meta property="og:title" content="Squeezer - IEO Exclusive Airdrop" />
-          <meta property="og:description" content="EVERY IEO WHITELISTED PARTICIPANT GETS $75 IN SQR TOKENS. FOR EVERY 3 FRIENDS YOU INVITE TO PARTICIPATE IN THE IEO YOU GET $50 IN ETH." />
-          <meta property="og:image" content={ieoBanner} />
-          <meta property="og:url" content="https://squeezer.io/ieo-exclusive-airdrop/" />
-          <meta name="twitter:title" content="Squeezer - IEO Exclusive Airdrop" />
-          <meta name="twitter:description" content="EVERY IEO WHITELISTED PARTICIPANT GETS $75 IN SQR TOKENS. FOR EVERY 3 FRIENDS YOU INVITE TO PARTICIPATE IN THE IEO YOU GET $50 IN ETH." />
-          <meta name="twitter:image" content={ieoBanner} />
+          <title>{title} Exclusive Airdrop</title>
+          <meta property="og:title" content={metaTitle} />
+          <meta property="og:description" content={metaDesc} />
+          <meta property="og:image" content={banner} />
+          <meta property="og:url" content={orgUrl} />
+          <meta name="twitter:title" content={metaTitle} />
+          <meta name="twitter:description" content={metaDesc} />
+          <meta name="twitter:image" content={banner} />
           <meta name="twitter:card" content="summary_large_image" />
         </Helmet>
         <div css={{
@@ -229,11 +237,11 @@ export default class WhiteListPage extends Component {
           margin: '0 auto',
           padding: '75px 0 0 0'
         }}>
-          <h1 css={{ fontFamily: 'DIN Condensed', fontSize: '45px', fontWeight: 'bold', textAlign: 'center' }}>SQUEEZER IEO EXCLUSIVE AIRDROP</h1>
-          <img src={ieoBanner} alt="ieoBanner" css={{ width: '800px', height: 'auto', position: 'relative' }} />
+          <h1 css={{ fontFamily: 'DIN Condensed', fontSize: '45px', fontWeight: 'bold', textAlign: 'center' }}>SQUEEZER {title} EXCLUSIVE AIRDROP</h1>
+          <img src={banner} alt="ieoBanner" css={{ width: '800px', height: 'auto', position: 'relative' }} />
           <h2 css={{ fontFamily: 'DIN Condensed', fontSize: '38px', fontWeight: 'bold', textAlign: 'center' }}>
-            - EVERY <span css={{ color: '#3399ff' }}>IEO</span> WHITELISTED PARTICIPANT GETS <span css={{ color: '#3399ff' }}>$75</span> IN SQR TOKENS<p></p>
-            - FOR EVERY <span css={{ color: '#ff9933' }}>3 FRIENDS</span> YOU INVITE TO PARTICIPATE IN THE IEO YOU GET <span css={{ color: '#ff9933' }}>$50</span> IN ETH<br></br><br></br>
+            - EVERY <span css={{ color: '#3399ff' }}>{title}</span> WHITELISTED PARTICIPANT GETS <span css={{ color: '#3399ff' }}>$75</span> IN SQR TOKENS<p></p>
+            - FOR EVERY <span css={{ color: '#ff9933' }}>3 FRIENDS</span> YOU INVITE TO PARTICIPATE IN THE {title} YOU GET <span css={{ color: '#ff9933' }}>$50</span> IN ETH<br></br><br></br>
           </h2>
           <h4 css={{ textAlign: 'center' }}>
             Use the link bellow and share with your friends: <br />
@@ -264,18 +272,18 @@ export default class WhiteListPage extends Component {
           </h4>
           <img src={IeoReferral} alt="ieoReferral" css={{ width: '800px', height: 'auto', position: 'relative' }} />
           <h2 css={{ fontFamily: 'Khula', fontSize: '26px', fontWeight: 'bold', textAlign: 'center' }}>...</h2><br></br>
-          <h2 css={{ fontFamily: 'Khula', fontSize: '26px', fontWeight: 'bold', textAlign: 'center' }}>Step-By-Step Instructions For IEO Participants</h2><br></br>
-          <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>1. Whitelist for the IEO Aidrop</h2>
-          <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>In order to be able to participate on the IEO Exclusive Airdrop you need to submit the form at the bottom of the page <a href="#whitelist-form">Whitelist Form</a>.</h3><br></br>
+          <h2 css={{ fontFamily: 'Khula', fontSize: '26px', fontWeight: 'bold', textAlign: 'center' }}>Step-By-Step Instructions For {title} Participants</h2><br></br>
+          <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>1. Whitelist for the {title} Aidrop</h2>
+          <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>In order to be able to participate on the {title} Exclusive Airdrop you need to submit the form at the bottom of the page <a href="#whitelist-form">Whitelist Form</a>.</h3><br></br>
           <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>2. Signup for Bitforex and verify your account.</h2>
-          <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>We recommend to do this in advance not to rush off on the day of the token sale start. Only the verified user accounts are allowed to participate in the IEO.</h3><br></br>
+          <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>We recommend to do this in advance not to rush off on the day of the token sale start. Only the verified user accounts are allowed to participate in the {title}.</h3><br></br>
           <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>3. Exchange crypto for BTC</h2>
-          <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>You can buy SQR only with BTC during the IEO, so don’t forget to make the exchange in advance on Bitforex.</h3><br></br>
+          <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>You can buy SQR only with BTC during the {title}, so don’t forget to make the exchange in advance on Bitforex.</h3><br></br>
           <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>4. Set a reminder with 10 minutes before the token sale start</h2>
           <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>Set you alarm clock at 4:50 PM (GMT +8) on June 10th - 10 minutes before the token sale start. Receive 25% bonus from your initial contribution if you are in the first 100 buyers.</h3><br></br>
           <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>5. Click the “Buy Tokens” button</h2>
-          <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>For every IEO participant we give out $75 in SQR tokens, all you need to do is buy SQR tokens worth minimum the individual cap ($50). Also for every 3 friends you invite to contribute in the IEO you receive $50 in ETH.</h3><br></br>
-          <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>6. Enjoy your exclusive 3 days of trading just for the IEO participants</h2>
+          <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>For every {title} participant we give out $75 in SQR tokens, all you need to do is buy SQR tokens worth minimum the individual cap ($50). Also for every 3 friends you invite to contribute in the {title} you receive $50 in ETH.</h3><br></br>
+          <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>6. Enjoy your exclusive 3 days of trading just for the {title} participants</h2>
           <img src={sqrTable} alt="sqrTable" css={{ width: '800px', height: 'auto', position: 'relative' }} />
         </div>
         <div id="whitelist-form" css={{
@@ -288,7 +296,7 @@ export default class WhiteListPage extends Component {
             marginTop: '45px',
             fontSize: '35px'
           }}>
-            IEO whitelist form
+            {title} whitelist form
           </h1>
           <form onSubmit={this.onFormSubmit.bind(this)} autoComplete="off">
             <SubInfo text="Email address used on the IEO" />
