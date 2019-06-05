@@ -4,7 +4,7 @@ import AirDrop from '../../components/airdrop';
 export default class WhiteListPage extends Component {
   render() {
     return (
-      <AirDrop/>
+      <AirDrop pto={true} />
     );
   }
 }
