@@ -191,7 +191,7 @@ export default class WhiteListPage extends Component {
       }
 
       axios.post('https://platform.api.squeezer.io/prod/rest/v1/project/ieo-whitelist', submitObj).then((res) => {
-      // axios.post('http://localhost:4001/rest/v1/project/ieo-whitelist', submitObj).then((res) => {
+        // axios.post('http://localhost:4001/rest/v1/project/ieo-whitelist', submitObj).then((res) => {
         const { message } = res.data
         console.log(res);
 
@@ -211,7 +211,15 @@ export default class WhiteListPage extends Component {
     return (
       <Layout color="#F8FCFF">
         <Helmet>
-          <title>Exclusive Airdrop</title>
+          <title>IEO Exclusive Airdrop</title>
+          <meta property="og:title" content="Squeezer - IEO Exclusive Airdrop" />
+          <meta property="og:description" content="Offering tour packages for individuals or groups." />
+          <meta property="og:image" content={ieoBanner} />
+          <meta property="og:url" content="https://squeezer.io/ieo-exclusive-airdrop/" />
+          <meta name="twitter:title" content="Squeezer - IEO Exclusive Airdrop" />
+          <meta name="twitter:description" content="EVERY IEO WHITELISTED PARTICIPANT GETS $75 IN SQR TOKENS. FOR EVERY 3 FRIENDS YOU INVITE TO PARTICIPATE IN THE IEO YOU GET $50 IN ETH." />
+          <meta name="twitter:image" content={ieoBanner} />
+          <meta name="twitter:card" content="summary_large_image" />
         </Helmet>
         <div css={{
           width: '100%',
