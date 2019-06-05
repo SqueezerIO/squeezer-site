@@ -167,9 +167,9 @@ export default class Airdrop extends Component {
       setError('Invalid email address');
     }
 
-    if (!walletAddress || !validateWallet(walletAddress)) {
-      setError('Invalid wallet address');
-    }
+    // if (!walletAddress || !validateWallet(walletAddress)) {
+    //   setError('Invalid wallet address');
+    // }
 
     if (!amount) {
       setError('Invalid amount')
@@ -303,10 +303,10 @@ export default class Airdrop extends Component {
             {title} whitelist form
           </h1>
           <form onSubmit={this.onFormSubmit.bind(this)} autoComplete="off">
-            <SubInfo text="Email address used on the IEO" />
+            <SubInfo text="Email address used on the BitForex IEO" />
             <Input name="email" placeholder="Email Address" onChange={this.handleChange.bind(this)} value={this.state.form.email} />
-            <SubInfo text="Wallet address where to get the bonuses" />
-            <Input name="walletAddress" placeholder="Wallet Address (ERC20)" onChange={this.handleChange.bind(this)} value={this.state.form.walletAddress} />
+            {/* <SubInfo text="Wallet address where to get the bonuses" />
+            <Input name="walletAddress" placeholder="Wallet Address (ERC20)" onChange={this.handleChange.bind(this)} value={this.state.form.walletAddress} /> */}
             <SubInfo text="Estimated amount you want to contribute (min 50 USD)" />
             <Input name="amount" placeholder="Amount (USD)" onChange={this.handleChange.bind(this)} value={this.state.form.amount} />
             {/* <SubInfo text="Whitelist code" />
