@@ -213,7 +213,7 @@ export default class WhiteListPage extends Component {
         <Helmet>
           <title>IEO Exclusive Airdrop</title>
           <meta property="og:title" content="Squeezer - IEO Exclusive Airdrop" />
-          <meta property="og:description" content="Offering tour packages for individuals or groups." />
+          <meta property="og:description" content="EVERY IEO WHITELISTED PARTICIPANT GETS $75 IN SQR TOKENS. FOR EVERY 3 FRIENDS YOU INVITE TO PARTICIPATE IN THE IEO YOU GET $50 IN ETH." />
           <meta property="og:image" content={ieoBanner} />
           <meta property="og:url" content="https://squeezer.io/ieo-exclusive-airdrop/" />
           <meta name="twitter:title" content="Squeezer - IEO Exclusive Airdrop" />
