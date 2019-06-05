@@ -267,8 +267,8 @@ export default class WhiteListPage extends Component {
           <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>In order to be able to participate on the IEO Exclusive Airdrop you need to submit the form at the bottom of the page <a href="#whitelist-form">Whitelist Form</a>.</h3><br></br>
           <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>2. Signup for Bitforex and verify your account.</h2>
           <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>We recommend to do this in advance not to rush off on the day of the token sale start. Only the verified user accounts are allowed to participate in the IEO.</h3><br></br>
-          <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>3. Exchange crypto for ETH</h2>
-          <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>You can buy SQR only with ETH during the IEO, so don’t forget to make the exchange in advance on Bitforex.</h3><br></br>
+          <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>3. Exchange crypto for BTC</h2>
+          <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>You can buy SQR only with BTC during the IEO, so don’t forget to make the exchange in advance on Bitforex.</h3><br></br>
           <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>4. Set a reminder with 10 minutes before the token sale start</h2>
           <h3 css={{ fontFamily: 'Khula', fontSize: '18px', fontWeight: 'Regular' }}>Set you alarm clock at 4:50 PM (GMT +8) on June 10th - 10 minutes before the token sale start. Receive 25% bonus from your initial contribution if you are in the first 100 buyers.</h3><br></br>
           <h2 css={{ fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold' }}>5. Click the “Buy Tokens” button</h2>
