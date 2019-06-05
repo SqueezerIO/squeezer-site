@@ -151,6 +151,7 @@ export default class WhiteListPage extends Component {
     const whitelistCode = this.state.form.whitelistCode;
     const captcha = this.state.captcha;
     const ref = getParameterByName('ref');
+    const source = getParameterByName('source');
 
     let isError = false
 
@@ -186,12 +187,13 @@ export default class WhiteListPage extends Component {
         amount: amount,
         whitelistCode: whitelistCode,
         ref,
+        source,
         affId: makeid(6),
         captcha: captcha
       }
 
       axios.post('https://platform.api.squeezer.io/prod/rest/v1/project/ieo-whitelist', submitObj).then((res) => {
-        // axios.post('http://localhost:4001/rest/v1/project/ieo-whitelist', submitObj).then((res) => {
+      // axios.post('http://localhost:4001/rest/v1/project/ieo-whitelist', submitObj).then((res) => {
         const { message } = res.data
         console.log(res);
 
