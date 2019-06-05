@@ -206,11 +206,13 @@ export default class WhiteListPage extends Component {
   render() {
     let origin = 'https:/squeezer.io/'
     let orgUrl = 'https://squeezer.io/ieo-exclusive-airdrop/'
+    let source = null
+
     if (typeof window !== 'undefined') {
       origin = window.location.origin
       orgUrl = window.location.href
+      source = getParameterByName('source');
     }
-    const source = getParameterByName('source');
     const title = source === 'bitforex' ? 'PTO' : 'IEO';
     const banner = source === 'bitforex' ? ptoBanner : ieoBanner;
 
