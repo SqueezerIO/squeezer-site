@@ -190,15 +190,32 @@ class Layout extends React.Component {
           fontFamily: 'Khula',
           textAlign: 'center'
         }}>
-          <div css={{display:'inline-block', verticalAlign: 'middle'}}>Squeezer <b>IEO</b> will start on <b>10 June (17:00 PM GMT+8)</b> on</div>    
-          &nbsp;       
-          <img src={bitforexIcon} alt='image' css={{margin:0, height: '18px', width: 'auto', display:'inline-block', verticalAlign: 'middle'}} /> 
-          <div css={{display:'inline-block', verticalAlign: 'middle'}}>BitForex. For more details please  <a css={{ color: 'white' }} target="_blank" href="https://support.bitforex.com/hc/en-us/articles/360028676651">click here</a></div>
+          <div css={{ display: 'inline-block', verticalAlign: 'middle' }}>Squeezer <b>IEO</b> will start on <b>10 June (17:00 PM GMT+8)</b> on</div>
+          &nbsp;
+          <img src={bitforexIcon} alt='image' css={{ margin: 0, height: '18px', width: 'auto', display: 'inline-block', verticalAlign: 'middle' }} />
+          <div css={{ display: 'inline-block', verticalAlign: 'middle' }}>BitForex. For more details please  <a css={{ color: 'white' }} target="_blank" href="https://support.bitforex.com/hc/en-us/articles/360028676651">click here</a></div>
           &nbsp;
           <br />
           <Countdown date={new Date(1560157200000)} renderer={countdownRenderer} />
+          <div  onClick={() => location.href = '/ieo-exclusive-airdrop/?source=home'} css={{
+            width: '220px',
+            background: '#EE4A4B',
+            padding: '5px 15px',
+            cursor: 'pointer',
+            borderRadius: '5px',
+            position: 'absolute',
+              left: '62%',
+              top: '60px',
+            [presets.Desktop]: {
+              position: 'relative',
+              left: 'auto',
+              margin: '0 auto',
+              top: '0px'
+            }
+            
+          }}>Exclusive IEO Airdrop</div>
         </div>
-        <Telegram/>
+        <Telegram />
         <I18nextProvider i18n={i18n}>
           <div
             css={{
