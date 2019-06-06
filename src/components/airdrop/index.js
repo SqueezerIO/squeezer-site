@@ -207,7 +207,7 @@ export default class Airdrop extends Component {
     const { pto } = this.props;
 
     let origin = 'https:/squeezer.io/'
-    let orgUrl = 'https://squeezer.io/ieo-exclusive-airdrop/'
+    let orgUrl = `https://squeezer.io/${pto === true ? 'pto' : 'ieo'}-exclusive-airdrop/`
     let source = null
 
     if (typeof window !== 'undefined') {
@@ -218,7 +218,7 @@ export default class Airdrop extends Component {
     const title = pto ? 'PTO' : 'IEO';
     const banner = pto ? ptoBanner : ieoBanner;
 
-    const affiliateUrl = `${origin}/ieo-exclusive-airdrop/?ref=${this.state.ref}`
+    const affiliateUrl = `${origin}/${pto === true ? 'pto' : 'ieo'}-exclusive-airdrop/?ref=${this.state.ref}`
     const metaTitle = `Squeezer - ${title} Exclusive Airdrop`
     const metaDesc = `EVERY ${title} WHITELISTED PARTICIPANT GETS $75 IN SQR TOKENS. FOR EVERY 3 FRIENDS YOU INVITE TO PARTICIPATE IN THE ${title} YOU GET $50 IN ETH.`
 
@@ -303,7 +303,7 @@ export default class Airdrop extends Component {
             {title} whitelist form
           </h1>
           <form onSubmit={this.onFormSubmit.bind(this)} autoComplete="off">
-            <SubInfo text="Email address used on the BitForex IEO" />
+            <SubInfo text={`Email address used on the BitForex ${pto === true ? 'PTO' : 'IEO'}`} />
             <Input name="email" placeholder="Email Address" onChange={this.handleChange.bind(this)} value={this.state.form.email} />
             {/* <SubInfo text="Wallet address where to get the bonuses" />
             <Input name="walletAddress" placeholder="Wallet Address (ERC20)" onChange={this.handleChange.bind(this)} value={this.state.form.walletAddress} /> */}

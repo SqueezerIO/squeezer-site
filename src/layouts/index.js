@@ -174,6 +174,11 @@ class Layout extends React.Component {
 
   render() {
     const { color } = this.props;
+    let typeIeo = 'IEO'
+
+    if (typeof window !== 'undefined') {
+      typeIeo = window.location.pathname === '/pto-exclusive-airdrop/' ? 'PTO' : 'IEO'
+    }
 
     return (
       <div className={`${bodyStyle}`}>
@@ -190,14 +195,14 @@ class Layout extends React.Component {
           fontFamily: 'Khula',
           textAlign: 'center'
         }}>
-          <div css={{ display: 'inline-block', verticalAlign: 'middle' }}>Squeezer <b>IEO</b> will start on <b>10 June (17:00 PM GMT+8)</b> on</div>
+          <div css={{ display: 'inline-block', verticalAlign: 'middle' }}>Squeezer <b>{typeIeo}</b> will start on <b>10 June (17:00 PM GMT+8)</b> on</div>
           &nbsp;
           <img src={bitforexIcon} alt='image' css={{ margin: 0, height: '18px', width: 'auto', display: 'inline-block', verticalAlign: 'middle' }} />
           <div css={{ display: 'inline-block', verticalAlign: 'middle' }}>BitForex. For more details please  <a css={{ color: 'white' }} target="_blank" href="https://support.bitforex.com/hc/en-us/articles/360028676651">click here</a></div>
           &nbsp;
           <br />
           <Countdown date={new Date(1560157200000)} renderer={countdownRenderer} />
-          <div  onClick={() => location.href = '/ieo-exclusive-airdrop/?source=home'} css={{
+          <div  onClick={() => location.href = `/${typeIeo}-exclusive-airdrop/?source=home`} css={{
             width: '220px',
             background: '#EE4A4B',
             padding: '5px 15px',
@@ -213,7 +218,7 @@ class Layout extends React.Component {
               top: '0px'
             }
             
-          }}>Exclusive IEO Airdrop</div>
+          }}>Exclusive {typeIeo} Airdrop</div>
         </div>
         <Telegram />
         <I18nextProvider i18n={i18n}>
