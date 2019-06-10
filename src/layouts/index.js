@@ -201,7 +201,8 @@ class Layout extends React.Component {
           <div css={{ display: 'inline-block', verticalAlign: 'middle' }}>BitForex. For more details please  <a css={{ color: 'white' }} target="_blank" href="https://support.bitforex.com/hc/en-us/articles/360028676651">click here</a></div>
           &nbsp;
           <br />
-          <Countdown date={new Date(1560157200000)} renderer={countdownRenderer} />
+          {/* <Countdown date={new Date(1560157200000)} renderer={countdownRenderer} /> */}
+          <div>IEO is <a css={{color: 'white'}} href='https://www.bitforex.com/en/trade/spotTrading?commodityCode=SQR&currencyCode=BTC'>LIVE NOW</a></div>
           <div  onClick={() => location.href = `/${typeIeo}-exclusive-airdrop/?source=home`} css={{
             width: '220px',
             background: '#EE4A4B',
@@ -210,7 +211,7 @@ class Layout extends React.Component {
             borderRadius: '5px',
             position: 'absolute',
               left: '62%',
-              top: '60px',
+              top: '45px',
             [presets.Desktop]: {
               position: 'relative',
               left: 'auto',
