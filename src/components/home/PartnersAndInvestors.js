@@ -3,7 +3,6 @@ import Perlin from "../../../static/images/partners-investors/perlin.png"
 import Ambisafe from "../../../static/images/partners-investors/ambisafe.png"
 import McroE from "../../../static/images/partners-investors/mcro.png"
 import BTC12 from "../../../static/images/partners-investors/btc12.png"
-import Flurry from "../../../static/images/partners-investors/flurry-capital.png"
 import BlockFront from "../../../static/images/partners-investors/blockfront.png"
 
 const Source = ({ pic, link, title, overrideCss }) => (
@@ -62,7 +61,6 @@ export default class PartnersAndInvestors extends Component {
           <Source link="https://www.ambisafe.co/" pic={Ambisafe} />
           <Source link="https://mcro.tech/" pic={McroE} />
           <Source link="https://btc12.com/" pic={BTC12} />
-          <Source pic={Flurry} />
           <Source link="http://www.blockfront.capital/" pic={BlockFront} />
         </div>
       </div>
