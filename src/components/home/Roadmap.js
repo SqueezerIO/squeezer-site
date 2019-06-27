@@ -31,9 +31,7 @@ const roadmapTasks = [
     name: '2019',
     // tags: ['frontend'],
     subtasks: [
-      { name: 'April', text: `Enable subscription purchases with the SQR token. Start to build apps connected to the blockchain`, progress: 100 },
-      { name: 'June', text: `Premium global token offering`, progress: 0 },
-      { name: 'July', text: `Token listing on top tier exchange`, progress: 0 }
+      { name: 'April', text: `Enable subscription purchases with the SQR token. Start to build apps connected to the blockchain`, progress: 100 }
     ]
   },
 ]
