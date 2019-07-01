@@ -55,7 +55,7 @@ export default class PartnersAndInvestors extends Component {
               fontSize: '33px',
               fontWeight: 'bold',
               fontFamily: 'Khula'
-            }}>Partners & Investors</div>
+            }}>Partners</div>
           </div>
           <Source link="https://perlin.net/" pic={Perlin} />
           <Source link="https://www.ambisafe.co/" pic={Ambisafe} />
