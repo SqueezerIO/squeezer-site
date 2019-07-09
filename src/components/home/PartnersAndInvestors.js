@@ -60,7 +60,6 @@ export default class PartnersAndInvestors extends Component {
           <Source link="https://perlin.net/" pic={Perlin} />
           <Source link="https://www.ambisafe.co/" pic={Ambisafe} />
           <Source link="https://mcro.tech/" pic={McroE} />
-          <Source link="https://btc12.com/" pic={BTC12} />
           <Source link="http://www.blockfront.capital/" pic={BlockFront} />
         </div>
       </div>
