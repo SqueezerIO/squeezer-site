@@ -15,8 +15,12 @@ export default class SqueezerInNumbers extends Component {
     return (
       <div css={{
         background: '#FFF',
+        clear: 'both',
         textAlign: 'center',
         // margin: '75px 0'
+        '@media screen and (max-width: 600px)' : {
+          marginTop: '250px'
+        }
       }}>
         <div css={{
           zIndex: 1,
