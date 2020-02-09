@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CountUp, {startAnimation} from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
+import presets from '../../utils/presets';
 
 export default class SqueezerInNumbersItem extends Component {
   constructor(props, ...args) {
@@ -25,6 +26,10 @@ export default class SqueezerInNumbersItem extends Component {
       <div css={{
         display: 'inline-block',
         width: '33.3%',
+        '@media screen and (max-width: 600px)' : {
+          display: 'block',
+          width: '100%',
+        },
         textAlign: 'center',
         color: '#1990FF',
         textTransform: 'uppercase',

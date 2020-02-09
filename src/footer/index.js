@@ -33,7 +33,7 @@ const footerItems = [
     items: [
       {
         name: 'Docs',
-        path: 'https://docs.squeezer.io'
+        path: 'https://docs.squeezer.network'
       },
       {
         name: 'Examples',
@@ -222,8 +222,8 @@ export default class Footer extends Component {
             </ul>
             <div css={{ fontFamily: "Khula", marginTop: '25px' }}>
               For investments and other inquiries email us at &nbsp;
-              <a css={{ color: '#438EED' }} href="mailto:info@squeezer.io?subject=Squeezer Inquiry">
-                info@squeezer.io</a>
+              <a css={{ color: '#438EED' }} href="mailto:info@squeezer.network?subject=Squeezer Inquiry">
+                info@squeezer.network</a>
             </div>
           </div>
         </div>

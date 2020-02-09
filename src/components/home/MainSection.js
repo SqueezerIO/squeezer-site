@@ -80,7 +80,7 @@ export default class MainSection extends Component {
             </div>
             <ButtonPrimary
               title='get free account'
-              onClick={() => location.href = 'https://platform.squeezer.io' }
+              onClick={() => location.href = 'https://platform.squeezer.network' }
               style={{ width: '163px', height: '39px', lineHeight: '38px', border: '1px solid #1890FF', boxShadow: '0 0 0 0 rgba(0,0,0,0.0)'}}
               mediaquery={{[presets.Desktop]: {
                   display: 'block', margin: 'auto', width: '9rem !important'
@@ -89,7 +89,7 @@ export default class MainSection extends Component {
             />
             <ButtonSecondary
               title='check the docs'
-              onClick={() => location.href = 'https://docs.squeezer.io'}
+              onClick={() => location.href = 'https://docs.squeezer.network'}
               style={{ marginLeft: '17px', width: '163px', height: '39px', lineHeight: '38px', border: '1px solid #979797', boxShadow: '0 0 0 0 rgba(0,0,0,0.0)'}}
               mediaquery={{[presets.Desktop]: {
                   display: 'block', margin: 'auto !important', width: '9rem !important', marginTop: '1rem !important'

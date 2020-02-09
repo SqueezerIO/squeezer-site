@@ -27,7 +27,7 @@ const products = [
     title: 'Framework',
     path: {
       pagePath: '/products/framework',
-      docsPath: 'https://docs.squeezer.io',
+      docsPath: 'https://docs.squeezer.network',
     },
     image: frameworkIcon,
     description: 'Develop dApps on local machine'
@@ -59,7 +59,7 @@ const products = [
 const developers = [
   {
     title: 'Docs',
-    path: 'https://docs.squeezer.io',
+    path: 'https://docs.squeezer.network',
     description: 'Learn how to use Squeezer tools'
   },
   {
@@ -185,7 +185,7 @@ class Layout extends React.Component {
         <Helmet defaultTitle={`Squeezer - Build Serverless dApps`} titleTemplate={`Squeezer - %s`}>
           <meta name="twitter:site" content="@squeezerio" />
           <meta name="og:type" content="website" />
-          <meta name="og:site_name" content="Squeezer.IO" />
+          <meta name="og:site_name" content="Squeezer.network" />
         </Helmet>
         <Telegram />
         <I18nextProvider i18n={i18n}>
@@ -243,12 +243,12 @@ class Layout extends React.Component {
                   >
                     <ButtonSecondary
                       title='login'
-                      onClick={() => location.href = 'https://platform.squeezer.io'}
+                      onClick={() => location.href = 'https://platform.squeezer.network'}
                       style={{ width: '100%', height: '39px', lineHeight: '38px' }}
                     />
                     <ButtonPrimary
                       title='register'
-                      onClick={() => location.href = 'https://platform.squeezer.io/user/register/'}
+                      onClick={() => location.href = 'https://platform.squeezer.network/user/register/'}
                       style={{ marginTop: '17px', width: '100%', height: '39px', lineHeight: '38px' }}
                     />
                   </div>
@@ -293,12 +293,12 @@ class Layout extends React.Component {
                 >
                   <ButtonSecondary
                     title='login'
-                    onClick={() => location.href = 'https://platform.squeezer.io'}
+                    onClick={() => location.href = 'https://platform.squeezer.network'}
                     style={{ width: '103px', height: '39px', lineHeight: '38px' }}
                   />
                   <ButtonPrimary
                     title='register'
-                    onClick={() => location.href = 'https://platform.squeezer.io/user/register/'}
+                    onClick={() => location.href = 'https://platform.squeezer.network/user/register/'}
                     style={{ marginLeft: '17px', width: '103px', height: '39px', lineHeight: '38px' }}
                   />
                 </div>

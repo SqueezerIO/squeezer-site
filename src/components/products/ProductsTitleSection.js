@@ -82,7 +82,7 @@ export default class ProductsTitleSection extends Component {
               <div css={{left: 'auto', right: 'auto', marginTop: '1rem'}}>
                 <ButtonPrimary
                   title='get free account'
-                  onClick={() => location.href = 'https://platform.squeezer.io'}
+                  onClick={() => location.href = 'https://platform.squeezer.network'}
                   style={{ width: '163px', height: '39px'}}
                   mediaquery={{[presets.Desktop]: {
                       display: 'block', margin: 'auto', width: '9rem !important'
@@ -91,7 +91,7 @@ export default class ProductsTitleSection extends Component {
                 />
                 <ButtonSecondary
                   title='check the docs'
-                  onClick={() => location.href = 'https://docs.squeezer.io'}
+                  onClick={() => location.href = 'https://docs.squeezer.network'}
                   style={{ marginLeft: '17px', width: '163px', height: '39px'}}
                   mediaquery={{[presets.Desktop]: {
                       display: 'block', margin: 'auto !important', width: '9rem !important', marginTop: '1rem !important'

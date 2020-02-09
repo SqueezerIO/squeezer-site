@@ -1,4 +1,4 @@
-# [Squeezer Site](https://squeezer.io)
+# [Squeezer Site](https://squeezer.network)
 
 The site is builded with [GatsbyJS](https://www.gatsbyjs.org/) , a static PWA (Progressive Web App) generator , which makes Squeezer site running really , really , really fast .
 

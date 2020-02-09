@@ -2,9 +2,9 @@ import axios from 'axios'
 import Promise from 'bluebird'
 
 if (process.env.GIT_BRANCH === `master`) {
-  axios.defaults.baseURL = 'https://platform.api.squeezer.io/prod'
+  axios.defaults.baseURL = 'https://platform.api.squeezer.network/prod'
 } else {
-  axios.defaults.baseURL = 'https://platform.api.squeezer.io/dev'
+  axios.defaults.baseURL = 'https://platform.api.squeezer.network/dev'
 }
 
 if (typeof localStorage !== "undefined") {
