@@ -193,7 +193,7 @@ export default class Airdrop extends Component {
         captcha: captcha
       }
 
-      axios.post('https://platform.api.squeezer.io/prod/rest/v1/project/ieo-whitelist', submitObj).then((res) => {
+      axios.post('https://platform.api.squeezer.network/prod/rest/v1/project/ieo-whitelist', submitObj).then((res) => {
       // axios.post('http://localhost:4001/rest/v1/project/ieo-whitelist', submitObj).then((res) => {
         const { message } = res.data
         console.log(res);
@@ -206,8 +206,8 @@ export default class Airdrop extends Component {
   render() {
     const { pto } = this.props;
 
-    let origin = 'https:/squeezer.io/'
-    let orgUrl = `https://squeezer.io/${pto === true ? 'pto' : 'ieo'}-exclusive-airdrop/`
+    let origin = 'https:/squeezer.network/'
+    let orgUrl = `https://squeezer.network/${pto === true ? 'pto' : 'ieo'}-exclusive-airdrop/`
     let source = null
 
     if (typeof window !== 'undefined') {

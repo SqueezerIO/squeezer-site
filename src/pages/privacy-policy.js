@@ -20,7 +20,7 @@ export default class PrivacyPolicy extends Component {
           <h1 css={{fontFamily: 'DIN Condensed', fontSize: '45px',	fontWeight: 'bold', textAlign: 'center'}}>PRIVACY POLICY</h1>
           <h2 css={{fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold'}}>1. Identity of Squeezer</h2>
           <h3 css={{fontFamily: 'Khula', fontSize: '16px', fontWeight: 'Regular'}}>
-            If there are any questions regarding this Privacy Policy you may contact us at info@squeezer.io<p></p>
+            If there are any questions regarding this Privacy Policy you may contact us at info@squeezer.network<p></p>
             Company address:<p></p>
             Golden Data INC.<br></br>
             New Horizon, Ground Floor, 3 1⁄2<br></br>
@@ -67,7 +67,7 @@ export default class PrivacyPolicy extends Component {
             3.1. To personalize your experience (the information will help Squeezer better respond to your individual needs);<br></br>
             3.2. To improve our website (Squeezer continually strives to improve our website offerings based on the information and feedback we receive from our customers);<br></br>
             3.3. To identify you as a contracting party;<br></br>
-            3.4. To enable secure login for you in the Squeezer platform at squeezer.io;<br></br>
+            3.4. To enable secure login for you in the Squeezer platform at squeezer.network;<br></br>
             3.5. To establish a primary channel of communication with you;<br></br>
             3.6. To enable Squeezer to issue valid VAT invoices and to process transactions (your information will not be sold, exchanged, transferred, or given to any other company for any reason whatsoever, without your consent, other than for the express purpose of delivering the service requested);<br></br>
             3.7. To enable automated handling of the subscriptions;<br></br>
@@ -215,7 +215,7 @@ export default class PrivacyPolicy extends Component {
           </h3>
           <h2 css={{fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold'}}>13. Terms of Service</h2>
           <h3 css={{fontFamily: 'Khula', fontSize: '16px', fontWeight: 'Regular'}}>
-            Please also visit our Terms of Service section establishing the use, disclaimers, and limitations of liability governing the use of our website at www.squeezer.io/terms-of-service.
+            Please also visit our Terms of Service section establishing the use, disclaimers, and limitations of liability governing the use of our website at squeezer.network/terms-of-service.
           </h3>
           <h2 css={{fontFamily: 'Khula', fontSize: '24px', fontWeight: 'bold'}}>14. Your consent</h2>
           <h3 css={{fontFamily: 'Khula', fontSize: '16px', fontWeight: 'Regular'}}>
