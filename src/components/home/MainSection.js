@@ -4,6 +4,7 @@ import ButtonPrimary from '../button/ButtonPrimary';
 import ButtonSecondary from '../button/ButtonSecondary';
 import mainImage from '../../../static/images/homeSVG/Background-image-stock.svg';
 import gitImage from '../../../static/images/footer/github-footer.svg';
+import tradeOnBilaxy from '../../../static/images/trade-on-bilaxy.png';
 
 export default class MainSection extends Component {
   render() {
@@ -60,6 +61,9 @@ export default class MainSection extends Component {
                 mediaqueryPhablet={{[presets.Phablet]: {fontSize: '12px !important'}}}
               />
             </div>
+						<div css={{cursor: 'pointer'}} onClick={() => window.open('https://bilaxy.com/trade/SQR_ETH', '_blank')}>
+							<img css={{ width: 'auto', height: '50px', marginTop: '25px' }} src={tradeOnBilaxy} alt={tradeOnBilaxy} />
+						</div>
             <div onClick={() => window.open('https://github.com/SqueezerIO/squeezer', '_blank')} css={{
               fontFamily: 'Khula',
               // fontWeight: 'bold',
@@ -70,7 +74,7 @@ export default class MainSection extends Component {
               marginBottom: '35px',
               height: '40px',
               width: '225px',
-              marginTop: '50px',
+              marginTop: '10px',
               cursor: 'pointer'
             }}>
               <img css={{ display: 'inline-block', verticalAlign: 'middle', width: '25px', height: '25px' }} src={gitImage} alt={gitImage} />
