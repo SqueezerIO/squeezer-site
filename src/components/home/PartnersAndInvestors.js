@@ -3,6 +3,7 @@ import Perlin from "../../../static/images/partners-investors/perlin.png"
 import Ambisafe from "../../../static/images/partners-investors/ambisafe.png"
 import McroE from "../../../static/images/partners-investors/mcro.png"
 import BTC12 from "../../../static/images/partners-investors/btc12.png"
+import okex from "../../../static/images/partners-investors/okex.png"
 import BlockFront from "../../../static/images/partners-investors/blockfront.png"
 
 const Source = ({ pic, link, title, overrideCss }) => (
@@ -57,6 +58,7 @@ export default class PartnersAndInvestors extends Component {
               fontFamily: 'Khula'
             }}>Partners</div>
           </div>
+          <Source link="https://okex.com/" pic={okex} />
           <Source link="https://perlin.net/" pic={Perlin} />
           <Source link="https://www.ambisafe.co/" pic={Ambisafe} />
           <Source link="https://mcro.tech/" pic={McroE} />
