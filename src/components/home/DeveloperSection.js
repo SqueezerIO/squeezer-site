@@ -42,7 +42,7 @@ export default class DeveloperSection extends Component {
               <Link to='' css={{display: 'flex', alignContent: 'center', width: '100%', ':link': {textDecoration: 'none'}, ':hover': {
                   cursor: 'pointer'
                 }}}>
-                <div css={{color: '#00DE72', fontSize: '22px', fontWeight: '600', width: '189px', textTransform: 'uppercase', fontFamily: 'Khula', letterSpacing: '1px', whiteSpace: 'no-wrap'}}>check the docs</div>
+                <div css={{color: '#00DE72', fontSize: '22px', fontWeight: '600', width: '189px', textTransform: 'uppercase', fontFamily: 'Nunito', letterSpacing: '1px', whiteSpace: 'no-wrap'}}>check the docs</div>
                 <img src={arrow} alt='arrow' css={{width: '40px', height: '23px', marginLeft: '10px'}} />
               </Link>
             </div>
@@ -54,7 +54,7 @@ export default class DeveloperSection extends Component {
           width: '798px',
           padding: '29px 47px 47px 26px',
           color: '#004CA5',
-          fontFamily: 'Khula',
+          fontFamily: 'Nunito',
           borderRadius: '3px',
           backgroundColor: '#E6F4FF',
           boxShadow: '0 2px 10px 0 rgba(89,89,89,0.5)',

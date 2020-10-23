@@ -21,7 +21,7 @@ export default class ProductsMultipleApproaches extends Component {
           color: '#023775',	fontFamily: "DIN Condensed",	fontSize: '23px',	fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '.33px', lineHeight: '28px', marginTop: '5px', whiteSpace: 'no-wrap'
         }}>{title}</h3>
       </div>
-      <p css={{color: '#023775', fontFamily: 'Khula', fontSize: '16px', letterSpacing: '.7px', lineHeight: '22px', height: '120px', width: '225px', fontWeight: 200, marginLeft: '80px', marginTop: '-15px'}}>
+      <p css={{color: '#023775', fontFamily: 'Nunito', fontSize: '16px', letterSpacing: '.7px', lineHeight: '22px', height: '120px', width: '225px', fontWeight: 200, marginLeft: '80px', marginTop: '-15px'}}>
         {description}
       </p>
     </div>

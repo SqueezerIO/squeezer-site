@@ -11,10 +11,11 @@ export default class ProgressLine extends Component {
 
     return (
       <div css={{
-        width
+				width,
+				marginTop: '15px'
       }}>
         <div css={{
-          background: stripped ? '#1990ff repeating-linear-gradient(135deg, transparent, transparent 8px, rgba(255,255,255,0.3) 8px, rgba(255,255,255,0.3) 16px)' : '#1990ff',
+          background: stripped ? '#1990FF repeating-linear-gradient(135deg, transparent, transparent 8px, rgba(255,255,255,0.3) 8px, rgba(255,255,255,0.3) 16px)' : '#1990FF',
           transition: 'background-color .1s ease-out',
           borderTopLeftRadius: '2px',
           borderBottomLeftRadius: '2px',

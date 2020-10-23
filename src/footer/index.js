@@ -11,46 +11,46 @@ import twitterImage from '../../static/images/footer/twitter-footer.svg';
 import gitImage from '../../static/images/footer/github-footer.svg';
 
 const footerItems = [
+  // {
+  //   title: 'Products',
+  //   items: [
+  //     {
+  //       name: 'Swap',
+  //       path: '#'
+  //     },
+  //     {
+  //       name: 'Add Liquidity',
+  //       path: '#'
+  //     },
+  //     {
+  //       name: 'Claim',
+  //       path: '#'
+  //     }
+  //   ]
+  // },
+  // {
+  //   title: 'Developers',
+  //   items: [
+  //     {
+  //       name: 'Docs',
+  //       path: 'https://docs.squeezer.network'
+  //     },
+  //     {
+  //       name: 'Examples',
+  //       path: 'https://github.com/SqueezerIO/squeezer#example-projects'
+  //     },
+  //     {
+  //       name: 'Support',
+  //       path: 'https://gitter.im/SqueezerIO/squeezer/'
+  //     },
+  //     // {
+  //     //   name: 'Network status',
+  //     //   path: '/'
+  //     // }
+  //   ]
+  // },
   {
-    title: 'Products',
-    items: [
-      {
-        name: 'Framework',
-        path: '/products/framework'
-      },
-      {
-        name: 'Platform',
-        path: '/products/platform'
-      },
-      {
-        name: 'Chainkit',
-        path: '/products/chainkit'
-      }
-    ]
-  },
-  {
-    title: 'Developers',
-    items: [
-      {
-        name: 'Docs',
-        path: 'https://docs.squeezer.network'
-      },
-      {
-        name: 'Examples',
-        path: 'https://github.com/SqueezerIO/squeezer#example-projects'
-      },
-      {
-        name: 'Support',
-        path: 'https://gitter.im/SqueezerIO/squeezer/'
-      },
-      // {
-      //   name: 'Network status',
-      //   path: '/'
-      // }
-    ]
-  },
-  {
-    title: 'Company',
+    title: 'Links',
     items: [
       // {
       //   name: 'Careers',
@@ -64,10 +64,14 @@ const footerItems = [
       //   name: 'Press',
       //   path: '/'
       // },
-      {
-        name: 'Team',
-        path: '/company/team'
-      },
+      // {
+      //   name: 'Team',
+      //   path: '/company/team'
+			// },
+			{
+				name: 'Tokens Withdraw',
+				path: 'https://forms.gle/vpnQfeG2WgW1x99E8'
+			},
       {
         name: 'Privacy Policy',
         path: '/privacy-policy'
@@ -80,18 +84,18 @@ const footerItems = [
         name: 'About Cookies',
         path: '/about-cookies'
       },
-      {
-        name: 'White Paper',
-        path: '../../docs/Squeezer_White_Paper.pdf'
-      },
-      {
-        name: 'Pitch Deck',
-        path: '../../docs/Squeezer_Pitch_Deck.pdf'
-      },
-      {
-        name: 'Token Terms',
-        path: '../../docs/token-terms.pdf'
-      }
+      // {
+      //   name: 'White Paper',
+      //   path: '../../docs/Squeezer_White_Paper.pdf'
+      // },
+      // {
+      //   name: 'Pitch Deck',
+      //   path: '../../docs/Squeezer_Pitch_Deck.pdf'
+      // },
+      // {
+      //   name: 'Token Terms',
+      //   path: '../../docs/token-terms.pdf'
+      // }
     ]
   },
   {
@@ -101,10 +105,10 @@ const footerItems = [
         name: 'Twitter',
         path: 'https://twitter.com/SqueezerIO'
       },
-      {
-        name: 'Youtube',
-        path: 'https://www.youtube.com/channel/UC4oipFLgQW7e98Gei-7NEIQ'
-      },
+      // {
+      //   name: 'Youtube',
+      //   path: 'https://www.youtube.com/channel/UC4oipFLgQW7e98Gei-7NEIQ'
+      // },
       {
         name: 'Github',
         path: 'https://github.com/SqueezerIO'
@@ -122,9 +126,9 @@ export default class Footer extends Component {
     <div css={{ display: 'flex', flexDirection: 'column', textTransform: 'none' }}>
       {items.map((item, index) => (
         <Link to={item.path} key={index} css={{
-          color: '#004CA5',
-          fontFamily: "Khula",
-          fontSize: '19px',
+          color: '#b7b8bb',
+          fontFamily: "Nunito",
+          fontSize: '16px',
           fontWeight: '200',
           marginBottom: '.3rem',
           letterSpacing: '.96px',
@@ -149,13 +153,14 @@ export default class Footer extends Component {
 
   render() {
     return (
-      <div css={{
-        display: 'flex',
-        marginTop: '2rem',
-        marginBottom: '4rem',
+      <div id="footer" css={{
+				backgroundColor: '#172125',
+				marginTop: '2rem',
+				padding: '100px 0px',
+        // marginBottom: '4rem',
         minHeight: '20vh',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
+        // flexWrap: 'wrap',
+        // justifyContent: 'center',
         [presets.Hd]: {
           marginTop: '8rem',
           padding: '3rem',
@@ -169,10 +174,10 @@ export default class Footer extends Component {
           alignContent: 'center', display: 'block', marginTop: '30rem',
         }
       }}>
-        <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+        <div css={{ display: 'flex', maxWidth:'1200px', margin: '0 auto', justifyContent: 'space-between' }}>
           {footerItems.map(({ title, items }) => (
             <div key={title} css={{
-              margin: '0 1rem',
+              // margin: '0 1rem',
               width: '10rem',
               [presets.Hd]: {
                 margin: '.5rem 2rem',
@@ -185,9 +190,9 @@ export default class Footer extends Component {
             }}>
               <div css={{
                 textTransform: 'uppercase',
-                color: '#454545',
-                fontFamily: "DIN Condensed",
-                fontSize: '20px',
+                color: '#FFFFFF',
+                fontFamily: "Nunito",
+                fontSize: '16px',
                 fontWeight: '200',
                 letterSpacing: '.9px',
                 lineHeight: '24px',
@@ -199,18 +204,18 @@ export default class Footer extends Component {
             </div>
           ))}
           <div css={{
-            display: 'flex', flexDirection: 'column', width: '327px', justifyContent: 'space-between', marginLeft: '-.5rem',
+            display: 'flex', width: '327px', justifyContent: 'space-between', marginLeft: '-.5rem',
             [presets.Hd]: { display: 'block', margin: 'auto', marginTop: '1rem', textAlign: 'center', },
             [presets.Phablet]: { width: '280px' },
             [presets.Mobile]: { width: '12rem' }
           }}
           >
-            <h3 css={{ color: '#454545', fontFamily: "Khula", fontSize: '20px', fontWeight: 'normal', letterSpacing: '1.01px', margin: 0 }}>
+            {/* <h3 css={{ color: '#454545', fontFamily: "Nunito", fontSize: '20px', fontWeight: 'normal', letterSpacing: '1.01px', margin: 0 }}>
               Sign up for our newsletter to stay up to date.
-                </h3>
-            <ButtonPrimary onClick={() => window.open('https://emailoctopus.com/lists/1a8d8062-792c-11e8-a3c9-06b79b628af2/forms/subscribe', '_blank')} title='Subscribe for newsletter' style={{ marginTop: '50px', marginBottom: '50px', padding: '3px 15px', display: 'flex', width: 'auto', lineHeight: '39px', justifyContent: 'center', fontSize: '15px', letterSpacing: '.9px' }} />
+                </h3> */}
+            {/* <ButtonPrimary onClick={() => window.open('https://emailoctopus.com/lists/1a8d8062-792c-11e8-a3c9-06b79b628af2/forms/subscribe', '_blank')} title='Subscribe for newsletter' style={{ marginTop: '50px', marginBottom: '50px', padding: '3px 15px', display: 'flex', width: 'auto', lineHeight: '39px', justifyContent: 'center', fontSize: '15px', letterSpacing: '.9px' }} /> */}
             <ul css={{
-              listStyle: 'none', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', margin: 0,
+              listStyle: 'none', width: '200px', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', margin: 0,
               [presets.Hd]: { marginTop: '2rem' }, [presets.Mobile]: { marginTop: '4rem' }
             }}>
               {this.renderSocialIcon('https://twitter.com/SqueezerIO', twitterImage)}
@@ -218,14 +223,13 @@ export default class Footer extends Component {
               {this.renderSocialIcon('https://github.com/SqueezerIO', gitImage)}
               {this.renderSocialIcon('https://medium.com/@squeezer', mediumImage)}
               {this.renderSocialIcon('https://telegram.me/squeezerio', telegramImage)}
-              {this.renderSocialIcon('https://www.youtube.com/channel/UC4oipFLgQW7e98Gei-7NEIQ', playImage)}
+              {/* {this.renderSocialIcon('https://www.youtube.com/channel/UC4oipFLgQW7e98Gei-7NEIQ', playImage)} */}
             </ul>
-            <div css={{ fontFamily: "Khula", marginTop: '25px' }}>
-              For investments and other inquiries email us at &nbsp;
-              <a css={{ color: '#438EED' }} href="mailto:info@squeezer.network?subject=Squeezer Inquiry">
+          </div>
+					<div css={{ fontFamily: "Nunito" }}>
+              <a css={{ color: '#FFFFFF' }} href="mailto:info@squeezer.network?subject=Squeezer Inquiry">
                 info@squeezer.network</a>
             </div>
-          </div>
         </div>
       </div>
     );

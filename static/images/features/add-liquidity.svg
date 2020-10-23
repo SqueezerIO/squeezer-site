@@ -1,0 +1,17 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <polyline id="svg_3" stroke-width="15" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#1890ff" points="    309.809,170.822 383.886,170.822 491.442,259.364 20.558,259.364 128.114,170.822 201.272,170.822   " fill="none"/>
+  <polyline id="svg_4" stroke-width="15" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#1890ff" points="    20.558,259.364 20.558,286.84 491.442,286.84 491.442,259.364   " fill="none"/>
+  <path id="svg_6" stroke-width="15" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#1890ff" fill="none" d="m177.116,388.448c0,19.268 -15.62,34.887 -34.887,34.887s-34.887,-15.62 -34.887,-34.887c0,-23.725 25.789,-57.638 34.887,-80.945c8.847,22.608 34.887,57.22 34.887,80.945z"/>
+  <path id="svg_8" stroke-width="15" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#1890ff" fill="none" d="m400.548,440.403c0,19.268 -15.62,34.887 -34.887,34.887s-34.887,-15.62 -34.887,-34.887c0,-23.725 25.789,-57.638 34.887,-80.945c8.847,22.607 34.887,57.219 34.887,80.945z"/>
+  <path id="svg_10" stroke-width="15" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#1890ff" fill="none" d="m414.397,103.396c0,19.268 -15.62,34.887 -34.887,34.887s-34.887,-15.62 -34.887,-34.887c0,-23.725 25.789,-57.638 34.887,-80.945c8.847,22.607 34.887,57.219 34.887,80.945z"/>
+  <path id="svg_12" stroke-width="15" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#1890ff" fill="none" d="m290.887,141.291c0,19.268 -15.62,34.887 -34.887,34.887s-34.887,-15.62 -34.887,-34.887c0,-23.725 25.789,-57.638 34.887,-80.945c8.848,22.607 34.887,57.219 34.887,80.945z"/>
+  <path id="svg_14" stroke-width="15" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#1890ff" fill="none" d="m167.378,103.396c0,19.268 -15.62,34.887 -34.887,34.887s-34.887,-15.62 -34.887,-34.887c0,-23.725 25.789,-57.638 34.887,-80.945c8.847,22.607 34.887,57.219 34.887,80.945z"/>
+ </g>
+</svg>

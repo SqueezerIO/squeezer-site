@@ -18,14 +18,14 @@ class HomePage extends React.Component {
     return (
       <Layout>
         <MainSection />
-        <SqueezerInNumbers/>
+        {/* <SqueezerInNumbers/> */}
         <ProductsSection />
-        <DeveloperSection />
+        {/* <DeveloperSection /> */}
         <RoadMap/>
-        <MemberEEA />
-        <PartnersInvestors/>
-        <FeaturedIn />
-        <StartBuildingSection />
+        {/* <MemberEEA /> */}
+        {/* <PartnersInvestors/> */}
+        {/* <FeaturedIn /> */}
+        {/* <StartBuildingSection /> */}
       </Layout>
     )
   }

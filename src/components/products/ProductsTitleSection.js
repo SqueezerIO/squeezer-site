@@ -66,7 +66,7 @@ export default class ProductsTitleSection extends Component {
                 height: '93px',
                 width: '400px',
                 color: '#023775',
-                fontFamily: 'Khula',
+                fontFamily: 'Nunito',
                 fontSize: '23px',
                 letterSpacing: '1px',
                 lineHeight: '31px',
@@ -117,7 +117,7 @@ export default class ProductsTitleSection extends Component {
                   height: '24px',
                   width: '97px',
                   color: '#023775',
-                  fontFamily: 'Khula',
+                  fontFamily: 'Nunito',
                   fontSize: '18px',
                   fontWeight: 'bold',
                   letterSpacing: '0.87px',
@@ -129,7 +129,7 @@ export default class ProductsTitleSection extends Component {
                 <div css={{ display: 'inline-flex', flexWrap: 'wrap'}}>
                   {this.renderIcon(product)}
                   <h3 css={{
-                    height: '35px', color: '#023775',	fontFamily: 'Khula', fontSize: '26px',	fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '.78px', lineHeight: '35px', marginTop: '7px'
+                    height: '35px', color: '#023775',	fontFamily: 'Nunito', fontSize: '26px',	fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '.78px', lineHeight: '35px', marginTop: '7px'
                   }}>{product}</h3>
                 </div>
               </div>

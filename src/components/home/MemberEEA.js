@@ -34,7 +34,7 @@ export default class MemberEEA extends Component {
           [presets.Hd]: {justifyContent: 'center'}
         }}>
          <div css={{display: 'flex', flexDirection: 'column'}}>
-           <p css={{marginLeft: '80px', marginBottom: 0, fontFamily: 'Khula', color: '#004CA5', textTransform: 'uppercase', fontSize: '20px', fontWeight: '600'}}>
+           <p css={{marginLeft: '80px', marginBottom: 0, fontFamily: 'Nunito', color: '#004CA5', textTransform: 'uppercase', fontSize: '20px', fontWeight: '600'}}>
              member of eea
            </p>
           <img src={eeaImage} alt="eeaImage" css={{width: '249px', height: '142px'}}/>

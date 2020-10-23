@@ -33,7 +33,7 @@ export default class SqueezerInNumbersItem extends Component {
         textAlign: 'center',
         color: '#1990FF',
         textTransform: 'uppercase',
-        fontFamily: 'Khula',
+        fontFamily: 'Nunito',
         fontSize: '70px'
       }}>
         <div css={{

@@ -7,8 +7,8 @@ export default class PricingSection extends Component {
   render() {
     const { prices, title1, title2, id } = this.props;
     const cellStyle = css({height: '92px', width: '240px', backgroundColor: '#F7FBFF'});
-    const intervalStyle = css({marginTop: '7%',height: '24px', color: '#023775', fontFamily: 'Khula',	fontSize: '18px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '24px'});
-    const priceStyle = css({marginTop: '7%', height: '24px', color: '#0075FE', fontFamily: 'Khula',	fontSize: '18px',	fontWeight: '200', letterSpacing: '.87px', lineHeight: '24px'});
+    const intervalStyle = css({marginTop: '7%',height: '24px', color: '#023775', fontFamily: 'Nunito',	fontSize: '18px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '24px'});
+    const priceStyle = css({marginTop: '7%', height: '24px', color: '#0075FE', fontFamily: 'Nunito',	fontSize: '18px',	fontWeight: '200', letterSpacing: '.87px', lineHeight: '24px'});
 
     return (
       <div id={id} css={{
@@ -36,7 +36,7 @@ export default class PricingSection extends Component {
           <div css={{width: '240px'}}>
           </div>
           {prices.map(({id}, index) => (
-            <div key={index} css={{width: '240px', height: '53px', color: '#0075FE', fontFamily: 'Khula',	fontSize: '25px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '33px',
+            <div key={index} css={{width: '240px', height: '53px', color: '#0075FE', fontFamily: 'Nunito',	fontSize: '25px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '33px',
               [presets.Hd]:{width: '100px', height: '92px', lineHeight: '92px', verticalAlign: 'middle', marginBottom: '20px'},
               [presets.Phablet]: {fontSize: '20px', width: '58px'}
             }}>
@@ -50,12 +50,12 @@ export default class PricingSection extends Component {
               [presets.Phablet]: {marginLeft: '80px'}
             }}}>
             <h3 css={{height: '92px', marginBottom: '20px', backgroundColor: '#F7FBFF', width: '240px',
-              color: '#023775', fontFamily: 'Khula',	fontSize: '18px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '92px', verticalAlign: 'middle',
+              color: '#023775', fontFamily: 'Nunito',	fontSize: '18px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '92px', verticalAlign: 'middle',
               [presets.Hd]: {marginRight: '20px'}, [presets.Phablet]:{marginRight: '100px'}
             }} dangerouslySetInnerHTML={{ __html: title1 }}>
             </h3>
             <h3 css={{height: '92px', backgroundColor: '#F7FBFF', width: '240px',
-              color: '#023775', fontFamily: 'Khula',	fontSize: '18px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '92px', verticalAlign: 'middle',
+              color: '#023775', fontFamily: 'Nunito',	fontSize: '18px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '92px', verticalAlign: 'middle',
             }}>{title2}</h3>
           </div>
           {prices.map((item, index) => (
@@ -77,7 +77,7 @@ export default class PricingSection extends Component {
           ))}
 
           <h3 css={{display: 'none', [presets.Phablet]: {display: 'block', height: '92px', backgroundColor: '#F7FBFF', width: '240px', marginLeft: '80px',
-            color: '#023775', fontFamily: 'Khula',	fontSize: '18px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '92px', verticalAlign: 'middle'}
+            color: '#023775', fontFamily: 'Nunito',	fontSize: '18px',	fontWeight: 'bold', letterSpacing: '.87px', lineHeight: '92px', verticalAlign: 'middle'}
           }}>{title2}</h3>
 
           {prices.map((item, index) => (
@@ -92,7 +92,7 @@ export default class PricingSection extends Component {
                 verticalAlign: 'middle',
                 marginBottom: '20px',
                 color: '#0075FE',
-                fontFamily: 'Khula',
+                fontFamily: 'Nunito',
                 fontSize: '20px',
                 fontWeight: 'bold',
                 letterSpacing: '.87px',

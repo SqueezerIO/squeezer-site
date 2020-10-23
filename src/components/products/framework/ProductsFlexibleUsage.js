@@ -24,7 +24,7 @@ export default class ProductsFlexibleUsage extends Component {
       listStyle: 'none',
       fontSize: '23px',
       color: '#023775',
-      fontFamily: 'Khula',
+      fontFamily: 'Nunito',
       fontWeight: '200',
       letterSpacing: '1.28px',
       lineHeight: '31px',
@@ -76,7 +76,7 @@ export default class ProductsFlexibleUsage extends Component {
               <p css={{
                 fontSize: '23px',
                 color: '#023775',
-                fontFamily: 'Khula',
+                fontFamily: 'Nunito',
                 fontWeight: '200',
                 letterSpacing: '1px',
                 lineHeight: '31px',

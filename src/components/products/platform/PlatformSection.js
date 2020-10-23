@@ -52,7 +52,7 @@ export default class PlatformSection extends Component {
           <div css={{display: 'flex'}}>
             {this.renderIndexImage(index)}
             <h3 css={{
-              color: '#023775',	fontFamily: 'Khula', fontSize: '23px',	fontWeight: 'bold', letterSpacing: '1.4px', lineHeight: '31px', width: '280px', height: '67px', textAlign: 'left'
+              color: '#023775',	fontFamily: 'Nunito', fontSize: '23px',	fontWeight: 'bold', letterSpacing: '1.4px', lineHeight: '31px', width: '280px', height: '67px', textAlign: 'left'
             }}>{title}</h3>
           </div>
         </div>

@@ -28,7 +28,7 @@ export default class BlockchainAccess extends Component {
         }}>{title}</h3>
       </div>
       <p css={{
-        color: '#023775', fontFamily: 'Khula', fontSize: '18px', letterSpacing: '.87px', lineHeight: '24px', height: '48px', width: '411px', fontWeight: 200, marginLeft: '80px', marginTop: '-25px',
+        color: '#023775', fontFamily: 'Nunito', fontSize: '18px', letterSpacing: '.87px', lineHeight: '24px', height: '48px', width: '411px', fontWeight: 200, marginLeft: '80px', marginTop: '-25px',
         [presets.Phablet]: { width: '300px', marginTop: '20px', marginLeft: '-4px', textAlign: 'center' },
         [presets.Mobile]: { width: '280px' }
       }}>

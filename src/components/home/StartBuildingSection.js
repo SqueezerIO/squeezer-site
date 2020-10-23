@@ -87,7 +87,7 @@ export default class StartBuildingSection extends Component {
               }}>START BUILDING TOP-NOTCH DAPPS, IS FREE !</p>
             </div>
             <div css={{height: '187px', width: '603px', [presets.Phablet]: {width: 'auto', 'height': 'auto', marginTop: '5rem'}}}>
-              <p css={{padding: '0rem 0rem 0rem 3.5rem', color: '#fff', fontFamily: 'Khula', fontSize: '20px', letterSpacing: '.9px', lineHeight: '27px', fontWeight: '200',
+              <p css={{padding: '0rem 0rem 0rem 3.5rem', color: '#fff', fontFamily: 'Nunito', fontSize: '20px', letterSpacing: '.9px', lineHeight: '27px', fontWeight: '200',
                 [presets.Phablet]: {padding: '0 1rem 0 0', textAlign: 'center'}}}>
                 Feel free to try our solution, we offer <b>$25</b> credit to all new users.
                 Setting up a new project is super easy and if you need help we’ll

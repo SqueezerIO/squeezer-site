@@ -6,7 +6,7 @@
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Group">
             <rect id="Rectangle" stroke="#448EED" fill="#448EED" x="1.5" y="0.5" width="1509" height="29"></rect>
-            <text id="https://platform.squ" font-family="Khula-Bold, Khula" font-size="18" font-weight="bold" letter-spacing="1" fill="#FFFFFF">
+            <text id="https://platform.squ" font-family="Nunito-Bold, Nunito" font-size="18" font-weight="bold" letter-spacing="1" fill="#FFFFFF">
                 <tspan x="627" y="20">https://platform.squeezer.io</tspan>
             </text>
             <rect id="Rectangle" stroke="#DC4343" fill="#DC4343" x="15.5" y="5.5" width="19" height="19" rx="9.5"></rect>

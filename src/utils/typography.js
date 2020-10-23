@@ -11,8 +11,8 @@ const options = {
   baseLineHeight: 1.45,
   blockMarginBottom: 0.75,
   scaleRatio: 2.15,
-  headerFontFamily: ['Khula', DIN, "sans-serif",],
-  bodyFontFamily: ["Georgia", 'Khula', DIN, "serif"],
+  headerFontFamily: ['Nunito', DIN, "sans-serif",],
+  bodyFontFamily: ["Georgia", 'Nunito', DIN, "serif"],
   overrideStyles: ({rhythm, scale}, options) => {
     return {
       "h1,h2,h3,h4": {
@@ -32,7 +32,7 @@ const options = {
   },
   googleFonts: [
     {
-      name: 'Khula', styles: ['300', '400', '500', '600', '700'],
+      name: 'Nunito', styles: ['300', '400', '500', '600', '700'],
     }
   ]
 };
