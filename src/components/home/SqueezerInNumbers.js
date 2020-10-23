@@ -35,7 +35,7 @@ export default class SqueezerInNumbers extends Component {
               margin: '0 auto',
               fontSize: '33px',
               fontWeight: 'bold',
-              fontFamily: 'Khula'
+              fontFamily: 'Nunito'
             }}>Squeezer In Numbers</div>
           </div>
           <SqueezerInNumbersItem title="Users" end={12100} />

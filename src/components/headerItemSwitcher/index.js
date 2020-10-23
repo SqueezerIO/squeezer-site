@@ -12,7 +12,7 @@ const linkStyle = css({
   fontSize: '16px',
   fontWeight: 'bold',
   letterSpacing: '1px',
-  fontFamily: 'Khula',
+  fontFamily: 'Nunito',
   ':link, :visited, :active': {
     textDecoration: 'none',
     outline: 'none'
@@ -93,11 +93,11 @@ class HeaderItemSwitcher extends Component {
       <div css={{ display: 'flex', alignItems: 'start', flexDirection: 'column', width: '100%' }}>
         <div onClick={() => location.href = item.path.pagePath ? item.path.pagePath : item.path}>
           <h2 css={{
-            color: '#023775', fontFamily: 'Khula', fontSize: '20px', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '8px',
+            color: '#023775', fontFamily: 'Nunito', fontSize: '20px', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '8px',
             marginBottom: '5px', letterSpacing: '1px'
           }}>{item.title}</h2>
           <p css={{
-            color: '#023775', fontFamily: 'Khula', fontSize: '16px', letterSpacing: '1px', marginTop: 0, marginBottom: '7px',
+            color: '#023775', fontFamily: 'Nunito', fontSize: '16px', letterSpacing: '1px', marginTop: 0, marginBottom: '7px',
             [presets.Phablet]: { width: '200px' }, [presets.Mobile]: { display: 'none' }
           }}>
             {item.description}
@@ -144,7 +144,7 @@ class HeaderItemSwitcher extends Component {
               borderRadius: '4px'
             },
             color: '#092D5D',
-            fontFamily: 'Khula',
+            fontFamily: 'Nunito',
             fontSize: '1.2rem',
           }}
         >

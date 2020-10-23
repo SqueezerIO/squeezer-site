@@ -1,0 +1,62 @@
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title stroke="#1890ff">Layer 1</title>
+  <line id="svg_2" fill="none" stroke="#1890ff" stroke-width="2" stroke-miterlimit="10" y2="59" y1="59" x2="63" x1="22"/>
+  <line id="svg_3" fill="none" stroke="#1890ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" y2="63" y1="59" x2="59" x1="63"/>
+  <line id="svg_4" fill="none" stroke="#1890ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" y2="55" y1="59" x2="59" x1="63"/>
+  <line id="svg_5" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="1" y1="42" x2="5" x1="5"/>
+  <line id="svg_6" fill="none" stroke="#1890ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" y2="5" y1="1" x2="1" x1="5"/>
+  <line id="svg_7" fill="none" stroke="#1890ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" y2="5" y1="1" x2="9" x1="5"/>
+  <line id="svg_8" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="35" y1="35" x2="10" x1="8"/>
+  <line id="svg_9" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="35" y1="35" x2="14" x1="12"/>
+  <line id="svg_10" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="35" y1="35" x2="18" x1="16"/>
+  <line id="svg_11" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="35" y1="35" x2="22" x1="20"/>
+  <line id="svg_12" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="11" y1="11" x2="10" x1="8"/>
+  <line id="svg_13" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="11" y1="11" x2="14" x1="12"/>
+  <line id="svg_14" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="11" y1="11" x2="18" x1="16"/>
+  <line id="svg_15" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="11" y1="11" x2="22" x1="20"/>
+  <line id="svg_16" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="11" y1="11" x2="26" x1="24"/>
+  <line id="svg_17" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="11" y1="11" x2="30" x1="28"/>
+  <line id="svg_18" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="11" y1="11" x2="34" x1="32"/>
+  <line id="svg_19" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="11" y1="11" x2="38" x1="36"/>
+  <line id="svg_20" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="23" y1="23" x2="10" x1="8"/>
+  <line id="svg_21" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="23" y1="23" x2="14" x1="12"/>
+  <line id="svg_22" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="23" y1="23" x2="18" x1="16"/>
+  <line id="svg_23" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="23" y1="23" x2="22" x1="20"/>
+  <line id="svg_24" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="23" y1="23" x2="26" x1="24"/>
+  <line id="svg_25" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="23" y1="23" x2="30" x1="28"/>
+  <line id="svg_26" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="23" y1="23" x2="34" x1="32"/>
+  <line id="svg_27" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="11" y1="11" x2="42" x1="40"/>
+  <line id="svg_28" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="11" y1="11" x2="46" x1="44"/>
+  <line id="svg_29" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="44" y1="42" x2="29" x1="29"/>
+  <line id="svg_30" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="48" y1="46" x2="29" x1="29"/>
+  <line id="svg_31" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="52" y1="50" x2="29" x1="29"/>
+  <line id="svg_32" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="56" y1="54" x2="29" x1="29"/>
+  <line id="svg_33" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="40" y1="38" x2="41" x1="41"/>
+  <line id="svg_34" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="44" y1="42" x2="41" x1="41"/>
+  <line id="svg_35" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="32" y1="30" x2="41" x1="41"/>
+  <line id="svg_36" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="36" y1="34" x2="41" x1="41"/>
+  <line id="svg_37" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="48" y1="46" x2="41" x1="41"/>
+  <line id="svg_38" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="52" y1="50" x2="41" x1="41"/>
+  <line id="svg_39" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="56" y1="54" x2="41" x1="41"/>
+  <line id="svg_40" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="31" y1="31" x2="54" x1="52"/>
+  <line id="svg_41" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="36" y1="34" x2="53" x1="53"/>
+  <line id="svg_42" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="40" y1="38" x2="53" x1="53"/>
+  <line id="svg_43" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="44" y1="42" x2="53" x1="53"/>
+  <line id="svg_44" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="48" y1="46" x2="53" x1="53"/>
+  <line id="svg_45" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="52" y1="50" x2="53" x1="53"/>
+  <line id="svg_46" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="20" y1="18" x2="53" x1="53"/>
+  <line id="svg_47" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="24" y1="22" x2="53" x1="53"/>
+  <line id="svg_48" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="28" y1="26" x2="53" x1="53"/>
+  <line id="svg_49" fill="none" stroke="#1890ff" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" y2="56" y1="54" x2="53" x1="53"/>
+  <polyline id="svg_51" fill="none" stroke="#1890ff" stroke-width="2" stroke-miterlimit="10" points="29,40 29,35 24,35   "/>
+  <polyline id="svg_53" fill="none" stroke="#1890ff" stroke-width="2" stroke-miterlimit="10" points="41,28 41,23 36,23   "/>
+  <polyline id="svg_55" fill="none" stroke="#1890ff" stroke-width="2" stroke-miterlimit="10" points="53,16 53,11 48,11   "/>
+  <circle id="svg_56" fill="none" stroke="#1890ff" stroke-width="2" stroke-miterlimit="10" r="7" cy="52" cx="12"/>
+ </g>
+</svg>

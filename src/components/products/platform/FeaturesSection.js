@@ -26,7 +26,7 @@ export default class FeaturesSection extends Component {
           [presets.Phablet]: {marginTop: '20px'}
         }}>{title}</h3>
       </div>
-      <p css={{color: '#023775', fontFamily: 'Khula', fontSize: '18px', letterSpacing: '.87px', lineHeight: '24px', height: '48px', width: '423px', fontWeight: 200, marginLeft: '80px', marginTop: '-25px',
+      <p css={{color: '#023775', fontFamily: 'Nunito', fontSize: '18px', letterSpacing: '.87px', lineHeight: '24px', height: '48px', width: '423px', fontWeight: 200, marginLeft: '80px', marginTop: '-25px',
         [presets.Phablet]: {width: '300px', marginTop: '20px', marginLeft: '-4px', textAlign: 'center'},
         [presets.Mobile]: {width: '280px'}
       }}>

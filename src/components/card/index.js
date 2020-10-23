@@ -9,32 +9,33 @@ export default class Card extends Component {
 
     return (
       <div css={{
-        height: '285px',
-        maxWidth: '375px',
+        // height: '200px',
+        width: '340px',
         borderRadius: '3px',
-        backgroundColor: '#005499',
-        boxShadow: '0 24px 30px 0 rgba(0,0,0,0.5)',
+        // backgroundColor: '#1990FF',
+        // boxShadow: '0 24px 30px 0 rgba(0,0,0,0.5)',
         padding: '1.5rem',
-        margin: '23px',
+				margin: '23px',
+				textAlign: 'center',
       }}>
-        <div css={{ display: 'flex', alignItems: 'center' }}>
-          <img src={image} alt='image' css={{marginRight: '1rem', height: '50px', width: '50px'}} />
+        <div css={{ display: 'block', margin: '0 auto' }}>
+          <img src={image} alt='image' css={{height: '130px', width: 'auto'}} />
           <h2 css={{
-            color: '#FFFFFF',	fontFamily: 'Khula',	fontSize: '30px',	fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px', lineHeight: '40px', marginTop: '7px'
+            fontFamily: 'Nunito',	fontSize: '28px',	fontWeight: 700, marginTop: '7px'
           }}>{title}</h2>
         </div>
-        <p css={{color: '#FFFFFF', fontFamily: 'Khula', fontSize: '18px', letterSpacing: '1px', lineHeight: '24px', height: '120px', width: '303px', fontWeight: 200}}>
+        <p css={{fontFamily: 'Nunito', fontSize: '18px', letterSpacing: '1px', lineHeight: '24px', height: '120px', width: '303px', fontWeight: 200}}>
           {description}
         </p>
 
-        <div css={{position: 'relative'}}>
+        {/* <div css={{position: 'relative'}}>
           <Link to={path} css={{display: 'flex', alignContent: 'center', ':link': {textDecoration: 'none'},':hover': {
               cursor: 'pointer',
             }}}>
-            <div css={{color: '#00DE72', fontSize: '18px', fontWeight: 'bold', textTransform: 'uppercase', fontFamily: 'Khula', letterSpacing: '1px'}}>learn more</div>
+            <div css={{color: '#00DE72', fontSize: '18px', fontWeight: 'bold', textTransform: 'uppercase', fontFamily: 'Nunito', letterSpacing: '1px'}}>learn more</div>
             <img src={arrow} alt='arrow' css={{width: '40px', height: '23px', marginLeft: '20px'}} />
           </Link>
-        </div>
+        </div> */}
       </div>
     );
   }

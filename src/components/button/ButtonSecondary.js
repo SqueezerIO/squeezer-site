@@ -16,7 +16,7 @@ export default class ButtonSecondary extends Component {
           color: '#092D5D',
           textTransform: 'uppercase',
           fontSize: '15px',
-          fontFamily: 'Khula',
+          fontFamily: 'Nunito',
           lineHeight: '38px',
           whiteSpace: 'no-wrap',
           fontWeight: 'bold',

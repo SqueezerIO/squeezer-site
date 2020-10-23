@@ -23,7 +23,7 @@
                     <rect id="Rectangle" stroke="#8FDC77" fill="#8FDC77" x="32.9364723" y="4.16218236" width="7.37070254" height="7.37070254" rx="3.68535127"></rect>
                     <rect id="Rectangle" stroke="#F1B655" fill="#F1B655" x="21.4267564" y="4.16218236" width="7.37070254" height="7.37070254" rx="3.68535127"></rect>
                     <rect id="Rectangle" stroke="#E05858" fill="#E05858" x="9.91704036" y="4.16218236" width="7.37070254" height="7.37070254" rx="3.68535127"></rect>
-                    <text id="https://platform.squ" font-family="Khula-Regular, Khula" font-size="7" font-weight="normal" letter-spacing="1.217532" fill="#FFFFFF">
+                    <text id="https://platform.squ" font-family="Nunito-Regular, Nunito" font-size="7" font-weight="normal" letter-spacing="1.217532" fill="#FFFFFF">
                         <tspan x="291" y="10">https://platform.squeezer.io</tspan>
                     </text>
                 </g>

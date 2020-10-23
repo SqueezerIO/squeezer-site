@@ -56,7 +56,7 @@ export default class FeaturedIn extends Component {
               margin: '0 auto',
               fontSize: '33px',
               fontWeight: 'bold',
-              fontFamily: 'Khula'
+              fontFamily: 'Nunito'
             }}>As Featured In</div>
           </div>
           <Source link="" pic={Bloomberg} />

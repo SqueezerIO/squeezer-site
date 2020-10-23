@@ -187,7 +187,7 @@ class Layout extends React.Component {
           <meta name="og:type" content="website" />
           <meta name="og:site_name" content="Squeezer.network" />
         </Helmet>
-        <Telegram />
+        {/* <Telegram /> */}
         <I18nextProvider i18n={i18n}>
           <div
             css={{
@@ -230,10 +230,10 @@ class Layout extends React.Component {
                   }} />
                 </div>
                 <MobileNav open={this.state.open} closeNav={this.closeNav}>
-                  <HeaderItemSwitcher header='products' component={products} />
-                  <HeaderItemSwitcher header='developers' component={developers} />
-                  <HeaderItemSwitcher header='company' component={company} />
-                  <div
+                  {/* <HeaderItemSwitcher header='products' component={products} />
+                  <HeaderItemSwitcher header='developers' component={developers} /> */}
+                  <HeaderItemSwitcher header='links' component={company} />
+                  {/* <div
                     css={{
                       display: 'none',
                       [presets.Phablet]: {
@@ -251,7 +251,7 @@ class Layout extends React.Component {
                       onClick={() => location.href = 'https://platform.squeezer.network/user/register/'}
                       style={{ marginTop: '17px', width: '100%', height: '39px', lineHeight: '38px' }}
                     />
-                  </div>
+                  </div> */}
                 </MobileNav>
 
                 <Link to='/' css={{ display: 'flex' }}>
@@ -265,25 +265,43 @@ class Layout extends React.Component {
                   />
                 </Link>
 
-                <img
+                {/* <img
                   src={hiring}
                   alt="hiring"
                   css={{
                     width: '83px', height: '25px', marginLeft: '-130px', [presets.Hd]: { marginLeft: '-20px' },
                     [presets.Desktop]: { marginLeft: -100 }, [presets.Phablet]: { marginLeft: -10 }
                   }}
-                />
+                /> */}
                 <div css={{
                   display: 'flex',
                   textDecoration: 'none',
                   justifyContent: 'space-between',
-                  [presets.Desktop]: { display: 'none' }
+									[presets.Desktop]: { display: 'none' },
+									'a': {
+										textDecoration: 'none',
+										color: '#000',
+									}
                 }}>
-                  <HeaderItemSwitcher header='products' component={products} />
-                  <HeaderItemSwitcher header='developers' component={developers} />
-                  <HeaderItemSwitcher header='company' component={company} />
+									<a href="#features" css={{
+										textDecoration: 'none',
+										color: '#000'
+									}}>Features</a>
+									<a href="#roadmap" css={{
+										textDecoration: 'none',
+										color: '#000',
+										marginLeft: '45px',
+									}}>Roadmap</a>
+									<a href="#footer" css={{
+										textDecoration: 'none',
+										color: '#000',
+										marginLeft: '45px',
+									}}>Connect</a>
+                  {/* <HeaderItemSwitcher header='products' component={products} />
+                  <HeaderItemSwitcher header='developers' component={developers} /> */}
+                  {/* <HeaderItemSwitcher header='Links' component={company} /> */}
                 </div>
-                <div
+                {/* <div
                   css={{
                     display: 'flex',
                     textDecoration: 'none',
@@ -301,7 +319,7 @@ class Layout extends React.Component {
                     onClick={() => location.href = 'https://platform.squeezer.network/user/register/'}
                     style={{ marginLeft: '17px', width: '103px', height: '39px', lineHeight: '38px' }}
                   />
-                </div>
+                </div> */}
               </div>
             </div>
             <div

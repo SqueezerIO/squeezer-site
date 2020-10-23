@@ -107,10 +107,10 @@ export default class TeamPage extends Component {
             {teamMembers.map((member) => (
               <div css={{display: 'flex', flexDirection: 'column', width: '339px', alignItems: 'center', margin: '111px 20px 20px 20px', [presets.Desktop]: {margin: '20px'}}}>
                 <img src={member.image} alt={member.image} css={{width: '250px', height: '250px'}}/>
-                <h3 css={{color: '#000',	fontFamily: 'Khula',	fontSize: '20px',	fontWeight: '600', lineHeight: '27px', marginBottom: '2px'}}>
+                <h3 css={{color: '#000',	fontFamily: 'Nunito',	fontSize: '20px',	fontWeight: '600', lineHeight: '27px', marginBottom: '2px'}}>
                   {member.name}
                 </h3>
-                <h4 css={{color: '#969696',	fontFamily: 'Khula',	fontSize: '20px',	fontWeight: '500', lineHeight: '27px'}}>
+                <h4 css={{color: '#969696',	fontFamily: 'Nunito',	fontSize: '20px',	fontWeight: '500', lineHeight: '27px'}}>
                   {member.position}
                 </h4>
 
@@ -119,7 +119,7 @@ export default class TeamPage extends Component {
                   {this.renderSocialIcon(member.twitter, twitterImage)}
                 </ul>
 
-                <p css={{width: '339px', height: '243px', color: '#808080',	fontFamily: 'Khula',	fontSize: '18px',	fontWeight: '400', lineHeight: '27px', [presets.Desktop]: {height: 'auto'}, [presets.Mobile]: {width: '200px'}}}>
+                <p css={{width: '339px', height: '243px', color: '#808080',	fontFamily: 'Nunito',	fontSize: '18px',	fontWeight: '400', lineHeight: '27px', [presets.Desktop]: {height: 'auto'}, [presets.Mobile]: {width: '200px'}}}>
                   {member.description}
                 </p>
               </div>
