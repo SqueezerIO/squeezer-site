@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "browser-env": "^3.2.5",
     "classnames": "^2.2.6",
     "fs-extra": "^7.0.0",
